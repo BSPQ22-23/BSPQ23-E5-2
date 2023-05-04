@@ -30,11 +30,14 @@ public class User {
 	@PrimaryKey
 	@Persistent
 	private String nick;
+	@Persistent(column = "password")
 	private String password;
+	@Persistent
 	@Unique
 	private String dni;
 	@NotPersistent
 	private Guest legalInfo;
+	@Persistent
 	private boolean isHotelOwner;
 	public String getNick() {
 		return nick;

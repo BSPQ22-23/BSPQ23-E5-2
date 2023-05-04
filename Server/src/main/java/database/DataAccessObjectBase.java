@@ -4,11 +4,13 @@ import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
+import javax.jdo.annotations.PersistenceAware;
 
 /**
  * DAO base
  *
  */
+@PersistenceAware
 public class DataAccessObjectBase {	
 	protected static PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 	

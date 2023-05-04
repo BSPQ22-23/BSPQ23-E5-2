@@ -89,7 +89,7 @@ public class ServerAppService {
 		if(h.getName().equals("") || h.getCity().equals("") || h.getRooms().size() == 0)
 			return false;
 		else
-			HotelDAO.getInstance().addHotel(h);
+			HotelDAO.getInstance().save(h);
 		return true;
 	}
 	public static List<Hotel> getHotels() {
@@ -101,7 +101,7 @@ public class ServerAppService {
 		return h;
 	}
 	public static List<Hotel> getHotels(String query) {
-		List<Hotel> h = HotelDAO.getInstance().getbyName(query);
+		List<Hotel> h = HotelDAO.getInstance().getByName(query);
 		h.forEach(v-> {
 			v.getRooms().forEach(w->w.getBookings().clear());//Do not ship bookings
 			v.setOwner(null);//No need to know private info of owner

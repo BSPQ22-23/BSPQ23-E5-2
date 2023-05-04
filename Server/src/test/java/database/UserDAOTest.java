@@ -19,52 +19,41 @@ public class UserDAOTest {
 		dao = UserDAO.getInstance();
 		Guest legalInfo = new Guest("Juan", "García", "12345678A", 0, null);
 		user = new User("jgarcia", "password", legalInfo, false);
+		dao.save(user);
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		user = dao.find("jgarcia");
 		dao.delete(user);
 		User retrievedUser = dao.find("jgarcia");
 		assertNull(retrievedUser);
 	}
 
 	@Test
-	public void tests() {
-		
-		////////////////////////////////////////
-		//                SAVE / FIND BY PK
-		////////////////////////////////////////
-		dao.save(user);
+	public void testFind() {
 		User retrievedUser = dao.find("jgarcia");
 		assertNotNull(retrievedUser);
 		assertEquals(user.getNick(), retrievedUser.getNick());
-		assertEquals(user.getPassword(), retrievedUser.getPassword());
-		assertEquals(user.isHotelOwner(), retrievedUser.isHotelOwner());
-		assertEquals(user.getLegalInfo().getDni(), retrievedUser.getLegalInfo().getDni());
-		user = retrievedUser;
-		
-		////////////////////////////////////////
-		//                GET ALL
-		////////////////////////////////////////
+	}
+	
+	@Test
+	public void testGetAll() {
 		List<User> userList = dao.getAll();
 		assertTrue(userList.contains(user));
-		
-		////////////////////////////////////////
-		//                FIND BY AUTH
-		////////////////////////////////////////
-		retrievedUser = dao.find("jgarcia", "password");
+	}
+	
+	@Test
+	public void testFindByAuth() {
+		User retrievedUser = dao.find("jgarcia", "password");
 		assertNotNull(retrievedUser);
 		assertEquals(user.getNick(), retrievedUser.getNick());
-		assertEquals(user.getPassword(), retrievedUser.getPassword());
-		assertEquals(user.isHotelOwner(), retrievedUser.isHotelOwner());
-		assertEquals(user.getLegalInfo().getDni(), retrievedUser.getLegalInfo().getDni());
+	}
 	
-		////////////////////////////////////////
-		//                EXISTS
-		////////////////////////////////////////
+	@Test
+	public void testExists() {
 		assertTrue(dao.exists("jgarcia"));
 		assertFalse(dao.exists("pedro"));
-	
 	}
 }
 

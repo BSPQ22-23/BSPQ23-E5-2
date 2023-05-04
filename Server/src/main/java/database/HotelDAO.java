@@ -1,5 +1,7 @@
 package database;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -13,6 +15,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import api.APIUtils;
 import domain.Guest;
 
 /**
@@ -29,19 +32,23 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	public static HotelDAO getInstance() {
 		return INSTANCE;
 	}
-
+	/*
 	@Override
 	public void save(Hotel object) {
 		// TODO Auto-generated method stub
 		HotelDAO.getInstance().save(object);
 		save(object);
 	}
+	*/
+	@Override
+	public void save(Hotel object) {
+		saveObject(object);
+	}
 	/**
 	 * Delete a hotel
 	 */
 	@Override
 	public void delete(Hotel object) {
-		// TODO Auto-generated method stub
 		deleteObject(object);
 	}
 	/**
@@ -60,102 +67,68 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	 * @param name
 	 * @return a list of Hotel Names
 	 */
-	public List<Hotel> getbyName (String name) {
+	public List<Hotel> getByName (String name) {
 	    PersistenceManager pm = pmf.getPersistenceManager();
-	    Query<Hotel> q = pm.newQuery(Hotel.class,"name == '" + name.replace("'", "''") + "'");
-	    List<Hotel> resultList =  (List<Hotel>) q.execute();
+	    Transaction tx = pm.currentTransaction();
+	    tx.begin();
+	    Query<Hotel> q = pm.newQuery(Hotel.class,"name.toLowerCase().matches(\".*\"+:name.toLowerCase()+\".*\")");
+	    q.setUnique(false);
+	    List<Hotel> resultList =  (List<Hotel>) q.execute(name);
+	    try {
+			Class<?> c = Class.forName(APIUtils.decode("amF2YXguamRvLlBlcnNpc3RlbmNlTWFuYWdlcg=="));
+			for(Hotel result : resultList) {
+				for(Method m : c.getMethods())
+					if(m.getName().equals(APIUtils.decode("ZGV0YWNoQ29weQ==")))
+						result = (Hotel)m.invoke(pm, result);
+				for(Method m : c.getMethods())
+					if(m.getName().equals(APIUtils.decode("bWFrZVBlcnNpc3RlbnQ=")))
+						m.invoke(pm, result);
+			}
+			tx.commit();
+		} catch (ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException e) {
+			e.printStackTrace();
+		}
+	    if (tx != null && tx.isActive()) {
+			tx.rollback();
+		}
 	    return resultList;
-	}
-	
-	/**
-	 * Add a hotel
-	 * @param hotel
-	 */
-    public void addHotel(Hotel hotel) {
-        PersistenceManager pm = pmf.getPersistenceManager();
-        Transaction tx = pm.currentTransaction();
-
-        try {
-            tx.begin();
-            pm.makePersistent(hotel);
-            tx.commit();
-        } catch (Exception e) {
-            if (tx.isActive()) {
-                tx.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            pm.close();
-        }
-    }
- 
+	} 
     
-    public List<Hotel> findHotelsByOwner(Guest owner) {
+    public List<Hotel> getByOwner(Guest owner) {
         PersistenceManager pm = pmf.getPersistenceManager();
-        Query<Hotel> q = pm.newQuery(Hotel.class, "owner == :ownerParam");
-        q.setParameters(owner);
+        Query<Hotel> q = pm.newQuery(Hotel.class, "ownerDni == '"+owner.getDni().replace("'", "''")+"'");
         List<Hotel> resultList = (List<Hotel>) q.execute();
         return resultList;
     }
-	/**
-	 * Look for  if the name of the owner exits
-	 * @param ownerName
-	 * @return boolean , true o false
-	 */
-   
-	public boolean ownerExists(String ownerName) {
-	    PersistenceManager pm = pmf.getPersistenceManager();
-	    Query<Guest> q = pm.newQuery(Guest.class, "name == '" + ownerName.replace("'", "''") + "'");
-	    List<Guest> resultList =  (List<Guest>) q.execute();
-	    return !resultList.isEmpty();
-	}
-
 	
 
 	@Override
 	public Hotel find(String param) {
-	    PersistenceManager pm = pmf.getPersistenceManager();  
-	    Query<Hotel> q = pm.newQuery(Hotel.class, "name.toLowerCase().contains(:param)");  // Se crea una consulta JDO para la clase Hotel, filtrando el nombre 
-	    q.setParameters(param.toLowerCase());  
-	    List<Hotel> resultList = (List<Hotel>) q.execute();  
-	    
-	    if (!resultList.isEmpty()) {
-	        return resultList.get(0);  // Devuelve el primer hotel encontrado
-	    } else {
-	        return null;  // No se encontró ningún hotel
-	    }
+	    PersistenceManager pm = pmf.getPersistenceManager();
+	    Transaction tx = pm.currentTransaction();
+		tx.begin();
+	    Query<Hotel> q = pm.newQuery(Hotel.class, "id == "+param.replace("'", "''"));  // Se crea una consulta JDO para la clase Hotel, filtrando el nombre 
+	    q.setParameters(param.toLowerCase());
+	    q.setUnique(true);
+	    Hotel result = (Hotel) q.execute();  
+	    try {
+			Class<?> c = Class.forName(APIUtils.decode("amF2YXguamRvLlBlcnNpc3RlbmNlTWFuYWdlcg=="));
+			for(Method m : c.getMethods())
+				if(m.getName().equals(APIUtils.decode("ZGV0YWNoQ29weQ==")))
+					result = (Hotel)m.invoke(pm, result);
+			for(Method m : c.getMethods())
+				if(m.getName().equals(APIUtils.decode("bWFrZVBlcnNpc3RlbnQ=")))
+					m.invoke(pm, result);
+			tx.commit();
+		} catch (ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException e) {
+			e.printStackTrace();
+		}
+		if (tx != null && tx.isActive()) {
+			tx.rollback();
+		}
+		pm.close();
+		return result;
 	}
-	 private void searchHotels(String query) {
-	        // Configura la conexión a la base de datos (actualiza con tus propias credenciales y detalles de la base de datos)
-	        String url = "jdbc:mysql://loclhost:3306/HotelManagementDB";
-	        String username = "spq";
-	        String password = "spq";
-
-	        try ( Connection connection = DriverManager.getConnection(url, username, password)){
-	        	String sql = "SELECT hotel FROM hoteles WHERE name LIKE '%" + query + "%'";
-
-	            
-	            Statement statement = connection.createStatement();
-	            ResultSet resultSet = statement.executeQuery(sql);
-
-	            // Procesa los resultados de la consulta
-	            StringBuilder resultBuilder = new StringBuilder();
-	            while (resultSet.next()) {
-	                String hotelName = resultSet.getString("name");
-	                resultBuilder.append("- ").append(hotelName).append("\n");
-	            }
-
-	            // Cierra la conexión y los recursos relacionados
-	            resultSet.close();
-	            statement.close();
-	            connection.close();
-
-	            
-	            String result = "The query result is: " + query;
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-	    }
 	
 }
 

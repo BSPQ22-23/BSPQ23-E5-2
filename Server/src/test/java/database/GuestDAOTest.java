@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,7 +18,6 @@ public class GuestDAOTest {
 	public void setUp() throws Exception {
 		guestDAO = GuestDAO.getInstance();
 		guest = new Guest("Lorem", "Ipsum", "22222222A", 50, "Vitoria-Gasteiz");
-		System.out.println('a');
 		try {
 			guestDAO.save(guest);
 		} catch(Exception e) {}
@@ -25,16 +25,27 @@ public class GuestDAOTest {
 	}
 
 	@Test
-	public void tests() throws Exception {
+	public void testExists() throws Exception {
 		boolean exist = guestDAO.exists(guest.getDni());
 		assertTrue(exist);
+	}
+	@Test
+	public void testFind() {
 		guest = guestDAO.find(guest.getDni());
 		assertEquals(guest.getDni(), guest.getDni());
 		assertNotNull(guest);
+	}
+	@Test
+	public void testGetAll() {
 		List<Guest> guestList = guestDAO.getAll();
 		assertTrue(guestList.contains(guest));
+	}
+	
+	@After
+	public void finish() {
+		guest = guestDAO.find(guest.getDni());
 		guestDAO.delete(guest);
-		guestList = guestDAO.getAll();
+		List<Guest> guestList = guestDAO.getAll();
 		assertFalse(guestList.contains(guest));
 	}
 

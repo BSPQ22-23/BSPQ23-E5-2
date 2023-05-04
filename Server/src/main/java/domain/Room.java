@@ -21,6 +21,7 @@ public class Room {
     private String type;
     private int numMaxGuests;
     private int spaceInMeters;
+    @Persistent
     private Hotel hotel; 
     private float prize;
     @Join
@@ -109,6 +110,12 @@ public class Room {
 
     public void addBooking(Booking booking) {
         this.bookings.add(booking);
+    }
+    public boolean equals(Object o) {
+    	System.err.println("-----------------------------------------");
+    	System.err.println(((Room)o).getHotel());
+    	System.err.println(hotel);
+    	return o instanceof Room && ((Room)o).getRoomNumber() == roomNumber && ((Room)o).getHotel().equals(hotel);
     }
 }
 
