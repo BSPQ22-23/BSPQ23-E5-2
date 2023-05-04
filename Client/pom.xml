@@ -4,8 +4,8 @@
 	<packaging>jar</packaging>
 	<contributors></contributors>
 	<parent>
-		<groupId>BSPQ23-E5</groupId>
-		<artifactId>BSPQ23-E5</artifactId>
+		<groupId>BSPQ23-E5-2</groupId>
+		<artifactId>BSPQ23-E5-2</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<dependencies>

@@ -4,7 +4,6 @@ import java.awt.Component;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import javax.swing.DefaultListModel;
-import javax.swing.JList;
 import javax.swing.ListModel;
 
 import remote.APIUtils;
