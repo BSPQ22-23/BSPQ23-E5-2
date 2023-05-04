@@ -10,7 +10,6 @@ import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import api.APIUtils;
-import domain.Guest;
 import domain.User;
 
 /**
@@ -34,6 +33,7 @@ public class UserDAO extends DataAccessObjectBase implements IDataAccessObject<U
 
 	@Override
 	public void delete(User object) {
+		GuestDAO.getInstance().delete(object.getLegalInfo());
 		deleteObject(object);
 		
 	}

@@ -6,13 +6,14 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.jdo.annotations.Join;
+import javax.jdo.annotations.NotPersistent;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 import org.json.JSONObject;
-import api.APIUtils;
-import javax.jdo.annotations.PersistenceCapable;
+import database.GuestDAO;
 
 
 @PersistenceCapable(detachable="true")
@@ -44,8 +45,11 @@ public class Booking {
     private Date checkinDate;
     private Date checkoutDate;
     private Room room;
+    private String authorId;
+    @NotPersistent
     private Guest author;
-
+    
+    @Join
 	private List<Guest> guests;
     
     public Booking(Date checkinDate, Date checkoutDate, Room room, List<Guest> guests, Guest author) {
@@ -53,6 +57,7 @@ public class Booking {
         this.checkoutDate = checkoutDate;
         this.room = room;
         this.guests = guests;
+        this.authorId = author.getDni();
         this.author = author;
     }
 
@@ -98,9 +103,12 @@ public class Booking {
     
     public void setAuthor(Guest author) {
     	this.author = author;
+    	authorId = author.getDni();
     }
     
     public Guest getAuthor() {
+    	if(author == null && authorId != null)
+    		author = GuestDAO.getInstance().find(authorId);
 		return author;
 	}
     

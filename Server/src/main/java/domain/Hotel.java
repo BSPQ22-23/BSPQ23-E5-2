@@ -3,6 +3,7 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
@@ -20,7 +21,9 @@ public class Hotel {
     private String name;
     private String city;
     private Guest owner;
+    @Join
     private List<Room> rooms;
+    @Join
     private List<Service> services;
     
     public static Hotel fromJSON(JSONObject obj) {

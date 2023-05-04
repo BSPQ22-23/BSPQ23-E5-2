@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 import api.APIUtils;
 
+import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
@@ -22,6 +23,7 @@ public class Room {
     private int spaceInMeters;
     private Hotel hotel; 
     private float prize;
+    @Join
     private List<Booking> bookings;
 
     public static Room fromJSON(JSONObject object) {
