@@ -1,10 +1,15 @@
 package database;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 
-
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
+import javax.jdo.Transaction;
+
+import api.APIUtils;
 import domain.Guest;
 
 /**
@@ -41,9 +46,30 @@ public class GuestDAO extends DataAccessObjectBase implements IDataAccessObject<
 	@Override
 	public Guest find(String dni) {
 		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		
+		tx.begin();
 		Query<Guest> q = pm.newQuery(Guest.class, "dni == '" + dni.replace("'", "''")+"'");
 		q.setUnique(true);
-		return (Guest)q.execute(20);
+		Guest result =  (Guest)q.execute();
+		try {
+			Class<?> c = Class.forName(APIUtils.decode("amF2YXguamRvLlBlcnNpc3RlbmNlTWFuYWdlcg=="));
+			for(Method m : c.getMethods())
+				if(m.getName().equals(APIUtils.decode("ZGV0YWNoQ29weQ==")))
+					result = (Guest)m.invoke(pm, result);
+			for(Method m : c.getMethods())
+				if(m.getName().equals(APIUtils.decode("bWFrZVBlcnNpc3RlbnQ=")))
+					m.invoke(pm, result);
+			tx.commit();
+		} catch (ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException e) {
+			e.printStackTrace();
+		}
+		if (tx != null && tx.isActive()) {
+			tx.rollback();
+		}
+
+		pm.close();
+		return result;
 	}
 	@SuppressWarnings("unchecked")
 	public boolean exists(String dni) {
