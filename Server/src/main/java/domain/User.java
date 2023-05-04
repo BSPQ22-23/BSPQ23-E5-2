@@ -1,9 +1,9 @@
 package domain;
 
+import javax.jdo.annotations.NotPersistent;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
-import javax.jdo.annotations.Transactional;
 import javax.jdo.annotations.Unique;
 
 import org.json.JSONObject;
@@ -16,7 +16,7 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "User [nick=" + nick + ", password=" + password + ", dni=" + dni + ", legalInfo=" + legalInfo
+		return "User [nick=" + nick + ", password=" + password + ", dni=" + dni + ", legalInfo=" + getLegalInfo()
 				+ ", isHotelOwner=" + isHotelOwner + "]";
 	}
 	public static User fromJSON(JSONObject obj) {
@@ -33,7 +33,7 @@ public class User {
 	private String password;
 	@Unique
 	private String dni;
-	@Transactional
+	@NotPersistent
 	private Guest legalInfo;
 	private boolean isHotelOwner;
 	public String getNick() {

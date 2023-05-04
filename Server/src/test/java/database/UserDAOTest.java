@@ -24,38 +24,16 @@ public class UserDAOTest {
 	@After
 	public void tearDown() throws Exception {
 		dao.delete(user);
-		dao = null;
-		user = null;
-	}
-
-	@Test
-	public void testSave() {
-		dao.save(user);
-		User retrievedUser = dao.find("jgarcia");
-		assertNotNull(retrievedUser);
-		assertEquals(user.getNick(), retrievedUser.getNick());
-		assertEquals(user.getPassword(), retrievedUser.getPassword());
-		assertEquals(user.isHotelOwner(), retrievedUser.isHotelOwner());
-		assertEquals(user.getLegalInfo().getDni(), retrievedUser.getLegalInfo().getDni());
-	}
-
-	@Test
-	public void testDelete() {
-		dao.save(user);
-		dao.delete(user);
 		User retrievedUser = dao.find("jgarcia");
 		assertNull(retrievedUser);
 	}
 
 	@Test
-	public void testGetAll() {
-		dao.save(user);
-		List<User> userList = dao.getAll();
-		assertTrue(userList.contains(user));
-	}
-
-	@Test
-	public void testFindString() {
+	public void tests() {
+		
+		////////////////////////////////////////
+		//                SAVE / FIND BY PK
+		////////////////////////////////////////
 		dao.save(user);
 		User retrievedUser = dao.find("jgarcia");
 		assertNotNull(retrievedUser);
@@ -63,24 +41,30 @@ public class UserDAOTest {
 		assertEquals(user.getPassword(), retrievedUser.getPassword());
 		assertEquals(user.isHotelOwner(), retrievedUser.isHotelOwner());
 		assertEquals(user.getLegalInfo().getDni(), retrievedUser.getLegalInfo().getDni());
-	}
-
-	@Test
-	public void testFindStringString() {
-		dao.save(user);
-		User retrievedUser = dao.find("jgarcia", "password");
+		user = retrievedUser;
+		
+		////////////////////////////////////////
+		//                GET ALL
+		////////////////////////////////////////
+		List<User> userList = dao.getAll();
+		assertTrue(userList.contains(user));
+		
+		////////////////////////////////////////
+		//                FIND BY AUTH
+		////////////////////////////////////////
+		retrievedUser = dao.find("jgarcia", "password");
 		assertNotNull(retrievedUser);
 		assertEquals(user.getNick(), retrievedUser.getNick());
 		assertEquals(user.getPassword(), retrievedUser.getPassword());
 		assertEquals(user.isHotelOwner(), retrievedUser.isHotelOwner());
 		assertEquals(user.getLegalInfo().getDni(), retrievedUser.getLegalInfo().getDni());
-	}
-
-	@Test
-	public void testExists() {
-		dao.save(user);
+	
+		////////////////////////////////////////
+		//                EXISTS
+		////////////////////////////////////////
 		assertTrue(dao.exists("jgarcia"));
 		assertFalse(dao.exists("pedro"));
+	
 	}
 }
 

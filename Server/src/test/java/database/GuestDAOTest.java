@@ -16,7 +16,7 @@ public class GuestDAOTest {
 	@Before
 	public void setUp() throws Exception {
 		guestDAO = GuestDAO.getInstance();
-		guest = new Guest("maitane", "a", "22222222A", 50, null);
+		guest = new Guest("Lorem", "Ipsum", "22222222A", 50, "Vitoria-Gasteiz");
 		System.out.println('a');
 		try {
 			guestDAO.save(guest);
