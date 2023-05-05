@@ -77,7 +77,6 @@ public class Guest {
     }
     
     public boolean equals(Object o) {
-    	System.out.println(o instanceof Guest && ((Guest)o).dni.equals(dni));
     	return o instanceof Guest && ((Guest)o).dni.equals(dni);
     }
 

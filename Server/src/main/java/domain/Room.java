@@ -112,10 +112,7 @@ public class Room {
         this.bookings.add(booking);
     }
     public boolean equals(Object o) {
-    	System.err.println("-----------------------------------------");
-    	System.err.println(((Room)o).getHotel());
-    	System.err.println(hotel);
-    	return o instanceof Room && ((Room)o).getRoomNumber() == roomNumber && ((Room)o).getHotel().equals(hotel);
+    	return o instanceof Room && ((Room)o).getRoomNumber() == roomNumber;
     }
 }
 

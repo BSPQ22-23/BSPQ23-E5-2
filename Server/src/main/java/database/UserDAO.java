@@ -1,7 +1,5 @@
 package database;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.List;
 
 
@@ -9,7 +7,6 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-import api.APIUtils;
 import domain.User;
 
 /**
@@ -55,18 +52,7 @@ public class UserDAO extends DataAccessObjectBase implements IDataAccessObject<U
 		Query<User> q = pm.newQuery(User.class, "nick == '" + dni.replace("'", "''")+"'");
 		q.setUnique(true);
 		User result =  (User)q.execute();
-		try {
-			Class<?> c = Class.forName(APIUtils.decode("amF2YXguamRvLlBlcnNpc3RlbmNlTWFuYWdlcg=="));
-			for(Method m : c.getMethods())
-				if(m.getName().equals(APIUtils.decode("ZGV0YWNoQ29weQ==")))
-					result = (User)m.invoke(pm, result);
-			for(Method m : c.getMethods())
-				if(m.getName().equals(APIUtils.decode("bWFrZVBlcnNpc3RlbnQ=")))
-					m.invoke(pm, result);
-			tx.commit();
-		} catch (ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException e) {
-			e.printStackTrace();
-		}
+		tx.commit();
 		if (tx != null && tx.isActive()) {
 			tx.rollback();
 		}

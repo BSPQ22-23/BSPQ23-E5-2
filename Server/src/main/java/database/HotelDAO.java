@@ -1,13 +1,5 @@
 package database;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
@@ -15,7 +7,6 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-import api.APIUtils;
 import domain.Guest;
 
 /**
@@ -74,23 +65,11 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	    Query<Hotel> q = pm.newQuery(Hotel.class,"name.toLowerCase().matches(\".*\"+:name.toLowerCase()+\".*\")");
 	    q.setUnique(false);
 	    List<Hotel> resultList =  (List<Hotel>) q.execute(name);
-	    try {
-			Class<?> c = Class.forName(APIUtils.decode("amF2YXguamRvLlBlcnNpc3RlbmNlTWFuYWdlcg=="));
-			for(Hotel result : resultList) {
-				for(Method m : c.getMethods())
-					if(m.getName().equals(APIUtils.decode("ZGV0YWNoQ29weQ==")))
-						result = (Hotel)m.invoke(pm, result);
-				for(Method m : c.getMethods())
-					if(m.getName().equals(APIUtils.decode("bWFrZVBlcnNpc3RlbnQ=")))
-						m.invoke(pm, result);
-			}
-			tx.commit();
-		} catch (ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException e) {
-			e.printStackTrace();
-		}
+		tx.commit();
 	    if (tx != null && tx.isActive()) {
 			tx.rollback();
 		}
+	    pm.close();
 	    return resultList;
 	} 
     
@@ -111,18 +90,7 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	    q.setParameters(param.toLowerCase());
 	    q.setUnique(true);
 	    Hotel result = (Hotel) q.execute();  
-	    try {
-			Class<?> c = Class.forName(APIUtils.decode("amF2YXguamRvLlBlcnNpc3RlbmNlTWFuYWdlcg=="));
-			for(Method m : c.getMethods())
-				if(m.getName().equals(APIUtils.decode("ZGV0YWNoQ29weQ==")))
-					result = (Hotel)m.invoke(pm, result);
-			for(Method m : c.getMethods())
-				if(m.getName().equals(APIUtils.decode("bWFrZVBlcnNpc3RlbnQ=")))
-					m.invoke(pm, result);
-			tx.commit();
-		} catch (ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException | SecurityException e) {
-			e.printStackTrace();
-		}
+	    tx.commit();
 		if (tx != null && tx.isActive()) {
 			tx.rollback();
 		}
