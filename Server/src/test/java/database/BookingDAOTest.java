@@ -69,7 +69,7 @@ public class BookingDAOTest {
 	
 	@AfterClass
 	public static void end() {
-		//GuestDAO.getInstance().delete(guest);
+		GuestDAO.getInstance().delete(guest);
 	}
 
 	@Test

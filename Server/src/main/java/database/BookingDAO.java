@@ -41,7 +41,7 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
  */
 	@Override
 	public void delete(Booking object) {
-		object.getRoom().getBookings().remove(object);
+		//object.getRoom().getBookings().remove(object);
 		super.deleteObject(object);
 		
 	}

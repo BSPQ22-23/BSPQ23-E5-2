@@ -1,5 +1,9 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
@@ -27,6 +31,9 @@ public class Guest {
     private String surname;
     private int age;
     private String cityOfProvenance;
+    
+    @Persistent(mappedBy = "guests", dependentElement="true", defaultFetchGroup="false")
+    private List<Booking> bookings;
 
     public Guest(String name, String surname, String dni, int age, String cityOfProvenance) {
         this.name = name;
@@ -34,6 +41,7 @@ public class Guest {
         this.dni = dni;
         this.age = age;
         this.cityOfProvenance = cityOfProvenance;
+        this.bookings = new ArrayList<>();
     }
 
 	public String getName() {
@@ -85,5 +93,13 @@ public class Guest {
 		return "Guest [name=" + name + ", surname=" + surname + ", dni="
 				+ dni + ", age=" + age + ", cityOfProvenance=" + cityOfProvenance
 				+ "]";
+	}
+
+	public List<Booking> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(List<Booking> bookings) {
+		this.bookings = bookings;
 	}
 }
