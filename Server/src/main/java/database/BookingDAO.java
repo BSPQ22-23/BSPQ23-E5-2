@@ -41,7 +41,7 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
  */
 	@Override
 	public void delete(Booking object) {
-		// TODO Auto-generated method stub
+		object.getRoom().getBookings().remove(object);
 		super.deleteObject(object);
 		
 	}
@@ -71,7 +71,7 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	        tx.begin();
 
 	        Query<Booking> q = pm.newQuery(Booking.class);
-	        q.setFilter("user == userParam");
+	        q.setFilter("id == userParam");
 	        q.declareParameters("String userParam");
 	        q.setUnique(true);
 	        result = (Booking) q.execute(param);
@@ -79,6 +79,7 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	        tx.commit();
 	    } catch (Exception ex) {
 	        System.out.println("Error: " + ex.getMessage());
+	        ex.printStackTrace();
 	    } finally {
 	        if (tx != null && tx.isActive()) {
 	            tx.rollback();
@@ -102,7 +103,7 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	        tx.begin();
 
 	        Query<Booking> q = pm.newQuery(Booking.class);
-	        q.setFilter("room == roomParam && date == dateParam");
+	        q.setFilter("room == roomParam && checkinDate <= dateParam && checkoutDate >= dateParam");
 	        q.declareParameters("Room roomParam, java.util.Date dateParam");
 	        q.setUnique(true);
 	        Booking reservation = (Booking) q.execute(room, date);

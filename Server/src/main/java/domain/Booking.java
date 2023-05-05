@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.NotPersistent;
 import javax.jdo.annotations.PersistenceCapable;
@@ -40,7 +41,7 @@ public class Booking {
     }
 	
 	@PrimaryKey
-	@Persistent
+	@Persistent(valueStrategy = IdGeneratorStrategy.INCREMENT)
 	private int id;
     private Date checkinDate;
     private Date checkoutDate;
@@ -48,7 +49,6 @@ public class Booking {
     private String authorId;
     @NotPersistent
     private Guest author;
-    
     @Join
     @Persistent(dependentElement="false", defaultFetchGroup="false")
 	private List<Guest> guests;

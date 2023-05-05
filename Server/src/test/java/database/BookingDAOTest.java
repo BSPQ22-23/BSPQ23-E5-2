@@ -46,7 +46,7 @@ public class BookingDAOTest {
 	public void setup() {
 		bookingDAO = BookingDAO.getInstance();
 		booking = new Booking(
-				new Date(System.currentTimeMillis() + 24000000), 
+				new Date(System.currentTimeMillis() - 24000000), 
 				new Date(System.currentTimeMillis() + 2400000000l), 
 				room, 
 				List.of(guest), 
@@ -64,33 +64,26 @@ public class BookingDAOTest {
 	@Test
 	public void testGetAll() {
 		List<Booking> listBooking = bookingDAO.getAll();
-		System.err.println(listBooking.size());
 		assertTrue(listBooking.contains(booking));
 	}
 	
 	@AfterClass
 	public static void end() {
-		GuestDAO.getInstance().delete(guest);
+		//GuestDAO.getInstance().delete(guest);
 	}
 
 	@Test
 	public void testFind() {
-        Booking findBooking = bookingDAO.find(guest.getName());
+        Booking findBooking = bookingDAO.find(""+booking.getId());
         assertEquals(guest.getName(), findBooking.getAuthor().getName());
 		
 	}
-
+	
 	@Test
 	public void testHasReservationInRoomOnDate() {
-		Date d = new Date(System.currentTimeMillis());
-		booking.setRoom(room);
-		booking.setCheckinDate(d);
+		Date d = new Date(System.currentTimeMillis());		
 		
-		bookingDAO.save(booking);
-		
-		boolean hasReservationInRoomOnDate = bookingDAO.hasReservationInRoomOnDate(room, d);
-		
-		assertTrue("Reservation in room on date", hasReservationInRoomOnDate);
+		assertTrue("Reservation in room on date", bookingDAO.hasReservationInRoomOnDate(room, d));
 		
 	}
 
