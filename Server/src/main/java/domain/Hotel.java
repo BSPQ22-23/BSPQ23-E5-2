@@ -3,6 +3,7 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.NotPersistent;
 import javax.jdo.annotations.PersistenceCapable;
@@ -24,7 +25,7 @@ public class Hotel {
 	}
 
 	@PrimaryKey
-	@Persistent
+	@Persistent(valueStrategy = IdGeneratorStrategy.INCREMENT)
 	private int id;
     private String name;
     private String city;

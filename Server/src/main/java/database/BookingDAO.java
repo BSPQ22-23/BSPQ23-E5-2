@@ -55,6 +55,7 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Query<Booking> q = pm.newQuery(Booking.class);
 		List<Booking> ListBooking = (List<Booking>) q.executeList();
+		pm.close();
 		return ListBooking;
 	}
 	

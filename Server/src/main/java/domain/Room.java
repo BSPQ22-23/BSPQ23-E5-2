@@ -6,6 +6,8 @@ import org.json.JSONObject;
 
 import api.APIUtils;
 
+import javax.jdo.annotations.ForeignKey;
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -16,15 +18,19 @@ import javax.jdo.annotations.PrimaryKey;
 public class Room {
 
     @PrimaryKey
+    @Persistent(valueStrategy = IdGeneratorStrategy.INCREMENT)
+    private int id;
     @Persistent
     private int roomNumber;
     private String type;
     private int numMaxGuests;
     private int spaceInMeters;
+    @ForeignKey
     @Persistent
     private Hotel hotel; 
     private float prize;
     @Join
+    @Persistent(mappedBy="room", dependentElement="true", defaultFetchGroup="true")
     private List<Booking> bookings;
 
     public static Room fromJSON(JSONObject object) {

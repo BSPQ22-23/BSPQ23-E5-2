@@ -7,6 +7,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import api.APIUtils;
 import domain.Guest;
 
 /**
@@ -50,6 +51,7 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Query<Hotel> q = pm.newQuery(Hotel.class);
 		List<Hotel> ListHotel = (List<Hotel>) q.executeList();
+		pm.close();
 		return ListHotel;
 		
 	}
@@ -59,12 +61,14 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	 * @return a list of Hotel Names
 	 */
 	public List<Hotel> getByName (String name) {
+		name = ".*"+name+".*";
 	    PersistenceManager pm = pmf.getPersistenceManager();
 	    Transaction tx = pm.currentTransaction();
 	    tx.begin();
-	    Query<Hotel> q = pm.newQuery(Hotel.class,"name.toLowerCase().matches(\".*\"+:name.toLowerCase()+\".*\")");
+	    Query<Hotel> q = pm.newQuery(Hotel.class,APIUtils.decode("bmFtZS50b0xvd2VyQ2FzZSgpLm1hdGNoZXMocV9uYW1lKQ=="));
+	    q.declareParameters("String q_name");
 	    q.setUnique(false);
-	    List<Hotel> resultList =  (List<Hotel>) q.execute(name);
+	    List<Hotel> resultList =  (List<Hotel>) q.setParameters(name.toLowerCase()).executeList();
 		tx.commit();
 	    if (tx != null && tx.isActive()) {
 			tx.rollback();
@@ -76,7 +80,7 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
     public List<Hotel> getByOwner(Guest owner) {
         PersistenceManager pm = pmf.getPersistenceManager();
         Query<Hotel> q = pm.newQuery(Hotel.class, "ownerDni == '"+owner.getDni().replace("'", "''")+"'");
-        List<Hotel> resultList = (List<Hotel>) q.execute();
+        List<Hotel> resultList = (List<Hotel>) q.executeList();
         return resultList;
     }
 	

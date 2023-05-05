@@ -22,7 +22,7 @@ import domain.Room;
  *
  */
 public class HotelDAOTest {
-    private HotelDAO hotelDAO;
+    private HotelDAO hotelDAO = HotelDAO.getInstance();
     private Hotel hotel;
     private static Guest owner;
     
@@ -34,12 +34,13 @@ public class HotelDAOTest {
     
     @Before
     public void setUp() {
-        hotelDAO = HotelDAO.getInstance();
         hotel = new Hotel("Test Hotel", "Test City", owner);
         hotel.addRoom(new Room(100, "Single", 1, 5, 10, hotel));
-        hotelDAO.save(hotel);
+        if(hotelDAO.getByName(hotel.getName()).size() == 0)
+        	hotelDAO.save(hotel);
+        else
+        	hotel = hotelDAO.getByName(hotel.getName()).get(0);
     }
-    
     @Test
     public void testGetByName() {
     	Hotel h = hotelDAO.getByName("Test Hotel").get(0);
@@ -72,7 +73,6 @@ public class HotelDAOTest {
     }
     @After
     public void deleteHotel() {
-    	hotel = hotelDAO.find(""+hotel.getId());
     	hotelDAO.delete(hotel);
     	List<Hotel> hotels = hotelDAO.getAll();
         assertFalse(hotels.contains(hotel));

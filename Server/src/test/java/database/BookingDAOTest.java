@@ -2,85 +2,79 @@ package database;
 
 import static org.junit.Assert.*;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import javax.validation.constraints.AssertFalse;
-
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import domain.Booking;
 import domain.Guest;
-import domain.User;
+import domain.Hotel;
 import domain.Room;
 
 public class BookingDAOTest {
 	private BookingDAO bookingDAO;
 	private Booking booking;
-	private User user;
-	private Room room;
-	private Guest guest;
-	
-	
-	private Date date;
+	private static Room room;
+	private static Guest guest;
+	private static Hotel hotel;
 	
 	
 
-	@Before
-	public void setUp() throws Exception {
-		bookingDAO = BookingDAO.getInstance();
-		booking = new Booking(null, null, null, null, null);
-		room = new Room(100, null, 0, 0, 0, null);
-		date = new Date();
-		guest = new Guest("gorka", "kk", "23232323A", 67, null);
+	@BeforeClass
+	public static void start() throws Exception {
+		guest = new Guest("gorka", "kk", "23232323A", 67, "Vitoria-Gasteiz");
+		if(!GuestDAO.getInstance().exists(guest.getDni()))
+			GuestDAO.getInstance().save(guest);
+		else
+			guest = GuestDAO.getInstance().find(guest.getDni());
+		hotel = new Hotel("Hotel Lakua", "Vitoria-Gasteiz", guest);
+		room = new Room(100, "Single", 0, 0, 0, hotel);
+		hotel.addRoom(room);
+		if(HotelDAO.getInstance().getByOwner(guest).size() == 0)
+			HotelDAO.getInstance().save(hotel);
+		else
+			hotel = HotelDAO.getInstance().getByOwner(guest).get(0);
 		
+	}
+	@Before
+	public void setup() {
+		bookingDAO = BookingDAO.getInstance();
+		booking = new Booking(
+				new Date(System.currentTimeMillis() + 24000000), 
+				new Date(System.currentTimeMillis() + 2400000000l), 
+				room, 
+				List.of(guest), 
+				guest);
+		BookingDAO.getInstance().save(booking);
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		
-	}
-
-	@Test
-	public void testGetInstance() {
-		bookingDAO = BookingDAO.getInstance();
-		
-	}
-
-	@Test
-	public void testSave() {
-		bookingDAO.save(booking);
-		List<Booking> bookingList = bookingDAO.getAll();
-		assertTrue(bookingList.contains(booking));
-	}
-
-	@Test
-	public void testDelete() {
-		//save the booking , then delete and look for the reservation on the list
-		bookingDAO.save(booking);
 		bookingDAO.delete(booking);
 		List<Booking> listBooking = bookingDAO.getAll();
 		assertFalse(listBooking.contains(booking));
-		
-		
-		
 	}
+	
 	@Test
 	public void testGetAll() {
-		bookingDAO.save(booking);
 		List<Booking> listBooking = bookingDAO.getAll();
+		System.err.println(listBooking.size());
 		assertTrue(listBooking.contains(booking));
+	}
+	
+	@AfterClass
+	public static void end() {
+		GuestDAO.getInstance().delete(guest);
 	}
 
 	@Test
 	public void testFind() {
-		
-		booking.setAuthor(guest);
-        bookingDAO.save(booking);
-
         Booking findBooking = bookingDAO.find(guest.getName());
         assertEquals(guest.getName(), findBooking.getAuthor().getName());
 		
@@ -88,15 +82,13 @@ public class BookingDAOTest {
 
 	@Test
 	public void testHasReservationInRoomOnDate() {
-		
-	
-		
+		Date d = new Date(System.currentTimeMillis());
 		booking.setRoom(room);
-		booking.setCheckinDate(date);
+		booking.setCheckinDate(d);
 		
 		bookingDAO.save(booking);
 		
-		boolean hasReservationInRoomOnDate = bookingDAO.hasReservationInRoomOnDate(room, date);
+		boolean hasReservationInRoomOnDate = bookingDAO.hasReservationInRoomOnDate(room, d);
 		
 		assertTrue("Reservation in room on date", hasReservationInRoomOnDate);
 		

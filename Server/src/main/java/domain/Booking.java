@@ -50,6 +50,7 @@ public class Booking {
     private Guest author;
     
     @Join
+    @Persistent(dependentElement="false", defaultFetchGroup="false")
 	private List<Guest> guests;
     
     public Booking(Date checkinDate, Date checkoutDate, Room room, List<Guest> guests, Guest author) {
@@ -118,5 +119,9 @@ public class Booking {
 
     public void removeGuest(Guest guest) {
         guests.remove(guest);
+    }
+    
+    public boolean equals(Object o) {
+    	return o instanceof Booking && ((Booking)o).id == id;
     }
 }
