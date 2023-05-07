@@ -42,6 +42,7 @@ public class DataAccessObjectBase {
 			pm.makePersistent(object);
 			tx.commit();
 		} catch (Exception ex) {
+			ex.printStackTrace();
 			System.out.println(" $ Error storing an object: " + ex.getMessage());
 		} finally {
 			if (tx != null && tx.isActive()) {

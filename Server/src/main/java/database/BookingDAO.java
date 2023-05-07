@@ -2,11 +2,13 @@ package database;
 import java.util.Date;
 import java.util.List;
 
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import domain.Booking;
+import domain.Guest;
 import domain.Room;
 /**
  * DAO for Booking class
@@ -16,15 +18,11 @@ import domain.Room;
 
 public class BookingDAO extends DataAccessObjectBase implements IDataAccessObject<Booking> {
 
-	private static BookingDAO instance;	
+	private static BookingDAO instance = new BookingDAO();	
 	
 	private BookingDAO() { }
 	
 	public static BookingDAO getInstance() {
-		if (instance == null) {
-			instance = new BookingDAO();
-		}		
-		
 		return instance;
 	}	
 	/**
@@ -32,8 +30,9 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	 */
 	@Override
 	public void save(Booking object) {
-		// TODO Auto-generated method stub
-		super.saveObject(object);
+		object.getRoom().addBooking(object);
+		super.saveObject(object.getRoom());
+		saveObject(object);
 		
 	}
 /**
@@ -41,7 +40,9 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
  */
 	@Override
 	public void delete(Booking object) {
-		//object.getRoom().getBookings().remove(object);
+		object.getRoom().getBookings().remove(object);
+		System.err.println(JDOHelper.getObjectState(object.getRoom()));
+		saveObject(object.getRoom());
 		super.deleteObject(object);
 		
 	}
@@ -90,7 +91,26 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 
 	    return result;
 	}
+	public List<Booking> getByAuthor(Guest author){
+		PersistenceManager pm = pmf.getPersistenceManager();
+	    Transaction tx = pm.currentTransaction();
+	    List<Booking> result = null;
+	    try {
+	        tx.begin();
+	        Query<Booking> q = pm.newQuery(Booking.class, "authorId == :authorDNI");
+	        result = q.setParameters(author.getDni().replace("'", "''")).executeList();
+	        tx.commit();
+	    } catch (Exception ex) {
+	        System.out.println("Error: " + ex.getMessage());
+	    } finally {
+	        if (tx != null && tx.isActive()) {
+	            tx.rollback();
+	        }
 
+	        pm.close();
+	    }
+	    return result;
+	}
 	
 	
 	public boolean hasReservationInRoomOnDate(Room room, Date date) {

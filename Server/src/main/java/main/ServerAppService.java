@@ -58,7 +58,7 @@ public class ServerAppService {
 	}
 	
 	public static List<Booking> getReservationsByUser(User user){
-		return null;
+		return BookingDAO.getInstance().getByAuthor(user.getLegalInfo());
 	}
 	
 	public static List<Booking> getReservationsByHotel(String hotelId){

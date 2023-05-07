@@ -2,14 +2,16 @@ package database;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import javax.jdo.JDOHelper;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import domain.Booking;
@@ -38,29 +40,43 @@ public class BookingDAOTest {
 		hotel.addRoom(room);
 		if(HotelDAO.getInstance().getByOwner(guest).size() == 0)
 			HotelDAO.getInstance().save(hotel);
-		else
+		else {
 			hotel = HotelDAO.getInstance().getByOwner(guest).get(0);
+			room = hotel.getRooms().get(0);
+		}
 		
 	}
 	@Before
 	public void setup() {
+		ArrayList<Guest> g = new ArrayList<>();
+		g.add(guest);
 		bookingDAO = BookingDAO.getInstance();
 		booking = new Booking(
 				new Date(System.currentTimeMillis() - 24000000), 
 				new Date(System.currentTimeMillis() + 2400000000l), 
 				room, 
-				List.of(guest), 
+				g, 
 				guest);
+		room.addBooking(booking);
+		System.err.println("hotel: "+JDOHelper.getObjectState(hotel));
 		BookingDAO.getInstance().save(booking);
+		System.err.println("room: " + JDOHelper.getObjectState(room));
+		System.err.println("booking: " +JDOHelper.getObjectState(booking));
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		System.err.println("booking: " +JDOHelper.getObjectState(booking));
 		bookingDAO.delete(booking);
 		List<Booking> listBooking = bookingDAO.getAll();
 		assertFalse(listBooking.contains(booking));
 	}
-	
+	@Test
+	public void getByAuthor() {
+		List<Booking> bookings = bookingDAO.getByAuthor(guest);
+		assertEquals(1, bookings.size());
+		assertTrue(bookings.contains(booking));
+	}
 	@Test
 	public void testGetAll() {
 		List<Booking> listBooking = bookingDAO.getAll();
@@ -71,14 +87,13 @@ public class BookingDAOTest {
 	public static void end() {
 		GuestDAO.getInstance().delete(guest);
 	}
-
+	
 	@Test
 	public void testFind() {
         Booking findBooking = bookingDAO.find(""+booking.getId());
         assertEquals(guest.getName(), findBooking.getAuthor().getName());
 		
 	}
-	
 	@Test
 	public void testHasReservationInRoomOnDate() {
 		Date d = new Date(System.currentTimeMillis());		

@@ -3,6 +3,8 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jdo.annotations.ForeignKey;
+import javax.jdo.annotations.ForeignKeyAction;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.NotPersistent;
@@ -34,6 +36,7 @@ public class Hotel {
     private Guest owner;
     @Join
     @Persistent(mappedBy="hotel", dependentElement="true", defaultFetchGroup="true")
+    @ForeignKey(deleteAction = ForeignKeyAction.CASCADE)
     private List<Room> rooms = new ArrayList<>();
     @Join
     @Persistent(dependentElement="true", defaultFetchGroup="true")

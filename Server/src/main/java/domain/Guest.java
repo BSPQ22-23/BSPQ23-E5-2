@@ -32,6 +32,7 @@ public class Guest {
     private int age;
     private String cityOfProvenance;
     
+    @Join
     @Persistent(mappedBy = "guests", dependentElement="true", defaultFetchGroup="false")
     private List<Booking> bookings;
 

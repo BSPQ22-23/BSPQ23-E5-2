@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import org.json.JSONObject;
@@ -7,6 +8,7 @@ import org.json.JSONObject;
 import api.APIUtils;
 
 import javax.jdo.annotations.ForeignKey;
+import javax.jdo.annotations.ForeignKeyAction;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
@@ -30,7 +32,8 @@ public class Room {
     private Hotel hotel; 
     private float prize;
     @Join
-    @Persistent(mappedBy="room", dependentElement="true", defaultFetchGroup="true")
+    @Persistent(mappedBy="room", dependentElement="true", defaultFetchGroup="false")
+    @ForeignKey(deleteAction = ForeignKeyAction.CASCADE)
     private List<Booking> bookings;
 
     public static Room fromJSON(JSONObject object) {
@@ -56,6 +59,7 @@ public class Room {
         this.numMaxGuests = numMaxGuests;
         this.spaceInMeters = spaceInMeters;
         this.hotel = hotel;
+        this.bookings = new LinkedList<>();
     }
 
     public int getRoomNumber() {
@@ -115,6 +119,8 @@ public class Room {
     }
 
     public void addBooking(Booking booking) {
+    	if(this.bookings == null)
+    		this.bookings = new LinkedList<>();
         this.bookings.add(booking);
     }
     public boolean equals(Object o) {
