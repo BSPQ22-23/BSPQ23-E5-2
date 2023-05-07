@@ -110,8 +110,7 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	        pm.close();
 	    }
 	    return result;
-	}
-	
+	}	
 	
 	public boolean hasReservationInRoomOnDate(Room room, Date date) {
 	    PersistenceManager pm = pmf.getPersistenceManager();

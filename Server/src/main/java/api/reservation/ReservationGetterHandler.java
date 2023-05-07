@@ -57,11 +57,20 @@ public class ReservationGetterHandler implements HttpHandler{
 			 		return;
 				case "hotel":
 					l.info("Getting reservations by hotel");
-					body = APIUtils.listToJSONArray(ServerAppService.getReservationsByHotel(parameter)).toString();
-					exchange.sendResponseHeaders(200, body.length());
-		    		os = exchange.getResponseBody();
-			 		os.write(body.getBytes());
-			 		os.close();
+					if(!author.isHotelOwner()) {
+						l.info("Unauthorized use of API: Unauthorized");
+			    		String resp = "Unauthorized";
+			    		exchange.sendResponseHeaders(401, resp.length());
+			    		os = exchange.getResponseBody();
+				 		os.write(resp.getBytes());
+				 		os.close();
+					}else {
+						body = APIUtils.listToJSONArray(ServerAppService.getReservationsByHotel(author, parameter)).toString();
+						exchange.sendResponseHeaders(200, body.length());
+		    			os = exchange.getResponseBody();
+			 			os.write(body.getBytes());
+			 			os.close();
+					}
 					return;
 				case "single":
 					l.info("Getting reservation by id");

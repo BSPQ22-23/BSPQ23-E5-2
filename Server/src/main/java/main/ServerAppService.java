@@ -1,6 +1,7 @@
 package main;
 
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 import database.BookingDAO;
@@ -61,9 +62,11 @@ public class ServerAppService {
 		return BookingDAO.getInstance().getByAuthor(user.getLegalInfo());
 	}
 	
-	public static List<Booking> getReservationsByHotel(String hotelId){
-		//TODO Implement database to access hotel's bookings
-		return null;
+	public static List<Booking> getReservationsByHotel(User user, String hotelId){
+		Hotel h = HotelDAO.getInstance().find(hotelId);
+		List<Booking> bookings = new LinkedList<>();
+		h.getRooms().forEach(v -> bookings.addAll(v.getBookings()));
+		return bookings;
 	}
 	
 	public static Booking getReservationById(String bookingID) {
