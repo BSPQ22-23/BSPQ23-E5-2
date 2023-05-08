@@ -2,8 +2,10 @@ package database;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -30,25 +32,20 @@ public class BookingDAOTest {
 
 	@BeforeClass
 	public static void start() throws Exception {
+		PrintStream out = new PrintStream(new FileOutputStream("output.log"));
+		System.setOut(out);
+		System.setErr(out);
 		guest = new Guest("gorka", "kk", "23232323A", 67, "Vitoria-Gasteiz");
-		if(!GuestDAO.getInstance().exists(guest.getDni()))
-			GuestDAO.getInstance().save(guest);
-		else
-			guest = GuestDAO.getInstance().find(guest.getDni());
+		GuestDAO.getInstance().save(guest);
 		hotel = new Hotel("Hotel Lakua", "Vitoria-Gasteiz", guest);
 		room = new Room(100, "Single", 0, 0, 0, hotel);
 		hotel.addRoom(room);
-		if(HotelDAO.getInstance().getByOwner(guest).size() == 0)
-			HotelDAO.getInstance().save(hotel);
-		else {
-			hotel = HotelDAO.getInstance().getByOwner(guest).get(0);
-			room = hotel.getRooms().get(0);
-		}
+		HotelDAO.getInstance().save(hotel);
 		
 	}
 	@Before
 	public void setup() {
-		ArrayList<Guest> g = new ArrayList<>();
+		LinkedList<Guest> g = new LinkedList<>();
 		g.add(guest);
 		bookingDAO = BookingDAO.getInstance();
 		booking = new Booking(
@@ -57,20 +54,15 @@ public class BookingDAOTest {
 				room, 
 				g, 
 				guest);
-		room.addBooking(booking);
-		System.err.println("hotel: "+JDOHelper.getObjectState(hotel));
+		System.out.println("hotel: " + JDOHelper.getObjectState(hotel) + " " + hotel);
+		System.out.println("room: "  + JDOHelper.getObjectState(room)  + " " + room );
+		System.out.println("guest: " + JDOHelper.getObjectState(guest) + " " + guest);
+		System.out.println(g);
 		BookingDAO.getInstance().save(booking);
-		System.err.println("room: " + JDOHelper.getObjectState(room));
-		System.err.println("booking: " +JDOHelper.getObjectState(booking));
+		System.out.println(JDOHelper.getObjectState(booking));
+//		System.out.println(booking);
 	}
 
-	@After
-	public void tearDown() throws Exception {
-		System.err.println("booking: " +JDOHelper.getObjectState(booking));
-		bookingDAO.delete(booking);
-		List<Booking> listBooking = bookingDAO.getAll();
-		assertFalse(listBooking.contains(booking));
-	}
 	@Test
 	public void getByAuthor() {
 		List<Booking> bookings = bookingDAO.getByAuthor(guest);
@@ -83,15 +75,10 @@ public class BookingDAOTest {
 		assertTrue(listBooking.contains(booking));
 	}
 	
-	@AfterClass
-	public static void end() {
-		GuestDAO.getInstance().delete(guest);
-	}
-	
 	@Test
 	public void testFind() {
         Booking findBooking = bookingDAO.find(""+booking.getId());
-        assertEquals(guest.getName(), findBooking.getAuthor().getName());
+        assertEquals("Find", guest.getName(), findBooking.getAuthor().getName());
 		
 	}
 	@Test
@@ -99,7 +86,19 @@ public class BookingDAOTest {
 		Date d = new Date(System.currentTimeMillis());		
 		
 		assertTrue("Reservation in room on date", bookingDAO.hasReservationInRoomOnDate(room, d));
-		
+	}
+	
+	@After
+	public void tearDown() throws Exception {
+		bookingDAO.delete(booking);
+		List<Booking> listBooking = bookingDAO.getAll();
+		assertFalse(listBooking.contains(booking));
+	}
+	
+	@AfterClass
+	public static void end() {
+		HotelDAO.getInstance().delete(hotel);
+		GuestDAO.getInstance().delete(guest);
 	}
 
 }

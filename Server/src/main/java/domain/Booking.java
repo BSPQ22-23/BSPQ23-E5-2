@@ -8,18 +8,22 @@ import java.util.List;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.Join;
-import javax.jdo.annotations.NotPersistent;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 import org.json.JSONObject;
-import database.GuestDAO;
 
 
 @PersistenceCapable(detachable="true")
 public class Booking {
 	
+	@Override
+	public String toString() {
+		return "Booking [id=" + id + ", checkinDate=" + checkinDate + ", checkoutDate=" + checkoutDate + ", room="
+				+ room + ", author=" + author + ", guests=" + guests + "]";
+	}
+
 	public static Booking fromJSON(JSONObject object) {
 		Calendar c = Calendar.getInstance();
 		int startdate = object.getInt("checkinDate");
@@ -45,12 +49,12 @@ public class Booking {
 	private int id;
     private Date checkinDate;
     private Date checkoutDate;
+    @Persistent(defaultFetchGroup = "true")
     private Room room;
-    private String authorId;
-    @NotPersistent
+    @Persistent(defaultFetchGroup = "true", dependentElement = "false")
     private Guest author;
     @Join
-    @Persistent(dependentElement="false", defaultFetchGroup="false")
+    @Persistent(dependentElement="false", defaultFetchGroup="true")
 	private List<Guest> guests;
     
     public Booking(Date checkinDate, Date checkoutDate, Room room, List<Guest> guests, Guest author) {
@@ -58,7 +62,6 @@ public class Booking {
         this.checkoutDate = checkoutDate;
         this.room = room;
         this.guests = guests;
-        this.authorId = author.getDni();
         this.author = author;
     }
 
@@ -104,12 +107,9 @@ public class Booking {
     
     public void setAuthor(Guest author) {
     	this.author = author;
-    	authorId = author.getDni();
     }
     
     public Guest getAuthor() {
-    	if(author == null && authorId != null)
-    		author = GuestDAO.getInstance().find(authorId);
 		return author;
 	}
     

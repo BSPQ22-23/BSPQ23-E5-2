@@ -1,13 +1,10 @@
 package domain;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
-import javax.jdo.annotations.ForeignKey;
-import javax.jdo.annotations.ForeignKeyAction;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.Join;
-import javax.jdo.annotations.NotPersistent;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
@@ -15,15 +12,14 @@ import javax.jdo.annotations.PrimaryKey;
 import org.json.JSONObject;
 
 import api.APIUtils;
-import database.GuestDAO;
 
 @PersistenceCapable(detachable="true")
 public class Hotel {
 	
 	@Override
 	public String toString() {
-		return "Hotel [id=" + id + ", name=" + name + ", city=" + city + ", ownerDni=" + ownerDni
-				+ ", rooms=" + rooms + ", services=" + services + "]";
+		return "Hotel [id=" + id + ", name=" + name + ", city=" + city 
+				 + ", services=" + services + "]";
 	}
 
 	@PrimaryKey
@@ -31,16 +27,14 @@ public class Hotel {
 	private int id;
     private String name;
     private String city;
-    private String ownerDni;
-    @NotPersistent
+    @Persistent(defaultFetchGroup = "true", dependentElement = "false")
     private Guest owner;
     @Join
     @Persistent(mappedBy="hotel", dependentElement="true", defaultFetchGroup="true")
-    @ForeignKey(deleteAction = ForeignKeyAction.CASCADE)
-    private List<Room> rooms = new ArrayList<>();
+    private List<Room> rooms;
     @Join
     @Persistent(dependentElement="true", defaultFetchGroup="true")
-    private List<Service> services = new ArrayList<>();
+    private List<Service> services;
     
     public static Hotel fromJSON(JSONObject obj) {
     	Hotel result = new Hotel(
@@ -60,7 +54,8 @@ public class Hotel {
         this.name = name;
         this.city = city;
         this.owner = owner;
-        this.ownerDni = owner.getDni();
+        rooms = new LinkedList<>();
+        services = new LinkedList<>();
     }
 
     public int getId() {
@@ -116,14 +111,11 @@ public class Hotel {
     }
     
     public Guest getOwner() {
-    	if(owner == null && ownerDni != null)
-    		owner = GuestDAO.getInstance().find(ownerDni);
 		return owner;
 	}
 
 	public void setOwner(Guest owner) {
 		this.owner = owner;
-		this.ownerDni = owner.getDni();
 	}
 	
 	public boolean equals(Object o) {

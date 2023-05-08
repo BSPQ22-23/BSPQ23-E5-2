@@ -3,10 +3,10 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+
 import org.json.JSONObject;
 
 import api.APIUtils;
@@ -32,8 +32,7 @@ public class Guest {
     private int age;
     private String cityOfProvenance;
     
-    @Join
-    @Persistent(mappedBy = "guests", dependentElement="true", defaultFetchGroup="false")
+    @Persistent(mappedBy = "guests", dependentElement="true", defaultFetchGroup="true")
     private List<Booking> bookings;
 
     public Guest(String name, String surname, String dni, int age, String cityOfProvenance) {
@@ -103,4 +102,5 @@ public class Guest {
 	public void setBookings(List<Booking> bookings) {
 		this.bookings = bookings;
 	}
+	
 }

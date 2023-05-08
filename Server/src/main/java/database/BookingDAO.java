@@ -2,7 +2,6 @@ package database;
 import java.util.Date;
 import java.util.List;
 
-import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
@@ -30,8 +29,6 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	 */
 	@Override
 	public void save(Booking object) {
-		object.getRoom().addBooking(object);
-		super.saveObject(object.getRoom());
 		saveObject(object);
 		
 	}
@@ -40,9 +37,6 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
  */
 	@Override
 	public void delete(Booking object) {
-		object.getRoom().getBookings().remove(object);
-		System.err.println(JDOHelper.getObjectState(object.getRoom()));
-		saveObject(object.getRoom());
 		super.deleteObject(object);
 		
 	}
@@ -52,12 +46,30 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
  */
 	@Override
 	public List<Booking> getAll() {
-		// TODO Auto-generated method stub
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Query<Booking> q = pm.newQuery(Booking.class);
-		List<Booking> ListBooking = (List<Booking>) q.executeList();
-		pm.close();
-		return ListBooking;
+		 PersistenceManager pm = pmf.getPersistenceManager();
+		    Transaction tx = pm.currentTransaction();
+
+		    List<Booking> result = null;
+
+		    try {
+		        tx.begin();
+
+		        Query<Booking> q = pm.newQuery(Booking.class);
+		        result = (List<Booking>) q.executeList();
+
+		        tx.commit();
+		    } catch (Exception ex) {
+		        System.out.println("Error: " + ex.getMessage());
+		        ex.printStackTrace();
+		    } finally {
+		        if (tx != null && tx.isActive()) {
+		            tx.rollback();
+		        }
+
+		        pm.close();
+		    }
+
+		    return result;
 	}
 	
 
@@ -97,8 +109,9 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	    List<Booking> result = null;
 	    try {
 	        tx.begin();
-	        Query<Booking> q = pm.newQuery(Booking.class, "authorId == :authorDNI");
-	        result = q.setParameters(author.getDni().replace("'", "''")).executeList();
+	        Query<Booking> q = pm.newQuery(Booking.class, "author == authorDNI");
+	        q.declareParameters("domain.Guest authorDNI");
+	        result = q.setParameters(author).executeList();
 	        tx.commit();
 	    } catch (Exception ex) {
 	        System.out.println("Error: " + ex.getMessage());

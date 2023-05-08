@@ -3,17 +3,15 @@ package domain;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.json.JSONObject;
-
-import api.APIUtils;
-
-import javax.jdo.annotations.ForeignKey;
-import javax.jdo.annotations.ForeignKeyAction;
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.Join;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+
+import org.json.JSONObject;
+
+import api.APIUtils;
 
 
 @PersistenceCapable(detachable = "true")
@@ -27,13 +25,16 @@ public class Room {
     private String type;
     private int numMaxGuests;
     private int spaceInMeters;
-    @ForeignKey
-    @Persistent
+    @Persistent(defaultFetchGroup = "true", dependent="false")
     private Hotel hotel; 
-    private float prize;
+    @Override
+	public String toString() {
+		return "Room [id=" + id + ", roomNumber=" + roomNumber + ", type=" + type + ", numMaxGuests=" + numMaxGuests
+				+ ", spaceInMeters=" + spaceInMeters + ", hotel=" + hotel + ", prize=" + prize + "]";
+	}
+	private float prize;
     @Join
-    @Persistent(mappedBy="room", dependentElement="true", defaultFetchGroup="false")
-    @ForeignKey(deleteAction = ForeignKeyAction.CASCADE)
+    @Persistent(mappedBy="room", dependentElement="true", defaultFetchGroup="true")
     private List<Booking> bookings;
 
     public static Room fromJSON(JSONObject object) {

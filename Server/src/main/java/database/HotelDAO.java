@@ -79,8 +79,8 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
     
     public List<Hotel> getByOwner(Guest owner) {
         PersistenceManager pm = pmf.getPersistenceManager();
-        Query<Hotel> q = pm.newQuery(Hotel.class, "ownerDni == '"+owner.getDni().replace("'", "''")+"'");
-        List<Hotel> resultList = (List<Hotel>) q.executeList();
+        Query<Hotel> q = pm.newQuery(Hotel.class, "owner == :owner");
+        List<Hotel> resultList = (List<Hotel>) q.setParameters(owner).executeList();
         pm.close();
         return resultList;
     }
