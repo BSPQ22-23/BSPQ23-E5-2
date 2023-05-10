@@ -24,7 +24,7 @@ jobs:
           mvn --batch-mode --update-snapshots compile datanucleus:enhance datanucleus:schema-delete -DskipTests -pl Server
       - name: Run server
         run: | 
-          mvn --batch-mode --update-snapshots datanucleus:enhance exec:java -pl Server
+          mvn --batch-mode --update-snapshots datanucleus:enhance exec:java -pl Server &
 
       - name: Build with Maven including integration tests
         run: | 
