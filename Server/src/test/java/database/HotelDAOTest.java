@@ -74,7 +74,7 @@ public class HotelDAOTest {
     }
     @Test
     public void testGetByOwner() {
-        List<Hotel> hotels = hotelDAO.getByOwner(owner);
+        List<Hotel> hotels = hotelDAO.getByOwner(owner.getDni());
         assertTrue(hotels.contains(hotel));       
     }
     

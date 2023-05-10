@@ -8,7 +8,7 @@ import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import api.APIUtils;
-import domain.Guest;
+
 
 /**
  * DAO for Hotel class
@@ -77,9 +77,9 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	    return resultList;
 	} 
     
-    public List<Hotel> getByOwner(Guest owner) {
+    public List<Hotel> getByOwner(String owner) {
         PersistenceManager pm = pmf.getPersistenceManager();
-        Query<Hotel> q = pm.newQuery(Hotel.class, "owner == :owner");
+        Query<Hotel> q = pm.newQuery(Hotel.class, "ownerDni == :owner");
         List<Hotel> resultList = (List<Hotel>) q.setParameters(owner).executeList();
         pm.close();
         return resultList;
