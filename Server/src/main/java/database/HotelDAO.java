@@ -79,7 +79,7 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	    PersistenceManager pm = pmf.getPersistenceManager();
 	    Transaction tx = pm.currentTransaction();
 	    tx.begin();
-	    Query<Hotel> q = pm.newQuery(Hotel.class,APIUtils.decode("bmFtZS50b0xvd2VyQ2FzZSgpLmluZGV4T2YocV9uYW1lKSA+PSAw"));
+	    Query<Hotel> q = pm.newQuery(Hotel.class,APIUtils.decode("bmFtZS50b0xvd2VyQ2FzZSgpLmluZGV4T2YocV9uYW1lKSA+PSAwIHx8IG5hbWUudG9Mb3dlckNhc2UoKSA9PSBxX25hbWU="));
 	    q.declareParameters("String q_name");
 	    q.setUnique(false);
 	    List<Hotel> resultList =  (List<Hotel>) q.setParameters(name.toLowerCase()).executeList();

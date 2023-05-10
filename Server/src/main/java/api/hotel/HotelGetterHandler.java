@@ -27,7 +27,6 @@ public class HotelGetterHandler implements HttpHandler{
     			l.info("Retrieving all hotels containing '"+name+"' in their name");
     			body = APIUtils.listToJSONArray(ServerAppService.getHotels(name)).toString();
     		}
-    		System.out.println("body: " + body);
 			exchange.sendResponseHeaders(200, body.length());
     		OutputStream os = exchange.getResponseBody();
 	 		os.write(body.getBytes());

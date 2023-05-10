@@ -2,6 +2,7 @@ package api.reservation;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -44,7 +45,7 @@ public class ReservationGetterHandler implements HttpHandler{
 		 		return;
 	    	}
 	    	try {
-		    	String queryType = APIUtils.getStringHeader(exchange, "q", "user");
+		    	String queryType = exchange.getRequestHeaders().getOrDefault("q", List.of("user")).get(0);
 		    	String parameter = APIUtils.getStringHeader(exchange, "value", "");
 		    	switch (queryType) {
 				case "user":
@@ -109,14 +110,14 @@ public class ReservationGetterHandler implements HttpHandler{
 					return;
 				}
 	    	} catch(IllegalArgumentException | JSONException e) {
-	    		l.info("Illegal use of API: " + e.toString());
+	    		l.info("Illegal use of API: " + e.getMessage());
 	    		String response = e.getMessage();
 	    		exchange.sendResponseHeaders(400, response.length());
 	    		OutputStream os = exchange.getResponseBody();
 	    		os.write(response.getBytes());
 	    		os.close();
 	    	}
-		}catch(IOException e) {
+		}catch(Exception e) {
 			l.error("Error getting reservation(s): " + e.toString());
 			APIUtils.respondInternalError(exchange, e.getMessage());
 		}
