@@ -21,7 +21,7 @@
 				<configuration>
 					<api>JDO</api>
 					<verbose>false</verbose>
-					<props>${project.basedir}}src/main/resources/datanucleus.properties</props>
+					<props>${project.basedir}/src/main/resources/datanucleus.properties</props>
 				</configuration>
 				<executions>
 					<execution>
