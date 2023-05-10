@@ -12,6 +12,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.11
+          distribution: oracle
 
       - name: Build with Maven including only unit testing (with SonarCloud)
         env:
@@ -27,10 +28,8 @@ jobs:
         run: | 
           sudo /etc/init.d/mysql start
           mysql -uroot -proot < sql/HotelManagementDB.sql
-          mvn --batch-mode --update-snapshots compile 
-          mvn --batch-mode --update-snapshots datanucleus:enhance
-          mvn --batch-mode --update-snapshots datanucleus:schema-create
-          mvn --batch-mode --update-snapshots  exec:java -DskipTests
+          mvn --batch-mode --update-snapshots compile datanucleus:enhance datanucleus:schema-delete -DskipTests -pl Server
+      
       - name: Build with Maven including integration tests
         run: mvn --batch-mode --update-snapshots verify -Pintegracion
 
@@ -38,7 +37,7 @@ jobs:
         run: echo "::set-output name=TAG_NAME::$(mvn org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout)"
         id: version
 
-      - uses: dev-drprasad/delete-tag-and-release@v2.304.0
+      - uses: dev-drprasad/delete-tag-and-release@v0.2.1
         with:
           delete_release: true
           tag_name: ${{ steps.version.outputs.TAG_NAME }}
