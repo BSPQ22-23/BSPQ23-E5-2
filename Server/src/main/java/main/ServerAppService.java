@@ -1,5 +1,6 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,6 +10,7 @@ import database.HotelDAO;
 import database.UserDAO;
 import domain.Booking;
 import domain.Hotel;
+import domain.Room;
 import domain.User;
 
 public class ServerAppService {
@@ -97,9 +99,18 @@ public class ServerAppService {
 	}
 	public static List<Hotel> getHotels() {
 		List<Hotel> h = HotelDAO.getInstance().getAll();
+		List<Hotel> transientList = new ArrayList<>(h.size());
 		h.forEach(v-> {
-			v.getRooms().forEach(w->w.getBookings().clear());//Do not ship bookings
-			v.setOwner(null);//No need to know private info of owner
+			Hotel h1 = new Hotel(v);
+			List<Room> transientRooms = new ArrayList<>();
+			h1.getRooms().forEach(w->{
+				Room r = new Room(w);
+				r.setHotel(null);//Avoid stack overflow
+				r.setBookings(null);
+			});//Do not ship bookings
+			h1.setRooms(transientRooms);
+			h1.setOwner(null);//No need to know private info of owner
+			transientList.add(h1);
 		});
 		return h;
 	}

@@ -79,7 +79,7 @@ public class APIUtils {
 				array.put(Long.toString(c.get(Calendar.DAY_OF_YEAR) + c.get(Calendar.YEAR) * 365));
 			}else if(obj.getClass().isPrimitive())
 				array.put(obj);
-			else
+			else if (o != null)
 				array.put(objectToJSON(obj));
 		return array;
 	}

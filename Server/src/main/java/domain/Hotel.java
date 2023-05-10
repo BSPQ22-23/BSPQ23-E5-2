@@ -53,6 +53,15 @@ public class Hotel {
     	return result;
     	
     }
+    public Hotel(Hotel h) {
+    	this.name = h.name;
+    	this.city = h.city;
+    	this.id = h.id;
+    	this.owner = h.owner;
+    	this.ownerDni = h.ownerDni;
+    	this.rooms = h.rooms;
+    	this.services = h.services;
+    }
 
 	public Hotel(String name, String city, Guest owner) {
         this.name = name;

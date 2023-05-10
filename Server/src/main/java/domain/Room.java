@@ -62,6 +62,14 @@ public class Room {
         this.hotel = hotel;
         this.bookings = new LinkedList<>();
     }
+    public Room(Room clone) {
+    	this.roomNumber = clone.roomNumber;
+    	this.type = clone.type;
+    	this.numMaxGuests = clone.numMaxGuests;
+    	this.spaceInMeters = clone.spaceInMeters;
+    	this.hotel = clone.hotel;
+    	this.bookings = clone.bookings;
+    }
 
     public int getRoomNumber() {
         return roomNumber;
