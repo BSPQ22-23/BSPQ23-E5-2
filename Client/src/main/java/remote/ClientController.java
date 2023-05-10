@@ -2,6 +2,7 @@ package remote;
 
 import java.net.URISyntaxException;
 import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -199,7 +200,7 @@ public class ClientController {
 	public static List<Hotel> getHotels(String name){
 		HttpResponse<String> response;
 		try {
-			response = handler.sendGET("hotel/get", Map.of("token", token, "query", name));
+			response = handler.sendGET("hotel/get", Map.of("token", token, "query", new String(Base64.getEncoder().encode(name.getBytes()), StandardCharsets.UTF_8)));
 			if(response.statusCode() == 200) {
 				JSONArray resp = new JSONArray(response.body());
 				List<Hotel> output = new LinkedList<>();

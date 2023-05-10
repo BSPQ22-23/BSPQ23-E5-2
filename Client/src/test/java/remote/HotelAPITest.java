@@ -1,8 +1,6 @@
 package remote;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -63,11 +61,9 @@ public class HotelAPITest {
 		
 		Response unauthCreation = ClientController.createHotel(h);
 		assertEquals(unauthCreation.status, Response.UNATHORIZED);
-		System.out.println(unauthCreation.message);
 		
 		List<Hotel> getAll = ClientController.getHotels();
-		assertNotEquals(0, getAll.size());
-		System.out.println(getAll);
+		assertEquals(1, getAll.size());
 		
 		List<Hotel> getExisting = ClientController.getHotels("La");
 		assertEquals(getExisting.size(), 1);
