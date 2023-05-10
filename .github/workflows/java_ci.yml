@@ -28,7 +28,7 @@ jobs:
 
       - name: Build with Maven including integration tests
         run: | 
-          sleep(10)  
+          sleep 10  
           mvn --batch-mode --update-snapshots verify -Pintegracion
 
       - name: Retrieve version
