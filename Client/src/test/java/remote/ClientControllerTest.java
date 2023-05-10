@@ -22,8 +22,7 @@ public class ClientControllerTest {
 	
 	@Test
 	public void registerTest() throws InterruptedException, ExecutionException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
-		Response r = ClientController.register(
-			new User(
+		User u = new User(
 				"OriginalNick", 
 				"ASecurePassword",
 				new Guest(
@@ -34,22 +33,37 @@ public class ClientControllerTest {
 					"A city somewhere"
 				),
 				false
-			)
-		);
+			);
+		Response r = ClientController.register(u);
+		assertEquals(Response.SUCCESS, r.status);
+		r = ClientController.register(u);
 		assertEquals(Response.BAD_REQUEST, r.status);
-		System.out.println(r.message);
 		Field f =ClientController.class.getDeclaredField("token");
 		f.setAccessible(true);
 		System.out.println("Register token: " + f.get(null));
 	}
 	@Test
 	public void loginTest() throws InterruptedException, ExecutionException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
-		Response r = ClientController.login("name", "password");
+		User u = new User(
+				"LoginUser", 
+				"ASecurePassword",
+				new Guest(
+					"This is a name", 
+					"This is a surname",  
+					"12345689J", 
+					10, 
+					"A city somewhere"
+				),
+				false
+			);
+		Response r = ClientController.register(u);
+		assertEquals(Response.SUCCESS, r.status);
+		r = ClientController.login("Noobmaster69", "passuuord");
 		assertEquals(Response.BAD_REQUEST, r.status);
 		Field f =ClientController.class.getDeclaredField("token");
 		f.setAccessible(true);
 		System.out.println("Login token on fail: " + f.get(null));
-		r = ClientController.login("OriginalNick", "ASecurePassword");
+		r = ClientController.login(u.getNick(), u.getPassword());
 		assertEquals(Response.SUCCESS, r.status);
 		System.out.println("Login token on success: " + f.get(null));
 	}

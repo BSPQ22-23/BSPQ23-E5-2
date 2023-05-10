@@ -58,7 +58,7 @@ public class Hotel {
         this.name = name;
         this.city = city;
         this.owner = owner;
-        ownerDni = owner.getDni();
+        ownerDni = owner == null? null : owner.getDni();
         rooms = new LinkedList<>();
         services = new LinkedList<>();
     }

@@ -39,9 +39,11 @@ public class HotelAPITest {
 				"Vitoria"
 		
 		);
-		h.addRoom(new Room(100, "Single", 1, 1, 1, null));
 		Response creation = ClientController.createHotel(h);
-		assertEquals(creation.status, Response.BAD_REQUEST);
+		assertEquals("Can't make hotel without rooms", Response.BAD_REQUEST, creation.status);
+		h.addRoom(new Room(100, "Single", 1, 1, 1, null));
+		creation = ClientController.createHotel(h);
+		assertEquals(Response.SUCCESS, creation.status);		
 		
 		if(ClientController.register(
 				new User(
