@@ -50,7 +50,12 @@ public class ReservationGetterHandler implements HttpHandler{
 		    	switch (queryType) {
 				case "user":
 					l.info("Getting reservations by user");
-					String body = APIUtils.listToJSONArray(ServerAppService.getReservationsByUser(author)).toString();
+					List<Booking> b = ServerAppService.getReservationsByUser(author);
+					b.forEach(v-> {
+						v.getRoom().setBookings(null);//Avoid stack overflow
+						v.getRoom().getHotel().setRooms(null);//Avoid stack overflow x2
+					});
+					String body = APIUtils.listToJSONArray(b).toString();
 					exchange.sendResponseHeaders(200, body.length());
 		    		OutputStream os = exchange.getResponseBody();
 			 		os.write(body.getBytes());

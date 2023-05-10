@@ -20,7 +20,7 @@ public class Room {
     	Room res = new Room(
 			object.getInt("roomNumber"), 
 			APIUtils.decode(object.getString("type")),
-			object.getInt("numMaxHosts"),
+			object.getInt("numMaxGuests"),
 			object.getInt("spaceInMeters"),
 			object.getFloat("prize"),
 			Hotel.fromJSON(object.getJSONObject("hotel"))

@@ -5,6 +5,7 @@ import org.json.JSONObject;
 import api.APIUtils;
 
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 
 @PersistenceCapable(detachable = "true")
 public class Service {
@@ -12,6 +13,9 @@ public class Service {
     private String name;
     private String description;
     private double price;
+    
+    @Persistent(defaultFetchGroup = "true", dependent="false")
+    private Hotel hotel;
 
     public static Service fromJSON(JSONObject object) {
         return new Service(
@@ -27,6 +31,9 @@ public class Service {
         this.price = price;
     }
 
+    public Hotel getHotel() {
+    	return hotel;
+    }
     public String getName() {
         return name;
     }

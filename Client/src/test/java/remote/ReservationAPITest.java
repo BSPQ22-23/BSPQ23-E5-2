@@ -53,7 +53,7 @@ public class ReservationAPITest {
 		ClientController.createReservation(b);
 		List<Booking> result = ClientController.getReservations();
 		assertEquals(1, result.size());
-		
+		b = result.get(0);
 		//Modify reservation
 		
 		b = result.get(0);//Get the id assigned by the server
