@@ -29,7 +29,8 @@ jobs:
           sudo /etc/init.d/mysql start
           mysql -uroot -proot < sql/HotelManagementDB.sql
           mvn --batch-mode --update-snapshots compile datanucleus:enhance datanucleus:schema-delete -DskipTests -pl Server
-      
+      - name: Run server
+        run mvn --batch-mode --update-snapshots exec:java -pl Server
       - name: Build with Maven including integration tests
         run: mvn --batch-mode --update-snapshots verify -Pintegracion
 
