@@ -76,11 +76,10 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	 * @return a list of Hotel Names
 	 */
 	public List<Hotel> getByName (String name) {
-		name = ".*"+name+".*";
 	    PersistenceManager pm = pmf.getPersistenceManager();
 	    Transaction tx = pm.currentTransaction();
 	    tx.begin();
-	    Query<Hotel> q = pm.newQuery(Hotel.class,APIUtils.decode("bmFtZS50b0xvd2VyQ2FzZSgpLm1hdGNoZXMocV9uYW1lKQ=="));
+	    Query<Hotel> q = pm.newQuery(Hotel.class,APIUtils.decode("bmFtZS50b0xvd2VyQ2FzZSgpLmluZGV4T2YocV9uYW1lKSA+PSAw"));
 	    q.declareParameters("String q_name");
 	    q.setUnique(false);
 	    List<Hotel> resultList =  (List<Hotel>) q.setParameters(name.toLowerCase()).executeList();

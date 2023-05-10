@@ -116,10 +116,19 @@ public class ServerAppService {
 	}
 	public static List<Hotel> getHotels(String query) {
 		List<Hotel> h = HotelDAO.getInstance().getByName(query);
+		List<Hotel> transientList = new ArrayList<>(h.size());
 		h.forEach(v-> {
-			v.getRooms().forEach(w->w.getBookings().clear());//Do not ship bookings
-			v.setOwner(null);//No need to know private info of owner
+			Hotel h1 = new Hotel(v);
+			List<Room> transientRooms = new ArrayList<>();
+			h1.getRooms().forEach(w->{
+				Room r = new Room(w);
+				r.setHotel(null);//Avoid stack overflow
+				r.setBookings(null);
+			});//Do not ship bookings
+			h1.setRooms(transientRooms);
+			h1.setOwner(null);//No need to know private info of owner
+			transientList.add(h1);
 		});
-		return h;
+		return transientList;
 	}
 }
