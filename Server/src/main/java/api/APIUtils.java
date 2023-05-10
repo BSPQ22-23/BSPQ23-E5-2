@@ -88,7 +88,7 @@ public class APIUtils {
 		try {
 			for(Field f : o.getClass().getDeclaredFields()){
 				f.setAccessible(true);
-				if(Modifier.isTransient(f.getModifiers()) || Modifier.isStatic(f.getModifiers()))
+				if(Modifier.isTransient(f.getModifiers()) || Modifier.isStatic(f.getModifiers()) || f.get(o) == null)
 					continue;
 				 if(f.get(o) instanceof Collection)
 					output.put(f.getName(), listToJSONArray((Collection<?>)f.get(o)));

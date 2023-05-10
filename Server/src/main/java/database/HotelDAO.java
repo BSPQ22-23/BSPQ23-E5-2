@@ -3,12 +3,10 @@ package database;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
-
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import api.APIUtils;
-
 
 /**
  * DAO for Hotel class
@@ -49,12 +47,29 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	@Override
 	public List<Hotel> getAll() {
 		PersistenceManager pm = pmf.getPersistenceManager();
-		Query<Hotel> q = pm.newQuery(Hotel.class);
-		List<Hotel> ListHotel = (List<Hotel>) q.executeList();
-		pm.close();
-		return ListHotel;
-		
-	}
+	    Transaction tx = pm.currentTransaction();
+
+	    List<Hotel> result = null;
+
+	    try {
+	        tx.begin();
+
+	        Query<Hotel> q = pm.newQuery(Hotel.class);
+	        result = (List<Hotel>) q.executeList();
+
+	        tx.commit();
+	    } catch (Exception ex) {
+	        System.out.println("Error: " + ex.getMessage());
+	        ex.printStackTrace();
+	    } finally {
+	        if (tx != null && tx.isActive()) {
+	            tx.rollback();
+	        }
+
+	        pm.close();
+	    }
+	    return result;
+}
 	/**
 	 * Method that get a list Hotel by the name
 	 * @param name

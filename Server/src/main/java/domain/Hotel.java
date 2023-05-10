@@ -132,7 +132,7 @@ public class Hotel {
 
 	public void setOwner(Guest owner) {
 		this.owner = owner;
-		ownerDni = owner.getDni();
+		ownerDni = owner == null? null : owner.getDni();
 	}
 	
 	public boolean equals(Object o) {

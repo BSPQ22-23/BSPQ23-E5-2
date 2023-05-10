@@ -112,7 +112,7 @@ public class ServerAppService {
 			h1.setOwner(null);//No need to know private info of owner
 			transientList.add(h1);
 		});
-		return h;
+		return transientList;
 	}
 	public static List<Hotel> getHotels(String query) {
 		List<Hotel> h = HotelDAO.getInstance().getByName(query);
