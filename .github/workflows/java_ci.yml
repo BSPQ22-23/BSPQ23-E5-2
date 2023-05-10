@@ -12,7 +12,7 @@ jobs:
         uses: actions/setup-java@v3.11.0
         with:
           java-version: 1.11
-          distribution: temurin
+          distribution: adopt
 
       - name: Build with Maven including only unit testing (with SonarCloud)
         env:
