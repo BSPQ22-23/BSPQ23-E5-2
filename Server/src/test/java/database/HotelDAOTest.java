@@ -5,6 +5,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
 import java.util.List;
 
 import org.junit.After;
@@ -27,7 +30,10 @@ public class HotelDAOTest {
     private static Guest owner;
     
     @BeforeClass
-    public static void start() {
+    public static void start() throws FileNotFoundException {
+    	PrintStream out = new PrintStream(new FileOutputStream("output.log"));
+		System.setOut(out);
+		//System.setErr(out);
     	owner = new Guest("Aihnoa", "Gaspiz", "776978574J", 30, "Vitoria-Gasteiz");
     	GuestDAO.getInstance().save(owner);
     }
@@ -71,6 +77,7 @@ public class HotelDAOTest {
         List<Hotel> hotels = hotelDAO.getByOwner(owner);
         assertTrue(hotels.contains(hotel));       
     }
+    
     @After
     public void deleteHotel() {
     	hotelDAO.delete(hotel);
