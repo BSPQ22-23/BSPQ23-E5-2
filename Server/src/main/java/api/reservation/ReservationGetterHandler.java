@@ -80,7 +80,7 @@ public class ReservationGetterHandler implements HttpHandler{
 					return;
 				case "single":
 					l.info("Getting reservation by id");
-					Booking res = ServerAppService.getReservationById(parameter);
+					Booking res = ServerAppService.getReservationById(exchange.getRequestHeaders().getOrDefault("value", List.of("-1")).get(0));
 					if(res == null) {
 						l.info("No reservations found");
 						String response = "Not Found";
