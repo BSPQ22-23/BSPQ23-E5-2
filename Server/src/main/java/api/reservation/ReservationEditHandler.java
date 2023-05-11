@@ -61,7 +61,11 @@ public class ReservationEditHandler implements HttpHandler{
 					ServerAppService.deleteReservation(author, id);
 					return;
 				case "POST":
-					ServerAppService.editReservation(author, Booking.fromJSON(new JSONObject(APIUtils.readBody(exchange))));
+					if(ServerAppService.editReservation(author, Booking.fromJSON(new JSONObject(APIUtils.readBody(exchange)))))
+						APIUtils.respondACK(exchange);
+					else
+						APIUtils.respondError(exchange, "Unable to edit the reservation");
+					
 					return;
 				default:
 					l.info("Illegal use of API: Unknown method");

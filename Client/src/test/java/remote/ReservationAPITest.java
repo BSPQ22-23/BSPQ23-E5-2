@@ -41,7 +41,7 @@ public class ReservationAPITest {
 		Booking b = new Booking(
 			2, 
 			new Date(System.currentTimeMillis()), 
-			new Date(System.currentTimeMillis() + TimeUnit.DAYS.toMillis(1)), 
+			new Date(System.currentTimeMillis() + TimeUnit.DAYS.toMillis(3)), 
 			new Room(1, "Double", 2, 10, 15.5f, h), 
 			List.of(
 				new Guest("Erik", "Torsten", "12314", 38, "Estocolmo"),

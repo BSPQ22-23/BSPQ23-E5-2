@@ -21,10 +21,10 @@ public class UserDAO extends DataAccessObjectBase implements IDataAccessObject<U
 	}
 	private UserDAO() {}
 	@Override
-	public void save(User object) {
+	public boolean save(User object) {
 		if(!GuestDAO.getInstance().exists(object.getLegalInfo().getDni()))
 			GuestDAO.getInstance().save(object.getLegalInfo());
-		saveObject(object);
+		return saveObject(object);
 		
 	}
 

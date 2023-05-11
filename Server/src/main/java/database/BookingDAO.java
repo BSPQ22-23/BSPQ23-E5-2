@@ -32,8 +32,8 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	 * This method saves a reservation
 	 */
 	@Override
-	public void save(Booking object) {
-		saveObject(object);
+	public boolean save(Booking object) {
+		return saveObject(object);
 		
 	}
 /**
@@ -107,10 +107,11 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	        q.declareParameters("String userParam");
 	        q.setUnique(true);
 	        result = (Booking) q.execute(param);
-	        d = m3.invoke(pm, result);
-	        m2.invoke(d, m3.invoke(pm, m1.invoke(result)));
-	        m7.invoke(m1.invoke(d), m3.invoke(pm, m6.invoke(m1.invoke(result))));
-	        
+	        if(result != null) {
+	        	d = m3.invoke(pm, result);
+	        	m2.invoke(d, m3.invoke(pm, m1.invoke(result)));
+	        	m7.invoke(m1.invoke(d), m3.invoke(pm, m6.invoke(m1.invoke(result))));
+	        }
 	        tx.commit();
 	    } catch (Exception ex) {
 	        System.out.println("Error: " + ex.getMessage());

@@ -20,8 +20,8 @@ public class GuestDAO extends DataAccessObjectBase implements IDataAccessObject<
 	}
 	private GuestDAO() {}
 	@Override
-	public void save(Guest object) {
-		saveObject(object);
+	public boolean save(Guest object) {
+		return saveObject(object);
 		
 	}
 

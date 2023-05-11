@@ -41,7 +41,10 @@ public class Booking {
 		List<Guest> guests = new LinkedList<>();
 		for(Object o : object.getJSONArray("guests")) 
 			guests.add(Guest.fromJSON((JSONObject)o));
-		return new Booking(sd, ed, r, guests, object.keySet().contains("author")?Guest.fromJSON(object.getJSONObject("author")):null);
+		Booking temp = new Booking(sd, ed, r, guests, object.keySet().contains("author")?Guest.fromJSON(object.getJSONObject("author")):null);
+		if(object.keySet().contains("id"))
+			temp.setId(object.getInt("id"));
+		return temp;
     }
 	
 	@PrimaryKey

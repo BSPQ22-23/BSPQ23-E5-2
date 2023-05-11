@@ -31,8 +31,8 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	}
 	*/
 	@Override
-	public void save(Hotel object) {
-		saveObject(object);
+	public boolean save(Hotel object) {
+		return saveObject(object);
 	}
 	/**
 	 * Delete a hotel

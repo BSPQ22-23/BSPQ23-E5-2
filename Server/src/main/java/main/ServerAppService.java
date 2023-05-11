@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.jdo.JDOHelper;
+
 import database.BookingDAO;
 import database.HotelDAO;
 import database.UserDAO;
@@ -83,11 +85,12 @@ public class ServerAppService {
 	}
 	public static boolean editReservation(User u, Booking b) {
 		Booking toUpdate = BookingDAO.getInstance().find(Integer.toString(b.getId()));
+		System.out.println("\n".repeat(50));
 		toUpdate.setCheckinDate(b.getCheckinDate());
 		toUpdate.setCheckoutDate(b.getCheckoutDate());
 		toUpdate.setGuests(b.getGuests());
-		BookingDAO.getInstance().save(b);
-		return false;
+		System.out.println(JDOHelper.getObjectState(toUpdate));
+		return BookingDAO.getInstance().save(b);
 	}
 	
 	public static boolean createHotel(Hotel h) {

@@ -33,7 +33,7 @@ public class DataAccessObjectBase {
 		}
 	}
 	
-	public void saveObject(Object object) {
+	public boolean saveObject(Object object) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
@@ -43,12 +43,13 @@ public class DataAccessObjectBase {
 			tx.commit();
 		} catch (Exception ex) {
 			System.out.println(" $ Error storing an object: " + ex.getMessage());
-		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
-			}
-
-			pm.close();
 		}
+		if (tx != null && tx.isActive()) {
+			tx.rollback();
+			return false;
+		}
+
+		pm.close();
+		return true;
 	}
 }
