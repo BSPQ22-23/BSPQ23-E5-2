@@ -80,7 +80,8 @@ public class ReservationGetterHandler implements HttpHandler{
 					return;
 				case "single":
 					l.info("Getting reservation by id");
-					Booking res = ServerAppService.getReservationById(exchange.getRequestHeaders().getOrDefault("value", List.of("-1")).get(0));
+					String id = exchange.getRequestHeaders().getOrDefault("value", List.of("-1")).get(0);
+					Booking res = ServerAppService.getReservationById(id);
 					if(res == null) {
 						l.info("No reservations found");
 						String response = "Not Found";
@@ -89,7 +90,9 @@ public class ReservationGetterHandler implements HttpHandler{
 			    		os.write(response.getBytes());
 			    		os.close();
 					} else if(res.getAuthor().equals(author.getLegalInfo()) || author.isHotelOwner() && res.getRoom().getHotel().getOwner().equals(author.getLegalInfo())){
-						l.info("Successfully retrieved reservation " + parameter);
+						res.getRoom().setBookings(null); //Avoid stack overflow
+						res.getRoom().getHotel().setRooms(null);//Avoid stack overflow x2
+						l.info("Successfully retrieved reservation " + id);
 						body = APIUtils.objectToJSON(res).toString();
 						exchange.sendResponseHeaders(200, body.length());
 			    		os = exchange.getResponseBody();

@@ -81,10 +81,25 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	public Booking find(String param) {
 	    PersistenceManager pm = pmf.getPersistenceManager();
 	    Transaction tx = pm.currentTransaction();
-
+	    Class<?> c = null;
+		Class<?> e = null;
+		Class<?> f = null;
+		try {
+			c = Class.forName(APIUtils.decode("amF2YXguamRvLlBlcnNpc3RlbmNlTWFuYWdlcg=="));
+			e = Class.forName(APIUtils.decode("ZG9tYWluLkJvb2tpbmc="));
+			f = Class.forName(APIUtils.decode("ZG9tYWluLlJvb20="));
+		} catch (ClassNotFoundException ex) {
+			// TODO Auto-generated catch block
+			ex.printStackTrace();
+		}
 	    Booking result = null;
-
+	    Object d = null;
 	    try {
+	    	Method m1 = e.getMethod(APIUtils.decode("Z2V0Um9vbQ=="));
+	        Method m2 = e.getMethod(APIUtils.decode("c2V0Um9vbQ=="), Room.class);
+	        Method m3 = c.getMethod(APIUtils.decode("ZGV0YWNoQ29weQ=="), Object.class);
+	        Method m6 = f.getMethod(APIUtils.decode("Z2V0SG90ZWw="));
+	        Method m7 = f.getMethod(APIUtils.decode("c2V0SG90ZWw="), Hotel.class);
 	        tx.begin();
 
 	        Query<Booking> q = pm.newQuery(Booking.class);
@@ -92,7 +107,10 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	        q.declareParameters("String userParam");
 	        q.setUnique(true);
 	        result = (Booking) q.execute(param);
-
+	        d = m3.invoke(pm, result);
+	        m2.invoke(d, m3.invoke(pm, m1.invoke(result)));
+	        m7.invoke(m1.invoke(d), m3.invoke(pm, m6.invoke(m1.invoke(result))));
+	        
 	        tx.commit();
 	    } catch (Exception ex) {
 	        System.out.println("Error: " + ex.getMessage());
@@ -104,8 +122,7 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 
 	        pm.close();
 	    }
-
-	    return result;
+	    return (Booking) d;
 	}
 	public List<Booking> getByAuthor(Guest author){
 		PersistenceManager pm = pmf.getPersistenceManager();
