@@ -8,9 +8,11 @@ import java.util.List;
 import javax.jdo.JDOHelper;
 
 import database.BookingDAO;
+import database.GuestDAO;
 import database.HotelDAO;
 import database.UserDAO;
 import domain.Booking;
+import domain.Guest;
 import domain.Hotel;
 import domain.Room;
 import domain.User;
@@ -85,12 +87,18 @@ public class ServerAppService {
 	}
 	public static boolean editReservation(User u, Booking b) {
 		Booking toUpdate = BookingDAO.getInstance().find(Integer.toString(b.getId()));
-		System.out.println("\n".repeat(50));
 		toUpdate.setCheckinDate(b.getCheckinDate());
 		toUpdate.setCheckoutDate(b.getCheckoutDate());
-		toUpdate.setGuests(b.getGuests());
-		System.out.println(JDOHelper.getObjectState(toUpdate));
-		return BookingDAO.getInstance().save(b);
+		List<Guest> guests = new LinkedList<>();
+		for(Guest g : b.getGuests())
+			if(!GuestDAO.getInstance().exists(g.getDni())) {
+				GuestDAO.getInstance().save(g);
+				guests.add(g);
+			} else
+				guests.add(GuestDAO.getInstance().find(g.getDni()));
+		toUpdate.getGuests().clear();
+		toUpdate.getGuests().addAll(guests);
+		return BookingDAO.getInstance().save(toUpdate);
 	}
 	
 	public static boolean createHotel(Hotel h) {
