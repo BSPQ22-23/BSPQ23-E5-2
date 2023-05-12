@@ -35,19 +35,19 @@ jobs:
         run: echo "::set-output name=TAG_NAME::$(mvn org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout)"
         id: version
 
-      #- uses: dev-drprasad/delete-tag-and-release@v0.2.1
-      #  with:
-      #    delete_release: true
-      #    tag_name: ${{ steps.version.outputs.TAG_NAME }}
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: dev-drprasad/delete-tag-and-release@v0.2.1
+        with:
+          delete_release: true
+          tag_name: ${{ steps.version.outputs.TAG_NAME }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-     - name: Upload binaries to release
-       uses: svenstaro/upload-release-action@v3
-       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: Client/target/Client-{{ steps.version.outputs.TAG_NAME }}-SNAPSHOT-jar-with-dependencies.jar
-        asset_name: Client.jar
-        tag: ${{ steps.version.outputs.TAG_NAME }}
-        release_name: ${{ steps.version.outputs.TAG_NAME }}
-        overwrite: true
+      - name: Upload binaries to release
+          uses: svenstaro/upload-release-action@v3
+          with:
+            repo_token: ${{ secrets.GITHUB_TOKEN }}
+            file: Client/target/Client-{{ steps.version.outputs.TAG_NAME }}-SNAPSHOT-jar-with-dependencies.jar
+            asset_name: Client.jar
+            tag: ${{ steps.version.outputs.TAG_NAME }}
+            release_name: ${{ steps.version.outputs.TAG_NAME }}
+            overwrite: true
