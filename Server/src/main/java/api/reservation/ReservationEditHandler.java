@@ -58,10 +58,14 @@ public class ReservationEditHandler implements HttpHandler{
 						return;
 					}
 					l.info("Deletion aproved");
-					ServerAppService.deleteReservation(author, id);
+					if(ServerAppService.deleteReservation(author, id))
+						APIUtils.respondACK(exchange);
+					else
+						APIUtils.respondError(exchange, "Deletion denied");
 					return;
 				case "POST":
-					if(ServerAppService.editReservation(author, Booking.fromJSON(new JSONObject(APIUtils.readBody(exchange)))))
+					JSONObject o = new JSONObject(APIUtils.readBody(exchange));
+					if(ServerAppService.editReservation(author, Booking.fromJSON(o)))
 						APIUtils.respondACK(exchange);
 					else
 						APIUtils.respondError(exchange, "Unable to edit the reservation");

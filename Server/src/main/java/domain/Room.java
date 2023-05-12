@@ -1,7 +1,6 @@
 package domain;
 
 import java.util.LinkedList;
-import java.util.List;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.Join;
@@ -35,7 +34,7 @@ public class Room {
 	private float prize;
     @Join
     @Persistent(mappedBy="room", dependentElement="true", defaultFetchGroup="true")
-    private List<Booking> bookings;
+    private LinkedList<Booking> bookings;
 
     public static Room fromJSON(JSONObject object) {
         Room res = new Room(
@@ -119,11 +118,11 @@ public class Room {
         this.prize = prize;
     }
 
-    public List<Booking> getBookings() {
+    public LinkedList<Booking> getBookings() {
         return bookings;
     }
 
-    public void setBookings(List<Booking> bookings) {
+    public void setBookings(LinkedList<Booking> bookings) {
         this.bookings = bookings;
     }
 

@@ -46,7 +46,7 @@ public class ReservationGetterHandler implements HttpHandler{
 	    	}
 	    	try {
 		    	String queryType = exchange.getRequestHeaders().getOrDefault("q", List.of("user")).get(0);
-		    	String parameter = APIUtils.getStringHeader(exchange, "value", "");
+		    	String parameter = exchange.getRequestHeaders().getOrDefault("value", List.of("-1")).get(0);
 		    	switch (queryType) {
 				case "user":
 					l.info("Getting reservations by user");
@@ -71,7 +71,12 @@ public class ReservationGetterHandler implements HttpHandler{
 				 		os.write(resp.getBytes());
 				 		os.close();
 					}else {
-						body = APIUtils.listToJSONArray(ServerAppService.getReservationsByHotel(author, parameter)).toString();
+						List<Booking> result = ServerAppService.getReservationsByHotel(author, parameter);
+						result.forEach(v-> {
+							v.getRoom().setBookings(null);//Avoid stack overflow
+							v.getRoom().getHotel().setRooms(null);//Avoid stack overflow x2
+						});
+						body = APIUtils.listToJSONArray(result).toString();
 						exchange.sendResponseHeaders(200, body.length());
 		    			os = exchange.getResponseBody();
 			 			os.write(body.getBytes());
@@ -80,8 +85,7 @@ public class ReservationGetterHandler implements HttpHandler{
 					return;
 				case "single":
 					l.info("Getting reservation by id");
-					String id = exchange.getRequestHeaders().getOrDefault("value", List.of("-1")).get(0);
-					Booking res = ServerAppService.getReservationById(id);
+					Booking res = ServerAppService.getReservationById(parameter);
 					if(res == null) {
 						l.info("No reservations found");
 						String response = "Not Found";
@@ -92,7 +96,7 @@ public class ReservationGetterHandler implements HttpHandler{
 					} else if(res.getAuthor().equals(author.getLegalInfo()) || author.isHotelOwner() && res.getRoom().getHotel().getOwner().equals(author.getLegalInfo())){
 						res.getRoom().setBookings(null); //Avoid stack overflow
 						res.getRoom().getHotel().setRooms(null);//Avoid stack overflow x2
-						l.info("Successfully retrieved reservation " + id);
+						l.info("Successfully retrieved reservation " + parameter);
 						body = APIUtils.objectToJSON(res).toString();
 						exchange.sendResponseHeaders(200, body.length());
 			    		os = exchange.getResponseBody();

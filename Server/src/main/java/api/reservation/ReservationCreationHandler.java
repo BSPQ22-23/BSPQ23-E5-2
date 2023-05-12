@@ -3,8 +3,6 @@ package api.reservation;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -16,8 +14,10 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import api.APIUtils;
+import database.HotelDAO;
 import domain.Booking;
 import domain.Guest;
+import domain.Hotel;
 import domain.Room;
 import domain.User;
 import main.Server;
@@ -57,16 +57,27 @@ public class ReservationCreationHandler implements HttpHandler{
 	    			JSONObject o = (JSONObject)_o;
 	    			guests.add(new Guest(o.getString("name"), o.getString("surname"), o.getString("dni"), o.getInt("age"), o.getString("cityOfProvenance")));
 	    		}
-	    		Calendar c = Calendar.getInstance();
-	    		long checkinDate = obj.getLong("checkinDate");
-	    		c.set(Calendar.DAY_OF_YEAR, (int)(checkinDate%365));
-	    		c.set(Calendar.YEAR, (int)(checkinDate/365));
-	    		Date inDate = c.getTime();
-	    		long checkoutDate = obj.getLong("checkoutDate");
-	    		c.set(Calendar.DAY_OF_YEAR, (int)(checkoutDate%365));
-	    		c.set(Calendar.YEAR, (int)(checkoutDate/365));
-	    		Date outDate = c.getTime();
 	    		Booking b = Booking.fromJSON(obj);
+	    		l.info("Searching hotel");
+	    		Hotel h = HotelDAO.getInstance().find(""+b.getRoom().getHotel().getId());
+	    		if(h == null) {
+	    			l.info("Hotel not found, responding error");
+	    			APIUtils.respondError(t, "Hotel doesn't exist");
+	    			return;
+	    		}
+	    		l.info("Hotel found, searching room");
+	    		getRoom: {
+	    			for(Room r : h.getRooms()) {
+	    				if(r.getRoomNumber() == b.getRoom().getRoomNumber()) {
+	    					b.setRoom(r);
+	    					break getRoom;
+	    				}
+	    			}
+	    			l.info("Room not found, responding error");
+	    			APIUtils.respondError(t, "Room doesn't exist");
+	    			return;
+	    		}
+	    		l.info("Room found, creating reservation");
 	    		b.setAuthor(author.getLegalInfo());
 	    		if(ServerAppService.reservationCreate(b)) {
 	    			l.info("Reservation done correctly");

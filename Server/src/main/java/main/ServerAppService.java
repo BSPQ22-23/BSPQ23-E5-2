@@ -5,8 +5,6 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.jdo.JDOHelper;
-
 import database.BookingDAO;
 import database.GuestDAO;
 import database.HotelDAO;
@@ -71,7 +69,9 @@ public class ServerAppService {
 	public static List<Booking> getReservationsByHotel(User user, String hotelId){
 		Hotel h = HotelDAO.getInstance().find(hotelId);
 		List<Booking> bookings = new LinkedList<>();
-		h.getRooms().forEach(v -> bookings.addAll(v.getBookings()));
+		h.getRooms().forEach(v -> {
+			bookings.addAll(v.getBookings());	
+		});
 		return bookings;
 	}
 	
@@ -89,15 +89,13 @@ public class ServerAppService {
 		Booking toUpdate = BookingDAO.getInstance().find(Integer.toString(b.getId()));
 		toUpdate.setCheckinDate(b.getCheckinDate());
 		toUpdate.setCheckoutDate(b.getCheckoutDate());
-		List<Guest> guests = new LinkedList<>();
-		for(Guest g : b.getGuests())
-			if(!GuestDAO.getInstance().exists(g.getDni())) {
-				GuestDAO.getInstance().save(g);
-				guests.add(g);
-			} else
-				guests.add(GuestDAO.getInstance().find(g.getDni()));
-		toUpdate.getGuests().clear();
-		toUpdate.getGuests().addAll(guests);
+		List<Guest> guests = new ArrayList<>();
+		for(Guest g : b.getGuests()) {
+			if(GuestDAO.getInstance().exists(g.getDni()))
+				g = GuestDAO.getInstance().find(g.getDni());
+			guests.add(g);			
+		}
+		toUpdate.setGuests(guests);
 		return BookingDAO.getInstance().save(toUpdate);
 	}
 	
@@ -113,7 +111,7 @@ public class ServerAppService {
 		List<Hotel> transientList = new ArrayList<>(h.size());
 		h.forEach(v-> {
 			Hotel h1 = new Hotel(v);
-			List<Room> transientRooms = new ArrayList<>();
+			LinkedList<Room> transientRooms = new LinkedList<>();
 			h1.getRooms().forEach(w->{
 				Room r = new Room(w);
 				r.setHotel(null);//Avoid stack overflow
@@ -130,7 +128,7 @@ public class ServerAppService {
 		List<Hotel> transientList = new ArrayList<>(h.size());
 		h.forEach(v-> {
 			Hotel h1 = new Hotel(v);
-			List<Room> transientRooms = new ArrayList<>();
+			LinkedList<Room> transientRooms = new LinkedList<>();
 			h1.getRooms().forEach(w->{
 				Room r = new Room(w);
 				r.setHotel(null);//Avoid stack overflow

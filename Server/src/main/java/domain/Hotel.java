@@ -35,10 +35,10 @@ public class Hotel {
     private Guest owner;
     @Join
     @Persistent(mappedBy="hotel", dependentElement="true", defaultFetchGroup="true")
-    private List<Room> rooms;
+    private LinkedList<Room> rooms;
     @Join
     @Persistent(dependentElement="true", defaultFetchGroup="true")
-    private List<Service> services;
+    private LinkedList<Service> services;
     
     public static Hotel fromJSON(JSONObject obj) {
     	Hotel result = new Hotel(
@@ -50,6 +50,8 @@ public class Hotel {
     		for(Object o : obj.getJSONArray("rooms"))    result.addRoom(Room.fromJSON((JSONObject)o));
     	if(obj.keySet().contains("services"))
     		for(Object o : obj.getJSONArray("services")) result.addService(Service.fromJSON((JSONObject)o));
+    	if(obj.keySet().contains("id"))
+    		result.setId(obj.getInt("id"));
     	return result;
     	
     }
@@ -72,6 +74,9 @@ public class Hotel {
         services = new LinkedList<>();
     }
 
+	public void setId(int id) {
+		this.id = id;
+	}
     public int getId() {
 		return id;
 	}
@@ -92,11 +97,11 @@ public class Hotel {
         this.city = city;
     }
 
-    public List<Room> getRooms() {
+    public LinkedList<Room> getRooms() {
         return rooms;
     }
 
-    public void setRooms(List<Room> rooms) {
+    public void setRooms(LinkedList<Room> rooms) {
         this.rooms = rooms;
     }
 
@@ -108,11 +113,11 @@ public class Hotel {
         rooms.remove(room);
     }
 
-    public List<Service> getServices() {
+    public LinkedList<Service> getServices() {
         return services;
     }
 
-    public void setServices(List<Service> services) {
+    public void setServices(LinkedList<Service> services) {
         this.services = services;
     }
 

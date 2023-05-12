@@ -2,7 +2,9 @@ package remote;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
+
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -42,30 +44,57 @@ public class ReservationAPITest {
 			2, 
 			new Date(System.currentTimeMillis()), 
 			new Date(System.currentTimeMillis() + TimeUnit.DAYS.toMillis(3)), 
-			new Room(1, "Double", 2, 10, 15.5f, h), 
+			new Room(100, "Double", 2, 10, 15.5f, h), 
 			List.of(
 				new Guest("Erik", "Torsten", "12314", 38, "Estocolmo"),
 				new Guest("Tayane", "Alves", "987654321", 27, "Salvador")
 			)
 		);
-		
 		//Create reservation + getReservations
-		ClientController.createReservation(b);
+		assertEquals(Response.SUCCESS, ClientController.createReservation(b).status);
 		List<Booking> result = ClientController.getReservations();
 		assertEquals(1, result.size());
 		b = result.get(0);
 		//Modify reservation
-		
 		b = result.get(0);//Get the id assigned by the server
-		Date newDate = new Date(System.currentTimeMillis() + TimeUnit.DAYS.toMillis(1));
+		Calendar c = Calendar.getInstance();
+		c.setTimeInMillis(System.currentTimeMillis());
+		c.add(Calendar.DATE, 1);
+		c.set(Calendar.HOUR_OF_DAY, 0);
+		c.set(Calendar.MINUTE, 0);
+		c.set(Calendar.SECOND, 0);
+		c.set(Calendar.MILLISECOND, 0);
+		Date newDate = c.getTime();
 		b.setCheckinDate(newDate);
 		ClientController.editReservation(b);
-		assertEquals(newDate, ClientController.getReservation(b.getId()).getCheckinDate());
+		Date newDateOut = ClientController.getReservation(b.getId()).getCheckinDate();
+		System.out.println(newDate);
+		System.out.println(newDateOut);
+		assertEquals(newDate.getTime(), newDateOut.getTime());
+		
+		//Authorized use of getReservationsByHotel
+		assertEquals(1, ClientController.getReservations(b.getRoom().getHotel()).size());
+		
+		if(ClientController.register(
+				new User(
+					"OriginalNick", 
+					"ASecurePassword",
+					new Guest(
+						"This is a name", 
+						"This is a surname",  
+						"123456789J", 
+						10, 
+						"A city somewhere" 
+					),
+					false
+				)
+			).status != Response.SUCCESS)
+			ClientController.login("OriginalNick", "ASecurePassword");
 		
 		//Unauthorized use of getReservationsByHotel
 		final Booking _b = b;
-		Response r =assertThrows(Response.class, () -> ClientController.getReservations(_b.getRoom().getHotel()));
-		assertEquals(r.status, Response.UNATHORIZED);
+		Response r = assertThrows(Response.class, () -> ClientController.getReservations(_b.getRoom().getHotel()));
+		assertEquals(Response.UNATHORIZED, r.status);
 		
 		//Delete of reservation
 		
