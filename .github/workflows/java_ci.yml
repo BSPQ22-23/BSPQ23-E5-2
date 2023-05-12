@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    permissions: write-all
     steps:
       - uses: actions/checkout@v3.5.2
       - name: Set up JDK 1.11
@@ -36,7 +36,6 @@ jobs:
         id: version
 
       - uses: dev-drprasad/delete-tag-and-release@v0.2.1
-        permissions: write-all
         with:
           delete_release: true
           tag_name: ${{ steps.version.outputs.TAG_NAME }}
