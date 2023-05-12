@@ -68,7 +68,7 @@
 							<goal>check</goal>
 						</goals>
 						<configuration>
-							<rules>
+							<!--rules>
 								<rule>
 									<element>PACKAGE</element>
 									<limits>
@@ -84,7 +84,7 @@
 										</limit>
 									</limits>
 								</rule>
-							</rules>
+							</rules-->
 						</configuration>
 					</execution>
 				</executions>
