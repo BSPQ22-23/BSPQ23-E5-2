@@ -23,12 +23,12 @@ public class ClientControllerTest {
 	@Test
 	public void registerTest() throws InterruptedException, ExecutionException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
 		User u = new User(
-				"OriginalNick", 
+				"Some User", 
 				"ASecurePassword",
 				new Guest(
 					"This is a name", 
 					"This is a surname",  
-					"123456789J", 
+					"111111111A", 
 					10, 
 					"A city somewhere"
 				),
