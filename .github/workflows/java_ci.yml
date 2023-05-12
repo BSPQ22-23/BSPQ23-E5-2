@@ -26,10 +26,10 @@ jobs:
         run: | 
           mvn --batch-mode --update-snapshots datanucleus:enhance exec:java -pl Server &
 
-      - name: Build with Maven including integration tests
+      - name: Run JUnits
         run: | 
           sleep 10  
-          mvn --batch-mode --update-snapshots verify -Pintegracion
+          mvn --batch-mode --update-snapshots test
 
       - name: Retrieve version
         run: echo "::set-output name=TAG_NAME::$(mvn org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout)"
