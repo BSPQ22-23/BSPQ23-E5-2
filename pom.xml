@@ -68,8 +68,8 @@
 							<goal>check</goal>
 						</goals>
 						<configuration>
-							<!--rules>
-								<rule>
+							<rules>
+								<!--rule>
 									<element>PACKAGE</element>
 									<limits>
 										<limit>
@@ -83,8 +83,8 @@
 											<minimum>0.80</minimum>
 										</limit>
 									</limits>
-								</rule>
-							</rules-->
+								</rule-->
+							</rules>
 						</configuration>
 					</execution>
 				</executions>
