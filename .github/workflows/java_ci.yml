@@ -31,6 +31,10 @@ jobs:
           sleep 10  
           mvn --batch-mode --update-snapshots test
 
+      - name: Build client
+        run: |
+          mvn --batch-mode --update-snapshots install -pl Client
+
       - name: Retrieve version
         run: echo "::set-output name=TAG_NAME::$(mvn org.apache.maven.plugins:maven-help-plugin:3.1.0:evaluate -Dexpression=project.version -q -DforceStdout)"
         id: version
@@ -46,7 +50,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: Client/target/Client-{{ steps.version.outputs.TAG_NAME }}-SNAPSHOT-jar-with-dependencies.jar
+          file: Client/target/Client-{{ steps.version.outputs.TAG_NAME }}-jar-with-dependencies.jar
           asset_name: Client.jar
           tag: ${{ steps.version.outputs.TAG_NAME }}
           release_name: ${{ steps.version.outputs.TAG_NAME }}
