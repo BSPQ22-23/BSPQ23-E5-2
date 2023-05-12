@@ -43,11 +43,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload binaries to release
-          uses: svenstaro/upload-release-action@v3
-          with:
-            repo_token: ${{ secrets.GITHUB_TOKEN }}
-            file: Client/target/Client-{{ steps.version.outputs.TAG_NAME }}-SNAPSHOT-jar-with-dependencies.jar
-            asset_name: Client.jar
-            tag: ${{ steps.version.outputs.TAG_NAME }}
-            release_name: ${{ steps.version.outputs.TAG_NAME }}
-            overwrite: true
+        uses: svenstaro/upload-release-action@v3
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: Client/target/Client-{{ steps.version.outputs.TAG_NAME }}-SNAPSHOT-jar-with-dependencies.jar
+          asset_name: Client.jar
+          tag: ${{ steps.version.outputs.TAG_NAME }}
+          release_name: ${{ steps.version.outputs.TAG_NAME }}
+          overwrite: true
