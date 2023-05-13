@@ -1,5 +1,9 @@
 package remote;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
@@ -9,6 +13,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+
+import javax.imageio.ImageIO;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -50,6 +56,14 @@ public class ClientController {
 	}
 	public static void setServerHandler(ServiceLocator sv) {
 		handler = sv;
+	}
+	public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException, ExecutionException {
+		 BufferedImage bi = ImageIO.read(new File("2022-12-15 (9).png"));
+		 ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		 ImageIO.write(bi, "jpg", baos);
+		 byte[] bytes = baos.toByteArray();
+		 setServerHandler(new ServiceLocator("localhost", 8000));
+		 handler.sendPOST("resources/upload", Map.of("format", "png"), Base64.getEncoder().encode(bytes));
 	}
 	@SuppressWarnings("unused")
 	private static String token = null;

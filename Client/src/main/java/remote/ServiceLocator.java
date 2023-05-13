@@ -49,6 +49,16 @@ public class ServiceLocator {
 		HttpResponse<String> response = client.sendAsync(request.POST(bodyP).build(), BodyHandlers.ofString()).get();
 		return response;
 	}
+	public HttpResponse<String> sendPOST(String method, Map<String, String> headers, byte[] body) throws URISyntaxException, InterruptedException, ExecutionException {
+		HttpRequest.Builder request = HttpRequest.newBuilder()
+				 .uri(new URI(destination + method))
+				 .setHeader("Content-Type", "application/json");
+		for(Entry<String, String> e : headers.entrySet())
+			request.setHeader(e.getKey(), e.getValue());
+		BodyPublisher bodyP = BodyPublishers.ofByteArray(body);
+		HttpResponse<String> response = client.sendAsync(request.POST(bodyP).build(), BodyHandlers.ofString()).get();
+		return response;
+	}
 	public HttpResponse<String> sendPOST(String method, JSONObject body) throws URISyntaxException, InterruptedException, ExecutionException {
 		HttpRequest.Builder request = HttpRequest.newBuilder()
 				 .uri(new URI(destination + method))
