@@ -1,7 +1,6 @@
 package domain;
 
 import java.util.LinkedList;
-import java.util.List;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.Join;
@@ -13,7 +12,6 @@ import javax.jdo.annotations.PrimaryKey;
 import org.json.JSONObject;
 
 import api.APIUtils;
-
 import database.GuestDAO;
 
 @PersistenceCapable(detachable="true")
