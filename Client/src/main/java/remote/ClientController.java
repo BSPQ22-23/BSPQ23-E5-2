@@ -142,10 +142,10 @@ public class ClientController {
 		HttpResponse<String> response;
 		try {
 			response = handler.sendPOST("hotel/create", Map.of("token", token), APIUtils.objectToJSON(h));
-			if(response.statusCode() != 200)
+			if(response.statusCode() != 200 || h.getIcon() == null)
 				return new Response(response.statusCode(), response.body());
-			 ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			 ImageIO.write(h.getIcon(), h.getIconFormat(), baos);
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			ImageIO.write(h.getIcon(), h.getIconFormat(), baos);
 			response = handler.sendPOST("/resources/upload", Map.of("Content-Type", "image/"+h.getIconFormat(), "ctx", "hotel/create/"+response.body(), "token", token),Base64.getEncoder().encode(baos.toByteArray()));
 			return new Response(response.statusCode(), response.body());
 		} catch (URISyntaxException | InterruptedException | ExecutionException | IOException e) {
