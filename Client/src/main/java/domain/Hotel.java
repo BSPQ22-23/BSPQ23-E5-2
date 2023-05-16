@@ -94,6 +94,14 @@ import remote.APIUtils;
     public void setCity(String city) {
         this.city = city;
     }
+    
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
 
     public List<Room> getRooms() {
         return rooms;

@@ -162,7 +162,7 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 	        mItem3.addActionListener(this);
 			mItem2.setEnabled(false);
 	        
-	        setSize(400, 360);
+	        setSize(400, 300);
 	        setLocationRelativeTo(null);
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setVisible(true);
