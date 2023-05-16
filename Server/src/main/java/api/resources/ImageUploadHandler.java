@@ -24,10 +24,10 @@ public class ImageUploadHandler implements HttpHandler{
 		Logger l = LogManager.getLogger();
 		l.debug("▓".repeat(78)+"\n" + " ".repeat(31) + "Uploading image" + " ".repeat(31) + "\n" + "▓".repeat(78)+"\n");
 		BufferedImage image = ImageIO.read(new ByteArrayInputStream(Base64.getDecoder().decode(APIUtils.readBody(exchange))));
-		System.out.println("A");
-		File f = new File("test." + exchange.getRequestHeaders().getOrDefault("format", List.of("png")).get(0));
-		System.out.println(f.getAbsolutePath());
-		ImageIO.write(image, exchange.getRequestHeaders().getOrDefault("format", List.of("png")).get(0), f);
+		String format = exchange.getRequestHeaders().getOrDefault("Content-Type", List.of("png")).get(0).replace("image/", "");
+		File f = new File("test." + format);
+		ImageIO.write(image, format, f);
+		APIUtils.respondACK(exchange);
 	}
 
 }

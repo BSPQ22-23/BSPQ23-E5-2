@@ -65,7 +65,6 @@ public class ClientController {
 		 setServerHandler(new ServiceLocator("localhost", 8000));
 		 handler.sendPOST("resources/upload", Map.of("format", "png"), Base64.getEncoder().encode(bytes));
 	}
-	@SuppressWarnings("unused")
 	private static String token = null;
 	private static ServiceLocator handler;
 	
@@ -143,8 +142,13 @@ public class ClientController {
 		HttpResponse<String> response;
 		try {
 			response = handler.sendPOST("hotel/create", Map.of("token", token), APIUtils.objectToJSON(h));
+			if(response.statusCode() != 200)
+				return new Response(response.statusCode(), response.body());
+			 ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			 ImageIO.write(h.getIcon(), h.getIconFormat(), baos);
+			response = handler.sendPOST("/resources/upload", Map.of("Content-Type", "image/"+h.getIconFormat(), "ctx", "hotel/create/"+response.body(), "token", token),Base64.getEncoder().encode(baos.toByteArray()));
 			return new Response(response.statusCode(), response.body());
-		} catch (URISyntaxException | InterruptedException | ExecutionException e) {
+		} catch (URISyntaxException | InterruptedException | ExecutionException | IOException e) {
 			e.printStackTrace();
 			return null;
 		}

@@ -48,7 +48,7 @@ public class HotelCreationHandler implements HttpHandler{
 	    	h.setOwner(author.getLegalInfo());
 	    	if(ServerAppService.createHotel(h)) {
 	    		l.info("Hotel created " + h.getName());
-	    		APIUtils.respondACK(exchange);
+	    		APIUtils.respondSuccess(exchange, ""+h.getId());
 	    	}else {
 	    		l.info("Hotel NOT created");
 	    		APIUtils.respondError(exchange, "Something went wrong");

@@ -111,6 +111,9 @@ public class APIUtils {
 	public static void respondACK(HttpExchange t) throws IOException {
 		rawResponse(200, t, "ACK");
 	}
+	public static void respondSuccess(HttpExchange t, String message) throws IOException {
+		rawResponse(200, t, message);
+	}
 	public static void respondInternalError(HttpExchange t, String response) throws IOException {
 		rawResponse(500, t, response);
 	}

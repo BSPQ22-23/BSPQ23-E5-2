@@ -1,7 +1,12 @@
 package domain;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import org.json.JSONObject;
 
@@ -13,6 +18,8 @@ import remote.APIUtils;
 	    private String city;
 	    private List<Room> rooms;
 	    private List<Service> services;
+	    private transient BufferedImage icon; //Transported independently
+	    private transient String iconFormat;
 
     public static Hotel fromJSON(JSONObject obj) {
     	Hotel result = new Hotel(
@@ -32,9 +39,39 @@ import remote.APIUtils;
         this.city = city;
         this.rooms = new ArrayList<>();
         this.services = new ArrayList<>();
+        this.icon = null;
+        this.iconFormat = null;
         
     }
-
+    public Hotel(int id, String name, String city, BufferedImage icon, String iconFormat) {
+    	this.id = id;
+        this.name = name;
+        this.city = city;
+        this.rooms = new ArrayList<>();
+        this.services = new ArrayList<>();
+        this.icon = icon;
+        this.iconFormat = iconFormat;
+        
+    }
+    
+    public BufferedImage getIcon() {
+    	return icon;
+    }
+    
+    public String getIconFormat() {
+    	return iconFormat;
+    }
+    
+    public void setIcon(BufferedImage icon, String iconFormat) {
+    	this.icon = icon;
+    	this.iconFormat = iconFormat;
+    }
+    
+    public void setIcon(byte[] pixelArray, String format) throws IOException {
+    	this.icon = ImageIO.read(new ByteArrayInputStream(pixelArray));
+    	this.iconFormat = format;
+    }
+    
     public int getId() {
 		return id;
 	}
