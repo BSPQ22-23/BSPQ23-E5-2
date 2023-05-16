@@ -40,7 +40,7 @@ public class HotelDAOTest {
     
     @Before
     public void setUp() {
-        hotel = new Hotel("Test Hotel", "Test City", owner);
+        hotel = new Hotel("Test Hotel", "Test City", "Buenas vistas", owner);
         hotel.addRoom(new Room(100, "Single", 1, 5, 10, hotel));
         if(hotelDAO.getByName(hotel.getName()).size() == 0)
         	hotelDAO.save(hotel);

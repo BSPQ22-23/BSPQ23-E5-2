@@ -37,7 +37,7 @@ public class BookingDAOTest {
 		System.setErr(out);
 		guest = new Guest("gorka", "kk", "23232323A", 67, "Vitoria-Gasteiz");
 		GuestDAO.getInstance().save(guest);
-		hotel = new Hotel("Hotel Lakua", "Vitoria-Gasteiz", guest);
+		hotel = new Hotel("Hotel Lakua", "Vitoria-Gasteiz", "Increible desayuno", guest);
 		room = new Room(100, "Single", 0, 0, 0, hotel);
 		hotel.addRoom(room);
 		HotelDAO.getInstance().save(hotel);

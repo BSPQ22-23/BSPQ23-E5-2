@@ -16,6 +16,7 @@ import remote.APIUtils;
 		private int id;
 	    private String name;
 	    private String city;
+	    private String info;
 	    private List<Room> rooms;
 	    private List<Service> services;
 	    private transient BufferedImage icon; //Transported independently
@@ -25,7 +26,8 @@ import remote.APIUtils;
     	Hotel result = new Hotel(
     			obj.getInt("id"),
     			APIUtils.decode(obj.getString("name")),
-    			APIUtils.decode(obj.getString("city"))
+    			APIUtils.decode(obj.getString("city")),
+    			APIUtils.decode(obj.getString("info"))
     		);
     	if(obj.keySet().contains("rooms"))
     		for(Object o : obj.getJSONArray("rooms"))    result.addRoom(Room.fromJSON((JSONObject)o));
@@ -33,20 +35,22 @@ import remote.APIUtils;
     		for(Object o : obj.getJSONArray("services")) result.addService(Service.fromJSON((JSONObject)o));
     	return result;
     }
-    public Hotel(int id, String name, String city) {
+    public Hotel(int id, String name, String city, String info) {
     	this.id = id;
         this.name = name;
         this.city = city;
+        this.info = info;
         this.rooms = new ArrayList<>();
         this.services = new ArrayList<>();
         this.icon = null;
         this.iconFormat = null;
         
     }
-    public Hotel(int id, String name, String city, BufferedImage icon, String iconFormat) {
+    public Hotel(int id, String name, String city, String info, BufferedImage icon, String iconFormat) {
     	this.id = id;
         this.name = name;
         this.city = city;
+        this.info = info;
         this.rooms = new ArrayList<>();
         this.services = new ArrayList<>();
         this.icon = icon;

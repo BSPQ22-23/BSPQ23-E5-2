@@ -36,7 +36,8 @@ public class HotelAPITest {
 		Hotel h = new Hotel(
 				0, 
 				"Hotel Lakua", 
-				"Vitoria"
+				"Vitoria",
+				"Muy buen servicio"
 		
 		);
 		Response creation = ClientController.createHotel(h);

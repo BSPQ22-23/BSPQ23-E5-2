@@ -194,10 +194,7 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 				mItem2.setEnabled(true);
 			    
 			 } else if (e.getSource() == addHotelButton) {
-				buttonPanel.setVisible(false);
-				welcomePanel.setVisible(false);
-				addPanel.setVisible(true);
-				mItem2.setEnabled(true);
+				 HotelCreatorWindow hotelWindow = new HotelCreatorWindow();
 				
 			 } else if (e.getSource() == submitHotelButton) {
 

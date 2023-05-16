@@ -19,7 +19,7 @@ public class Hotel {
 	
 	@Override
 	public String toString() {
-		return "Hotel [id=" + id + ", name=" + name + ", city=" + city 
+		return "Hotel [id=" + id + ", name=" + name + ", city=" + city + ", info=" + info 
 				 + ", services=" + services + "]";
 	}
 
@@ -28,6 +28,7 @@ public class Hotel {
 	private int id;
     private String name;
     private String city;
+    private String info;
     private String ownerDni;
     @NotPersistent
     private Guest owner;
@@ -42,6 +43,7 @@ public class Hotel {
     	Hotel result = new Hotel(
     			APIUtils.decode(obj.getString("name")),
     			APIUtils.decode(obj.getString("city")),
+    			APIUtils.decode(obj.getString("info")),
     			obj.keySet().contains("owner")?Guest.fromJSON(obj.getJSONObject("owner")):null
     		);
     	if(obj.keySet().contains("rooms"))
@@ -56,6 +58,7 @@ public class Hotel {
     public Hotel(Hotel h) {
     	this.name = h.name;
     	this.city = h.city;
+    	this.info = h.info;
     	this.id = h.id;
     	this.owner = h.owner;
     	this.ownerDni = h.ownerDni;
@@ -63,9 +66,10 @@ public class Hotel {
     	this.services = h.services;
     }
 
-	public Hotel(String name, String city, Guest owner) {
+	public Hotel(String name, String city, String info, Guest owner) {
         this.name = name;
         this.city = city;
+        this.info = info;
         this.owner = owner;
         ownerDni = owner == null? null : owner.getDni();
         rooms = new LinkedList<>();

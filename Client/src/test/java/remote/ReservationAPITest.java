@@ -36,7 +36,7 @@ public class ReservationAPITest {
 	}
 	@Test
 	public void testReservation() throws InterruptedException, ExecutionException {
-		Hotel h = new Hotel(1, "Hotel Overlook", "Oregón");
+		Hotel h = new Hotel(1, "Hotel Overlook", "Oregón", "Increible");
 		h.addRoom(new Room(100, "Double", 2, 15, 300, null));
 		ClientController.createHotel(h);
 		h = ClientController.getHotels(h.getName()).get(0);

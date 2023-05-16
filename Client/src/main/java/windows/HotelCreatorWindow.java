@@ -47,8 +47,10 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
 	        submitButton.addActionListener(this);
 	        clearButton.addActionListener(this);
 	        imageButton.addActionListener(this);
-
-	        JPanel formPanel = new JPanel(new GridLayout(7, 2, 5, 5));
+	        
+	        JPanel panelBorder = new JPanel(new BorderLayout());
+	        JPanel formPanel = new JPanel(new GridLayout(5, 2, 4, 4));
+	        JPanel imagePanel = new JPanel(new BorderLayout());
 	        formPanel.setBackground(new Color(255, 228, 181));
 	        formPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 	        formPanel.add(id);
@@ -59,8 +61,10 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
 	        formPanel.add(cityF);
 	        formPanel.add(info);
 	        formPanel.add(infoF);
-	        formPanel.add(imageButton);
-	        formPanel.add(imageL);
+	        panelBorder.add(formPanel, BorderLayout.NORTH);
+	        imagePanel.add(imageButton, BorderLayout.NORTH);
+	        imagePanel.add(imageL, BorderLayout.CENTER);
+	        panelBorder.add(imagePanel);
 
 	        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 	        buttonPanel.setBackground(new Color(135, 206, 250));
@@ -69,11 +73,11 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
 	        buttonPanel.add(clearButton);
 
 	        getContentPane().setLayout(new BorderLayout());
-	        getContentPane().add(formPanel, BorderLayout.CENTER);
+	        getContentPane().add(panelBorder, BorderLayout.CENTER);
 	        getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
 	   
-	        setSize(400, 300);
+	        setSize(400, 400);
 	        setLocationRelativeTo(null);
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setVisible(true);
@@ -85,8 +89,8 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
 	        	int id = Integer.parseInt(idF.getText());
 	            String name = nameF.getText();
 	            String city = cityF.getText();
-	            String info = infoF.getText(); //ask canal about this
-	            Hotel hotel = new Hotel(id, name, city);            
+	            String info = infoF.getText();
+	            Hotel hotel = new Hotel(id, name, city, info);            
 				ClientController.createHotel(hotel);
 
 	            
@@ -97,7 +101,7 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
 	            infoF.setText("");
 	            
 	         } else if (e.getSource() == imageButton) {
-	        	 
+	        	 //Border layout, uno al este otro al oeste
 	        	 int image = fileChooser.showOpenDialog(HotelCreatorWindow.this);
 	        	 if(image == JFileChooser.APPROVE_OPTION) {
 	        		 File file = fileChooser.getSelectedFile();
@@ -114,6 +118,5 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
 
 	     public static void main(String[] args) {
 	         HotelCreatorWindow hotelWindow = new HotelCreatorWindow();
-	     }
-	        
+	     }        
 }
