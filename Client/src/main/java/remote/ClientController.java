@@ -2,7 +2,6 @@ package remote;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.http.HttpResponse;
@@ -24,10 +23,19 @@ import domain.Hotel;
 import domain.User;
 
 public class ClientController {
+	/**
+	 * A simplified version of an http response and also way to assure you can get either your result or the error message if the server gives one
+	 *
+	 */
 	public static class Response extends RuntimeException {
 		private static final long serialVersionUID = 519375302527407530L;
 		public final String message;
 		public final int status;
+		/**
+		 * Represents a simplified version of what the server returns, can be thrown
+		 * @param status Status of the response, some mapped ones are {@link Response#SUCCESS SUCCESS}, {@link Response#BAD_REQUEST BAD REQUEST}, {@link Response#UNAUTHORIZED UNAUTHORIZED}...
+		 * @param message Body of the response or custom message
+		 */
 		public Response(int status, String message) {
 			super(message);
 			this.message = message;
@@ -54,20 +62,23 @@ public class ClientController {
 		 */
 		public static final int INTERNAL_SERVER_ERROR = 500;
 	}
+	/**
+	 * Establishes the server connection data
+	 * @param sv
+	 */
 	public static void setServerHandler(ServiceLocator sv) {
 		handler = sv;
-	}
-	public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException, ExecutionException {
-		 BufferedImage bi = ImageIO.read(new File("2022-12-15 (9).png"));
-		 ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		 ImageIO.write(bi, "jpg", baos);
-		 byte[] bytes = baos.toByteArray();
-		 setServerHandler(new ServiceLocator("localhost", 8000));
-		 handler.sendPOST("resources/upload", Map.of("format", "png"), Base64.getEncoder().encode(bytes));
 	}
 	private static String token = null;
 	private static ServiceLocator handler;
 	
+	/**
+	 * Register a new user
+	 * @param g user data to try to register
+	 * @return A simplified response, giving in the status the result of the exchange and in the body the error in case of one
+	 * @throws InterruptedException
+	 * @throws ExecutionException
+	 */
 	public static Response register(User g) throws InterruptedException, ExecutionException{
 		try {
 			HttpResponse<String> response = handler.sendPOST("register", APIUtils.objectToJSON(g));
@@ -82,6 +93,14 @@ public class ClientController {
 			return null;
 		}
 	}
+	/**
+	 * Tries to log an existing user
+	 * @param user Nick of the user
+	 * @param password Password of the user not encrypted
+	 * @return A simplified response, giving in the status the result of the exchange and in the body the error in case of one
+	 * @throws InterruptedException
+	 * @throws ExecutionException
+	 */
 	public static Response login(String user, String password) throws InterruptedException, ExecutionException {
 		try {
 			JSONObject body = new JSONObject();
@@ -99,6 +118,11 @@ public class ClientController {
 			return null;
 		}
 	}
+	/**
+	 * Tries to create a reservation
+	 * @param b original data of the reservation
+	 * @return A simplified version of the result from the server, giving the result type and a comment from the server
+	 */
 	public static Response createReservation(Booking b) {
 		HashMap<String, String> headers = new HashMap<>();
 		headers.put("token", token);
@@ -111,7 +135,11 @@ public class ClientController {
 			return null;
 		}	
 	}
-	
+	/**
+	 * Tries to edit an existing reservation
+	 * @param b A reservation with a valid id (one given by the server, not generated locally)
+	 * @return A simplified version of the result from the server, giving the result type and a comment from the server
+	 */
 	public static Response editReservation(Booking b) {
 		HashMap<String, String> headers = new HashMap<>();
 		headers.put("token", token);
@@ -124,6 +152,11 @@ public class ClientController {
 			return null;
 		}	
 	}
+	/**
+	 * Deletes an existing booking
+	 * @param b A booking with a valid id (one given by the server, not generated locally)
+	 * @return A simplified version of the result from the server, giving the result type and a comment from the server
+	 */
 	public static Response deleteReservation(Booking b) {
 		HashMap<String, String> headers = new HashMap<>();
 		headers.put("token", token);
@@ -137,22 +170,47 @@ public class ClientController {
 			return null;
 		}	
 	}
-	
+	/**
+	 * Tries to register a hotel in the database
+	 * @param h The hotel data to upload
+	 * @return A simplified version of the result from the server, giving the result type and a comment from the server
+	 */
 	public static Response createHotel(Hotel h) {
-		HttpResponse<String> response;
 		try {
-			response = handler.sendPOST("hotel/create", Map.of("token", token), APIUtils.objectToJSON(h));
+			HttpResponse<String> response = handler.sendPOST("hotel/create", Map.of("token", token), APIUtils.objectToJSON(h));
 			if(response.statusCode() != 200 || h.getIcon() == null)
 				return new Response(response.statusCode(), response.body());
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			ImageIO.write(h.getIcon(), h.getIconFormat(), baos);
-			response = handler.sendPOST("/resources/upload", Map.of("Content-Type", "image/"+h.getIconFormat(), "ctx", "hotel/icon/"+response.body(), "token", token),Base64.getEncoder().encode(baos.toByteArray()));
-			return new Response(response.statusCode(), response.body());
+			return uploadImage(h.getIcon(), h.getIconFormat(), "hotel/icon/"+response.body());
 		} catch (URISyntaxException | InterruptedException | ExecutionException | IOException e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
+	/**
+	 * Tries to upload an image to the server
+	 * @param image Image to upload
+	 * @param format Format in which the image is encoded (jpg, png, webp...)
+	 * @param ctx place where the image goes, determined by the server
+	 * @return A simplified version of the result from the server, giving the result type and a comment from the server
+	 * @throws IOException
+	 */
+	public static Response uploadImage(BufferedImage image, String format, String ctx) throws IOException {
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		ImageIO.write(image, format, baos);
+		HttpResponse<String> response;
+		try {
+			response = handler.sendPOST("/resources/upload", Map.of("Content-Type", "image/"+format, "ctx", ctx, "token", token),Base64.getEncoder().encode(baos.toByteArray()));
+			return new Response(response.statusCode(), response.body());
+		} catch (URISyntaxException | InterruptedException | ExecutionException e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	/**
+	 * Tries to return the list of reservations the user has made
+	 * @return A list of reservations where the user is registered
+	 */
 	public static List<Booking> getReservations(){
 		HttpResponse<String> response;
 		try {
@@ -169,6 +227,11 @@ public class ClientController {
 			return null;
 		}
 	}
+	/**
+	 * Get reservations by hotel. Only allowed to the owner of said hotel
+	 * @param h A hotel the logged user owns
+	 * @return A list of bookings registered to that hotel
+	 */
 	public static List<Booking> getReservations(Hotel h){
 		HttpResponse<String> response;
 		try {
@@ -185,6 +248,11 @@ public class ClientController {
 			return null;
 		}
 	}
+	/**
+	 * Gets an specific reservation if the user it's in the guest list
+	 * @param id id of the booking
+	 * @return the booking data
+	 */
 	public static Booking getReservation(int id) {
 		HttpResponse<String> response;
 		try {
@@ -199,6 +267,10 @@ public class ClientController {
 			return null;
 		}
 	}
+	/**
+	 * Returns a random list of hotels to show when no query is set
+	 * @return A list of hotels
+	 */
 	public static List<Hotel> getHotels(){
 		HttpResponse<String> response;
 		try {
@@ -215,6 +287,11 @@ public class ClientController {
 			return null;
 		}
 	}
+	/**
+	 * Gets a list of hotels according to user input
+	 * @param name string the name must contain
+	 * @return A list of hotels that comply with the query
+	 */
 	public static List<Hotel> getHotels(String name){
 		HttpResponse<String> response;
 		try {
