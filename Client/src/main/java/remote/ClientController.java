@@ -146,7 +146,7 @@ public class ClientController {
 				return new Response(response.statusCode(), response.body());
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			ImageIO.write(h.getIcon(), h.getIconFormat(), baos);
-			response = handler.sendPOST("/resources/upload", Map.of("Content-Type", "image/"+h.getIconFormat(), "ctx", "hotel/create/"+response.body(), "token", token),Base64.getEncoder().encode(baos.toByteArray()));
+			response = handler.sendPOST("/resources/upload", Map.of("Content-Type", "image/"+h.getIconFormat(), "ctx", "hotel/icon/"+response.body(), "token", token),Base64.getEncoder().encode(baos.toByteArray()));
 			return new Response(response.statusCode(), response.body());
 		} catch (URISyntaxException | InterruptedException | ExecutionException | IOException e) {
 			e.printStackTrace();

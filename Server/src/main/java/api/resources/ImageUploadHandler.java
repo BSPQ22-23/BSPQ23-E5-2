@@ -18,7 +18,10 @@ import com.sun.net.httpserver.HttpHandler;
 
 import api.APIUtils;
 import database.HotelDAO;
+import database.ImageDAO;
 import domain.Hotel;
+import domain.Image;
+import domain.Image.ImageType;
 import domain.User;
 import main.Server;
 
@@ -40,8 +43,9 @@ public class ImageUploadHandler implements HttpHandler{
 			return;
 		}
 		String location = resource.substring(0, resource.lastIndexOf('/'));
+		BufferedImage image = ImageIO.read(new ByteArrayInputStream(Base64.getDecoder().decode(APIUtils.readBody(exchange))));
 		switch (location) {
-		case "hotel/create":
+		case "hotel/icon":
 			String token = APIUtils.getStringHeader(exchange, "token", "");
 			if(token == "") {
 				l.info("Illegal use of API: No token provided");
@@ -70,16 +74,17 @@ public class ImageUploadHandler implements HttpHandler{
 				APIUtils.rawResponse(401, exchange, "Not the owner");
 		 		return;
 			}
-			//TODO set hotel icon
+			Image i = new Image(image, format, ImageType.HOTEL_ICON, id);
+			ImageDAO.getInstance().save(i);
+			APIUtils.respondACK(exchange);
 			break;
 
 		default:
 			break;
 		}
-		BufferedImage image = ImageIO.read(new ByteArrayInputStream(Base64.getDecoder().decode(APIUtils.readBody(exchange))));
+		
 		File f = new File("test." + format);
 		ImageIO.write(image, format, f);
-		APIUtils.respondACK(exchange);
 	}
 
 }
