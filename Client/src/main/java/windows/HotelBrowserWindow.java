@@ -3,6 +3,7 @@ import javax.swing.*;
 
 import domain.Hotel;
 import remote.ClientController;
+import language.InternLanguage;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,6 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
+
 
 public class HotelBrowserWindow extends JFrame  {
     private JTextField searchField;
@@ -32,17 +34,17 @@ public class HotelBrowserWindow extends JFrame  {
     }
 
     public HotelBrowserWindow(ClientController controller) {
-        setTitle("HOTEL BROWSER");
+        setTitle(InternLanguage.translateTxt("title_br"));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new BorderLayout());
         setPreferredSize(new Dimension(600, 400));
 
         // Create components
         searchField = new JTextField();
-        searchButton = new JButton("Search");
+        searchButton = new JButton(InternLanguage.translateTxt("Search"));
         hotelListArea = new JTextArea();
-        viewHotelButton = new JButton("View Hotel");
-        homeButton = new JButton("Home");
+        viewHotelButton = new JButton(InternLanguage.translateTxt("view_Hotel"));
+        homeButton = new JButton(InternLanguage.translateTxt("home"));
 
         // Add action listeners
         searchButton.addActionListener(new ActionListener() {
@@ -56,14 +58,14 @@ public class HotelBrowserWindow extends JFrame  {
         viewHotelButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Implement logic to enter the hotel description window
-                JOptionPane.showMessageDialog(null, "Entering hotel description window...");
+                JOptionPane.showMessageDialog(null, InternLanguage.translateTxt("hotel_DescMen"));
             }
         });
 
         homeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Implement logic to return to the home page
-                JOptionPane.showMessageDialog(null, "Returning to the home page...");
+                JOptionPane.showMessageDialog(null, InternLanguage.translateTxt("retur_HomePg"));
                 dispose();
                 MainMenuClient mmc = new MainMenuClient();
                 mmc.setVisible(true);

@@ -15,21 +15,23 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import language.InternLanguage;
+
 public class LoginWindow extends JFrame {
 	private JTextField usernameField;
     private JPasswordField passwordField;
     private JCheckBox showPasswordCheckbox;
 
     public LoginWindow() {
-        super("Login");
-        JLabel usernameLabel = new JLabel("Username:");
+        super(InternLanguage.translateTxt("login"));
+        JLabel usernameLabel = new JLabel(InternLanguage.translateTxt("username"));
         usernameField = new JTextField(20);
 
-        JLabel passwordLabel = new JLabel("Password:");
+        JLabel passwordLabel = new JLabel(InternLanguage.translateTxt("password"));
         passwordField = new JPasswordField(20);
         passwordField.setEchoChar('*');
 
-        showPasswordCheckbox = new JCheckBox("Show password");
+        showPasswordCheckbox = new JCheckBox(InternLanguage.translateTxt("sh_Password"));
         showPasswordCheckbox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (showPasswordCheckbox.isSelected()) {
@@ -40,7 +42,7 @@ public class LoginWindow extends JFrame {
             }
         });
 
-        JButton loginButton = new JButton("Login");
+        JButton loginButton = new JButton(InternLanguage.translateTxt("login"));
         loginButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String username = usernameField.getText();
@@ -53,7 +55,7 @@ public class LoginWindow extends JFrame {
                 		openMenu(true);
                 		
                 	} else {
-                		System.out.println("No info");
+                		System.out.println(InternLanguage.translateTxt("no_Info"));
                 	}
                 }  catch (Exception e1) {
 					e1.printStackTrace();
@@ -61,7 +63,7 @@ public class LoginWindow extends JFrame {
             }
         });
         
-        JButton registerButton = new JButton("Register");
+        JButton registerButton = new JButton(InternLanguage.translateTxt("register"));
         registerButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	RegistrationWindow registrationWindow = new RegistrationWindow();

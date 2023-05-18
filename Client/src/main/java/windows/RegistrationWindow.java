@@ -3,6 +3,7 @@ import javax.swing.*;
 
 import domain.Guest;
 import domain.User;
+import language.InternLanguage;
 import remote.ClientController;
 
 import java.awt.*;
@@ -15,15 +16,15 @@ public class RegistrationWindow extends JFrame implements ActionListener {
 	    private JButton submitButton, clearButton;
 
 	    public RegistrationWindow() {
-	        super("Hotel Registration Form");
+	        super(InternLanguage.translateTxt("register"));
 
-	        nicknameLabel = new JLabel("Nickname:");
-	        passwordLabel = new JLabel("Password:");
-	        nameLabel = new JLabel("Name:");
-	        lastNameLabel = new JLabel("Last Name:");
-	        idLabel = new JLabel("ID Number:");
-	        ageLabel = new JLabel("Age:");
-	        cityLabel = new JLabel("City of Origin:");
+	        nicknameLabel = new JLabel(InternLanguage.translateTxt("username"));
+	        passwordLabel = new JLabel(InternLanguage.translateTxt("password"));
+	        nameLabel = new JLabel(InternLanguage.translateTxt("name"));
+	        lastNameLabel = new JLabel(InternLanguage.translateTxt("lst_Name"));
+	        idLabel = new JLabel(InternLanguage.translateTxt("idnum"));
+	        ageLabel = new JLabel(InternLanguage.translateTxt("age"));
+	        cityLabel = new JLabel(InternLanguage.translateTxt("citylbl"));
 
 	        nicknameTextField = new JTextField(20);
 	        passwordTextField = new JTextField(20);
@@ -33,8 +34,8 @@ public class RegistrationWindow extends JFrame implements ActionListener {
 	        ageTextField = new JTextField(20);
 	        cityTextField = new JTextField(20);
 
-	        submitButton = new JButton("Submit");
-	        clearButton = new JButton("Clear");
+	        submitButton = new JButton(InternLanguage.translateTxt("submit"));
+	        clearButton = new JButton(InternLanguage.translateTxt("clear"));
 
 	        submitButton.addActionListener(this);
 	        clearButton.addActionListener(this);

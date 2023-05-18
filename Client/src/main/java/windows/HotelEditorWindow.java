@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import domain.Hotel;
 import domain.Room;
 import domain.Service;
+import language.InternLanguage;
 import remote.ClientController;
 
 public class HotelEditorWindow extends JFrame implements ActionListener {
@@ -16,19 +17,19 @@ public class HotelEditorWindow extends JFrame implements ActionListener {
 	    private JButton submitRoomButton, submitServiceButton, clearButton, exitButton;
 
 	    public HotelEditorWindow() {
-	        super("Hotel Editor Form");
+	        super(InternLanguage.translateTxt("title_Ed"));
 	        
-	        roomNum = new JLabel("Room number:");
-	        roomType = new JLabel("Room type:");
-	        roomMax = new JLabel("Room max guests:");
-	        roomSpace = new JLabel("Room space (m)");
-	        roomPrice = new JLabel("Room price:");
+	        roomNum = new JLabel(InternLanguage.translateTxt("roomNum"));
+	        roomType = new JLabel(InternLanguage.translateTxt("roomType"));
+	        roomMax = new JLabel(InternLanguage.translateTxt("roomMax"));
+	        roomSpace = new JLabel(InternLanguage.translateTxt("roomSpace"));
+	        roomPrice = new JLabel(InternLanguage.translateTxt("roomPrice"));
 	        
-	        serviceName = new JLabel("Service name:");
-	        serviceDesc = new JLabel("Service description:");
-	        servicePrice = new JLabel("Service price:");
+	        serviceName = new JLabel(InternLanguage.translateTxt("serviceName"));
+	        serviceDesc = new JLabel(InternLanguage.translateTxt("serviceDesc"));
+	        servicePrice = new JLabel(InternLanguage.translateTxt("servicePrice"));
 	        
-	        roomHotel = new JLabel("Hotel:");
+	        roomHotel = new JLabel(InternLanguage.translateTxt("hotelEd"));
 	        
 	        roomNumF = new JTextField(20);
 	        roomTypeF = new JTextField(20);
@@ -42,10 +43,10 @@ public class HotelEditorWindow extends JFrame implements ActionListener {
 	        
 	        roomHotelF = new JTextField(20);
 
-	        submitRoomButton = new JButton("Add Room");
-	        submitServiceButton = new JButton("Add Service");
-	        clearButton = new JButton("Clear");
-	        exitButton = new JButton("Exit");
+	        submitRoomButton = new JButton(InternLanguage.translateTxt("addRoom"));
+	        submitServiceButton = new JButton(InternLanguage.translateTxt("addService"));
+	        clearButton = new JButton(InternLanguage.translateTxt("clear"));
+	        exitButton = new JButton(InternLanguage.translateTxt("exit"));
 
 	        submitRoomButton.addActionListener(this);
 	        submitServiceButton.addActionListener(this);

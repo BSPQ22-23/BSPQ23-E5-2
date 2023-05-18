@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import com.journaldev.i18n.JavaInternationalization;
+import language.InternLanguage;
 
 public class MainMenuClient extends JFrame implements ActionListener {
 	 	private JLabel welcome, label, info, warningL, infoSettings;
@@ -32,7 +32,7 @@ public class MainMenuClient extends JFrame implements ActionListener {
 	    private JMenuItem mItem, mItem2, mItem3;
 	    private JPanel buttonPanel, welcomePanel, searchPanel, browserPanel, accountPanel, pCenter, settingsPanel;
 	    private ReservationWindow reservationWindow;
-	    private JavaInternationalization lang;
+	    private InternLanguage lang;
 	    
 	    public MainMenuClient() {
 	        super("Menu");

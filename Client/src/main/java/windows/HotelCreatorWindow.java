@@ -6,6 +6,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import domain.Guest;
 import domain.Hotel;
 import domain.User;
+import language.InternLanguage;
 import remote.ClientController;
 
 import java.awt.*;
@@ -23,12 +24,12 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
 	    private FileNameExtensionFilter filter;
 
 	    public HotelCreatorWindow() {
-	        super("Hotel Registration Form");
+	        super(InternLanguage.translateTxt("title_cr"));
 
-	        id = new JLabel("Hotel identificator number:");
-	        name = new JLabel("Hotel name:");
-	        city = new JLabel("Hotel location:");
-	        info = new JLabel("Hotel info:");
+	        id = new JLabel(InternLanguage.translateTxt("id_cr"));
+	        name = new JLabel(InternLanguage.translateTxt("name_cr"));
+	        city = new JLabel(InternLanguage.translateTxt("city_cr"));
+	        info = new JLabel(InternLanguage.translateTxt("info_cr"));
 	        imageL = new JLabel();
 	        
 	        idF = new JTextField(20);
@@ -36,9 +37,9 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
 	        cityF = new JTextField(20);
 	        infoF = new JTextField(60);
 
-	        submitButton = new JButton("Submit");
-	        clearButton = new JButton("Clear");
-	        imageButton = new JButton("Submit image");
+	        submitButton = new JButton(InternLanguage.translateTxt("submit"));
+	        clearButton = new JButton(InternLanguage.translateTxt("clear"));
+	        imageButton = new JButton(InternLanguage.translateTxt("submit_Image"));
 	        
 	        fileChooser = new JFileChooser();
 	        filter = new FileNameExtensionFilter("jpg", "png", "ico");
