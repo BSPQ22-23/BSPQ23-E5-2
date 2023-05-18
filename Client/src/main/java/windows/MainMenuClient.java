@@ -7,6 +7,7 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ResourceBundle;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -20,6 +21,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.journaldev.i18n.JavaInternationalization;
+
 public class MainMenuClient extends JFrame implements ActionListener {
 	 	private JLabel welcome, label, info, warningL, infoSettings;
 	 	private JTextField search;
@@ -29,11 +32,13 @@ public class MainMenuClient extends JFrame implements ActionListener {
 	    private JMenuItem mItem, mItem2, mItem3;
 	    private JPanel buttonPanel, welcomePanel, searchPanel, browserPanel, accountPanel, pCenter, settingsPanel;
 	    private ReservationWindow reservationWindow;
+	    private JavaInternationalization lang;
 	    
 	    public MainMenuClient() {
 	        super("Menu");
 	        
-	        welcome = new JLabel("Welcome to the Hotel Management App");
+	        
+	        welcome = new JLabel();
 	        label = new  JLabel("Search my reservations: ");
 	        info = new JLabel("User info such as nickname, stats, recently reserved hotels, etc...");
 	        infoSettings = new JLabel("Welcome to settings. Yo may edit your account information.");
