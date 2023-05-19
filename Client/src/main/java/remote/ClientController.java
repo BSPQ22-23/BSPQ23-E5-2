@@ -1,6 +1,7 @@
 package remote;
 
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -218,6 +219,40 @@ public class ClientController {
 			return null;
 		}
 		
+	}
+	/**
+	 * A class to relate an image with it's format
+	 * @author a-rasines
+	 *
+	 */
+	public static class DownloadedImage {
+		public final BufferedImage image;
+		public final String format;
+		public DownloadedImage(BufferedImage image, String format) {
+			super();
+			this.image = image;
+			this.format = format;
+		}
+		
+	}
+	/**
+	 * Download a photo existing in the server
+	 * @param ctx place to search
+	 * @return
+	 */
+	public static DownloadedImage downloadImage(String ctx, int offset) {
+		HttpResponse<String> response;
+		try {
+			response = handler.sendGET("resources/download", Map.of("ctx", ctx, "offset", ""+offset));
+			if(response.statusCode() != 200)
+				throw new Response(response.statusCode(), response.body());
+			JSONObject o = new JSONObject(response.body());
+			BufferedImage image = ImageIO.read(new ByteArrayInputStream(Base64.getDecoder().decode(o.getString("image").getBytes())));
+			return new DownloadedImage(image, o.getString("format"));
+		} catch (URISyntaxException | InterruptedException | ExecutionException | IOException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	/**
 	 * Tries to return the list of reservations the user has made

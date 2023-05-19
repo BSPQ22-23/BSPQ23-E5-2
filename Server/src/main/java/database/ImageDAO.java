@@ -1,4 +1,8 @@
 package database;
+import java.awt.image.BufferedImage;
+import java.awt.image.ColorModel;
+import java.awt.image.WritableRaster;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
@@ -97,18 +101,35 @@ public class ImageDAO extends DataAccessObjectBase implements IDataAccessObject<
 	    }
 	    return result;
 	}
+	@SuppressWarnings("unchecked")
 	public List<Image> find(String oid, ImageType type) {
 		PersistenceManager pm = pmf.getPersistenceManager();
 	    Transaction tx = pm.currentTransaction();
-	    List<Image> result = null;
+	    List<Image> output = new LinkedList<>();
 	    try {
 	        tx.begin();
-
 	        Query<Image> q = pm.newQuery(Image.class);
 	        q.setFilter("oid == inOid && type == inType");
 	        q.declareParameters("java.lang.String inOid, "+ImageType.class.getName()+" inType");
 	        q.setUnique(true);
-	        result = q.setParameters(oid, type).executeList();
+	        Object result = q.execute(oid, type);
+	        if(result instanceof Image) {
+	        	Image detatchedResult = pm.detachCopy((Image)result);
+	        	BufferedImage bi = ((Image)result).getImage();
+	        	ColorModel cm = bi.getColorModel();
+	        	boolean isAlphaPremultiplied = cm.isAlphaPremultiplied();
+	        	WritableRaster raster = bi.copyData(null);
+	        	detatchedResult.setImage(new BufferedImage(cm, raster, isAlphaPremultiplied, null), detatchedResult.getFormat());
+	        	output.add(detatchedResult);
+	        } else
+	        	((List<Image>) result).forEach(v -> {
+	        		Image detatchedResult = pm.detachCopy(v);
+	        		ColorModel cm = detatchedResult.getImage().getColorModel();
+		        	boolean isAlphaPremultiplied = cm.isAlphaPremultiplied();
+		        	WritableRaster raster = detatchedResult.getImage().copyData(null);
+		        	detatchedResult.setImage(new BufferedImage(cm, raster, isAlphaPremultiplied, null), detatchedResult.getFormat());
+		        	output.add(detatchedResult);
+	        	});
 	        tx.commit();
 	    } catch (Exception ex) {
 	        System.out.println("Error: " + ex.getMessage());
@@ -120,6 +141,6 @@ public class ImageDAO extends DataAccessObjectBase implements IDataAccessObject<
 
 	        pm.close();
 	    }
-	    return result;
+	    return output;
 	}		
 }

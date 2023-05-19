@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
 import javax.imageio.ImageIO;
@@ -17,6 +18,7 @@ import domain.Guest;
 import domain.Hotel;
 import domain.Room;
 import domain.User;
+import remote.ClientController.DownloadedImage;
 import remote.ClientController.Response;
 
 public class ImageTransferTest {
@@ -48,5 +50,12 @@ public class ImageTransferTest {
 		assertTrue(new File("src/test/resources/icon_test_jpg.jpg").exists());
 		BufferedImage bi = ImageIO.read(new File("src/test/resources/icon_test_jpg.jpg"));
 		assertEquals(Response.SUCCESS, ClientController.uploadImage(bi, "jpg", "hotel/icon/"+h.getId()).status);
+		DownloadedImage retrieved = ClientController.downloadImage("hotel/icon/"+h.getId(), 0);
+		assertEquals("jpg", retrieved.format);
+		assertEquals(bi.getHeight(), retrieved.image.getHeight());
+		assertEquals(bi.getWidth(), retrieved.image.getWidth());
+		File f = new File("test_client_" + retrieved.format + "." + retrieved.format);
+		ImageIO.write(retrieved.image, retrieved.format, f);
+		
 	}
 }

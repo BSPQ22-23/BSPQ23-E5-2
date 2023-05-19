@@ -94,7 +94,7 @@ public class ImageUploadHandler implements HttpHandler{
 			break;
 		}
 		
-		File f = new File("test." + format);
+		File f = new File("test_server_" + format + "." + format);
 		ImageIO.write(image, format, f);
 	}
 

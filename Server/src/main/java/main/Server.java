@@ -36,6 +36,7 @@ public class Server {
 	        server.createContext("/hotel/create", new HotelCreationHandler());
 	        server.createContext("/hotel/get", new HotelGetterHandler());
 	        server.createContext("/resources/upload", new ImageUploadHandler());
+	        server.createContext("/resources/download", new ImageDownloadHandler());
 	        server.setExecutor(null); // creates a default executor
 	        server.start();
 	        l.info("Server started at 127.0.0.1:8000");
