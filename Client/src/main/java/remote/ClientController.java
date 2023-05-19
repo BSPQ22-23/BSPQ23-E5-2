@@ -20,6 +20,7 @@ import org.json.JSONObject;
 
 import domain.Booking;
 import domain.Hotel;
+import domain.Room;
 import domain.User;
 
 public class ClientController {
@@ -124,13 +125,18 @@ public class ClientController {
 	 * @return A simplified version of the result from the server, giving the result type and a comment from the server
 	 */
 	public static Response createReservation(Booking b) {
+		List<Room> rooms = b.getRoom().getHotel().getRooms();
+		b.getRoom().getHotel().setRooms(null);//Avoid stack overflow
+		System.out.println(APIUtils.objectToJSON(b));
 		HashMap<String, String> headers = new HashMap<>();
 		headers.put("token", token);
 		HttpResponse<String> response;
 		try {
 			response = handler.sendPOST("booking/create", headers, APIUtils.objectToJSON(b));
+			b.getRoom().getHotel().setRooms(rooms); //Return to original state
 			return new Response(response.statusCode(), response.body());
 		} catch (URISyntaxException | InterruptedException | ExecutionException e) {
+			b.getRoom().getHotel().setRooms(rooms); //Return to original state
 			e.printStackTrace();
 			return null;
 		}	
@@ -177,8 +183,14 @@ public class ClientController {
 	 */
 	public static Response createHotel(Hotel h) {
 		try {
+			h.getRooms().forEach(v->v.setHotel(null));//Avoid stack overflow
 			HttpResponse<String> response = handler.sendPOST("hotel/create", Map.of("token", token), APIUtils.objectToJSON(h));
-			if(response.statusCode() != 200 || h.getIcon() == null)
+			h.getRooms().forEach(v->v.setHotel(h)); //Return to original state
+			if(response.statusCode() != 200) {
+				return new Response(response.statusCode(), response.body());
+			}
+			h.setId(Integer.parseInt(response.body()));//Recover hotel id
+			if(h.getIcon() == null)
 				return new Response(response.statusCode(), response.body());
 			return uploadImage(h.getIcon(), h.getIconFormat(), "hotel/icon/"+response.body());
 		} catch (URISyntaxException | InterruptedException | ExecutionException | IOException e) {
@@ -199,7 +211,7 @@ public class ClientController {
 		ImageIO.write(image, format, baos);
 		HttpResponse<String> response;
 		try {
-			response = handler.sendPOST("/resources/upload", Map.of("Content-Type", "image/"+format, "ctx", ctx, "token", token),Base64.getEncoder().encode(baos.toByteArray()));
+			response = handler.sendPOST("resources/upload", Map.of("Content-Type", "image/"+format, "ctx", ctx, "token", token),Base64.getEncoder().encode(baos.toByteArray()));
 			return new Response(response.statusCode(), response.body());
 		} catch (URISyntaxException | InterruptedException | ExecutionException e) {
 			e.printStackTrace();

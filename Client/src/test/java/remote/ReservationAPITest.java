@@ -36,15 +36,14 @@ public class ReservationAPITest {
 	}
 	@Test
 	public void testReservation() throws InterruptedException, ExecutionException {
-		Hotel h = new Hotel(1, "Hotel Overlook", "Oregón", "Increible");
-		h.addRoom(new Room(100, "Double", 2, 15, 300, null));
+		Hotel h = new Hotel(0, "Hotel Overlook", "Oregón", "Increible");
+		h.addRoom(new Room(100, "Double", 2, 15, 300, h));
 		ClientController.createHotel(h);
-		h = ClientController.getHotels(h.getName()).get(0);
 		Booking b = new Booking(
 			2, 
 			new Date(System.currentTimeMillis()), 
 			new Date(System.currentTimeMillis() + TimeUnit.DAYS.toMillis(3)), 
-			new Room(100, "Double", 2, 10, 15.5f, h), 
+			h.getRooms().get(0), 
 			List.of(
 				new Guest("Erik", "Torsten", "12314", 38, "Estocolmo"),
 				new Guest("Tayane", "Alves", "987654321", 27, "Salvador")

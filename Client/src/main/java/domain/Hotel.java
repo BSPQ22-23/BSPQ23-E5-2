@@ -58,7 +58,7 @@ import remote.APIUtils;
         
     }
     
-    public BufferedImage getIcon() {
+	public BufferedImage getIcon() {
     	return icon;
     }
     
@@ -74,6 +74,10 @@ import remote.APIUtils;
     public void setIcon(byte[] pixelArray, String format) throws IOException {
     	this.icon = ImageIO.read(new ByteArrayInputStream(pixelArray));
     	this.iconFormat = format;
+    }
+    
+    public void setId(int id) {
+    	this.id = id;
     }
     
     public int getId() {
