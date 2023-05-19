@@ -20,28 +20,25 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import language.InternLanguage;
+
 public class MainMenuOwner extends JFrame implements ActionListener {
-	 	private JLabel welcome, label, warningL, infoSettings, hotelNameL, hotelChainL, hotelRoomsL, hotelCityL;
-	 	private JTextField search, hotelName, hotelChain, hotelRooms, hotelCity;
-	    private JButton hotelEditButton, addHotelButton, searchButton, accountButton, searchHotelButton, deleteAccButton, logOutButton, changeDataButton, submitHotelButton, clearHotelButton;
+	 	private JLabel welcome, warningL, infoSettings;
+	 	private JTextField hotelName, hotelChain, hotelRooms, hotelCity;
+	    private JButton hotelEditButton, addHotelButton, searchButton, accountButton, deleteAccButton, logOutButton, changeDataButton, submitHotelButton, clearHotelButton;
 	    private JMenuBar menuBar;
-	    private JMenu menu, menuH;
-	    private JMenuItem mItem, mItem3, mItem2;
-	    private JPanel buttonPanel, welcomePanel, searchPanel, browserPanel, accountPanel, pCenter, addPanel;
+	    private JMenu menu, menuH, menuL;
+	    private JMenuItem mItem, mItem3, mItem2, mItemES, mItemEN;
+	    private JPanel buttonPanel, welcomePanel, browserPanel, accountPanel, pCenter;
 	    
 	    public MainMenuOwner() {
-	        super("Menu for Owner");
+	        super(InternLanguage.translateTxt("menuOwn"));
 	        
-	        welcome = new JLabel("Welcome to the Hotel Management App for Owners");
-	        label = new  JLabel("My hotel list: ");
-	        infoSettings = new JLabel("Welcome to settings. Yo may edit your account information.");
-	        warningL = new JLabel("Warning! Your account and your data will be deleted forever.");
-	        hotelNameL = new JLabel("Hotel Name: ");
-	        hotelChainL = new JLabel("Hotel Chain: ");
-	        hotelRoomsL = new JLabel("Room quantity: ");
-	        hotelCityL = new JLabel("Location: ");
+	        welcome = new JLabel(InternLanguage.translateTxt("settingInf"));
+	        infoSettings = new JLabel(InternLanguage.translateTxt("settingInf"));
+	        warningL = new JLabel(InternLanguage.translateTxt("warning"));
 	        
-	        search = new JTextField(20);
+
 	        hotelName = new JTextField(15);
 	        hotelChain = new JTextField(15);
 	        hotelRooms = new JTextField(5);
@@ -57,7 +54,6 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 	        addHotelButton = new JButton(resizeIcon(icon4, 60, 60));
 	        searchButton = new JButton(resizeIcon(icon2, 60, 60));
 	        accountButton = new JButton(resizeIcon(icon3,60, 60));
-	        searchHotelButton = new JButton(resizeIcon(icon2, 10, 10));
 	        changeDataButton = new JButton("Change account data");
 	        deleteAccButton = new JButton("Delete this account");
 	        logOutButton = new JButton("Log out");
@@ -65,11 +61,14 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 	        clearHotelButton = new JButton("Clear Info");
 	        
 	        menuBar = new JMenuBar();
-	        menu = new JMenu("Account");
-	        menuH = new JMenu("Home");
-	        mItem = new JMenuItem("Log Out");
-	        mItem2 = new JMenuItem("Return Home");
-	        mItem3 = new JMenuItem("Exit");
+	        menu = new JMenu(InternLanguage.translateTxt("account"));
+	        menuH = new JMenu(InternLanguage.translateTxt("home"));
+	        menuL = new JMenu(InternLanguage.translateTxt("language"));
+	        mItem = new JMenuItem(InternLanguage.translateTxt("logOut"));
+	        mItem2 = new JMenuItem(InternLanguage.translateTxt("returnHome"));
+	        mItem3 = new JMenuItem(InternLanguage.translateTxt("exit"));
+	        mItemES  = new JMenuItem("Español");
+	        mItemEN = new JMenuItem("English");
 	        
 	        hotelEditButton.addActionListener(this);
 	        addHotelButton.addActionListener(this);
@@ -101,29 +100,7 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 	        gridLayout2.setHgap(10);
 	        browserPanel = new JPanel(gridLayout2);
 	        browserPanel.setBackground(new Color(255, 228, 181));
-	        
-	        searchPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-	        searchPanel.setBackground(new Color(135, 206, 250));
-	        searchPanel.add(label);
-	        searchPanel.add(search);
-	        searchPanel.add(searchHotelButton);
-	        
-	        GridLayout gridLayout4 = new GridLayout(0, 2);
-	        gridLayout4.setVgap(20);
-	        gridLayout4.setHgap(20);
-	        addPanel = new JPanel(gridLayout4);
-	        addPanel.setBackground(new Color(255, 228, 181));
-	        addPanel.add(hotelNameL);
-	        addPanel.add(hotelName);
-	        addPanel.add(hotelChainL);
-	        addPanel.add(hotelChain);
-	        addPanel.add(hotelRoomsL);
-	        addPanel.add(hotelRooms);
-	        addPanel.add(hotelCityL);
-	        addPanel.add(hotelCity);
-	        addPanel.add(submitHotelButton);
-	        addPanel.add(clearHotelButton);
-	        
+
 	        GridLayout gridLayout3 = new GridLayout(0, 1);
 	        gridLayout3.setVgap(15);
 	        gridLayout3.setHgap(10);
@@ -139,23 +116,21 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 	        pCenter.add(buttonPanel);
 	        pCenter.add(browserPanel);
 	        pCenter.add(accountPanel);
-	        pCenter.add(addPanel);
 	        
 	        getContentPane().setLayout(new BorderLayout());
 	        getContentPane().add(pCenter, BorderLayout.CENTER);
 		    accountPanel.setVisible(false);
 			browserPanel.setVisible(false);
-			addPanel.setVisible(false);
-			getContentPane().add(searchPanel, BorderLayout.NORTH);
-		    searchPanel.setVisible(false);
 	        getContentPane().add(welcomePanel, BorderLayout.SOUTH);
 	        
 	        menuH.add(mItem2);
 	        menuH.add(mItem3);
-
+	        menuL.add(mItemES);
+	        menuL.add(mItemEN);
 	        menu.add(mItem);
 	        menuBar.add(menuH);
 	        menuBar.add(menu);
+	        menuBar.add(menuL);
 	        setJMenuBar(menuBar);
 	        
 	        mItem2.addActionListener(this);
@@ -180,12 +155,13 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 			if (e.getSource() == searchButton) {
 				buttonPanel.setVisible(false);
 				welcomePanel.setVisible(false);
-				searchPanel.setVisible(true);
 				browserPanel.setVisible(true);
 				browserPanel.revalidate();
 				browserPanel.repaint();
 				mItem2.setEnabled(true);
-
+			
+			 } else if (e.getSource() == hotelEditButton) {
+				 HotelEditorWindow hotelEdWindow = new HotelEditorWindow();
 				
 			 } else if (e.getSource() == accountButton) {
 				buttonPanel.setVisible(false);
@@ -206,9 +182,7 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 				 hotelCity.setText("");
 				 
 		     } else if (e.getSource() == mItem2) {
-		    	 searchPanel.setVisible(false);
 				 browserPanel.setVisible(false);
-				 addPanel.setVisible(false);
 				 accountPanel.setVisible(false);
 		    	 welcomePanel.setVisible(true);
 		    	 buttonPanel.setVisible(true);

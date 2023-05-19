@@ -24,28 +24,26 @@ import javax.swing.JTextField;
 import language.InternLanguage;
 
 public class MainMenuClient extends JFrame implements ActionListener {
-	 	private JLabel welcome, label, info, warningL, infoSettings;
-	 	private JTextField search;
-	    private JButton hotelButton, searchButton, accountButton, contactButton, advSettingsButton, infoButton, searchHotelButton, hotel1Button, hotel2Button, hotel3Button, hotel4Button, hotel5Button, hotel6Button, deleteAccButton, logOutButton, changeDataButton;
+	 	private JLabel welcome, info, info2, info3, info4, info5, warningL, infoSettings;
+	    private JButton hotelButton, searchButton, accountButton, contactButton, advSettingsButton, infoButton, searchHotelButton, deleteAccButton, logOutButton, changeDataButton;
 	    private JMenuBar menuBar;
-	    private JMenu menu, menuH;
-	    private JMenuItem mItem, mItem2, mItem3;
-	    private JPanel buttonPanel, welcomePanel, searchPanel, browserPanel, accountPanel, pCenter, settingsPanel;
+	    private JMenu menu, menuH, menuL;
+	    private JMenuItem mItem, mItem2, mItem3, mItemES, mItemEN;
+	    private JPanel buttonPanel, welcomePanel, infoPanel, pCenter, settingsPanel;
 	    private ReservationWindow reservationWindow;
-	    private InternLanguage lang;
 	    
 	    public MainMenuClient() {
-	        super("Menu");
+	        super("Menu");    
 	        
-	        
-	        welcome = new JLabel();
-	        label = new  JLabel("Search my reservations: ");
-	        info = new JLabel("User info such as nickname, stats, recently reserved hotels, etc...");
-	        infoSettings = new JLabel("Welcome to settings. Yo may edit your account information.");
-	        warningL = new JLabel("Warning! Your account and your data will be deleted forever.");
-	        
-	        search = new JTextField(20);
-	        
+	        welcome = new JLabel(InternLanguage.translateTxt("welcome"));
+	        info = new JLabel(InternLanguage.translateTxt("info"));
+	        info2 = new JLabel(InternLanguage.translateTxt("info2"));
+	        info3 = new JLabel(InternLanguage.translateTxt("info3"));
+	        info4 = new JLabel(InternLanguage.translateTxt("info4"));
+	        info5 = new JLabel(InternLanguage.translateTxt("info5"));
+	        infoSettings = new JLabel(InternLanguage.translateTxt("settingInf"));
+	        warningL = new JLabel(InternLanguage.translateTxt("warning"));
+
 	        ImageIcon icon = new ImageIcon("../photos/home.png");
 	        ImageIcon icon2 = new ImageIcon("../photos/search.png");
 	        ImageIcon icon3 = new ImageIcon("../photos/account.png");
@@ -60,22 +58,20 @@ public class MainMenuClient extends JFrame implements ActionListener {
 	        advSettingsButton = new JButton(resizeIcon(icon5, 60, 60));
 	        infoButton = new JButton(resizeIcon(icon6, 60, 60));
 	        searchHotelButton = new JButton(resizeIcon(icon2, 10, 10));
-	        hotel1Button = new JButton("HOTEL 1 INFO");
-	        hotel2Button = new JButton("HOTEL 2 INFO");
-	        hotel3Button = new JButton("HOTEL 3 INFO");
-	        hotel4Button = new JButton("HOTEL 4 INFO");
-	        hotel5Button = new JButton("HOTEL 5 INFO");
-	        hotel6Button = new JButton("HOTEL 6 INFO");
+
 	        changeDataButton = new JButton("Change account data");
 	        deleteAccButton = new JButton("Delete this account");
 	        logOutButton = new JButton("Log out");
 	        
 	        menuBar = new JMenuBar();
-	        menu = new JMenu("Account");
-	        menuH = new JMenu("Home");
-	        mItem = new JMenuItem("Log Out");
-	        mItem2 = new JMenuItem("Return Home");
-	        mItem3 = new JMenuItem("Exit");
+	        menu = new JMenu(InternLanguage.translateTxt("account"));
+	        menuH = new JMenu(InternLanguage.translateTxt("home"));
+	        menuL = new JMenu(InternLanguage.translateTxt("language"));
+	        mItem = new JMenuItem(InternLanguage.translateTxt("logOut"));
+	        mItem2 = new JMenuItem(InternLanguage.translateTxt("returnHome"));
+	        mItem3 = new JMenuItem(InternLanguage.translateTxt("exit"));
+	        mItemES  = new JMenuItem("Español");
+	        mItemEN = new JMenuItem("English");
 	        
 	        hotelButton.addActionListener(this);
 	        searchButton.addActionListener(this);
@@ -95,46 +91,33 @@ public class MainMenuClient extends JFrame implements ActionListener {
 	        buttonPanel.setBackground(new Color(255, 228, 181));
 	        buttonPanel.add(hotelButton);
 	        buttonPanel.add(searchButton);
-	        buttonPanel.add(accountButton);
-	        buttonPanel.add(contactButton);
 	        buttonPanel.add(advSettingsButton);
 	        buttonPanel.add(infoButton);
 	        
 	        welcomePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 	        welcomePanel.setBackground(new Color(135, 206, 250));
 	        welcomePanel.add(welcome);
-	        
-	        GridLayout gridLayout2 = new GridLayout(0, 3);
-	        gridLayout2.setVgap(25);
-	        gridLayout2.setHgap(10);
-	        browserPanel = new JPanel(gridLayout2);
-	        browserPanel.setBackground(new Color(255, 228, 181));
-	        browserPanel.add(hotel1Button);
-	        browserPanel.add(hotel2Button);
-	        browserPanel.add(hotel3Button);
-	        browserPanel.add(hotel4Button);
-	        browserPanel.add(hotel5Button);
-	        browserPanel.add(hotel6Button);
-	        
+
 			reservationWindow = new ReservationWindow();
 			getContentPane().add(reservationWindow);
 			reservationWindow.setVisible(false);
 	        
-	        searchPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-	        searchPanel.setBackground(new Color(135, 206, 250));
-	        searchPanel.add(label);
-	        searchPanel.add(search);
-	        searchPanel.add(searchHotelButton);
-	        
-	        accountPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-	        accountPanel.setBackground(new Color(135, 206, 250));
-	        accountPanel.add(info);
+			GridLayout gridLayout2 = new GridLayout(0, 1);
+			gridLayout2.setVgap(15);
+	        gridLayout2.setHgap(10);
+	        infoPanel = new JPanel(gridLayout2);
+	        infoPanel.setBackground(new Color(135, 206, 250));
+	        infoPanel.add(info);
+	        infoPanel.add(info2);
+	        infoPanel.add(info3);
+	        infoPanel.add(info4);
+	        infoPanel.add(info5);
 	        
 	        GridLayout gridLayout3 = new GridLayout(0, 1);
 	        gridLayout3.setVgap(15);
 	        gridLayout3.setHgap(10);
 	        settingsPanel = new JPanel(gridLayout3);
-	        accountPanel.setBackground(new Color(135, 206, 250));
+	        infoPanel.setBackground(new Color(135, 206, 250));
 	        settingsPanel.add(infoSettings);
 	        settingsPanel.add(changeDataButton);
 	        settingsPanel.add(logOutButton);
@@ -143,34 +126,34 @@ public class MainMenuClient extends JFrame implements ActionListener {
 
 	        
 	        pCenter.add(buttonPanel);
-	        pCenter.add(accountPanel);
-	        pCenter.add(browserPanel);
+	        pCenter.add(infoPanel);
+
 	        pCenter.add(settingsPanel);
 	        
 	        getContentPane().setLayout(new BorderLayout());
 	        getContentPane().add(pCenter, BorderLayout.CENTER);
-		    accountPanel.setVisible(false);
-			browserPanel.setVisible(false);
+		    infoPanel.setVisible(false);
+
 			settingsPanel.setVisible(false);
-			getContentPane().add(searchPanel, BorderLayout.NORTH);
-		    searchPanel.setVisible(false);
 	        getContentPane().add(welcomePanel, BorderLayout.SOUTH);
 	        
 
 	        
 	        menuH.add(mItem2);
 	        menuH.add(mItem3);
-	        
+	        menuL.add(mItemES);
+	        menuL.add(mItemEN);
 	        menu.add(mItem);
 	        menuBar.add(menuH);
 	        menuBar.add(menu);
+	        menuBar.add(menuL);
 	        setJMenuBar(menuBar);
 	        
 	        mItem2.addActionListener(this);
 	        mItem3.addActionListener(this);
 			mItem2.setEnabled(false);
 	        
-	        setSize(400, 360);
+	        setSize(400, 300);
 	        setLocationRelativeTo(null);
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        setVisible(true);
@@ -197,10 +180,10 @@ public class MainMenuClient extends JFrame implements ActionListener {
 			} else if (e.getSource() == searchButton) {
 				HotelBrowserWindow hotelBrowser = new HotelBrowserWindow(null);
 				
-			 } else if (e.getSource() == accountButton) {
+			 } else if (e.getSource() == infoButton) {
 				 buttonPanel.setVisible(false);
 			     welcomePanel.setVisible(false);
-			     accountPanel.setVisible(true);
+			     infoPanel.setVisible(true);
 				 mItem2.setEnabled(true);
 			    
 			 } else if (e.getSource() == advSettingsButton) {
@@ -210,12 +193,10 @@ public class MainMenuClient extends JFrame implements ActionListener {
 				 mItem2.setEnabled(true);
 				    
 		     } else if (e.getSource() == mItem2) {
-		    	 searchPanel.setVisible(false);
-				 browserPanel.setVisible(false);
-				 accountPanel.setVisible(false);
+				 infoPanel.setVisible(false);
 				 settingsPanel.setVisible(false);
 				 reservationWindow.setVisible(false);
-				 setSize(400, 360);
+				 setSize(400, 300);
 				 pCenter.setVisible(true);
 		    	 welcomePanel.setVisible(true);
 		    	 buttonPanel.setVisible(true);
@@ -223,6 +204,12 @@ public class MainMenuClient extends JFrame implements ActionListener {
 				
 		     }  else if (e.getSource() == mItem3) {
 		    	 this.dispose();
+		    	 
+		     }  else if (e.getSource() == mItemES) {
+		    	 InternLanguage.changeLanguage("es");
+		    	 
+		     }  else if (e.getSource() == mItemEN) {
+		    	 InternLanguage.changeLanguage("en");
 		     }
 		}
 		

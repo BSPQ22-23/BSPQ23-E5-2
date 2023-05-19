@@ -17,6 +17,9 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
+
+import language.InternLanguage;
+
 import javax.swing.JCheckBox;
 import java.awt.FlowLayout;
 import javax.swing.JRadioButton;
@@ -34,7 +37,7 @@ public class ReservationWindow extends JPanel {
 
 
 private JTextField txtname,txtsurname, txtdni,txtphone,textC,txtroom ,textField,txtEmail;
-private JCheckBox CheckBox1,CheckBox2,CheckBox3,CheckBox4;
+private JCheckBox CheckBox1,CheckBox2;
 private JRadioButton rdbtn1,rdbtn2,rdbtn3;
 private JPanel panelCA2;
 
@@ -81,14 +84,14 @@ public static void main(String[] args) {
 		panelCentroCentro.add(panelCC1);
 		panelCC1.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		lblName = new JLabel("Guest Name");
+		lblName = new JLabel(InternLanguage.translateTxt("name"));
 		panelCC1.add(lblName);
 		
 		txtname = new JTextField();
 		panelCC1.add(txtname);
 		txtname.setColumns(10);
 		
-		lblSurname = new JLabel("Surname");
+		lblSurname = new JLabel(InternLanguage.translateTxt("lst_Name"));
 		panelCC1.add(lblSurname);
 		
 		txtsurname = new JTextField();
@@ -96,7 +99,7 @@ public static void main(String[] args) {
 		panelCC1.add(txtsurname);
 		txtsurname.setColumns(10);
 		
-		lblDni = new JLabel("DNI");
+		lblDni = new JLabel(InternLanguage.translateTxt("idnum"));
 		panelCC1.add(lblDni);
 		
 		txtdni = new JTextField();
@@ -113,14 +116,14 @@ public static void main(String[] args) {
 		panelCC2.add(txtEmail);
 		txtEmail.setColumns(10);
 		
-		lblPhone = new JLabel("Phone");
+		lblPhone = new JLabel(InternLanguage.translateTxt("phone"));
 		panelCC2.add(lblPhone);
 		
 		txtphone = new JTextField();
 		panelCC2.add(txtphone);
 		txtphone.setColumns(10);
 		
-		lblCity = new JLabel("City");
+		lblCity = new JLabel(InternLanguage.translateTxt("city"));
 		panelCC2.add(lblCity);
 		
 		textC = new JTextField();
@@ -161,51 +164,44 @@ public static void main(String[] args) {
 		panelCA1.add(txtroom);
 		txtroom.setColumns(10);
 		
-		lblNumber = new JLabel("Type of room");
+		lblNumber = new JLabel(InternLanguage.translateTxt("room_Type"));
 		panelCA1.add(lblNumber);
 		
-		rdbtn1 = new JRadioButton("Double");
+		rdbtn1 = new JRadioButton(InternLanguage.translateTxt("double"));
 		panelCA1.add(rdbtn1);
 		
-		rdbtn2 = new JRadioButton("Single");
+		rdbtn2 = new JRadioButton(InternLanguage.translateTxt("single"));
 		panelCA1.add(rdbtn2);
 		
-		rdbtn3 = new JRadioButton("Triple");
+		rdbtn3 = new JRadioButton(InternLanguage.translateTxt("triple"));
 		panelCA1.add(rdbtn3);
 		
 		panelCA2 = new JPanel();
 		panelCentroAbajo.add(panelCA2);
 		panelCA2.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		lblNumberGuest = new JLabel("Number of Guest");
+		lblNumberGuest = new JLabel(InternLanguage.translateTxt("gst_Num"));
 		panelCA2.add(lblNumberGuest);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
 		panelCA2.add(textField);
 		
-		lblService = new JLabel("Services");
+		lblService = new JLabel(InternLanguage.translateTxt("services"));
 		panelCA2.add(lblService);
 		
-		CheckBox1 = new JCheckBox("Parking");
+		CheckBox1 = new JCheckBox(InternLanguage.translateTxt("parking"));
 		panelCA2.add(CheckBox1);
 		
-		CheckBox2 = new JCheckBox("complimentary breakfast");
+		CheckBox2 = new JCheckBox(InternLanguage.translateTxt("breakfast"));
 		panelCA2.add(CheckBox2);
-		
-		CheckBox3 = new JCheckBox("New check box");
-		panelCA2.add(CheckBox3);
-		
-		CheckBox4 = new JCheckBox("Others");
-		panelCA2.add(CheckBox4);
-
 
 		panelCA3 = new JPanel();
 		panelCentroAbajo.add(panelCA3);
 
-		btnAceptar = new JButton("Aceptar");
+		btnAceptar = new JButton(InternLanguage.translateTxt("submit"));
 		panelCA3.add(btnAceptar);
-		btnGuardar = new JButton("Guardar");
+		btnGuardar = new JButton(InternLanguage.translateTxt("clear"));
 		panelCA3.add(btnGuardar);
 		panelCA4 = new JPanel();
 		panelCentroAbajo.add(panelCA4);
