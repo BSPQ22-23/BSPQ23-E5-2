@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 
 public class InternLanguage {
 	
-	public static String language = "EN";
+	public static String language = "en";
 	private static ResourceBundle bundle = ResourceBundle.getBundle("ApplicationMessages", Locale.forLanguageTag(InternLanguage.language));
 
 	
