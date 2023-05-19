@@ -106,7 +106,7 @@ public class ImageDAO extends DataAccessObjectBase implements IDataAccessObject<
 
 	        Query<Image> q = pm.newQuery(Image.class);
 	        q.setFilter("oid == inOid && type == inType");
-	        q.declareParameters("String inOid, domain.Image.ImageType inType");
+	        q.declareParameters("java.lang.String inOid, "+ImageType.class.getName()+" inType");
 	        q.setUnique(true);
 	        result = q.setParameters(oid, type).executeList();
 	        tx.commit();
