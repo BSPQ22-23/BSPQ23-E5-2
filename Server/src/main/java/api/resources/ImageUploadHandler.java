@@ -74,6 +74,13 @@ public class ImageUploadHandler implements HttpHandler{
 				APIUtils.rawResponse(401, exchange, "Not the owner");
 		 		return;
 			}
+			List<Image> img = ImageDAO.getInstance().find(id, ImageType.HOTEL_ICON);
+			if(img.size() != 0) {
+				img.get(0).setImage(image, format);
+				ImageDAO.getInstance().save(img.get(0));
+				APIUtils.respondACK(exchange);
+				return;
+			}
 			Image i = new Image(image, format, ImageType.HOTEL_ICON, id);
 			ImageDAO.getInstance().save(i);
 			APIUtils.respondACK(exchange);
