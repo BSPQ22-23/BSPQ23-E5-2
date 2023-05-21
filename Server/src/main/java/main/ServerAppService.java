@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.json.JSONObject;
+
 import database.BookingDAO;
 import database.GuestDAO;
 import database.HotelDAO;
@@ -45,7 +47,13 @@ public class ServerAppService {
 	 */
 	public static String login(String username, String password) {
 		System.out.println("Login user: username= " +username+ " password= " +password);
-		return Server.createSession(UserDAO.getInstance().find(username, password));//TODO Create the token if the user it's succesfully logged in
+		User u = UserDAO.getInstance().find(username, password);
+		if(u == null)
+			return null;
+		JSONObject object = new JSONObject();
+		object.put("token", Server.createSession(u));
+		object.put("isOwner", u.isHotelOwner());
+		return object.toString();//TODO Create the token if the user it's succesfully logged in
 	}
 	/**
 	 * Adds a reservation to the database if all information it's correct

@@ -112,8 +112,9 @@ public class ClientController {
 			if(response.statusCode() != 200)
 				return new Response(response.statusCode(), response.body());
 			else {
-				token = response.body();
-				return new Response(200, "");
+				JSONObject obj = new JSONObject(response.body());
+				token = obj.getString("token");
+				return new Response(200, obj.getString("isOwner"));
 			}
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
