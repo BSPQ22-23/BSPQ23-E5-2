@@ -24,7 +24,7 @@ public class RegistrationWindow extends JFrame implements ActionListener {
 	        lastNameLabel = new JLabel(InternLanguage.translateTxt("lst_Name"));
 	        idLabel = new JLabel(InternLanguage.translateTxt("idnum"));
 	        ageLabel = new JLabel(InternLanguage.translateTxt("age"));
-	        cityLabel = new JLabel(InternLanguage.translateTxt("citylbl"));
+	        cityLabel = new JLabel(InternLanguage.translateTxt("cityLbl"));
 
 	        nicknameTextField = new JTextField(20);
 	        passwordTextField = new JTextField(20);
