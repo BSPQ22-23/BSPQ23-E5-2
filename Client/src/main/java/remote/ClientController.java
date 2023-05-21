@@ -71,8 +71,17 @@ public class ClientController {
 	public static void setServerHandler(ServiceLocator sv) {
 		handler = sv;
 	}
+	private static boolean isHotelOwner = false;
 	private static String token = null;
 	private static ServiceLocator handler;
+	
+	/**
+	 * Returns if the user logged in is a hotel owner
+	 * @return True if the user is a hotel owner
+	 */
+	public static boolean isHotelOwner() {
+		return isHotelOwner;
+	}
 	
 	/**
 	 * Register a new user
@@ -95,6 +104,7 @@ public class ClientController {
 			return null;
 		}
 	}
+	
 	/**
 	 * Tries to log an existing user
 	 * @param user Nick of the user
@@ -114,7 +124,8 @@ public class ClientController {
 			else {
 				JSONObject obj = new JSONObject(response.body());
 				token = obj.getString("token");
-				return new Response(200, obj.getString("isOwner"));
+				isHotelOwner = obj.getBoolean("isOwner");
+				return new Response(200, "");
 			}
 		} catch (URISyntaxException e) {
 			e.printStackTrace();

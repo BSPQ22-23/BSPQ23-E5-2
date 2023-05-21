@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -51,8 +52,9 @@ public class ServerAppService {
 		if(u == null)
 			return null;
 		JSONObject object = new JSONObject();
-		object.put("token", Server.createSession(u));
+		object.put("token", Base64.getEncoder().encodeToString(Server.createSession(u).getBytes()));
 		object.put("isOwner", u.isHotelOwner());
+		System.out.println(object.toString());
 		return object.toString();//TODO Create the token if the user it's succesfully logged in
 	}
 	/**

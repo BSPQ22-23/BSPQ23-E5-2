@@ -35,7 +35,6 @@ public class LoginHandler implements HttpHandler{
     		t.sendResponseHeaders(400, response.length());
     		OutputStream os = t.getResponseBody();
     		os.write(response.getBytes());
-    		System.out.println('o');
     		os.close();
     	}
 		if(token == null) {
@@ -48,7 +47,6 @@ public class LoginHandler implements HttpHandler{
 			return;
 		}
 		l.info("Authorized " + APIUtils.decode(obj.getString("user")));
-		token = Base64.getEncoder().encodeToString(token.getBytes());
 		t.sendResponseHeaders(200, token.length());
 		OutputStream os = t.getResponseBody();
  		os.write(token.getBytes());
