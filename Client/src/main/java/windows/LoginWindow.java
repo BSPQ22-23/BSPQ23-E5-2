@@ -4,7 +4,8 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import remote.ClientController;
+import java.io.IOException;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -14,6 +15,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import language.InternLanguage;
+import remote.ClientController;
+import remote.ServiceLocator;
 
 public class LoginWindow extends JFrame {
 	private static final long serialVersionUID = 9081802356867145951L;
@@ -104,6 +107,12 @@ public class LoginWindow extends JFrame {
     }
 
     public static void main(String[] args) {
-        new LoginWindow();
+    	try {
+			ClientController.setServerHandler(new ServiceLocator("localhost", 8000));
+			new LoginWindow();
+    	} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }

@@ -1,2 +1,1 @@
-cd Client
-mvn install -DskipTests
+mvn install -DskipTests -pl Client
