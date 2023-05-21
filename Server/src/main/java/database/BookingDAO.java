@@ -50,30 +50,30 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
  */
 	@Override
 	public List<Booking> getAll() {
-		 PersistenceManager pm = pmf.getPersistenceManager();
-		    Transaction tx = pm.currentTransaction();
+		PersistenceManager pm = pmf.getPersistenceManager();
+	    Transaction tx = pm.currentTransaction();
 
-		    List<Booking> result = null;
+	    List<Booking> result = null;
 
-		    try {
-		        tx.begin();
+	    try {
+	        tx.begin();
 
-		        Query<Booking> q = pm.newQuery(Booking.class);
-		        result = (List<Booking>) q.executeList();
+	        Query<Booking> q = pm.newQuery(Booking.class);
+	        result = (List<Booking>) q.executeList();
 
-		        tx.commit();
-		    } catch (Exception ex) {
-		        System.out.println("Error: " + ex.getMessage());
-		        ex.printStackTrace();
-		    } finally {
-		        if (tx != null && tx.isActive()) {
-		            tx.rollback();
-		        }
+	        tx.commit();
+	    } catch (Exception ex) {
+	        System.out.println("Error: " + ex.getMessage());
+	        ex.printStackTrace();
+	    } finally {
+	        if (tx != null && tx.isActive()) {
+	            tx.rollback();
+	        }
 
-		        pm.close();
-		    }
+	        pm.close();
+	    }
 
-		    return result;
+	    return result;
 	}
 	
 
