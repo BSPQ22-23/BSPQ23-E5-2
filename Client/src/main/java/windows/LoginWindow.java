@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.concurrent.ExecutionException;
-
 import remote.ClientController;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -18,6 +16,7 @@ import javax.swing.JTextField;
 import language.InternLanguage;
 
 public class LoginWindow extends JFrame {
+	private static final long serialVersionUID = 9081802356867145951L;
 	private JTextField usernameField;
     private JPasswordField passwordField;
     private JCheckBox showPasswordCheckbox;
@@ -52,7 +51,7 @@ public class LoginWindow extends JFrame {
                 try {
                 	if(!username.equals("") && !password.equals("")) {
                 		ClientController.login(username, password);
-                		openMenu(true);
+                		openMenu(ClientController.isHotelOwner());
                 		
                 	} else {
                 		System.out.println(InternLanguage.translateTxt("no_Info"));
@@ -66,7 +65,7 @@ public class LoginWindow extends JFrame {
         JButton registerButton = new JButton(InternLanguage.translateTxt("register"));
         registerButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	RegistrationWindow registrationWindow = new RegistrationWindow();
+            	new RegistrationWindow();
             	closeW();
             }
         });
@@ -105,6 +104,6 @@ public class LoginWindow extends JFrame {
     }
 
     public static void main(String[] args) {
-        LoginWindow loginWindow = new LoginWindow();
+        new LoginWindow();
     }
 }

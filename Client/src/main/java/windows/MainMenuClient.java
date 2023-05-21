@@ -20,7 +20,7 @@ import language.InternLanguage;
 public class MainMenuClient extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 8376278722958811219L;
 	private JLabel welcome, info, info2, info3, info4, info5, warningL, infoSettings;
-    private JButton hotelButton, searchButton, accountButton, contactButton, advSettingsButton, infoButton, searchHotelButton, deleteAccButton, logOutButton, changeDataButton;
+    private JButton hotelButton, searchButton, accountButton, contactButton, advSettingsButton, infoButton, deleteAccButton, logOutButton, changeDataButton;
     private JPanel buttonPanel, welcomePanel, infoPanel, pCenter, settingsPanel;
     private UpperMenu upperMenu;
     
@@ -49,7 +49,6 @@ public class MainMenuClient extends JFrame implements ActionListener {
         contactButton = new JButton(resizeIcon(icon4, 60, 60));
         advSettingsButton = new JButton(resizeIcon(icon5, 60, 60));
         infoButton = new JButton(resizeIcon(icon6, 60, 60));
-        searchHotelButton = new JButton(resizeIcon(icon2, 10, 10));
 
         changeDataButton = new JButton("Change account data");
         deleteAccButton = new JButton("Delete this account");
@@ -168,7 +167,7 @@ public class MainMenuClient extends JFrame implements ActionListener {
 	}
 		
      public static void main(String[] args) {
-         MainMenuClient menuW = new MainMenuClient();
+         new MainMenuClient();
      }
 
 }

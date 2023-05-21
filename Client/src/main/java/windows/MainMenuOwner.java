@@ -16,14 +16,14 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import language.InternLanguage;
 
 public class MainMenuOwner extends JFrame implements ActionListener {
-	 	private JLabel welcome, warningL, infoSettings;
+	private static final long serialVersionUID = 7388889135006913436L;
+		private JLabel welcome, warningL, infoSettings;
 	 	private JTextField hotelName, hotelChain, hotelRooms, hotelCity;
 	    private JButton hotelEditButton, addHotelButton, searchButton, accountButton, deleteAccButton, logOutButton, changeDataButton, submitHotelButton, clearHotelButton;
 	    private JMenuBar menuBar;
@@ -161,7 +161,7 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 				mItem2.setEnabled(true);
 			
 			 } else if (e.getSource() == hotelEditButton) {
-				 HotelEditorWindow hotelEdWindow = new HotelEditorWindow();
+				 new HotelEditorWindow();
 				
 			 } else if (e.getSource() == accountButton) {
 				buttonPanel.setVisible(false);
@@ -170,7 +170,7 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 				mItem2.setEnabled(true);
 			    
 			 } else if (e.getSource() == addHotelButton) {
-				 HotelCreatorWindow hotelWindow = new HotelCreatorWindow();
+				 new HotelCreatorWindow();
 				
 			 } else if (e.getSource() == submitHotelButton) {
 
@@ -195,7 +195,7 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 		}
 		
 		     public static void main(String[] args) {
-		         MainMenuOwner menuOw = new MainMenuOwner();
+		         new MainMenuOwner();
 		     }
 
 }
