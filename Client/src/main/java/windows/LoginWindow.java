@@ -4,12 +4,7 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-<<<<<<< Updated upstream
 import java.io.IOException;
-=======
-import remote.ClientController;
-import remote.ClientController.Response;
->>>>>>> Stashed changes
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -22,6 +17,7 @@ import javax.swing.JTextField;
 
 import language.InternLanguage;
 import remote.ClientController;
+import remote.ClientController.Response;
 import remote.ServiceLocator;
 
 public class LoginWindow extends JFrame {
@@ -64,7 +60,7 @@ public class LoginWindow extends JFrame {
                 	} else {
                 		System.out.println(InternLanguage.translateTxt("no_Info"));
                 	}
-                	if(resp.status == 200) {
+                	if(resp.status == Response.SUCCESS) {
                 		openMenu(ClientController.isHotelOwner());
                 	} else {
                 		messageWrong();
@@ -126,7 +122,6 @@ public class LoginWindow extends JFrame {
 			ClientController.setServerHandler(new ServiceLocator("localhost", 8000));
 			new LoginWindow();
     	} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }
