@@ -1,0 +1,53 @@
+\hypertarget{_register_handler_8java_source}{}\doxysection{Register\+Handler.\+java}
+\label{_register_handler_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Server/src/main/java/api/RegisterHandler.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Server/src/main/java/api/RegisterHandler.java}}
+\mbox{\hyperlink{_register_handler_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00001}00001\ \textcolor{keyword}{package\ }api;}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.io.OutputStream;}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.util.Base64;}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.apache.logging.log4j.LogManager;}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00008}00008\ \textcolor{keyword}{import}\ org.apache.logging.log4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00009}00009\ \textcolor{keyword}{import}\ org.json.JSONException;}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00010}00010\ \textcolor{keyword}{import}\ org.json.JSONObject;}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00012}00012\ \textcolor{keyword}{import}\ com.sun.net.httpserver.HttpExchange;}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00013}00013\ \textcolor{keyword}{import}\ com.sun.net.httpserver.HttpHandler;}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00015}00015\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_user}{User}};}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00016}00016\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacemain}{main}}.\mbox{\hyperlink{classmain_1_1_server_app_service}{ServerAppService}};}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00018}\mbox{\hyperlink{classapi_1_1_register_handler}{00018}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classapi_1_1_register_handler}{RegisterHandler}}\ \textcolor{keyword}{implements}\ HttpHandler\{}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00020}00020\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00021}\mbox{\hyperlink{classapi_1_1_register_handler_a00aaa998815b2144564b8a246cbfad67}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classapi_1_1_register_handler_a00aaa998815b2144564b8a246cbfad67}{handle}}(HttpExchange\ t)\ \textcolor{keywordflow}{throws}\ IOException\ \{}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ Logger\ l\ =\ LogManager.getLogger();}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ l.debug(\textcolor{stringliteral}{"{}▓"{}}.repeat(78)+\textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +\ \textcolor{stringliteral}{"{}\ "{}}.repeat(31)\ +\ \textcolor{stringliteral}{"{}Registering\ user"{}}\ +\ \textcolor{stringliteral}{"{}\ "{}}.repeat(31)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +\ \textcolor{stringliteral}{"{}▓"{}}.repeat(78)+\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ JSONObject\ obj\ =\ \textcolor{keyword}{new}\ JSONObject(\mbox{\hyperlink{classapi_1_1_a_p_i_utils}{APIUtils}}.\mbox{\hyperlink{classapi_1_1_a_p_i_utils_ad81c164fd9464dffb62015ecef9d8ea8}{readBody}}(t));}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ String\ token\ =\ \mbox{\hyperlink{classmain_1_1_server_app_service}{ServerAppService}}.\mbox{\hyperlink{classmain_1_1_server_app_service_a17b3c3c4d1fec7e33773aa2807571ec1}{register}}(\mbox{\hyperlink{classdomain_1_1_user}{User}}.\mbox{\hyperlink{classdomain_1_1_user_ade584de435c4b933addc85fa73be9c70}{fromJSON}}(obj));}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(token\ !=\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Authorized\ "{}}\ +\ \mbox{\hyperlink{classapi_1_1_a_p_i_utils}{APIUtils}}.\mbox{\hyperlink{classapi_1_1_a_p_i_utils_af3e43b1eaa0bd38b63f547306849d45f}{decode}}(obj.getString(\textcolor{stringliteral}{"{}nick"{}})));}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ token\ =Base64.getEncoder().encodeToString(token.getBytes());}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t.sendResponseHeaders(200,\ token.length());}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OutputStream\ os\ =\ t.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.write(token.getBytes());}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ IllegalArgumentException(\textcolor{stringliteral}{"{}Unknown\ error\ occurred"{}});}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{catch}(IllegalArgumentException\ |\ JSONException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Unauthorized:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ String\ response\ =\ e.getMessage();}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ t.sendResponseHeaders(400,\ response.length());}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ OutputStream\ os\ =\ t.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ os.write(response.getBytes());}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_register_handler_8java_source_l00047}00047\ \}}
+
+\end{DoxyCode}

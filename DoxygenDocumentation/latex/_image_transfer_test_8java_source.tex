@@ -1,0 +1,66 @@
+\hypertarget{_image_transfer_test_8java_source}{}\doxysection{Image\+Transfer\+Test.\+java}
+\label{_image_transfer_test_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/test/java/remote/ImageTransferTest.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/test/java/remote/ImageTransferTest.java}}
+\mbox{\hyperlink{_image_transfer_test_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00001}00001\ \textcolor{keyword}{package\ }remote;}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.Assert.assertEquals;}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.Assert.assertTrue;}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.awt.image.BufferedImage;}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.io.File;}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.concurrent.ExecutionException;}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00011}00011\ \textcolor{keyword}{import}\ javax.imageio.ImageIO;}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00013}00013\ \textcolor{keyword}{import}\ org.junit.BeforeClass;}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00014}00014\ \textcolor{keyword}{import}\ org.junit.Test;}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00016}00016\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_guest}{Guest}};}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00017}00017\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}};}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00018}00018\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_room}{Room}};}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00019}00019\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_user}{User}};}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00020}00020\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceremote}{remote}}.\mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_1_1_downloaded_image}{DownloadedImage}};}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00021}00021\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceremote}{remote}}.\mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_1_1_response}{Response}};}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00023}\mbox{\hyperlink{classremote_1_1_image_transfer_test}{00023}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classremote_1_1_image_transfer_test}{ImageTransferTest}}\ \{}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ h;}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00025}00025\ \ \ \ \ @BeforeClass}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00026}\mbox{\hyperlink{classremote_1_1_image_transfer_test_a203fd193ed164d58639aabc218cd3e6b}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classremote_1_1_image_transfer_test_a203fd193ed164d58639aabc218cd3e6b}{setup}}()\ throws\ IOException,\ InterruptedException,\ ExecutionException\ \{}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a88bacc8ec920950b099914d1783d9e8f}{setServerHandler}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{classremote_1_1_service_locator}{ServiceLocator}}(\textcolor{stringliteral}{"{}localhost"{}},\ 8000));}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ hm\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}(}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}hotelManager"{}},\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}AnotherPassword"{}},\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}(\textcolor{stringliteral}{"{}Benjamin"{}},\ \textcolor{stringliteral}{"{}Dover"{}},\ \textcolor{stringliteral}{"{}305MWW"{}},\ 29,\ \textcolor{stringliteral}{"{}Miami,\ Florida"{}}),\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a6c97427df5402630b799800a0c7263fe}{register}}(hm).status\ !=\ Response.SUCCESS)}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_abf6dcb2fcfceda277469080df028603c}{login}}(hm.\mbox{\hyperlink{classdomain_1_1_user_aa1079a5e2c084266988c9568c1de4e56}{getNick}}(),\ hm.\mbox{\hyperlink{classdomain_1_1_user_a82156325603d4e2cb751d184a3ad5b19}{getPassword}}());}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ h\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}(}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Hotel\ Gasteiz"{}},\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Vitoria"{}},}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Muy\ buen\ servicio"{}}}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ h.\mbox{\hyperlink{classdomain_1_1_hotel_a10f77bf7bb9592b58afe1b59d1326540}{addRoom}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_room}{Room}}(100,\ \textcolor{stringliteral}{"{}Single"{}},\ 1,\ 10,\ 50,\ \textcolor{keyword}{null}));}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_aa12be99f64706cbfc85e23c74d8ce9f2}{createHotel}}(h);}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00047}00047\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00048}\mbox{\hyperlink{classremote_1_1_image_transfer_test_af325a660f0f916e3ee1c0e25ade73396}{00048}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classremote_1_1_image_transfer_test_af325a660f0f916e3ee1c0e25ade73396}{testUploadJPG}}()\ throws\ IOException\ \{}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ assertTrue(\textcolor{keyword}{new}\ File(\textcolor{stringliteral}{"{}src/test/resources/icon\_test\_jpg.jpg"{}}).exists());}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ BufferedImage\ bi\ =\ ImageIO.read(\textcolor{keyword}{new}\ File(\textcolor{stringliteral}{"{}src/test/resources/icon\_test\_jpg.jpg"{}}));}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ assertEquals(Response.SUCCESS,\ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a85d121b4ef7988ad5b8d762b0356840e}{uploadImage}}(bi,\ \textcolor{stringliteral}{"{}jpg"{}},\ \textcolor{stringliteral}{"{}hotel/icon/"{}}+h.\mbox{\hyperlink{classdomain_1_1_hotel_adc35ff096bbedc2ec0734ffaa0af68fd}{getId}}()).status);}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ DownloadedImage\ retrieved\ =\ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_ae6d781be2d96c4466bcdd7d0ed52a44b}{downloadImage}}(\textcolor{stringliteral}{"{}hotel/icon/"{}}+h.\mbox{\hyperlink{classdomain_1_1_hotel_adc35ff096bbedc2ec0734ffaa0af68fd}{getId}}(),\ 0);}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}jpg"{}},\ retrieved.format);}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ assertEquals(bi.getHeight(),\ retrieved.image.getHeight());}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ assertEquals(bi.getWidth(),\ retrieved.image.getWidth());}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ File\ f\ =\ \textcolor{keyword}{new}\ File(\textcolor{stringliteral}{"{}test\_client\_"{}}\ +\ retrieved.format\ +\ \textcolor{stringliteral}{"{}."{}}\ +\ retrieved.format);}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ ImageIO.write(retrieved.image,\ retrieved.format,\ f);}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_image_transfer_test_8java_source_l00060}00060\ \}}
+
+\end{DoxyCode}

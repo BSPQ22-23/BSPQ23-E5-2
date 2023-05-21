@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['handle_0',['handle',['../classapi_1_1hotel_1_1_hotel_creation_handler.html#a56692109fccbe95265b5562ce6942207',1,'api.hotel.HotelCreationHandler.handle()'],['../classapi_1_1resources_1_1_image_upload_handler.html#a6d44b42cb80051ba0cc454f919fd57e1',1,'api.resources.ImageUploadHandler.handle()'],['../classapi_1_1resources_1_1_image_download_handler.html#a408dc293df7a2e5df428f2562b9e7db1',1,'api.resources.ImageDownloadHandler.handle()'],['../classapi_1_1reservation_1_1_reservation_getter_handler.html#aeea257f8f85dd8c1cbf64655442d6478',1,'api.reservation.ReservationGetterHandler.handle()'],['../classapi_1_1reservation_1_1_reservation_edit_handler.html#a6acad8059151bd8d3a081c93faf643a9',1,'api.reservation.ReservationEditHandler.handle()'],['../classapi_1_1reservation_1_1_reservation_creation_handler.html#a67fe572f870ad8506132cdd0dc376d4c',1,'api.reservation.ReservationCreationHandler.handle()'],['../classapi_1_1_register_handler.html#a00aaa998815b2144564b8a246cbfad67',1,'api.RegisterHandler.handle()'],['../classapi_1_1_login_handler.html#a6c0ac0faf66a17273ec2949b7c4f9523',1,'api.LoginHandler.handle()'],['../classapi_1_1hotel_1_1_hotel_getter_handler.html#a078eae37b8681b5483d305f026393c51',1,'api.hotel.HotelGetterHandler.handle()']]],
+  ['hasreservationinroomondate_1',['hasReservationInRoomOnDate',['../classdatabase_1_1_booking_d_a_o.html#a3e295d6486d892e4ae65290af3537587',1,'database::BookingDAO']]],
+  ['hotel_2',['Hotel',['../classdomain_1_1_hotel.html',1,'domain.Hotel'],['../classdomain_1_1_hotel.html#a1f9fb56b7412449bc8999be6b8839f22',1,'domain.Hotel.Hotel(int id, String name, String city, String info)'],['../classdomain_1_1_hotel.html#a5df8e9dc4c636691da8a719f2d3489cb',1,'domain.Hotel.Hotel(int id, String name, String city, String info, BufferedImage icon, String iconFormat)'],['../classdomain_1_1_hotel.html#afed103132e778b773bf9edb68d2dca43',1,'domain.Hotel.Hotel(Hotel h)'],['../classdomain_1_1_hotel.html#ae94b617daf98135b32c6b33ad38fa1ce',1,'domain.Hotel.Hotel(String name, String city, String info, Guest owner)']]],
+  ['hotel_20manager_20tool_3',['Hotel Manager Tool',['../md__c___users_andon__documents__git_hub__b_s_p_q23__e5_2__r_e_a_d_m_e.html',1,'']]],
+  ['hotel_2ejava_4',['Hotel.java',['../_client_2src_2main_2java_2domain_2_hotel_8java.html',1,'(Global Namespace)'],['../_server_2src_2main_2java_2domain_2_hotel_8java.html',1,'(Global Namespace)']]],
+  ['hotel_5ficon_5',['HOTEL_ICON',['../enumdomain_1_1_image_1_1_image_type.html#a037ab7ff65ec45222ee665d581e234a7',1,'domain::Image::ImageType']]],
+  ['hotelapitest_6',['HotelAPITest',['../classremote_1_1_hotel_a_p_i_test.html',1,'remote']]],
+  ['hotelapitest_2ejava_7',['HotelAPITest.java',['../_hotel_a_p_i_test_8java.html',1,'']]],
+  ['hotelbrowserwindow_8',['HotelBrowserWindow',['../classwindows_1_1_hotel_browser_window.html#a0f5edd6f982d73270994520794eddce9',1,'windows.HotelBrowserWindow.HotelBrowserWindow()'],['../classwindows_1_1_hotel_browser_window.html',1,'windows.HotelBrowserWindow']]],
+  ['hotelbrowserwindow_2ejava_9',['HotelBrowserWindow.java',['../_hotel_browser_window_8java.html',1,'']]],
+  ['hotelcreationhandler_10',['HotelCreationHandler',['../classapi_1_1hotel_1_1_hotel_creation_handler.html',1,'api::hotel']]],
+  ['hotelcreationhandler_2ejava_11',['HotelCreationHandler.java',['../_hotel_creation_handler_8java.html',1,'']]],
+  ['hotelcreatorwindow_12',['HotelCreatorWindow',['../classwindows_1_1_hotel_creator_window.html#a1b922f9d1fed0d7fbed3786dbda25f41',1,'windows.HotelCreatorWindow.HotelCreatorWindow()'],['../classwindows_1_1_hotel_creator_window.html',1,'windows.HotelCreatorWindow']]],
+  ['hotelcreatorwindow_2ejava_13',['HotelCreatorWindow.java',['../_hotel_creator_window_8java.html',1,'']]],
+  ['hoteldao_14',['HotelDAO',['../classdatabase_1_1_hotel_d_a_o.html',1,'database']]],
+  ['hoteldao_2ejava_15',['HotelDAO.java',['../_hotel_d_a_o_8java.html',1,'']]],
+  ['hoteldaotest_16',['HotelDAOTest',['../classdatabase_1_1_hotel_d_a_o_test.html',1,'database']]],
+  ['hoteldaotest_2ejava_17',['HotelDAOTest.java',['../_hotel_d_a_o_test_8java.html',1,'']]],
+  ['hoteleditorwindow_18',['HotelEditorWindow',['../classwindows_1_1_hotel_editor_window.html#a5331fa13314f0aa42c6083be7390a346',1,'windows.HotelEditorWindow.HotelEditorWindow()'],['../classwindows_1_1_hotel_editor_window.html',1,'windows.HotelEditorWindow']]],
+  ['hoteleditorwindow_2ejava_19',['HotelEditorWindow.java',['../_hotel_editor_window_8java.html',1,'']]],
+  ['hotelgetterhandler_20',['HotelGetterHandler',['../classapi_1_1hotel_1_1_hotel_getter_handler.html',1,'api::hotel']]],
+  ['hotelgetterhandler_2ejava_21',['HotelGetterHandler.java',['../_hotel_getter_handler_8java.html',1,'']]]
+];

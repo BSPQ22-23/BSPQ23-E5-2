@@ -1,0 +1,140 @@
+\hypertarget{classdatabase_1_1_booking_d_a_o}{}\doxysection{database.\+Booking\+DAO Class Reference}
+\label{classdatabase_1_1_booking_d_a_o}\index{database.BookingDAO@{database.BookingDAO}}
+Inheritance diagram for database.\+Booking\+DAO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdatabase_1_1_booking_d_a_o}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1_booking_d_a_o_a2ea246db31ace3d964ffb2e3531d54c3}{save}} (\mbox{\hyperlink{classdomain_1_1_booking}{Booking}} object)
+\item 
+void \mbox{\hyperlink{classdatabase_1_1_booking_d_a_o_a6051c6d63160cebe758e2eed978e7b9d}{delete}} (\mbox{\hyperlink{classdomain_1_1_booking}{Booking}} object)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}} $>$ \mbox{\hyperlink{classdatabase_1_1_booking_d_a_o_abc7c4acbf94525ebc21062ffdb04b009}{get\+All}} ()
+\item 
+\mbox{\hyperlink{classdomain_1_1_booking}{Booking}} \mbox{\hyperlink{classdatabase_1_1_booking_d_a_o_a94599fa08d6a8e3762bf4c78d92c42fb}{find}} (String param)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}} $>$ \mbox{\hyperlink{classdatabase_1_1_booking_d_a_o_a9658d731482299f8dcde292d6f0da26c}{get\+By\+Author}} (\mbox{\hyperlink{classdomain_1_1_guest}{Guest}} author)
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1_booking_d_a_o_a3e295d6486d892e4ae65290af3537587}{has\+Reservation\+In\+Room\+On\+Date}} (\mbox{\hyperlink{classdomain_1_1_room}{Room}} room, Date date)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdatabase_1_1_data_access_object_base}{database.\+Data\+Access\+Object\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_ad9f80ee38bb7503be53ebea31f016a27}{delete\+Object}} (Object object)
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a8c464a43b69b5f79e0f5af40b445d3d4}{save\+Object}} (Object object)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object}{database.\+IData\+Access\+Object$<$ Booking $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object_a91801c618f264f262cd634e12841763d}{save}} (Domain\+Object object)
+\item 
+void \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object_a8fe2dfc5b27b13319f5c17e5c44f1cb7}{delete}} (Domain\+Object object)
+\item 
+List$<$ Domain\+Object $>$ \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object_a65174d43c0bfb7dcbf89a96fcdb91dbd}{get\+All}} ()
+\item 
+Domain\+Object \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object_a3e55c4668e0eb540ef8d0b3511b0b797}{find}} (String param)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classdatabase_1_1_booking_d_a_o}{Booking\+DAO}} \mbox{\hyperlink{classdatabase_1_1_booking_d_a_o_a2e956df355af937061c1942ae4014c00}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classdatabase_1_1_data_access_object_base}{database.\+Data\+Access\+Object\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static Persistence\+Manager\+Factory \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}} = JDOHelper.\+get\+Persistence\+Manager\+Factory(\char`\"{}datanucleus.\+properties\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+DAO for Booking class \begin{DoxyAuthor}{Author}
+maitanegarcia 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00022}{22}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_a6051c6d63160cebe758e2eed978e7b9d}\label{classdatabase_1_1_booking_d_a_o_a6051c6d63160cebe758e2eed978e7b9d}} 
+\index{database.BookingDAO@{database.BookingDAO}!delete@{delete}}
+\index{delete@{delete}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily void database.\+Booking\+DAO.\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_booking}{Booking}}}]{object }\end{DoxyParamCaption})}
+
+Thus method deletes a reservation 
+
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00043}{43}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_a94599fa08d6a8e3762bf4c78d92c42fb}\label{classdatabase_1_1_booking_d_a_o_a94599fa08d6a8e3762bf4c78d92c42fb}} 
+\index{database.BookingDAO@{database.BookingDAO}!find@{find}}
+\index{find@{find}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdomain_1_1_booking}{Booking}} database.\+Booking\+DAO.\+find (\begin{DoxyParamCaption}\item[{String}]{param }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00081}{81}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_abc7c4acbf94525ebc21062ffdb04b009}\label{classdatabase_1_1_booking_d_a_o_abc7c4acbf94525ebc21062ffdb04b009}} 
+\index{database.BookingDAO@{database.BookingDAO}!getAll@{getAll}}
+\index{getAll@{getAll}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}} $>$ database.\+Booking\+DAO.\+get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method gets a list of all the reservations 
+
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00052}{52}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_a9658d731482299f8dcde292d6f0da26c}\label{classdatabase_1_1_booking_d_a_o_a9658d731482299f8dcde292d6f0da26c}} 
+\index{database.BookingDAO@{database.BookingDAO}!getByAuthor@{getByAuthor}}
+\index{getByAuthor@{getByAuthor}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{getByAuthor()}{getByAuthor()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}} $>$ database.\+Booking\+DAO.\+get\+By\+Author (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_guest}{Guest}}}]{author }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00128}{128}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_a2e956df355af937061c1942ae4014c00}\label{classdatabase_1_1_booking_d_a_o_a2e956df355af937061c1942ae4014c00}} 
+\index{database.BookingDAO@{database.BookingDAO}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classdatabase_1_1_booking_d_a_o}{Booking\+DAO}} database.\+Booking\+DAO.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00028}{28}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_a3e295d6486d892e4ae65290af3537587}\label{classdatabase_1_1_booking_d_a_o_a3e295d6486d892e4ae65290af3537587}} 
+\index{database.BookingDAO@{database.BookingDAO}!hasReservationInRoomOnDate@{hasReservationInRoomOnDate}}
+\index{hasReservationInRoomOnDate@{hasReservationInRoomOnDate}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{hasReservationInRoomOnDate()}{hasReservationInRoomOnDate()}}
+{\footnotesize\ttfamily boolean database.\+Booking\+DAO.\+has\+Reservation\+In\+Room\+On\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_room}{Room}}}]{room,  }\item[{Date}]{date }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00175}{175}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_a2ea246db31ace3d964ffb2e3531d54c3}\label{classdatabase_1_1_booking_d_a_o_a2ea246db31ace3d964ffb2e3531d54c3}} 
+\index{database.BookingDAO@{database.BookingDAO}!save@{save}}
+\index{save@{save}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily boolean database.\+Booking\+DAO.\+save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_booking}{Booking}}}]{object }\end{DoxyParamCaption})}
+
+This method saves a reservation 
+
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00035}{35}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/andon/\+Documents/\+Git\+Hub/\+BSPQ23-\/\+E5-\/2/\+Server/src/main/java/database/\mbox{\hyperlink{_booking_d_a_o_8java}{Booking\+DAO.\+java}}\end{DoxyCompactItemize}

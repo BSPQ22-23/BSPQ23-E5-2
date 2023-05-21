@@ -1,0 +1,66 @@
+\hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source}{}\doxysection{Service.\+java}
+\label{_server_2src_2main_2java_2domain_2_service_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Server/src/main/java/domain/Service.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Server/src/main/java/domain/Service.java}}
+\mbox{\hyperlink{_server_2src_2main_2java_2domain_2_service_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00003}00003\ \textcolor{keyword}{import}\ org.json.JSONObject;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00005}00005\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceapi}{api}}.\mbox{\hyperlink{classapi_1_1_a_p_i_utils}{APIUtils}};}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00007}00007\ \textcolor{keyword}{import}\ javax.jdo.annotations.PersistenceCapable;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00008}00008\ \textcolor{keyword}{import}\ javax.jdo.annotations.Persistent;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00010}00010\ @PersistenceCapable(detachable\ =\ \textcolor{stringliteral}{"{}true"{}})}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00011}00011\ public\ class\ Service\ \{}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{private}\ String\ name;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{private}\ String\ description;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{double}\ price;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00016}00016\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00017}00017\ \ \ \ \ @Persistent(defaultFetchGroup\ =\ \textcolor{stringliteral}{"{}true"{}},\ dependent=\textcolor{stringliteral}{"{}false"{}})}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00018}00018\ \ \ \ \ private\ Hotel\ hotel;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00020}\mbox{\hyperlink{classdomain_1_1_service_a5f7e08ab13e18a5d7b032bd7daee5a4b}{00020}}\ \ \ \ \ public\ static\ \mbox{\hyperlink{classdomain_1_1_service}{Service}}\ fromJSON(JSONObject\ \textcolor{keywordtype}{object})\ \{}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_service}{Service}}(}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_a_p_i_utils}{APIUtils}}.\mbox{\hyperlink{classremote_1_1_a_p_i_utils_ac29a25b9e97ced828f0c4606e9fd6d2b}{decode}}(\textcolor{keywordtype}{object}.getString(\textcolor{stringliteral}{"{}name"{}})),}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_a_p_i_utils}{APIUtils}}.\mbox{\hyperlink{classremote_1_1_a_p_i_utils_ac29a25b9e97ced828f0c4606e9fd6d2b}{decode}}(\textcolor{keywordtype}{object}.getString(\textcolor{stringliteral}{"{}description"{}})),}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{object}.getDouble(\textcolor{stringliteral}{"{}price"{}})}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00028}\mbox{\hyperlink{classdomain_1_1_service_aaedd35d090b3fa6400ed511e3b001f59}{00028}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1_service_aaedd35d090b3fa6400ed511e3b001f59}{Service}}(String\ name,\ String\ description,\ \textcolor{keywordtype}{double}\ price)\ \{}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ this.description\ =\ description;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ this.price\ =\ price;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00034}\mbox{\hyperlink{classdomain_1_1_service_a92d552765bde6007830319f6c569809d}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ \mbox{\hyperlink{classdomain_1_1_service_a92d552765bde6007830319f6c569809d}{getHotel}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hotel;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00037}\mbox{\hyperlink{classdomain_1_1_service_a8d935c6f22c480b44f6f8aac98385a8d}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classdomain_1_1_service_a8d935c6f22c480b44f6f8aac98385a8d}{getName}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00041}\mbox{\hyperlink{classdomain_1_1_service_a1fde2f8356ab66bd3d643478e8355ddb}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_service_a1fde2f8356ab66bd3d643478e8355ddb}{setName}}(String\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ this.name\ =\ name;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00045}\mbox{\hyperlink{classdomain_1_1_service_a0d150b94e19026246efcd90a818eb0d4}{00045}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classdomain_1_1_service_a0d150b94e19026246efcd90a818eb0d4}{getDescription}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ description;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00049}\mbox{\hyperlink{classdomain_1_1_service_a3a9f3627db8d4488b9972d971f1f76d9}{00049}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_service_a3a9f3627db8d4488b9972d971f1f76d9}{setDescription}}(String\ description)\ \{}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ this.description\ =\ description;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00053}\mbox{\hyperlink{classdomain_1_1_service_add84c3eee6247c151778129fd7bc3fe7}{00053}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classdomain_1_1_service_add84c3eee6247c151778129fd7bc3fe7}{getPrice}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ price;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00057}\mbox{\hyperlink{classdomain_1_1_service_a2f8a83c30fd20cd2b2ae007d770106c4}{00057}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_service_a2f8a83c30fd20cd2b2ae007d770106c4}{setPrice}}(\textcolor{keywordtype}{double}\ price)\ \{}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ this.price\ =\ price;}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_2src_2main_2java_2domain_2_service_8java_source_l00060}00060\ \}}
+
+\end{DoxyCode}

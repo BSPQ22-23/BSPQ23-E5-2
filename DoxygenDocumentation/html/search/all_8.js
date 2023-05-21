@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['idataaccessobject_0',['IDataAccessObject',['../interfacedatabase_1_1_i_data_access_object.html',1,'database']]],
+  ['idataaccessobject_2ejava_1',['IDataAccessObject.java',['../_i_data_access_object_8java.html',1,'']]],
+  ['idataaccessobject_3c_20booking_20_3e_2',['IDataAccessObject&lt; Booking &gt;',['../interfacedatabase_1_1_i_data_access_object.html',1,'database']]],
+  ['idataaccessobject_3c_20guest_20_3e_3',['IDataAccessObject&lt; Guest &gt;',['../interfacedatabase_1_1_i_data_access_object.html',1,'database']]],
+  ['idataaccessobject_3c_20hotel_20_3e_4',['IDataAccessObject&lt; Hotel &gt;',['../interfacedatabase_1_1_i_data_access_object.html',1,'database']]],
+  ['idataaccessobject_3c_20image_20_3e_5',['IDataAccessObject&lt; Image &gt;',['../interfacedatabase_1_1_i_data_access_object.html',1,'database']]],
+  ['idataaccessobject_3c_20user_20_3e_6',['IDataAccessObject&lt; User &gt;',['../interfacedatabase_1_1_i_data_access_object.html',1,'database']]],
+  ['image_7',['Image',['../classdomain_1_1_image.html',1,'domain.Image'],['../classdomain_1_1_image.html#a214b822f3b51975cca93a03e814ec4bd',1,'domain.Image.Image()']]],
+  ['image_2ejava_8',['Image.java',['../_image_8java.html',1,'']]],
+  ['imagedao_9',['ImageDAO',['../classdatabase_1_1_image_d_a_o.html',1,'database']]],
+  ['imagedao_2ejava_10',['ImageDAO.java',['../_image_d_a_o_8java.html',1,'']]],
+  ['imagedownloadhandler_11',['ImageDownloadHandler',['../classapi_1_1resources_1_1_image_download_handler.html',1,'api::resources']]],
+  ['imagedownloadhandler_2ejava_12',['ImageDownloadHandler.java',['../_image_download_handler_8java.html',1,'']]],
+  ['imagetransfertest_13',['ImageTransferTest',['../classremote_1_1_image_transfer_test.html',1,'remote']]],
+  ['imagetransfertest_2ejava_14',['ImageTransferTest.java',['../_image_transfer_test_8java.html',1,'']]],
+  ['imagetype_15',['ImageType',['../enumdomain_1_1_image_1_1_image_type.html',1,'domain::Image']]],
+  ['imageuploadhandler_16',['ImageUploadHandler',['../classapi_1_1resources_1_1_image_upload_handler.html',1,'api::resources']]],
+  ['imageuploadhandler_2ejava_17',['ImageUploadHandler.java',['../_image_upload_handler_8java.html',1,'']]],
+  ['initdb_18',['initDB',['../classdb_1_1_data_base.html#ae6e28d534a08d31c8d0f66b1260bea48',1,'db::DataBase']]],
+  ['internlanguage_19',['InternLanguage',['../classlanguage_1_1_intern_language.html',1,'language']]],
+  ['internlanguage_2ejava_20',['InternLanguage.java',['../_intern_language_8java.html',1,'']]],
+  ['internlanguagetest_21',['InternLanguageTest',['../classlanguage_1_1_intern_language_test.html',1,'language']]],
+  ['internlanguagetest_2ejava_22',['InternLanguageTest.java',['../_intern_language_test_8java.html',1,'']]],
+  ['ishotelowner_23',['isHotelOwner',['../classdomain_1_1_user.html#ad7b88a71f5493c86d66e70135becd63e',1,'domain.User.isHotelOwner()'],['../classdomain_1_1_user.html#ad7b88a71f5493c86d66e70135becd63e',1,'domain.User.isHotelOwner()']]]
+];

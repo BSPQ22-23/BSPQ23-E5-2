@@ -16,6 +16,7 @@
 		<!--config.files.dir>${project.basedir}/resources</config.files.dir-->
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<doxygen.config.file>${basedir}/src/main/resources/Doxyfile</doxygen.config.file>
 	</properties>
 	<dependencies>
 		<dependency>

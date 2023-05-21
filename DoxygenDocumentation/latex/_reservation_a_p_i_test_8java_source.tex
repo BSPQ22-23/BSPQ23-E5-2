@@ -1,0 +1,109 @@
+\hypertarget{_reservation_a_p_i_test_8java_source}{}\doxysection{Reservation\+APITest.\+java}
+\label{_reservation_a_p_i_test_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/test/java/remote/ReservationAPITest.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/test/java/remote/ReservationAPITest.java}}
+\mbox{\hyperlink{_reservation_a_p_i_test_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00001}00001\ \textcolor{keyword}{package\ }remote;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.Assert.assertEquals;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00004}00004\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.Assert.assertThrows;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.util.Calendar;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.util.Date;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.util.concurrent.ExecutionException;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.concurrent.TimeUnit;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00013}00013\ \textcolor{keyword}{import}\ org.junit.Before;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00014}00014\ \textcolor{keyword}{import}\ org.junit.Test;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00016}00016\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_booking}{Booking}};}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00017}00017\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_guest}{Guest}};}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00018}00018\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}};}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00019}00019\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_room}{Room}};}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00020}00020\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_user}{User}};}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00021}00021\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceremote}{remote}}.\mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_1_1_response}{Response}};}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00023}\mbox{\hyperlink{classremote_1_1_reservation_a_p_i_test}{00023}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classremote_1_1_reservation_a_p_i_test}{ReservationAPITest}}\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00025}00025\ \ \ \ \ @Before}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00026}\mbox{\hyperlink{classremote_1_1_reservation_a_p_i_test_a715a1db564edd41fe7bc7626926bd9ef}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classremote_1_1_reservation_a_p_i_test_a715a1db564edd41fe7bc7626926bd9ef}{setup}}()\ throws\ IOException,\ InterruptedException,\ ExecutionException\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a88bacc8ec920950b099914d1783d9e8f}{setServerHandler}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{classremote_1_1_service_locator}{ServiceLocator}}(\textcolor{stringliteral}{"{}localhost"{}},\ 8000));}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ hm\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}(}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}hotelManager"{}},\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}AnotherPassword"{}},\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}(\textcolor{stringliteral}{"{}Benjamin"{}},\ \textcolor{stringliteral}{"{}Dover"{}},\ \textcolor{stringliteral}{"{}305MWW"{}},\ 29,\ \textcolor{stringliteral}{"{}Miami,\ Florida"{}}),\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{true}}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a6c97427df5402630b799800a0c7263fe}{register}}(hm).status\ !=\ Response.SUCCESS)}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_abf6dcb2fcfceda277469080df028603c}{login}}(hm.\mbox{\hyperlink{classdomain_1_1_user_aa1079a5e2c084266988c9568c1de4e56}{getNick}}(),\ hm.\mbox{\hyperlink{classdomain_1_1_user_a82156325603d4e2cb751d184a3ad5b19}{getPassword}}());}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00037}00037\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00038}\mbox{\hyperlink{classremote_1_1_reservation_a_p_i_test_a3811364be037b7bf0488dd964b9c504b}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classremote_1_1_reservation_a_p_i_test_a3811364be037b7bf0488dd964b9c504b}{testReservation}}()\ throws\ InterruptedException,\ ExecutionException\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ h\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}(0,\ \textcolor{stringliteral}{"{}Hotel\ Overlook"{}},\ \textcolor{stringliteral}{"{}Oregón"{}},\ \textcolor{stringliteral}{"{}Increible"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ h.\mbox{\hyperlink{classdomain_1_1_hotel_a10f77bf7bb9592b58afe1b59d1326540}{addRoom}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_room}{Room}}(100,\ \textcolor{stringliteral}{"{}Double"{}},\ 2,\ 15,\ 300,\ h));}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_aa12be99f64706cbfc85e23c74d8ce9f2}{createHotel}}(h);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}}\ b\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}}(}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ 2,\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Date(System.currentTimeMillis()),\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Date(System.currentTimeMillis()\ +\ TimeUnit.DAYS.toMillis(3)),\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ h.\mbox{\hyperlink{classdomain_1_1_hotel_af0b0bb65c3baade4a15959bf5bd459bf}{getRooms}}().get(0),\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ List.of(}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}(\textcolor{stringliteral}{"{}Erik"{}},\ \textcolor{stringliteral}{"{}Torsten"{}},\ \textcolor{stringliteral}{"{}12314"{}},\ 38,\ \textcolor{stringliteral}{"{}Estocolmo"{}}),}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}(\textcolor{stringliteral}{"{}Tayane"{}},\ \textcolor{stringliteral}{"{}Alves"{}},\ \textcolor{stringliteral}{"{}987654321"{}},\ 27,\ \textcolor{stringliteral}{"{}Salvador"{}})}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Create\ reservation\ +\ getReservations}}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ assertEquals(Response.SUCCESS,\ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a75cfb0a18ff05582eb47297359513033}{createReservation}}(b).status);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ List<Booking>\ result\ =\ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a5933499df88d02b793cc880d8344ce67}{getReservations}}();}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ assertEquals(1,\ result.size());}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ b\ =\ result.get(0);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Modify\ reservation}}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ b\ =\ result.get(0);\textcolor{comment}{//Get\ the\ id\ assigned\ by\ the\ server}}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ Calendar\ c\ =\ Calendar.getInstance();}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ c.setTimeInMillis(System.currentTimeMillis());}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ c.add(Calendar.DATE,\ 1);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ c.set(Calendar.HOUR\_OF\_DAY,\ 0);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ c.set(Calendar.MINUTE,\ 0);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ c.set(Calendar.SECOND,\ 0);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ c.set(Calendar.MILLISECOND,\ 0);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ Date\ newDate\ =\ c.getTime();}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ b.\mbox{\hyperlink{classdomain_1_1_booking_a9ba2f6b76abccd726470bc41f3f6e6da}{setCheckinDate}}(newDate);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_ab076f08e859353f90c152cdc2d2edd2f}{editReservation}}(b);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ Date\ newDateOut\ =\ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a5551f9983c3eb5a169c4a5557308c934}{getReservation}}(b.\mbox{\hyperlink{classdomain_1_1_booking_a27bbd4804a17519ba7ce0a32f107df89}{getId}}()).\mbox{\hyperlink{classdomain_1_1_booking_a79d6e0942746ee2618b3db89aeca7a4b}{getCheckinDate}}();}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ System.out.println(newDate);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ System.out.println(newDateOut);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ assertEquals(newDate.getTime(),\ newDateOut.getTime());}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Authorized\ use\ of\ getReservationsByHotel}}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ assertEquals(1,\ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a5933499df88d02b793cc880d8344ce67}{getReservations}}(b.\mbox{\hyperlink{classdomain_1_1_booking_af634dbd4e67cbd476b49e34a6865f248}{getRoom}}().\mbox{\hyperlink{classdomain_1_1_room_a5e227ed2a1f3f5c1e26e3410585902ed}{getHotel}}()).size());}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a6c97427df5402630b799800a0c7263fe}{register}}(}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}(}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}OriginalNick"{}},\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ASecurePassword"{}},}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}(}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}This\ is\ a\ name"{}},\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}This\ is\ a\ surname"{}},\ \ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}123456789J"{}},\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10,\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}A\ city\ somewhere"{}}\ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false}}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ ).status\ !=\ Response.SUCCESS)}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_abf6dcb2fcfceda277469080df028603c}{login}}(\textcolor{stringliteral}{"{}OriginalNick"{}},\ \textcolor{stringliteral}{"{}ASecurePassword"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Unauthorized\ use\ of\ getReservationsByHotel}}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}}\ \_b\ =\ b;}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ Response\ r\ =\ assertThrows(Response.class,\ ()\ -\/>\ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a5933499df88d02b793cc880d8344ce67}{getReservations}}(\_b.\mbox{\hyperlink{classdomain_1_1_booking_af634dbd4e67cbd476b49e34a6865f248}{getRoom}}().\mbox{\hyperlink{classdomain_1_1_room_a5e227ed2a1f3f5c1e26e3410585902ed}{getHotel}}()));}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ assertEquals(Response.UNATHORIZED,\ r.status);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Delete\ of\ reservation}}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a14c9c184c4edbdae2beba37b319ecee8}{deleteReservation}}(b);}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ assertEquals(0,\ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a5933499df88d02b793cc880d8344ce67}{getReservations}}().size());}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reservation_a_p_i_test_8java_source_l00103}00103\ \}}
+
+\end{DoxyCode}

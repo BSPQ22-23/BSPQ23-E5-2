@@ -1,0 +1,67 @@
+\hypertarget{_guest_d_a_o_8java_source}{}\doxysection{Guest\+DAO.\+java}
+\label{_guest_d_a_o_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Server/src/main/java/database/GuestDAO.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Server/src/main/java/database/GuestDAO.java}}
+\mbox{\hyperlink{_guest_d_a_o_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00001}00001\ \textcolor{keyword}{package\ }database;}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00005}00005\ \textcolor{keyword}{import}\ javax.jdo.PersistenceManager;}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00006}00006\ \textcolor{keyword}{import}\ javax.jdo.Query;}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00007}00007\ \textcolor{keyword}{import}\ javax.jdo.Transaction;}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00009}00009\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_guest}{Guest}};}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00016}\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{GuestDAO}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base}{DataAccessObjectBase}}\ implements\ \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object}{IDataAccessObject}}<Guest>\{}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{GuestDAO}}\ INSTANCE\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{GuestDAO}}();}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00018}\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a998f128084d9711e8796f2ad728fef88}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{GuestDAO}}\ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a998f128084d9711e8796f2ad728fef88}{getInstance}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ INSTANCE;}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{GuestDAO}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00022}00022\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00023}\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a40f46ffa59f5462be58bf1658a6e6342}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a40f46ffa59f5462be58bf1658a6e6342}{save}}(\mbox{\hyperlink{classdomain_1_1_guest}{Guest}}\ \textcolor{keywordtype}{object})\ \{}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a8c464a43b69b5f79e0f5af40b445d3d4}{saveObject}}(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00028}00028\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00029}\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a93bb00a885b912cda6d6f3296a1fe012}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a93bb00a885b912cda6d6f3296a1fe012}{delete}}(\mbox{\hyperlink{classdomain_1_1_guest}{Guest}}\ \textcolor{keywordtype}{object})\ \{}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_ad9f80ee38bb7503be53ebea31f016a27}{deleteObject}}(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00034}00034\ \ \ \ \ @SuppressWarnings(\textcolor{stringliteral}{"{}unchecked"{}})}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00035}00035\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00036}\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a0ea4516af467294e62987ef207a88f52}{00036}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Guest>\ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a0ea4516af467294e62987ef207a88f52}{getAll}}()\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ Query<Guest>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_guest}{Guest}}.class);}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (List<Guest>)q.execute(20);}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00042}00042\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00043}\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a4c334d254cd037376c2feebacbfd3e88}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}\ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a4c334d254cd037376c2feebacbfd3e88}{find}}(String\ dni)\ \{}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ Transaction\ tx\ =\ pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ tx.begin();}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ Query<Guest>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_guest}{Guest}}.class,\ \textcolor{stringliteral}{"{}dni\ ==\ '"{}}\ +\ dni.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}})+\textcolor{stringliteral}{"{}'"{}});}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ q.setUnique(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}\ result\ =\ \ (\mbox{\hyperlink{classdomain_1_1_guest}{Guest}})q.execute();}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ tx.commit();}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tx\ !=\ \textcolor{keyword}{null}\ \&\&\ tx.isActive())\ \{}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ pm.close();}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00059}00059\ \ \ \ \ @SuppressWarnings(\textcolor{stringliteral}{"{}unchecked"{}})}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00060}\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a0d066952e6668010d2fb0b23d2fa6f7e}{00060}}\ \ \ \ \ public\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a0d066952e6668010d2fb0b23d2fa6f7e}{exists}}(String\ dni)\ \{}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ Query<Guest>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_guest}{Guest}}.class,\ \textcolor{stringliteral}{"{}dni\ ==\ '"{}}\ +\ dni.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}})+\textcolor{stringliteral}{"{}'"{}});}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((List<Guest>)q.execute(20)).size()\ !=\ 0;}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00065}00065\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_guest_d_a_o_8java_source_l00066}00066\ \}}
+
+\end{DoxyCode}

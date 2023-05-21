@@ -1,0 +1,110 @@
+\hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source}{}\doxysection{Room.\+java}
+\label{_client_2src_2main_2java_2domain_2_room_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/main/java/domain/Room.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/main/java/domain/Room.java}}
+\mbox{\hyperlink{_client_2src_2main_2java_2domain_2_room_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00006}00006\ \textcolor{keyword}{import}\ org.json.JSONObject;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00008}00008\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceremote}{remote}}.\mbox{\hyperlink{classremote_1_1_a_p_i_utils}{APIUtils}};}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00010}\mbox{\hyperlink{classdomain_1_1_room}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1_room}{Room}}\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ roomNumber;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{private}\ String\ type;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ numMaxGuests;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ spaceInMeters;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{float}\ prize;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ List<Booking>\ bookings;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ hotel;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00019}\mbox{\hyperlink{classdomain_1_1_room_a10ab410864b630a0e46ce7dff224fb3d}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classdomain_1_1_room}{Room}}\ \mbox{\hyperlink{classdomain_1_1_room_a10ab410864b630a0e46ce7dff224fb3d}{fromJSON}}(JSONObject\ \textcolor{keywordtype}{object})\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_room}{Room}}\ res\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_room}{Room}}(}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{object}.getInt(\textcolor{stringliteral}{"{}roomNumber"{}}),\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_a_p_i_utils}{APIUtils}}.\mbox{\hyperlink{classremote_1_1_a_p_i_utils_ac29a25b9e97ced828f0c4606e9fd6d2b}{decode}}(\textcolor{keywordtype}{object}.getString(\textcolor{stringliteral}{"{}type"{}})),}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{object}.getInt(\textcolor{stringliteral}{"{}numMaxGuests"{}}),}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{object}.getInt(\textcolor{stringliteral}{"{}spaceInMeters"{}}),}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{object}.getFloat(\textcolor{stringliteral}{"{}prize"{}}),}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}.\mbox{\hyperlink{classdomain_1_1_hotel_a6bcddccbddbfaa74e5d88704f178d663}{fromJSON}}(\textcolor{keywordtype}{object}.getJSONObject(\textcolor{stringliteral}{"{}hotel"{}}))}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\textcolor{keywordtype}{object}.keySet().contains(\textcolor{stringliteral}{"{}bookings"{}}))}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Object\ o\ :\ \textcolor{keywordtype}{object}.getJSONArray(\textcolor{stringliteral}{"{}bookings"{}}))}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res.\mbox{\hyperlink{classdomain_1_1_room_ad067cd69d6403851b727cab6c9029c81}{addBooking}}(\mbox{\hyperlink{classdomain_1_1_booking}{Booking}}.\mbox{\hyperlink{classdomain_1_1_booking_abd66c847ae837e2b37808006014dab8c}{fromJSON}}((JSONObject)o));}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00033}00033\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00034}\mbox{\hyperlink{classdomain_1_1_room_adee6662065c5cdb6c789450c3d887c73}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1_room_adee6662065c5cdb6c789450c3d887c73}{Room}}(\textcolor{keywordtype}{int}\ roomNumber,\ String\ type,\ \textcolor{keywordtype}{int}\ numMaxHosts,\ \textcolor{keywordtype}{int}\ spaceInMeters,\ \textcolor{keywordtype}{float}\ prize,\ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ hotel)\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ this.roomNumber\ =\ roomNumber;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ this.type\ =\ type;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ this.numMaxGuests\ =\ numMaxHosts;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ this.spaceInMeters\ =\ spaceInMeters;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ this.prize\ =\ prize;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ this.bookings\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ this.hotel\ =\ hotel;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00043}\mbox{\hyperlink{classdomain_1_1_room_a464babb2c082859c22f517bf4e1762aa}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Booking>\ \mbox{\hyperlink{classdomain_1_1_room_a464babb2c082859c22f517bf4e1762aa}{getBookings}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bookings;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00047}\mbox{\hyperlink{classdomain_1_1_room_a52b752b53500179d9e39ba81dad3e1ff}{00047}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_room_a52b752b53500179d9e39ba81dad3e1ff}{setBookings}}(List<Booking>\ bookings)\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ this.bookings\ =\ bookings;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00051}\mbox{\hyperlink{classdomain_1_1_room_ad067cd69d6403851b727cab6c9029c81}{00051}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_room_ad067cd69d6403851b727cab6c9029c81}{addBooking}}(\mbox{\hyperlink{classdomain_1_1_booking}{Booking}}\ guest)\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ bookings.add(guest);}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00055}\mbox{\hyperlink{classdomain_1_1_room_a138d1ba1d5203033c8521c869323eff5}{00055}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_room_a138d1ba1d5203033c8521c869323eff5}{removeBooking}}(\mbox{\hyperlink{classdomain_1_1_booking}{Booking}}\ guest)\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ bookings.remove(guest);}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00059}\mbox{\hyperlink{classdomain_1_1_room_a365961bd14db0fa799d47584b9a5b6f5}{00059}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdomain_1_1_room_a365961bd14db0fa799d47584b9a5b6f5}{getRoomNumber}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ roomNumber;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00063}\mbox{\hyperlink{classdomain_1_1_room_a10e116c4e5a9209772cea470044e57aa}{00063}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdomain_1_1_room_a10e116c4e5a9209772cea470044e57aa}{getSpaceInMeters}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ spaceInMeters;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00067}\mbox{\hyperlink{classdomain_1_1_room_a11de50943e8b9dd158976543afceeb90}{00067}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_room_a11de50943e8b9dd158976543afceeb90}{setSpaceInMeters}}(\textcolor{keywordtype}{int}\ spaceInMeters)\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ this.spaceInMeters\ =\ spaceInMeters;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00071}\mbox{\hyperlink{classdomain_1_1_room_abc6e0358abe6b13a8c0cc31eccd3b2de}{00071}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_room_abc6e0358abe6b13a8c0cc31eccd3b2de}{setRoomNumber}}(\textcolor{keywordtype}{int}\ roomNumber)\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ this.roomNumber\ =\ roomNumber;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00075}\mbox{\hyperlink{classdomain_1_1_room_a766d4ce4ae6e9dc57afc50a79e18c0df}{00075}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classdomain_1_1_room_a766d4ce4ae6e9dc57afc50a79e18c0df}{getType}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ type;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00079}\mbox{\hyperlink{classdomain_1_1_room_a876f03e2eb41289e5d604972420c1573}{00079}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_room_a876f03e2eb41289e5d604972420c1573}{setType}}(String\ type)\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ this.type\ =\ type;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00082}\mbox{\hyperlink{classdomain_1_1_room_a47a206e43922f90918c91a8846a5d03e}{00082}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classdomain_1_1_room_a47a206e43922f90918c91a8846a5d03e}{getPrize}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ prize;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00085}\mbox{\hyperlink{classdomain_1_1_room_a85509f1566f4e4673de13dadaa0c4d15}{00085}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_room_a85509f1566f4e4673de13dadaa0c4d15}{setPrize}}(\textcolor{keywordtype}{float}\ prize)\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ this.prize\ =\ prize;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00088}\mbox{\hyperlink{classdomain_1_1_room_a51d6fd9b4e0d15bf606354a8ce38b12b}{00088}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdomain_1_1_room_a51d6fd9b4e0d15bf606354a8ce38b12b}{getNumMaxGuests}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ numMaxGuests;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00092}\mbox{\hyperlink{classdomain_1_1_room_a8a5a093da94b7df7cd45060ff3eb5a2b}{00092}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_room_a8a5a093da94b7df7cd45060ff3eb5a2b}{setNumMaxGuests}}(\textcolor{keywordtype}{int}\ numMaxHosts)\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ this.numMaxGuests\ =\ numMaxHosts;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00096}\mbox{\hyperlink{classdomain_1_1_room_a5e227ed2a1f3f5c1e26e3410585902ed}{00096}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ \mbox{\hyperlink{classdomain_1_1_room_a5e227ed2a1f3f5c1e26e3410585902ed}{getHotel}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ hotel;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00100}\mbox{\hyperlink{classdomain_1_1_room_a70c3b9125911127c5cb438df0ef76b8a}{00100}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_room_a70c3b9125911127c5cb438df0ef76b8a}{setHotel}}(\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ hotel)\ \{}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ this.hotel\ =\ hotel;}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_client_2src_2main_2java_2domain_2_room_8java_source_l00104}00104\ \}}
+
+\end{DoxyCode}

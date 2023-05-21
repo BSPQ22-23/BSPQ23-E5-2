@@ -1,0 +1,81 @@
+\hypertarget{_user_test_8java_source}{}\doxysection{User\+Test.\+java}
+\label{_user_test_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/test/java/domain/UserTest.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/test/java/domain/UserTest.java}}
+\mbox{\hyperlink{_user_test_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00001}00001\ \textcolor{keyword}{package\ }domain;}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00003}00003\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.Assert.*;}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00005}00005\ \textcolor{keyword}{import}\ org.junit.Test;}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00007}00007\ \textcolor{keyword}{import}\ \textcolor{keyword}{static}\ org.junit.Assert.*;}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00009}00009\ \textcolor{keyword}{import}\ org.junit.Before;}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00010}00010\ \textcolor{keyword}{import}\ org.junit.Test;}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00012}\mbox{\hyperlink{classdomain_1_1_user_test}{00012}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdomain_1_1_user_test}{UserTest}}\ \{}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ user;}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00015}00015\ \ \ \ \ @Before}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00016}\mbox{\hyperlink{classdomain_1_1_user_test_a93ea9972293dbe69a86e087a7f944b16}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_user_test_a93ea9972293dbe69a86e087a7f944b16}{setUp}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}\ guest\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}(\textcolor{stringliteral}{"{}John"{}},\ \textcolor{stringliteral}{"{}Doe"{}},\ \textcolor{stringliteral}{"{}12345678A"{}},\ 30,\ \textcolor{stringliteral}{"{}New\ York"{}});}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00018}00018\ \ \ \ \ \ \ \ \ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}(\textcolor{stringliteral}{"{}johndoe"{}},\ \textcolor{stringliteral}{"{}password123"{}},\ guest,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00021}00021\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00022}\mbox{\hyperlink{classdomain_1_1_user_test_a4123912c2dd44aaceb262fbf8b165f41}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_user_test_a4123912c2dd44aaceb262fbf8b165f41}{testGetNick}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}johndoe"{}},\ user.\mbox{\hyperlink{classdomain_1_1_user_aa1079a5e2c084266988c9568c1de4e56}{getNick}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00026}00026\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00027}\mbox{\hyperlink{classdomain_1_1_user_test_a87c64f552a6098572367d061bf490b4d}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_user_test_a87c64f552a6098572367d061bf490b4d}{testSetNick}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ user.\mbox{\hyperlink{classdomain_1_1_user_ada59ab8e70963284b93f5eed85d53ce3}{setNick}}(\textcolor{stringliteral}{"{}janedoe"{}});}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}janedoe"{}},\ user.\mbox{\hyperlink{classdomain_1_1_user_aa1079a5e2c084266988c9568c1de4e56}{getNick}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00032}00032\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00033}\mbox{\hyperlink{classdomain_1_1_user_test_a9c954fbfaec259cd01ee9d0803bb5a29}{00033}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_user_test_a9c954fbfaec259cd01ee9d0803bb5a29}{testGetPassword}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}password123"{}},\ user.\mbox{\hyperlink{classdomain_1_1_user_a82156325603d4e2cb751d184a3ad5b19}{getPassword}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00037}00037\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00038}\mbox{\hyperlink{classdomain_1_1_user_test_a24bc7cbe14a9cbd637992ab4777c1234}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_user_test_a24bc7cbe14a9cbd637992ab4777c1234}{testSetPassword}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ user.\mbox{\hyperlink{classdomain_1_1_user_a8a2337a1895d8020771885e9b2237bf8}{setPassword}}(\textcolor{stringliteral}{"{}newpassword123"{}});}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}newpassword123"{}},\ user.\mbox{\hyperlink{classdomain_1_1_user_a82156325603d4e2cb751d184a3ad5b19}{getPassword}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00043}00043\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00044}\mbox{\hyperlink{classdomain_1_1_user_test_a387edd928718a8644c3ab72553a6cad7}{00044}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_user_test_a387edd928718a8644c3ab72553a6cad7}{testGetLegalInfo}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}\ guest\ =\ user.\mbox{\hyperlink{classdomain_1_1_user_a376e76030e3f942e1ec776bc41de75c6}{getLegalInfo}}();}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}John"{}},\ guest.\mbox{\hyperlink{classdomain_1_1_guest_ae883bc87ac9c2998283895b473dc0d01}{getName}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Doe"{}},\ guest.\mbox{\hyperlink{classdomain_1_1_guest_aa6f94832a97e705a679ce5b2d0c441f5}{getSurname}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}12345678A"{}},\ guest.\mbox{\hyperlink{classdomain_1_1_guest_a9e54a35bb182b93cc8c284c8d0a9795f}{getDni}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ assertEquals(30,\ guest.\mbox{\hyperlink{classdomain_1_1_guest_adcf5a5a3f92dc2e96fe8983a9a359401}{getAge}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}New\ York"{}},\ guest.\mbox{\hyperlink{classdomain_1_1_guest_a595e7e57bd09c309a190ab7aa441c9c6}{getCityOfProvenance}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00053}00053\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00054}\mbox{\hyperlink{classdomain_1_1_user_test_acaf8cc5f3d5672fa39255efdc935957a}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_user_test_acaf8cc5f3d5672fa39255efdc935957a}{testSetLegalInfo}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}\ newGuest\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}(\textcolor{stringliteral}{"{}Jane"{}},\ \textcolor{stringliteral}{"{}Doe"{}},\ \textcolor{stringliteral}{"{}87654321B"{}},\ 25,\ \textcolor{stringliteral}{"{}Los\ Angeles"{}});}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ user.\mbox{\hyperlink{classdomain_1_1_user_a3d516fadc115c860d74a9852c021ffcf}{setLegalInfo}}(newGuest);}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Jane"{}},\ user.\mbox{\hyperlink{classdomain_1_1_user_a376e76030e3f942e1ec776bc41de75c6}{getLegalInfo}}().\mbox{\hyperlink{classdomain_1_1_guest_ae883bc87ac9c2998283895b473dc0d01}{getName}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Doe"{}},\ user.\mbox{\hyperlink{classdomain_1_1_user_a376e76030e3f942e1ec776bc41de75c6}{getLegalInfo}}().\mbox{\hyperlink{classdomain_1_1_guest_aa6f94832a97e705a679ce5b2d0c441f5}{getSurname}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}87654321B"{}},\ user.\mbox{\hyperlink{classdomain_1_1_user_a376e76030e3f942e1ec776bc41de75c6}{getLegalInfo}}().\mbox{\hyperlink{classdomain_1_1_guest_a9e54a35bb182b93cc8c284c8d0a9795f}{getDni}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ assertEquals(25,\ user.\mbox{\hyperlink{classdomain_1_1_user_a376e76030e3f942e1ec776bc41de75c6}{getLegalInfo}}().\mbox{\hyperlink{classdomain_1_1_guest_adcf5a5a3f92dc2e96fe8983a9a359401}{getAge}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ assertEquals(\textcolor{stringliteral}{"{}Los\ Angeles"{}},\ user.\mbox{\hyperlink{classdomain_1_1_user_a376e76030e3f942e1ec776bc41de75c6}{getLegalInfo}}().\mbox{\hyperlink{classdomain_1_1_guest_a595e7e57bd09c309a190ab7aa441c9c6}{getCityOfProvenance}}());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00064}00064\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00065}\mbox{\hyperlink{classdomain_1_1_user_test_a594cb2ed94ff054f7318b3b54db0aafc}{00065}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_user_test_a594cb2ed94ff054f7318b3b54db0aafc}{testIsHotelOwner}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ assertFalse(user.isHotelOwner());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00069}00069\ \ \ \ \ @Test}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00070}\mbox{\hyperlink{classdomain_1_1_user_test_ab03c04c72a690469acc1d899342973e6}{00070}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdomain_1_1_user_test_ab03c04c72a690469acc1d899342973e6}{testSetHotelOwner}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ user.\mbox{\hyperlink{classdomain_1_1_user_a09bda47a17be59b53fbc3402120c6abf}{setHotelOwner}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ assertTrue(user.isHotelOwner());}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{_user_test_8java_source_l00075}00075\ }
+
+\end{DoxyCode}

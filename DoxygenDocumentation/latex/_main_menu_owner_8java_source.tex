@@ -1,0 +1,207 @@
+\hypertarget{_main_menu_owner_8java_source}{}\doxysection{Main\+Menu\+Owner.\+java}
+\label{_main_menu_owner_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/main/java/windows/MainMenuOwner.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/main/java/windows/MainMenuOwner.java}}
+\mbox{\hyperlink{_main_menu_owner_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00001}00001\ \textcolor{keyword}{package\ }windows;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.awt.BorderLayout;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.awt.Color;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.awt.FlowLayout;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00006}00006\ \textcolor{keyword}{import}\ java.awt.GridLayout;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00007}00007\ \textcolor{keyword}{import}\ java.awt.Image;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00008}00008\ \textcolor{keyword}{import}\ java.awt.event.ActionEvent;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00009}00009\ \textcolor{keyword}{import}\ java.awt.event.ActionListener;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00011}00011\ \textcolor{keyword}{import}\ javax.swing.Icon;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00012}00012\ \textcolor{keyword}{import}\ javax.swing.ImageIcon;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00013}00013\ \textcolor{keyword}{import}\ javax.swing.JButton;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00014}00014\ \textcolor{keyword}{import}\ javax.swing.JFrame;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00015}00015\ \textcolor{keyword}{import}\ javax.swing.JLabel;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00016}00016\ \textcolor{keyword}{import}\ javax.swing.JMenu;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00017}00017\ \textcolor{keyword}{import}\ javax.swing.JMenuBar;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00018}00018\ \textcolor{keyword}{import}\ javax.swing.JMenuItem;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00019}00019\ \textcolor{keyword}{import}\ javax.swing.JOptionPane;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00020}00020\ \textcolor{keyword}{import}\ javax.swing.JPanel;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00021}00021\ \textcolor{keyword}{import}\ javax.swing.JTextField;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00023}00023\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacelanguage}{language}}.\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}};}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00025}\mbox{\hyperlink{classwindows_1_1_main_menu_owner}{00025}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classwindows_1_1_main_menu_owner}{MainMenuOwner}}\ \textcolor{keyword}{extends}\ JFrame\ implements\ ActionListener\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JLabel\ welcome,\ warningL,\ infoSettings;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JTextField\ hotelName,\ hotelChain,\ hotelRooms,\ hotelCity;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JButton\ hotelEditButton,\ addHotelButton,\ searchButton,\ accountButton,\ deleteAccButton,\ logOutButton,\ changeDataButton,\ submitHotelButton,\ clearHotelButton;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JMenuBar\ menuBar;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JMenu\ menu,\ menuH,\ menuL;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JMenuItem\ mItem,\ mItem3,\ mItem2,\ mItemES,\ mItemEN;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JPanel\ buttonPanel,\ welcomePanel,\ browserPanel,\ accountPanel,\ pCenter;}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00034}\mbox{\hyperlink{classwindows_1_1_main_menu_owner_a2c2ad264723dd0d2f11bdcf4b5c9bea1}{00034}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classwindows_1_1_main_menu_owner_a2c2ad264723dd0d2f11bdcf4b5c9bea1}{MainMenuOwner}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ super(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}menuOwn"{}}));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ welcome\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}settingInf"{}}));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ infoSettings\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}settingInf"{}}));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ warningL\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}warning"{}}));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ hotelName\ =\ \textcolor{keyword}{new}\ JTextField(15);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ hotelChain\ =\ \textcolor{keyword}{new}\ JTextField(15);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ hotelRooms\ =\ \textcolor{keyword}{new}\ JTextField(5);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ hotelCity\ =\ \textcolor{keyword}{new}\ JTextField(15);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ ImageIcon\ icon\ =\ \textcolor{keyword}{new}\ ImageIcon(\textcolor{stringliteral}{"{}../photos/pencil.png"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ ImageIcon\ icon2\ =\ \textcolor{keyword}{new}\ ImageIcon(\textcolor{stringliteral}{"{}../photos/search.png"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ ImageIcon\ icon3\ =\ \textcolor{keyword}{new}\ ImageIcon(\textcolor{stringliteral}{"{}../photos/account.png"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ ImageIcon\ icon4\ =\ \textcolor{keyword}{new}\ ImageIcon(\textcolor{stringliteral}{"{}../photos/addIcon.png"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ hotelEditButton\ =\ \textcolor{keyword}{new}\ JButton(resizeIcon(icon,\ 60,\ 60));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ addHotelButton\ =\ \textcolor{keyword}{new}\ JButton(resizeIcon(icon4,\ 60,\ 60));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ searchButton\ =\ \textcolor{keyword}{new}\ JButton(resizeIcon(icon2,\ 60,\ 60));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ accountButton\ =\ \textcolor{keyword}{new}\ JButton(resizeIcon(icon3,60,\ 60));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ changeDataButton\ =\ \textcolor{keyword}{new}\ JButton(\textcolor{stringliteral}{"{}Change\ account\ data"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ deleteAccButton\ =\ \textcolor{keyword}{new}\ JButton(\textcolor{stringliteral}{"{}Delete\ this\ account"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ logOutButton\ =\ \textcolor{keyword}{new}\ JButton(\textcolor{stringliteral}{"{}Log\ out"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ submitHotelButton\ =\ \textcolor{keyword}{new}\ JButton(\textcolor{stringliteral}{"{}Submit\ Hotel"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ clearHotelButton\ =\ \textcolor{keyword}{new}\ JButton(\textcolor{stringliteral}{"{}Clear\ Info"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ menuBar\ =\ \textcolor{keyword}{new}\ JMenuBar();}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ menu\ =\ \textcolor{keyword}{new}\ JMenu(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}account"{}}));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ menuH\ =\ \textcolor{keyword}{new}\ JMenu(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}home"{}}));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ menuL\ =\ \textcolor{keyword}{new}\ JMenu(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}language"{}}));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ mItem\ =\ \textcolor{keyword}{new}\ JMenuItem(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}logOut"{}}));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ mItem2\ =\ \textcolor{keyword}{new}\ JMenuItem(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}returnHome"{}}));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ mItem3\ =\ \textcolor{keyword}{new}\ JMenuItem(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}exit"{}}));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ mItemES\ \ =\ \textcolor{keyword}{new}\ JMenuItem(\textcolor{stringliteral}{"{}Español"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ mItemEN\ =\ \textcolor{keyword}{new}\ JMenuItem(\textcolor{stringliteral}{"{}English"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ hotelEditButton.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ addHotelButton.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ searchButton.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ accountButton.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ submitHotelButton.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ clearHotelButton.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ pCenter\ =\ \textcolor{keyword}{new}\ JPanel();}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ pCenter.setBackground(\textcolor{keyword}{new}\ Color(255,\ 228,\ 181));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ GridLayout\ gridLayout\ =\ \textcolor{keyword}{new}\ GridLayout(0,\ 2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ gridLayout.setVgap(10);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ gridLayout.setHgap(50);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel\ =\ \textcolor{keyword}{new}\ JPanel(gridLayout);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.setBackground(\textcolor{keyword}{new}\ Color(255,\ 228,\ 181));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.add(hotelEditButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.add(addHotelButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.add(searchButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.add(accountButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ welcomePanel\ =\ \textcolor{keyword}{new}\ JPanel(\textcolor{keyword}{new}\ FlowLayout(FlowLayout.CENTER));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ welcomePanel.setBackground(\textcolor{keyword}{new}\ Color(135,\ 206,\ 250));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ welcomePanel.add(welcome);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ GridLayout\ gridLayout2\ =\ \textcolor{keyword}{new}\ GridLayout(0,\ 3);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ gridLayout2.setVgap(25);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ gridLayout2.setHgap(10);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ browserPanel\ =\ \textcolor{keyword}{new}\ JPanel(gridLayout2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ browserPanel.setBackground(\textcolor{keyword}{new}\ Color(255,\ 228,\ 181));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ GridLayout\ gridLayout3\ =\ \textcolor{keyword}{new}\ GridLayout(0,\ 1);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ gridLayout3.setVgap(15);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ gridLayout3.setHgap(10);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ accountPanel\ =\ \textcolor{keyword}{new}\ JPanel(gridLayout3);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ accountPanel.setBackground(\textcolor{keyword}{new}\ Color(135,\ 206,\ 250));}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ accountPanel.add(infoSettings);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ accountPanel.add(changeDataButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ accountPanel.add(logOutButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ accountPanel.add(warningL);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ accountPanel.add(deleteAccButton);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ pCenter.add(buttonPanel);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ pCenter.add(browserPanel);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ pCenter.add(accountPanel);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ getContentPane().setLayout(\textcolor{keyword}{new}\ BorderLayout());}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ getContentPane().add(pCenter,\ BorderLayout.CENTER);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ accountPanel.setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ browserPanel.setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ getContentPane().add(welcomePanel,\ BorderLayout.SOUTH);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ menuH.add(mItem2);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ menuH.add(mItem3);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ menuL.add(mItemES);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ menuL.add(mItemEN);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ menu.add(mItem);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ menuBar.add(menuH);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ menuBar.add(menu);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ menuBar.add(menuL);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ setJMenuBar(menuBar);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ mItem2.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ mItem3.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ mItem2.setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ setSize(400,\ 300);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ setLocationRelativeTo(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ setDefaultCloseOperation(JFrame.EXIT\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00145}00145\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ Icon\ resizeIcon(ImageIcon\ icon,\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ Image\ img\ =\ icon.getImage();\ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ Image\ resizedImage\ =\ img.getScaledInstance(w,\ h,\ \ java.awt.Image.SCALE\_SMOOTH);\ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ ImageIcon(resizedImage);}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00150}00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00151}00151\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00152}00152\ \ \ \ \ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00153}\mbox{\hyperlink{classwindows_1_1_main_menu_owner_a4b0bee87084505fc9ca0741021f503dc}{00153}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwindows_1_1_main_menu_owner_a4b0bee87084505fc9ca0741021f503dc}{actionPerformed}}(ActionEvent\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ searchButton)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ welcomePanel.setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ browserPanel.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ browserPanel.revalidate();}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ browserPanel.repaint();}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mItem2.setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ hotelEditButton)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_hotel_editor_window}{HotelEditorWindow}}\ hotelEdWindow\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classwindows_1_1_hotel_editor_window}{HotelEditorWindow}}();}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ accountButton)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ welcomePanel.setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accountPanel.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mItem2.setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ addHotelButton)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_hotel_creator_window}{HotelCreatorWindow}}\ hotelWindow\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classwindows_1_1_hotel_creator_window}{HotelCreatorWindow}}();}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ submitHotelButton)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ clearHotelButton)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hotelName.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hotelChain.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hotelRooms.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hotelCity.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ mItem2)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ browserPanel.setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accountPanel.setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ welcomePanel.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mItem2.setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ mItem3)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dispose();\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00195}00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00196}00196\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00197}\mbox{\hyperlink{classwindows_1_1_main_menu_owner_ac3a4d41e19973f255dd4b4a6d97d6003}{00197}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwindows_1_1_main_menu_owner_ac3a4d41e19973f255dd4b4a6d97d6003}{main}}(String[]\ args)\ \{}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_main_menu_owner}{MainMenuOwner}}\ menuOw\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classwindows_1_1_main_menu_owner_a2c2ad264723dd0d2f11bdcf4b5c9bea1}{MainMenuOwner}}();}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_main_menu_owner_8java_source_l00201}00201\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,140 @@
+\hypertarget{classdatabase_1_1_user_d_a_o}{}\doxysection{database.\+User\+DAO Class Reference}
+\label{classdatabase_1_1_user_d_a_o}\index{database.UserDAO@{database.UserDAO}}
+Inheritance diagram for database.\+User\+DAO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdatabase_1_1_user_d_a_o}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_adde618b63bb1655f9f7d96ab0cec48b8}{save}} (\mbox{\hyperlink{classdomain_1_1_user}{User}} object)
+\item 
+void \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a6e394cdea117b28a3bfd93689d9f6ca0}{delete}} (\mbox{\hyperlink{classdomain_1_1_user}{User}} object)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1_user}{User}} $>$ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_aa9097a996b9d81a3b1c0c7568db696fb}{get\+All}} ()
+\item 
+\mbox{\hyperlink{classdomain_1_1_user}{User}} \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a17ec5036c890794792c48a6ce32ae5ae}{find}} (String dni)
+\item 
+\mbox{\hyperlink{classdomain_1_1_user}{User}} \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a6c0dfbef092e984ff0fb2bd84a6fb850}{find}} (String user, String password)
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_afe976b7a23a9e81b988c39b5e36fcbc5}{exists}} (String user)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classdatabase_1_1_data_access_object_base}{database.\+Data\+Access\+Object\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_ad9f80ee38bb7503be53ebea31f016a27}{delete\+Object}} (Object object)
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a8c464a43b69b5f79e0f5af40b445d3d4}{save\+Object}} (Object object)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object}{database.\+IData\+Access\+Object$<$ User $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object_a91801c618f264f262cd634e12841763d}{save}} (Domain\+Object object)
+\item 
+void \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object_a8fe2dfc5b27b13319f5c17e5c44f1cb7}{delete}} (Domain\+Object object)
+\item 
+List$<$ Domain\+Object $>$ \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object_a65174d43c0bfb7dcbf89a96fcdb91dbd}{get\+All}} ()
+\item 
+Domain\+Object \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object_a3e55c4668e0eb540ef8d0b3511b0b797}{find}} (String param)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{User\+DAO}} \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_abd550028bb2a34376e1907cd92024763}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classdatabase_1_1_data_access_object_base}{database.\+Data\+Access\+Object\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static Persistence\+Manager\+Factory \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}} = JDOHelper.\+get\+Persistence\+Manager\+Factory(\char`\"{}datanucleus.\+properties\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+DAO for User class \begin{DoxyAuthor}{Author}
+a-\/rasines 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{_user_d_a_o_8java_source_l00017}{17}} of file \mbox{\hyperlink{_user_d_a_o_8java_source}{User\+DAO.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdatabase_1_1_user_d_a_o_a6e394cdea117b28a3bfd93689d9f6ca0}\label{classdatabase_1_1_user_d_a_o_a6e394cdea117b28a3bfd93689d9f6ca0}} 
+\index{database.UserDAO@{database.UserDAO}!delete@{delete}}
+\index{delete@{delete}!database.UserDAO@{database.UserDAO}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily void database.\+User\+DAO.\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_user}{User}}}]{object }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_d_a_o_8java_source_l00032}{32}} of file \mbox{\hyperlink{_user_d_a_o_8java_source}{User\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_user_d_a_o_afe976b7a23a9e81b988c39b5e36fcbc5}\label{classdatabase_1_1_user_d_a_o_afe976b7a23a9e81b988c39b5e36fcbc5}} 
+\index{database.UserDAO@{database.UserDAO}!exists@{exists}}
+\index{exists@{exists}!database.UserDAO@{database.UserDAO}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily boolean database.\+User\+DAO.\+exists (\begin{DoxyParamCaption}\item[{String}]{user }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_d_a_o_8java_source_l00070}{70}} of file \mbox{\hyperlink{_user_d_a_o_8java_source}{User\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_user_d_a_o_a17ec5036c890794792c48a6ce32ae5ae}\label{classdatabase_1_1_user_d_a_o_a17ec5036c890794792c48a6ce32ae5ae}} 
+\index{database.UserDAO@{database.UserDAO}!find@{find}}
+\index{find@{find}!database.UserDAO@{database.UserDAO}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdomain_1_1_user}{User}} database.\+User\+DAO.\+find (\begin{DoxyParamCaption}\item[{String}]{dni }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_d_a_o_8java_source_l00047}{47}} of file \mbox{\hyperlink{_user_d_a_o_8java_source}{User\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_user_d_a_o_a6c0dfbef092e984ff0fb2bd84a6fb850}\label{classdatabase_1_1_user_d_a_o_a6c0dfbef092e984ff0fb2bd84a6fb850}} 
+\index{database.UserDAO@{database.UserDAO}!find@{find}}
+\index{find@{find}!database.UserDAO@{database.UserDAO}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdomain_1_1_user}{User}} database.\+User\+DAO.\+find (\begin{DoxyParamCaption}\item[{String}]{user,  }\item[{String}]{password }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_d_a_o_8java_source_l00063}{63}} of file \mbox{\hyperlink{_user_d_a_o_8java_source}{User\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_user_d_a_o_aa9097a996b9d81a3b1c0c7568db696fb}\label{classdatabase_1_1_user_d_a_o_aa9097a996b9d81a3b1c0c7568db696fb}} 
+\index{database.UserDAO@{database.UserDAO}!getAll@{getAll}}
+\index{getAll@{getAll}!database.UserDAO@{database.UserDAO}}
+\doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classdomain_1_1_user}{User}} $>$ database.\+User\+DAO.\+get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_d_a_o_8java_source_l00040}{40}} of file \mbox{\hyperlink{_user_d_a_o_8java_source}{User\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_user_d_a_o_abd550028bb2a34376e1907cd92024763}\label{classdatabase_1_1_user_d_a_o_abd550028bb2a34376e1907cd92024763}} 
+\index{database.UserDAO@{database.UserDAO}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!database.UserDAO@{database.UserDAO}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{User\+DAO}} database.\+User\+DAO.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_user_d_a_o_8java_source_l00019}{19}} of file \mbox{\hyperlink{_user_d_a_o_8java_source}{User\+DAO.\+java}}.
+
+\mbox{\Hypertarget{classdatabase_1_1_user_d_a_o_adde618b63bb1655f9f7d96ab0cec48b8}\label{classdatabase_1_1_user_d_a_o_adde618b63bb1655f9f7d96ab0cec48b8}} 
+\index{database.UserDAO@{database.UserDAO}!save@{save}}
+\index{save@{save}!database.UserDAO@{database.UserDAO}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily boolean database.\+User\+DAO.\+save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_user}{User}}}]{object }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_user_d_a_o_8java_source_l00024}{24}} of file \mbox{\hyperlink{_user_d_a_o_8java_source}{User\+DAO.\+java}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/andon/\+Documents/\+Git\+Hub/\+BSPQ23-\/\+E5-\/2/\+Server/src/main/java/database/\mbox{\hyperlink{_user_d_a_o_8java}{User\+DAO.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,144 @@
+\hypertarget{_reservation_getter_handler_8java_source}{}\doxysection{Reservation\+Getter\+Handler.\+java}
+\label{_reservation_getter_handler_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Server/src/main/java/api/reservation/ReservationGetterHandler.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Server/src/main/java/api/reservation/ReservationGetterHandler.java}}
+\mbox{\hyperlink{_reservation_getter_handler_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00001}00001\ \textcolor{keyword}{package\ }api.reservation;}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.io.OutputStream;}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.apache.logging.log4j.LogManager;}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00008}00008\ \textcolor{keyword}{import}\ org.apache.logging.log4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00009}00009\ \textcolor{keyword}{import}\ org.json.JSONException;}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00011}00011\ \textcolor{keyword}{import}\ com.sun.net.httpserver.HttpExchange;}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00012}00012\ \textcolor{keyword}{import}\ com.sun.net.httpserver.HttpHandler;}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00014}00014\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceapi}{api}}.\mbox{\hyperlink{classapi_1_1_a_p_i_utils}{APIUtils}};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00015}00015\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_booking}{Booking}};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00016}00016\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_user}{User}};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00017}00017\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacemain}{main}}.\mbox{\hyperlink{classmain_1_1_server}{Server}};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00018}00018\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacemain}{main}}.\mbox{\hyperlink{classmain_1_1_server_app_service}{ServerAppService}};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00020}\mbox{\hyperlink{classapi_1_1reservation_1_1_reservation_getter_handler}{00020}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classapi_1_1reservation_1_1_reservation_getter_handler}{ReservationGetterHandler}}\ \textcolor{keyword}{implements}\ HttpHandler\{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00022}00022\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00023}\mbox{\hyperlink{classapi_1_1reservation_1_1_reservation_getter_handler_aeea257f8f85dd8c1cbf64655442d6478}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classapi_1_1reservation_1_1_reservation_getter_handler_aeea257f8f85dd8c1cbf64655442d6478}{handle}}(HttpExchange\ exchange)\ \textcolor{keywordflow}{throws}\ IOException\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ Logger\ l\ =\ LogManager.getLogger();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ l.debug(\textcolor{stringliteral}{"{}▓"{}}.repeat(78)+\textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +\ \textcolor{stringliteral}{"{}\ "{}}.repeat(31)\ +\ \textcolor{stringliteral}{"{}Getting\ reservation(s)"{}}\ +\ \textcolor{stringliteral}{"{}\ "{}}.repeat(31)\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ +\ \textcolor{stringliteral}{"{}▓"{}}.repeat(78)+\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ String\ token\ =\ \mbox{\hyperlink{classapi_1_1_a_p_i_utils}{APIUtils}}.\mbox{\hyperlink{classapi_1_1_a_p_i_utils_afe4d34870bb97c6bee921ef5a69872ba}{getStringHeader}}(exchange,\ \textcolor{stringliteral}{"{}token"{}},\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(token\ ==\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Illegal\ use\ of\ API:\ No\ token\ provided"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ resp\ =\ \textcolor{stringliteral}{"{}No\ token\ provided"{}};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exchange.sendResponseHeaders(401,\ resp.length());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OutputStream\ os\ =\ exchange.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.write(resp.getBytes());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ author\ =\ \mbox{\hyperlink{classmain_1_1_server}{Server}}.\mbox{\hyperlink{classmain_1_1_server_ae90c53a2e9b8dd37fe85437c71563a76}{getUser}}(token);}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(author\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Unauthorized\ use\ of\ API:\ Invalid\ token"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ resp\ =\ \textcolor{stringliteral}{"{}Invalid\ token"{}};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exchange.sendResponseHeaders(401,\ resp.length());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OutputStream\ os\ =\ exchange.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.write(resp.getBytes());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ queryType\ =\ exchange.getRequestHeaders().getOrDefault(\textcolor{stringliteral}{"{}q"{}},\ List.of(\textcolor{stringliteral}{"{}user"{}})).get(0);}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ parameter\ =\ exchange.getRequestHeaders().getOrDefault(\textcolor{stringliteral}{"{}value"{}},\ List.of(\textcolor{stringliteral}{"{}-\/1"{}})).get(0);}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (queryType)\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}user"{}}:}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Getting\ reservations\ by\ user"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Booking>\ b\ =\ \mbox{\hyperlink{classmain_1_1_server_app_service}{ServerAppService}}.\mbox{\hyperlink{classmain_1_1_server_app_service_a9d9f006971a8d6136c872c8863f2ecee}{getReservationsByUser}}(author);}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b.forEach(v-\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v.getRoom().setBookings(null);\textcolor{comment}{//Avoid\ stack\ overflow}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v.getRoom().getHotel().setRooms(null);\textcolor{comment}{//Avoid\ stack\ overflow\ x2}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ body\ =\ \mbox{\hyperlink{classapi_1_1_a_p_i_utils}{APIUtils}}.\mbox{\hyperlink{classapi_1_1_a_p_i_utils_af088098a7355b129508c1178089cc91c}{listToJSONArray}}(b).toString();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exchange.sendResponseHeaders(200,\ body.length());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OutputStream\ os\ =\ exchange.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.write(body.getBytes());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}hotel"{}}:}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Getting\ reservations\ by\ hotel"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!author.isHotelOwner())\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Unauthorized\ use\ of\ API:\ Unauthorized"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ resp\ =\ \textcolor{stringliteral}{"{}Unauthorized"{}};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exchange.sendResponseHeaders(401,\ resp.length());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ =\ exchange.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.write(resp.getBytes());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ List<Booking>\ result\ =\ \mbox{\hyperlink{classmain_1_1_server_app_service}{ServerAppService}}.\mbox{\hyperlink{classmain_1_1_server_app_service_a0d750ca966254e19eaf9a1346443f5fe}{getReservationsByHotel}}(author,\ parameter);}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.forEach(v-\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v.getRoom().setBookings(null);\textcolor{comment}{//Avoid\ stack\ overflow}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v.getRoom().getHotel().setRooms(null);\textcolor{comment}{//Avoid\ stack\ overflow\ x2}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ body\ =\ \mbox{\hyperlink{classapi_1_1_a_p_i_utils}{APIUtils}}.\mbox{\hyperlink{classapi_1_1_a_p_i_utils_af088098a7355b129508c1178089cc91c}{listToJSONArray}}(result).toString();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exchange.sendResponseHeaders(200,\ body.length());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ =\ exchange.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.write(body.getBytes());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}single"{}}:}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Getting\ reservation\ by\ id"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}}\ res\ =\ \mbox{\hyperlink{classmain_1_1_server_app_service}{ServerAppService}}.\mbox{\hyperlink{classmain_1_1_server_app_service_ac60de1284ca9b022404c3a6afc86a429}{getReservationById}}(parameter);}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(res\ ==\ \textcolor{keyword}{null})\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}No\ reservations\ found"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ response\ =\ \textcolor{stringliteral}{"{}Not\ Found"{}};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exchange.sendResponseHeaders(404,\ response.length());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ =\ exchange.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.write(response.getBytes());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(res.\mbox{\hyperlink{classdomain_1_1_booking_a8e301daeb0724801f2fcc982321770a7}{getAuthor}}().\mbox{\hyperlink{classdomain_1_1_guest_ae0eb4f6c02926548a2590fd69943552e}{equals}}(author.\mbox{\hyperlink{classdomain_1_1_user_a376e76030e3f942e1ec776bc41de75c6}{getLegalInfo}}())\ ||\ author.isHotelOwner()\ \&\&\ res.\mbox{\hyperlink{classdomain_1_1_booking_af634dbd4e67cbd476b49e34a6865f248}{getRoom}}().\mbox{\hyperlink{classdomain_1_1_room_a5e227ed2a1f3f5c1e26e3410585902ed}{getHotel}}().\mbox{\hyperlink{classdomain_1_1_hotel_a1e98d0c499fab2976ff43103a875e348}{getOwner}}().\mbox{\hyperlink{classdomain_1_1_guest_ae0eb4f6c02926548a2590fd69943552e}{equals}}(author.\mbox{\hyperlink{classdomain_1_1_user_a376e76030e3f942e1ec776bc41de75c6}{getLegalInfo}}()))\{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res.\mbox{\hyperlink{classdomain_1_1_booking_af634dbd4e67cbd476b49e34a6865f248}{getRoom}}().\mbox{\hyperlink{classdomain_1_1_room_a52b752b53500179d9e39ba81dad3e1ff}{setBookings}}(\textcolor{keyword}{null});\ \textcolor{comment}{//Avoid\ stack\ overflow}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res.\mbox{\hyperlink{classdomain_1_1_booking_af634dbd4e67cbd476b49e34a6865f248}{getRoom}}().\mbox{\hyperlink{classdomain_1_1_room_a5e227ed2a1f3f5c1e26e3410585902ed}{getHotel}}().\mbox{\hyperlink{classdomain_1_1_hotel_afc96f66b29d907e486af2a1b21263bf2}{setRooms}}(\textcolor{keyword}{null});\textcolor{comment}{//Avoid\ stack\ overflow\ x2}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Successfully\ retrieved\ reservation\ "{}}\ +\ parameter);}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ body\ =\ \mbox{\hyperlink{classapi_1_1_a_p_i_utils}{APIUtils}}.\mbox{\hyperlink{classapi_1_1_a_p_i_utils_ad3230b896a563834b9a1c8756e8c4527}{objectToJSON}}(res).toString();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exchange.sendResponseHeaders(200,\ body.length());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ =\ exchange.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.write(body.getBytes());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Unauthorized:\ Not\ the\ legit\ owner\ of\ the\ reservation"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ resp\ =\ \textcolor{stringliteral}{"{}Invalid\ token"{}};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exchange.sendResponseHeaders(401,\ resp.length());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ =\ exchange.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.write(resp.getBytes());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Illegal\ use\ of\ API:\ Unknown\ method"{}});}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ response\ =\ \textcolor{stringliteral}{"{}No\ method\ called\ '"{}}+queryType+\textcolor{charliteral}{'\(\backslash\)''};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exchange.sendResponseHeaders(400,\ response.length());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ =\ exchange.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.write(response.getBytes());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(IllegalArgumentException\ |\ JSONException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Illegal\ use\ of\ API:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ response\ =\ e.getMessage();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exchange.sendResponseHeaders(400,\ response.length());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OutputStream\ os\ =\ exchange.getResponseBody();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.write(response.getBytes());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os.close();}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{catch}(Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ l.error(\textcolor{stringliteral}{"{}Error\ getting\ reservation(s):\ "{}}\ +\ e.toString());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classapi_1_1_a_p_i_utils}{APIUtils}}.\mbox{\hyperlink{classapi_1_1_a_p_i_utils_ac37d21e8ae6a14cc3c1187b19d9a5b0a}{respondInternalError}}(exchange,\ e.getMessage());}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_reservation_getter_handler_8java_source_l00138}00138\ \}}
+
+\end{DoxyCode}

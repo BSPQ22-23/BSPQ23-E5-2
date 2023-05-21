@@ -1,0 +1,129 @@
+\hypertarget{_hotel_creator_window_8java_source}{}\doxysection{Hotel\+Creator\+Window.\+java}
+\label{_hotel_creator_window_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/main/java/windows/HotelCreatorWindow.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/main/java/windows/HotelCreatorWindow.java}}
+\mbox{\hyperlink{_hotel_creator_window_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00001}00001\ \textcolor{keyword}{package\ }windows;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00002}00002\ \textcolor{keyword}{import}\ javax.imageio.ImageIO;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00003}00003\ \textcolor{keyword}{import}\ javax.swing.*;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00004}00004\ \textcolor{keyword}{import}\ javax.swing.filechooser.FileNameExtensionFilter;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00006}00006\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_guest}{Guest}};}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00007}00007\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}};}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00008}00008\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_user}{User}};}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00009}00009\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacelanguage}{language}}.\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}};}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00010}00010\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceremote}{remote}}.\mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}};}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00012}00012\ \textcolor{keyword}{import}\ java.awt.*;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00013}00013\ \textcolor{keyword}{import}\ java.awt.event.*;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00014}00014\ \textcolor{keyword}{import}\ java.awt.image.BufferedImage;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00015}00015\ \textcolor{keyword}{import}\ java.io.File;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00016}00016\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00017}00017\ \textcolor{keyword}{import}\ java.util.concurrent.ExecutionException;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00019}\mbox{\hyperlink{classwindows_1_1_hotel_creator_window}{00019}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classwindows_1_1_hotel_creator_window}{HotelCreatorWindow}}\ \textcolor{keyword}{extends}\ JFrame\ implements\ ActionListener\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JLabel\ id,\ name,\ city,\ info,\ imageL;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JTextField\ idF,\ nameF,\ cityF,\ infoF;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JButton\ submitButton,\ clearButton,\ imageButton;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JFileChooser\ fileChooser;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ FileNameExtensionFilter\ filter;}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00026}\mbox{\hyperlink{classwindows_1_1_hotel_creator_window_a1b922f9d1fed0d7fbed3786dbda25f41}{00026}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classwindows_1_1_hotel_creator_window_a1b922f9d1fed0d7fbed3786dbda25f41}{HotelCreatorWindow}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ super(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}title\_cr"{}}));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}id\_cr"{}}));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ name\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}name\_cr"{}}));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ city\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}city\_cr"{}}));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ info\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}info\_cr"{}}));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ imageL\ =\ \textcolor{keyword}{new}\ JLabel();}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ idF\ =\ \textcolor{keyword}{new}\ JTextField(20);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ nameF\ =\ \textcolor{keyword}{new}\ JTextField(20);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ cityF\ =\ \textcolor{keyword}{new}\ JTextField(20);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ infoF\ =\ \textcolor{keyword}{new}\ JTextField(60);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ submitButton\ =\ \textcolor{keyword}{new}\ JButton(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}submit"{}}));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ clearButton\ =\ \textcolor{keyword}{new}\ JButton(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}clear"{}}));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ imageButton\ =\ \textcolor{keyword}{new}\ JButton(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}submit\_Image"{}}));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ fileChooser\ =\ \textcolor{keyword}{new}\ JFileChooser();}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ filter\ =\ \textcolor{keyword}{new}\ FileNameExtensionFilter(\textcolor{stringliteral}{"{}jpg"{}},\ \textcolor{stringliteral}{"{}png"{}},\ \textcolor{stringliteral}{"{}ico"{}});}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ fileChooser.setFileFilter(filter);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ submitButton.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ clearButton.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ imageButton.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ JPanel\ panelBorder\ =\ \textcolor{keyword}{new}\ JPanel(\textcolor{keyword}{new}\ BorderLayout());}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ JPanel\ formPanel\ =\ \textcolor{keyword}{new}\ JPanel(\textcolor{keyword}{new}\ GridLayout(5,\ 2,\ 4,\ 4));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ JPanel\ imagePanel\ =\ \textcolor{keyword}{new}\ JPanel(\textcolor{keyword}{new}\ BorderLayout());}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.setBackground(\textcolor{keyword}{new}\ Color(255,\ 228,\ 181));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.setBorder(BorderFactory.createEmptyBorder(10,\ 10,\ 10,\ 10));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(idF);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(name);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(nameF);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(city);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(cityF);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(info);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(infoF);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ panelBorder.add(formPanel,\ BorderLayout.NORTH);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ imagePanel.add(imageButton,\ BorderLayout.NORTH);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ imagePanel.add(imageL,\ BorderLayout.CENTER);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ panelBorder.add(imagePanel);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ JPanel\ buttonPanel\ =\ \textcolor{keyword}{new}\ JPanel(\textcolor{keyword}{new}\ FlowLayout(FlowLayout.CENTER));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.setBackground(\textcolor{keyword}{new}\ Color(135,\ 206,\ 250));}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.setBorder(BorderFactory.createEmptyBorder(0,\ 10,\ 10,\ 10));\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.add(submitButton);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.add(clearButton);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ getContentPane().setLayout(\textcolor{keyword}{new}\ BorderLayout());}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ getContentPane().add(panelBorder,\ BorderLayout.CENTER);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ getContentPane().add(buttonPanel,\ BorderLayout.SOUTH);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00080}00080\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ setSize(400,\ 400);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ setLocationRelativeTo(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ setDefaultCloseOperation(JFrame.DISPOSE\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00088}\mbox{\hyperlink{classwindows_1_1_hotel_creator_window_a2d9b7941c865158a2d0e0da83301ce5e}{00088}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwindows_1_1_hotel_creator_window_a2d9b7941c865158a2d0e0da83301ce5e}{actionPerformed}}(ActionEvent\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ submitButton)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ Integer.parseInt(idF.getText());}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ name\ =\ nameF.getText();}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ city\ =\ cityF.getText();}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ info\ =\ infoF.getText();}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ hotel\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}(\textcolor{keywordtype}{id},\ name,\ city,\ info);\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_aa12be99f64706cbfc85e23c74d8ce9f2}{createHotel}}(hotel);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ clearButton)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idF.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nameF.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cityF.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ infoF.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ imageButton)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Border\ layout,\ uno\ al\ este\ otro\ al\ oeste}}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ image\ =\ fileChooser.showOpenDialog(\mbox{\hyperlink{classwindows_1_1_hotel_creator_window}{HotelCreatorWindow}}.this);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(image\ ==\ JFileChooser.APPROVE\_OPTION)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ File\ file\ =\ fileChooser.getSelectedFile();}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BufferedImage\ imageBuff\ =\ ImageIO.read(file);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ImageIcon\ icon\ =\ \textcolor{keyword}{new}\ ImageIcon(imageBuff);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageL.setIcon(icon);}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (IOException\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ex.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00120}\mbox{\hyperlink{classwindows_1_1_hotel_creator_window_aca44614dc66a1783bc8bf67319cf34a2}{00120}}\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwindows_1_1_hotel_creator_window_aca44614dc66a1783bc8bf67319cf34a2}{main}}(String[]\ args)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_hotel_creator_window}{HotelCreatorWindow}}\ hotelWindow\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classwindows_1_1_hotel_creator_window_a1b922f9d1fed0d7fbed3786dbda25f41}{HotelCreatorWindow}}();}
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_creator_window_8java_source_l00123}00123\ \}}
+
+\end{DoxyCode}

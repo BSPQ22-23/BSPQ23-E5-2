@@ -1,0 +1,135 @@
+\hypertarget{_hotel_d_a_o_8java_source}{}\doxysection{Hotel\+DAO.\+java}
+\label{_hotel_d_a_o_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Server/src/main/java/database/HotelDAO.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Server/src/main/java/database/HotelDAO.java}}
+\mbox{\hyperlink{_hotel_d_a_o_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00001}00001\ \textcolor{keyword}{package\ }database;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.LinkedList;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00006}00006\ \textcolor{keyword}{import}\ javax.jdo.PersistenceManager;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00007}00007\ \textcolor{keyword}{import}\ javax.jdo.Query;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00008}00008\ \textcolor{keyword}{import}\ javax.jdo.Transaction;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00010}00010\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceapi}{api}}.\mbox{\hyperlink{classapi_1_1_a_p_i_utils}{APIUtils}};}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00011}00011\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_booking}{Booking}};}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00019}00019\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}};}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00020}00020\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_room}{Room}};}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00022}\mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o}{00022}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o}{HotelDAO}}\ \ \textcolor{keyword}{extends}\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base}{DataAccessObjectBase}}\ implements\ \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object}{IDataAccessObject}}<Hotel>\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o}{HotelDAO}}\ INSTANCE\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o}{HotelDAO}}();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00025}\mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_acbd01d431d8fc161787c91bbe686218c}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o}{HotelDAO}}\ \mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_acbd01d431d8fc161787c91bbe686218c}{getInstance}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ INSTANCE;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00028}00028\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00029}00029\ \textcolor{comment}{\ \ \ \ @Override}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00030}00030\ \textcolor{comment}{\ \ \ \ public\ void\ save(Hotel\ object)\ \{}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00031}00031\ \textcolor{comment}{\ \ \ \ \ \ \ \ //\ TODO\ Auto-\/generated\ method\ stub}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00032}00032\ \textcolor{comment}{\ \ \ \ \ \ \ \ HotelDAO.getInstance().save(object);}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00033}00033\ \textcolor{comment}{\ \ \ \ \ \ \ \ save(object);}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00034}00034\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00035}00035\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00036}00036\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00037}\mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_aa93a3bf1d295eef833b1a642ffd914c0}{00037}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_aa93a3bf1d295eef833b1a642ffd914c0}{save}}(\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ \textcolor{keywordtype}{object})\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a8c464a43b69b5f79e0f5af40b445d3d4}{saveObject}}(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00043}00043\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00044}\mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_ac4474c57dc47892b2a80a555f9f049e4}{00044}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_ac4474c57dc47892b2a80a555f9f049e4}{delete}}(\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ \textcolor{keywordtype}{object})\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_ad9f80ee38bb7503be53ebea31f016a27}{deleteObject}}(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00050}00050\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00051}\mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_a444dbf6e3903158dacc5553db5636c9e}{00051}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Hotel>\ \mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_a444dbf6e3903158dacc5553db5636c9e}{getAll}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ Transaction\ tx\ =\ pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ List<Hotel>\ result\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ tx.begin();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ Query<Hotel>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}.class);}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ (List<Hotel>)\ q.executeList();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ tx.commit();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (Exception\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Error:\ "{}}\ +\ ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ ex.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{finally}\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tx\ !=\ \textcolor{keyword}{null}\ \&\&\ tx.isActive())\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ pm.close();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00081}\mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_ad8ecec87bf471ac53d5d2528db340466}{00081}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Hotel>\ \mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_ad8ecec87bf471ac53d5d2528db340466}{getByName}}\ (String\ name)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ Transaction\ tx\ =\ pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ tx.begin();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ Query<Hotel>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}.class,\mbox{\hyperlink{classapi_1_1_a_p_i_utils}{APIUtils}}.\mbox{\hyperlink{classapi_1_1_a_p_i_utils_af3e43b1eaa0bd38b63f547306849d45f}{decode}}(\textcolor{stringliteral}{"{}bmFtZS50b0xvd2VyQ2FzZSgpLmluZGV4T2YocV9uYW1lKSA+PSAwIHx8IG5hbWUudG9Mb3dlckNhc2UoKSA9PSBxX25hbWU="{}}));}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ q.declareParameters(\textcolor{stringliteral}{"{}String\ q\_name"{}});}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ q.setUnique(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ List<Hotel>\ resultList\ =\ \ (List<Hotel>)\ q.setParameters(name.toLowerCase()).executeList();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ tx.commit();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tx\ !=\ \textcolor{keyword}{null}\ \&\&\ tx.isActive())\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ pm.close();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultList;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00095}00095\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00096}00096\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00097}\mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_a286ddeec9936fc21941d5855e8f23482}{00097}}\ \ \ \ \ \textcolor{keyword}{public}\ List<Hotel>\ \mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_a286ddeec9936fc21941d5855e8f23482}{getByOwner}}(String\ owner)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ Query<Hotel>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}.class,\ \textcolor{stringliteral}{"{}ownerDni\ ==\ :owner"{}});}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ List<Hotel>\ resultList\ =\ (List<Hotel>)\ q.setParameters(owner).executeList();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ pm.close();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultList;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00104}00104\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00106}00106\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00107}\mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_a995079eb79111ec7866e69c2fc3c734b}{00107}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ \mbox{\hyperlink{classdatabase_1_1_hotel_d_a_o_a995079eb79111ec7866e69c2fc3c734b}{find}}(String\ param)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ Transaction\ tx\ =\ pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ result\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ detatched\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ tx.begin();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ Query<Hotel>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}.class,\ \textcolor{stringliteral}{"{}id\ ==\ "{}}+param.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}}));\ \ \textcolor{comment}{//\ Se\ crea\ una\ consulta\ JDO\ para\ la\ clase\ Hotel,\ filtrando\ el\ nombre\ }}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ q.setParameters(param.toLowerCase());}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ q.setUnique(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ (\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}})\ q.execute();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ detatched\ =\ pm.detachCopy(result);}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}\ \_detatched\ =\ detatched;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ LinkedList<Room>\ detatchedRooms\ =\ \textcolor{keyword}{new}\ LinkedList<>();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{classdomain_1_1_hotel_af0b0bb65c3baade4a15959bf5bd459bf}{getRooms}}().forEach(v-\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Room\ r\ =\ pm.detachCopy(v);}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.setHotel(\_detatched);}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LinkedList<Booking>\ detatchedBookings\ =\ new\ LinkedList<>();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v.getBookings().forEach(b-\/>detatchedBookings.add(pm.detachCopy(b)));}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ detatchedBookings.forEach(b-\/>b.setRoom(r));}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r.setBookings(detatchedBookings);}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ detatchedRooms.add(r);}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ detatched.\mbox{\hyperlink{classdomain_1_1_hotel_afc96f66b29d907e486af2a1b21263bf2}{setRooms}}(detatchedRooms);}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//detatched.getRooms().forEach(v\ -\/>\ v.getBookings().forEach(b\ -\/>\ b.setRoom(pm.detachCopy(b.getRoom()))));}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ tx.commit();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ detatched.\mbox{\hyperlink{classdomain_1_1_hotel_af0b0bb65c3baade4a15959bf5bd459bf}{getRooms}}().forEach(v-\/>System.out.println(v.getBookings()));}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(Exception\ ex)\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ ex.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ System.err.println(\textcolor{stringliteral}{"{}\$\ Error\ finding\ a\ hotel:\ "{}}\ +\ ex.getMessage());}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tx\ !=\ \textcolor{keyword}{null}\ \&\&\ tx.isActive())\ \{}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00141}00141\ \ \ \ \ \ \ \ \ pm.close();}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detatched;}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00143}00143\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00144}00144\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00145}00145\ \}}
+\DoxyCodeLine{\Hypertarget{_hotel_d_a_o_8java_source_l00146}00146\ }
+
+\end{DoxyCode}

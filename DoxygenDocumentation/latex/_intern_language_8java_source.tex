@@ -1,0 +1,32 @@
+\hypertarget{_intern_language_8java_source}{}\doxysection{Intern\+Language.\+java}
+\label{_intern_language_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/main/java/language/InternLanguage.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/main/java/language/InternLanguage.java}}
+\mbox{\hyperlink{_intern_language_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00001}\mbox{\hyperlink{namespacelanguage}{00001}}\ \textcolor{keyword}{package\ }language;}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.Locale;}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.util.MissingResourceException;}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.util.ResourceBundle;}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00007}\mbox{\hyperlink{classlanguage_1_1_intern_language}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}\ \{}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00008}00008\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00009}\mbox{\hyperlink{classlanguage_1_1_intern_language_abcbd92f209d42cfc6c36bcd04fc3d303}{00009}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{namespacelanguage}{language}}\ =\ \textcolor{stringliteral}{"{}en"{}};}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ ResourceBundle\ bundle\ =\ ResourceBundle.getBundle(\textcolor{stringliteral}{"{}ApplicationMessages"{}},\ Locale.forLanguageTag(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_abcbd92f209d42cfc6c36bcd04fc3d303}{language}}));}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00012}00012\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00013}\mbox{\hyperlink{classlanguage_1_1_intern_language_a4f3223729336ef3e3f78c837931d4c15}{00013}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classlanguage_1_1_intern_language_a4f3223729336ef3e3f78c837931d4c15}{changeLanguage}}(String\ lan)\ \{}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00014}00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacelanguage}{language}}\ =\ lan;}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00015}00015\ \ \ \ \ \ \ \ \ bundle\ \ =\ ResourceBundle.getBundle(\textcolor{stringliteral}{"{}ApplicationMessages"{}},\ Locale.forLanguageTag(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_abcbd92f209d42cfc6c36bcd04fc3d303}{language}}));}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00017}00017\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00018}\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(String\ txt)\ \{}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ bundle.getString(txt);}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(MissingResourceException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}\{"{}}+txt+\textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00025}00025\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_intern_language_8java_source_l00026}00026\ \}}
+
+\end{DoxyCode}

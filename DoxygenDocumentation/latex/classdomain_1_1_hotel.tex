@@ -1,0 +1,555 @@
+\hypertarget{classdomain_1_1_hotel}{}\doxysection{domain.\+Hotel Class Reference}
+\label{classdomain_1_1_hotel}\index{domain.Hotel@{domain.Hotel}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdomain_1_1_hotel_a1f9fb56b7412449bc8999be6b8839f22}{Hotel}} (int id, String name, String city, String info)
+\item 
+\mbox{\hyperlink{classdomain_1_1_hotel_a5df8e9dc4c636691da8a719f2d3489cb}{Hotel}} (int id, String name, String city, String info, Buffered\+Image icon, String icon\+Format)
+\item 
+Buffered\+Image \mbox{\hyperlink{classdomain_1_1_hotel_a0c639c2f037d08ac08b5aa9d58ff8287}{get\+Icon}} ()
+\item 
+String \mbox{\hyperlink{classdomain_1_1_hotel_a60bcbab7f597ad6d734184d600bb501d}{get\+Icon\+Format}} ()
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a2401c618daa091031afe8ed970f42628}{set\+Icon}} (Buffered\+Image icon, String icon\+Format)
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a15d886e294d91ab64c3a2d8febee0c92}{set\+Icon}} (byte\mbox{[}$\,$\mbox{]} pixel\+Array, String format)  throws IOException 
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_afddd424db3ebfe4993ce18369039ab39}{set\+Id}} (int id)
+\item 
+int \mbox{\hyperlink{classdomain_1_1_hotel_adc35ff096bbedc2ec0734ffaa0af68fd}{get\+Id}} ()
+\item 
+String \mbox{\hyperlink{classdomain_1_1_hotel_a41db63c9f09af4905e9e2251eca49d35}{get\+Name}} ()
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a6cc71e51c47365927545aa71954fc8a6}{set\+Name}} (String name)
+\item 
+String \mbox{\hyperlink{classdomain_1_1_hotel_acd1ac38936eae91b6dd6fa887ef02e6a}{get\+City}} ()
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a2d6cdaa08f92ed1d514c1ecdf0ec1b44}{set\+City}} (String city)
+\item 
+String \mbox{\hyperlink{classdomain_1_1_hotel_abe8804671a48baa86b8a63337a157e5e}{get\+Info}} ()
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_ac767be011c2afc261dd88825d514cddf}{set\+Info}} (String info)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1_room}{Room}} $>$ \mbox{\hyperlink{classdomain_1_1_hotel_af0b0bb65c3baade4a15959bf5bd459bf}{get\+Rooms}} ()
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_afc96f66b29d907e486af2a1b21263bf2}{set\+Rooms}} (List$<$ \mbox{\hyperlink{classdomain_1_1_room}{Room}} $>$ rooms)
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a10f77bf7bb9592b58afe1b59d1326540}{add\+Room}} (\mbox{\hyperlink{classdomain_1_1_room}{Room}} room)
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a87e390cfdf893d185fb83e78819cb132}{remove\+Room}} (\mbox{\hyperlink{classdomain_1_1_room}{Room}} room)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1_service}{Service}} $>$ \mbox{\hyperlink{classdomain_1_1_hotel_a289cf16e0225f2603353193833a74c9b}{get\+Services}} ()
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a30cadf77ea2cf92860899557bd2ec4ec}{set\+Services}} (List$<$ \mbox{\hyperlink{classdomain_1_1_service}{Service}} $>$ services)
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a79bb3ca925704e85a95a64a59530f52c}{add\+Service}} (\mbox{\hyperlink{classdomain_1_1_service}{Service}} service)
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a60715fbddd1255e9beb6c616bb7c75dd}{remove\+Service}} (\mbox{\hyperlink{classdomain_1_1_service}{Service}} service)
+\item 
+String \mbox{\hyperlink{classdomain_1_1_hotel_a4b6f56ad065f115d75d2c7826967734c}{to\+String}} ()
+\item 
+\mbox{\hyperlink{classdomain_1_1_hotel_afed103132e778b773bf9edb68d2dca43}{Hotel}} (\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}} h)
+\item 
+\mbox{\hyperlink{classdomain_1_1_hotel_ae94b617daf98135b32c6b33ad38fa1ce}{Hotel}} (String name, String city, String info, \mbox{\hyperlink{classdomain_1_1_guest}{Guest}} owner)
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_afddd424db3ebfe4993ce18369039ab39}{set\+Id}} (int id)
+\item 
+int \mbox{\hyperlink{classdomain_1_1_hotel_adc35ff096bbedc2ec0734ffaa0af68fd}{get\+Id}} ()
+\item 
+String \mbox{\hyperlink{classdomain_1_1_hotel_a41db63c9f09af4905e9e2251eca49d35}{get\+Name}} ()
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a6cc71e51c47365927545aa71954fc8a6}{set\+Name}} (String name)
+\item 
+String \mbox{\hyperlink{classdomain_1_1_hotel_acd1ac38936eae91b6dd6fa887ef02e6a}{get\+City}} ()
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a2d6cdaa08f92ed1d514c1ecdf0ec1b44}{set\+City}} (String city)
+\item 
+Linked\+List$<$ \mbox{\hyperlink{classdomain_1_1_room}{Room}} $>$ \mbox{\hyperlink{classdomain_1_1_hotel_a63aa79aea155553590aab3f7105e61f3}{get\+Rooms}} ()
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a11ce0e2cca5d5cefbb4df1fb9f05fc01}{set\+Rooms}} (Linked\+List$<$ \mbox{\hyperlink{classdomain_1_1_room}{Room}} $>$ rooms)
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a10f77bf7bb9592b58afe1b59d1326540}{add\+Room}} (\mbox{\hyperlink{classdomain_1_1_room}{Room}} room)
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a87e390cfdf893d185fb83e78819cb132}{remove\+Room}} (\mbox{\hyperlink{classdomain_1_1_room}{Room}} room)
+\item 
+Linked\+List$<$ \mbox{\hyperlink{classdomain_1_1_service}{Service}} $>$ \mbox{\hyperlink{classdomain_1_1_hotel_a494ba04ee04201119d168c470de8281d}{get\+Services}} ()
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a19043c8cbdc68df0861bc8e3157349e8}{set\+Services}} (Linked\+List$<$ \mbox{\hyperlink{classdomain_1_1_service}{Service}} $>$ services)
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a79bb3ca925704e85a95a64a59530f52c}{add\+Service}} (\mbox{\hyperlink{classdomain_1_1_service}{Service}} service)
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a60715fbddd1255e9beb6c616bb7c75dd}{remove\+Service}} (\mbox{\hyperlink{classdomain_1_1_service}{Service}} service)
+\item 
+\mbox{\hyperlink{classdomain_1_1_guest}{Guest}} \mbox{\hyperlink{classdomain_1_1_hotel_a1e98d0c499fab2976ff43103a875e348}{get\+Owner}} ()
+\item 
+void \mbox{\hyperlink{classdomain_1_1_hotel_a92732c0d82d601af79f5244cd5da50a6}{set\+Owner}} (\mbox{\hyperlink{classdomain_1_1_guest}{Guest}} owner)
+\item 
+boolean \mbox{\hyperlink{classdomain_1_1_hotel_ad6f1fd1a21c653d52c4744a3a7723bf1}{equals}} (Object o)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}} \mbox{\hyperlink{classdomain_1_1_hotel_a6bcddccbddbfaa74e5d88704f178d663}{from\+JSON}} (JSONObject obj)
+\item 
+static \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}} \mbox{\hyperlink{classdomain_1_1_hotel_a6bcddccbddbfaa74e5d88704f178d663}{from\+JSON}} (JSONObject obj)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00015}{15}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdomain_1_1_hotel_a1f9fb56b7412449bc8999be6b8839f22}\label{classdomain_1_1_hotel_a1f9fb56b7412449bc8999be6b8839f22}} 
+\index{domain.Hotel@{domain.Hotel}!Hotel@{Hotel}}
+\index{Hotel@{Hotel}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{Hotel()}{Hotel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily domain.\+Hotel.\+Hotel (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{String}]{name,  }\item[{String}]{city,  }\item[{String}]{info }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00038}{38}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a5df8e9dc4c636691da8a719f2d3489cb}\label{classdomain_1_1_hotel_a5df8e9dc4c636691da8a719f2d3489cb}} 
+\index{domain.Hotel@{domain.Hotel}!Hotel@{Hotel}}
+\index{Hotel@{Hotel}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{Hotel()}{Hotel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily domain.\+Hotel.\+Hotel (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{String}]{name,  }\item[{String}]{city,  }\item[{String}]{info,  }\item[{Buffered\+Image}]{icon,  }\item[{String}]{icon\+Format }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00049}{49}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_afed103132e778b773bf9edb68d2dca43}\label{classdomain_1_1_hotel_afed103132e778b773bf9edb68d2dca43}} 
+\index{domain.Hotel@{domain.Hotel}!Hotel@{Hotel}}
+\index{Hotel@{Hotel}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{Hotel()}{Hotel()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily domain.\+Hotel.\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00058}{58}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_ae94b617daf98135b32c6b33ad38fa1ce}\label{classdomain_1_1_hotel_ae94b617daf98135b32c6b33ad38fa1ce}} 
+\index{domain.Hotel@{domain.Hotel}!Hotel@{Hotel}}
+\index{Hotel@{Hotel}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{Hotel()}{Hotel()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily domain.\+Hotel.\+Hotel (\begin{DoxyParamCaption}\item[{String}]{name,  }\item[{String}]{city,  }\item[{String}]{info,  }\item[{\mbox{\hyperlink{classdomain_1_1_guest}{Guest}}}]{owner }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00069}{69}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomain_1_1_hotel_a10f77bf7bb9592b58afe1b59d1326540}\label{classdomain_1_1_hotel_a10f77bf7bb9592b58afe1b59d1326540}} 
+\index{domain.Hotel@{domain.Hotel}!addRoom@{addRoom}}
+\index{addRoom@{addRoom}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{addRoom()}{addRoom()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+add\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_room}{Room}}}]{room }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00118}{118}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a10f77bf7bb9592b58afe1b59d1326540}\label{classdomain_1_1_hotel_a10f77bf7bb9592b58afe1b59d1326540}} 
+\index{domain.Hotel@{domain.Hotel}!addRoom@{addRoom}}
+\index{addRoom@{addRoom}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{addRoom()}{addRoom()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+add\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_room}{Room}}}]{room }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00110}{110}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a79bb3ca925704e85a95a64a59530f52c}\label{classdomain_1_1_hotel_a79bb3ca925704e85a95a64a59530f52c}} 
+\index{domain.Hotel@{domain.Hotel}!addService@{addService}}
+\index{addService@{addService}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{addService()}{addService()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+add\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_service}{Service}}}]{service }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00134}{134}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a79bb3ca925704e85a95a64a59530f52c}\label{classdomain_1_1_hotel_a79bb3ca925704e85a95a64a59530f52c}} 
+\index{domain.Hotel@{domain.Hotel}!addService@{addService}}
+\index{addService@{addService}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{addService()}{addService()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+add\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_service}{Service}}}]{service }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00126}{126}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_ad6f1fd1a21c653d52c4744a3a7723bf1}\label{classdomain_1_1_hotel_ad6f1fd1a21c653d52c4744a3a7723bf1}} 
+\index{domain.Hotel@{domain.Hotel}!equals@{equals}}
+\index{equals@{equals}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily boolean domain.\+Hotel.\+equals (\begin{DoxyParamCaption}\item[{Object}]{o }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00145}{145}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a6bcddccbddbfaa74e5d88704f178d663}\label{classdomain_1_1_hotel_a6bcddccbddbfaa74e5d88704f178d663}} 
+\index{domain.Hotel@{domain.Hotel}!fromJSON@{fromJSON}}
+\index{fromJSON@{fromJSON}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{fromJSON()}{fromJSON()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}} domain.\+Hotel.\+from\+JSON (\begin{DoxyParamCaption}\item[{JSONObject}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00025}{25}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a6bcddccbddbfaa74e5d88704f178d663}\label{classdomain_1_1_hotel_a6bcddccbddbfaa74e5d88704f178d663}} 
+\index{domain.Hotel@{domain.Hotel}!fromJSON@{fromJSON}}
+\index{fromJSON@{fromJSON}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{fromJSON()}{fromJSON()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}} domain.\+Hotel.\+from\+JSON (\begin{DoxyParamCaption}\item[{JSONObject}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00042}{42}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_acd1ac38936eae91b6dd6fa887ef02e6a}\label{classdomain_1_1_hotel_acd1ac38936eae91b6dd6fa887ef02e6a}} 
+\index{domain.Hotel@{domain.Hotel}!getCity@{getCity}}
+\index{getCity@{getCity}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getCity()}{getCity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily String domain.\+Hotel.\+get\+City (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00094}{94}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_acd1ac38936eae91b6dd6fa887ef02e6a}\label{classdomain_1_1_hotel_acd1ac38936eae91b6dd6fa887ef02e6a}} 
+\index{domain.Hotel@{domain.Hotel}!getCity@{getCity}}
+\index{getCity@{getCity}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getCity()}{getCity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String domain.\+Hotel.\+get\+City (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00094}{94}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a0c639c2f037d08ac08b5aa9d58ff8287}\label{classdomain_1_1_hotel_a0c639c2f037d08ac08b5aa9d58ff8287}} 
+\index{domain.Hotel@{domain.Hotel}!getIcon@{getIcon}}
+\index{getIcon@{getIcon}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getIcon()}{getIcon()}}
+{\footnotesize\ttfamily Buffered\+Image domain.\+Hotel.\+get\+Icon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00061}{61}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a60bcbab7f597ad6d734184d600bb501d}\label{classdomain_1_1_hotel_a60bcbab7f597ad6d734184d600bb501d}} 
+\index{domain.Hotel@{domain.Hotel}!getIconFormat@{getIconFormat}}
+\index{getIconFormat@{getIconFormat}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getIconFormat()}{getIconFormat()}}
+{\footnotesize\ttfamily String domain.\+Hotel.\+get\+Icon\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00065}{65}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_adc35ff096bbedc2ec0734ffaa0af68fd}\label{classdomain_1_1_hotel_adc35ff096bbedc2ec0734ffaa0af68fd}} 
+\index{domain.Hotel@{domain.Hotel}!getId@{getId}}
+\index{getId@{getId}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int domain.\+Hotel.\+get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00083}{83}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_adc35ff096bbedc2ec0734ffaa0af68fd}\label{classdomain_1_1_hotel_adc35ff096bbedc2ec0734ffaa0af68fd}} 
+\index{domain.Hotel@{domain.Hotel}!getId@{getId}}
+\index{getId@{getId}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int domain.\+Hotel.\+get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00082}{82}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_abe8804671a48baa86b8a63337a157e5e}\label{classdomain_1_1_hotel_abe8804671a48baa86b8a63337a157e5e}} 
+\index{domain.Hotel@{domain.Hotel}!getInfo@{getInfo}}
+\index{getInfo@{getInfo}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getInfo()}{getInfo()}}
+{\footnotesize\ttfamily String domain.\+Hotel.\+get\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00102}{102}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a41db63c9f09af4905e9e2251eca49d35}\label{classdomain_1_1_hotel_a41db63c9f09af4905e9e2251eca49d35}} 
+\index{domain.Hotel@{domain.Hotel}!getName@{getName}}
+\index{getName@{getName}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily String domain.\+Hotel.\+get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00086}{86}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a41db63c9f09af4905e9e2251eca49d35}\label{classdomain_1_1_hotel_a41db63c9f09af4905e9e2251eca49d35}} 
+\index{domain.Hotel@{domain.Hotel}!getName@{getName}}
+\index{getName@{getName}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String domain.\+Hotel.\+get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00086}{86}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a1e98d0c499fab2976ff43103a875e348}\label{classdomain_1_1_hotel_a1e98d0c499fab2976ff43103a875e348}} 
+\index{domain.Hotel@{domain.Hotel}!getOwner@{getOwner}}
+\index{getOwner@{getOwner}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getOwner()}{getOwner()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdomain_1_1_guest}{Guest}} domain.\+Hotel.\+get\+Owner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00134}{134}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_af0b0bb65c3baade4a15959bf5bd459bf}\label{classdomain_1_1_hotel_af0b0bb65c3baade4a15959bf5bd459bf}} 
+\index{domain.Hotel@{domain.Hotel}!getRooms@{getRooms}}
+\index{getRooms@{getRooms}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getRooms()}{getRooms()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classdomain_1_1_room}{Room}} $>$ domain.\+Hotel.\+get\+Rooms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00110}{110}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a63aa79aea155553590aab3f7105e61f3}\label{classdomain_1_1_hotel_a63aa79aea155553590aab3f7105e61f3}} 
+\index{domain.Hotel@{domain.Hotel}!getRooms@{getRooms}}
+\index{getRooms@{getRooms}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getRooms()}{getRooms()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Linked\+List$<$ \mbox{\hyperlink{classdomain_1_1_room}{Room}} $>$ domain.\+Hotel.\+get\+Rooms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00102}{102}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a289cf16e0225f2603353193833a74c9b}\label{classdomain_1_1_hotel_a289cf16e0225f2603353193833a74c9b}} 
+\index{domain.Hotel@{domain.Hotel}!getServices@{getServices}}
+\index{getServices@{getServices}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getServices()}{getServices()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classdomain_1_1_service}{Service}} $>$ domain.\+Hotel.\+get\+Services (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00126}{126}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a494ba04ee04201119d168c470de8281d}\label{classdomain_1_1_hotel_a494ba04ee04201119d168c470de8281d}} 
+\index{domain.Hotel@{domain.Hotel}!getServices@{getServices}}
+\index{getServices@{getServices}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{getServices()}{getServices()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Linked\+List$<$ \mbox{\hyperlink{classdomain_1_1_service}{Service}} $>$ domain.\+Hotel.\+get\+Services (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00118}{118}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a87e390cfdf893d185fb83e78819cb132}\label{classdomain_1_1_hotel_a87e390cfdf893d185fb83e78819cb132}} 
+\index{domain.Hotel@{domain.Hotel}!removeRoom@{removeRoom}}
+\index{removeRoom@{removeRoom}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{removeRoom()}{removeRoom()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+remove\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_room}{Room}}}]{room }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00122}{122}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a87e390cfdf893d185fb83e78819cb132}\label{classdomain_1_1_hotel_a87e390cfdf893d185fb83e78819cb132}} 
+\index{domain.Hotel@{domain.Hotel}!removeRoom@{removeRoom}}
+\index{removeRoom@{removeRoom}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{removeRoom()}{removeRoom()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+remove\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_room}{Room}}}]{room }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00114}{114}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a60715fbddd1255e9beb6c616bb7c75dd}\label{classdomain_1_1_hotel_a60715fbddd1255e9beb6c616bb7c75dd}} 
+\index{domain.Hotel@{domain.Hotel}!removeService@{removeService}}
+\index{removeService@{removeService}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{removeService()}{removeService()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+remove\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_service}{Service}}}]{service }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00138}{138}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a60715fbddd1255e9beb6c616bb7c75dd}\label{classdomain_1_1_hotel_a60715fbddd1255e9beb6c616bb7c75dd}} 
+\index{domain.Hotel@{domain.Hotel}!removeService@{removeService}}
+\index{removeService@{removeService}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{removeService()}{removeService()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+remove\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_service}{Service}}}]{service }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00130}{130}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a2d6cdaa08f92ed1d514c1ecdf0ec1b44}\label{classdomain_1_1_hotel_a2d6cdaa08f92ed1d514c1ecdf0ec1b44}} 
+\index{domain.Hotel@{domain.Hotel}!setCity@{setCity}}
+\index{setCity@{setCity}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setCity()}{setCity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+City (\begin{DoxyParamCaption}\item[{String}]{city }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00098}{98}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a2d6cdaa08f92ed1d514c1ecdf0ec1b44}\label{classdomain_1_1_hotel_a2d6cdaa08f92ed1d514c1ecdf0ec1b44}} 
+\index{domain.Hotel@{domain.Hotel}!setCity@{setCity}}
+\index{setCity@{setCity}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setCity()}{setCity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+City (\begin{DoxyParamCaption}\item[{String}]{city }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00098}{98}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a2401c618daa091031afe8ed970f42628}\label{classdomain_1_1_hotel_a2401c618daa091031afe8ed970f42628}} 
+\index{domain.Hotel@{domain.Hotel}!setIcon@{setIcon}}
+\index{setIcon@{setIcon}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setIcon()}{setIcon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Icon (\begin{DoxyParamCaption}\item[{Buffered\+Image}]{icon,  }\item[{String}]{icon\+Format }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00069}{69}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a15d886e294d91ab64c3a2d8febee0c92}\label{classdomain_1_1_hotel_a15d886e294d91ab64c3a2d8febee0c92}} 
+\index{domain.Hotel@{domain.Hotel}!setIcon@{setIcon}}
+\index{setIcon@{setIcon}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setIcon()}{setIcon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Icon (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{pixel\+Array,  }\item[{String}]{format }\end{DoxyParamCaption}) throws IOException}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00074}{74}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_afddd424db3ebfe4993ce18369039ab39}\label{classdomain_1_1_hotel_afddd424db3ebfe4993ce18369039ab39}} 
+\index{domain.Hotel@{domain.Hotel}!setId@{setId}}
+\index{setId@{setId}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00079}{79}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_afddd424db3ebfe4993ce18369039ab39}\label{classdomain_1_1_hotel_afddd424db3ebfe4993ce18369039ab39}} 
+\index{domain.Hotel@{domain.Hotel}!setId@{setId}}
+\index{setId@{setId}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00079}{79}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_ac767be011c2afc261dd88825d514cddf}\label{classdomain_1_1_hotel_ac767be011c2afc261dd88825d514cddf}} 
+\index{domain.Hotel@{domain.Hotel}!setInfo@{setInfo}}
+\index{setInfo@{setInfo}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setInfo()}{setInfo()}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Info (\begin{DoxyParamCaption}\item[{String}]{info }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00106}{106}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a6cc71e51c47365927545aa71954fc8a6}\label{classdomain_1_1_hotel_a6cc71e51c47365927545aa71954fc8a6}} 
+\index{domain.Hotel@{domain.Hotel}!setName@{setName}}
+\index{setName@{setName}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Name (\begin{DoxyParamCaption}\item[{String}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00090}{90}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a6cc71e51c47365927545aa71954fc8a6}\label{classdomain_1_1_hotel_a6cc71e51c47365927545aa71954fc8a6}} 
+\index{domain.Hotel@{domain.Hotel}!setName@{setName}}
+\index{setName@{setName}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Name (\begin{DoxyParamCaption}\item[{String}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00090}{90}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a92732c0d82d601af79f5244cd5da50a6}\label{classdomain_1_1_hotel_a92732c0d82d601af79f5244cd5da50a6}} 
+\index{domain.Hotel@{domain.Hotel}!setOwner@{setOwner}}
+\index{setOwner@{setOwner}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setOwner()}{setOwner()}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Owner (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_guest}{Guest}}}]{owner }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00140}{140}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a11ce0e2cca5d5cefbb4df1fb9f05fc01}\label{classdomain_1_1_hotel_a11ce0e2cca5d5cefbb4df1fb9f05fc01}} 
+\index{domain.Hotel@{domain.Hotel}!setRooms@{setRooms}}
+\index{setRooms@{setRooms}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setRooms()}{setRooms()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Rooms (\begin{DoxyParamCaption}\item[{Linked\+List$<$ \mbox{\hyperlink{classdomain_1_1_room}{Room}} $>$}]{rooms }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00106}{106}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_afc96f66b29d907e486af2a1b21263bf2}\label{classdomain_1_1_hotel_afc96f66b29d907e486af2a1b21263bf2}} 
+\index{domain.Hotel@{domain.Hotel}!setRooms@{setRooms}}
+\index{setRooms@{setRooms}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setRooms()}{setRooms()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Rooms (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classdomain_1_1_room}{Room}} $>$}]{rooms }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00114}{114}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a19043c8cbdc68df0861bc8e3157349e8}\label{classdomain_1_1_hotel_a19043c8cbdc68df0861bc8e3157349e8}} 
+\index{domain.Hotel@{domain.Hotel}!setServices@{setServices}}
+\index{setServices@{setServices}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setServices()}{setServices()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Services (\begin{DoxyParamCaption}\item[{Linked\+List$<$ \mbox{\hyperlink{classdomain_1_1_service}{Service}} $>$}]{services }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00122}{122}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a30cadf77ea2cf92860899557bd2ec4ec}\label{classdomain_1_1_hotel_a30cadf77ea2cf92860899557bd2ec4ec}} 
+\index{domain.Hotel@{domain.Hotel}!setServices@{setServices}}
+\index{setServices@{setServices}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{setServices()}{setServices()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void domain.\+Hotel.\+set\+Services (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{classdomain_1_1_service}{Service}} $>$}]{services }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source_l00130}{130}} of file \mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+\mbox{\Hypertarget{classdomain_1_1_hotel_a4b6f56ad065f115d75d2c7826967734c}\label{classdomain_1_1_hotel_a4b6f56ad065f115d75d2c7826967734c}} 
+\index{domain.Hotel@{domain.Hotel}!toString@{toString}}
+\index{toString@{toString}!domain.Hotel@{domain.Hotel}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String domain.\+Hotel.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source_l00021}{21}} of file \mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java_source}{Hotel.\+java}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/andon/\+Documents/\+Git\+Hub/\+BSPQ23-\/\+E5-\/2/\+Client/src/main/java/domain/\mbox{\hyperlink{_client_2src_2main_2java_2domain_2_hotel_8java}{Hotel.\+java}}\item 
+C\+:/\+Users/andon/\+Documents/\+Git\+Hub/\+BSPQ23-\/\+E5-\/2/\+Server/src/main/java/domain/\mbox{\hyperlink{_server_2src_2main_2java_2domain_2_hotel_8java}{Hotel.\+java}}\end{DoxyCompactItemize}
