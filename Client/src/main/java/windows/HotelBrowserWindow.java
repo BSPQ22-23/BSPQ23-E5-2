@@ -32,11 +32,14 @@ import remote.ClientController;
 import remote.ClientController.DownloadedImage;
 import remote.ClientController.Response;
 
-
+/**
+ * Window to browse a hotel from a list
+ *
+ */
 public class HotelBrowserWindow extends JFrame  {
 	private static final long serialVersionUID = 1L;
 	private JTextField searchField;
-    private JButton viewHotelButton, homeButton,searchButton;
+    private JButton homeButton,searchButton;
     public  ClientController controller;
     private static JLabel notAvailableHotel;
     private static JLabel noIconHotel;
@@ -67,7 +70,6 @@ public class HotelBrowserWindow extends JFrame  {
             }
         });
     }
-
     public HotelBrowserWindow() {
     	DefaultListModel<Hotel> hotelListModel = new DefaultListModel<>();
     	try {
@@ -76,6 +78,7 @@ public class HotelBrowserWindow extends JFrame  {
     		hotelListModel.addElement(errorHotel);
     	}
     	JList<Hotel> hotelList = new JList<>(hotelListModel);
+    	final HotelBrowserWindow window = this;
     	hotelList.setCellRenderer(new ListCellRenderer<Hotel>() {
 
 			@Override
@@ -87,6 +90,7 @@ public class HotelBrowserWindow extends JFrame  {
 				}else {
 					try {
 						DownloadedImage i = ClientController.downloadImage("hotel/icon/"+value.getId(), 0);
+						value.setIcon(i.image, i.format);
 						panel.add(new JLabel(new ImageIcon(i.image.getScaledInstance(100, 100, BufferedImage.SCALE_SMOOTH))), BorderLayout.WEST);
 					} catch(Response r) {
 						panel.add(noIconHotel, BorderLayout.WEST);
@@ -100,7 +104,8 @@ public class HotelBrowserWindow extends JFrame  {
 				
 				JButton buttonEnter = new JButton(InternLanguage.translateTxt("go"));
 				buttonEnter.addActionListener(v -> {
-					//TODO enter detail window
+					setVisible(false);
+					new HotelDescriptionWindow(value, window);
 				});
 				panel.add(buttonEnter, BorderLayout.EAST);
 				
@@ -116,7 +121,6 @@ public class HotelBrowserWindow extends JFrame  {
         // Create components
         searchField = new JTextField();
         searchButton = new JButton(InternLanguage.translateTxt("search"));
-        viewHotelButton = new JButton(InternLanguage.translateTxt("view_Hotel"));
         homeButton = new JButton(InternLanguage.translateTxt("home"));
 
         // Add action listeners
@@ -125,20 +129,16 @@ public class HotelBrowserWindow extends JFrame  {
                 String query = searchField.getText();
                 List<Hotel> hotels;
                 try {
-                	hotels =  ClientController.getHotels(query);
+                	if(query.strip().equals(""))
+                		hotels =  ClientController.getHotels();
+                	else
+                		hotels =  ClientController.getHotels(query);
                 } catch(Exception ex) {
                 	hotels = new LinkedList<>();
                 	hotels.add(errorHotel);
                 }
                 hotelListModel.removeAllElements();
                 hotels.forEach(v->hotelListModel.addElement(v));
-            }
-        });
-
-        viewHotelButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                // Implement logic to enter the hotel description window
-                JOptionPane.showMessageDialog(null, InternLanguage.translateTxt("hotel_DescMen"));
             }
         });
 
@@ -162,7 +162,6 @@ public class HotelBrowserWindow extends JFrame  {
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout());
-        buttonPanel.add(viewHotelButton);
         buttonPanel.add(homeButton);
 
         getContentPane().add(searchPanel, BorderLayout.NORTH);

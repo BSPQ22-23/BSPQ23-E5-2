@@ -13,9 +13,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import language.InternLanguage;
@@ -23,11 +20,9 @@ import language.InternLanguage;
 public class MainMenuClient extends JFrame implements ActionListener {
 	 	private JLabel welcome, info, info2, info3, info4, info5, warningL, infoSettings;
 	    private JButton hotelButton, searchButton, accountButton, contactButton, advSettingsButton, infoButton, searchHotelButton, deleteAccButton, logOutButton, changeDataButton;
-	    private JMenuBar menuBar;
-	    private JMenu menu, menuH, menuL;
-	    private JMenuItem mItem, mItem2, mItem3, mItemES, mItemEN;
 	    private JPanel buttonPanel, welcomePanel, infoPanel, pCenter, settingsPanel;
 	    private ReservationWindow reservationWindow;
+	    private UpperMenu upperMenu;
 	    
 	    public MainMenuClient() {
 	        super("Menu");    
@@ -59,16 +54,6 @@ public class MainMenuClient extends JFrame implements ActionListener {
 	        changeDataButton = new JButton("Change account data");
 	        deleteAccButton = new JButton("Delete this account");
 	        logOutButton = new JButton("Log out");
-	        
-	        menuBar = new JMenuBar();
-	        menu = new JMenu(InternLanguage.translateTxt("account"));
-	        menuH = new JMenu(InternLanguage.translateTxt("home"));
-	        menuL = new JMenu(InternLanguage.translateTxt("language"));
-	        mItem = new JMenuItem(InternLanguage.translateTxt("logOut"));
-	        mItem2 = new JMenuItem(InternLanguage.translateTxt("returnHome"));
-	        mItem3 = new JMenuItem(InternLanguage.translateTxt("exit"));
-	        mItemES  = new JMenuItem("Español");
-	        mItemEN = new JMenuItem("English");
 	        
 	        hotelButton.addActionListener(this);
 	        searchButton.addActionListener(this);
@@ -134,21 +119,17 @@ public class MainMenuClient extends JFrame implements ActionListener {
 			settingsPanel.setVisible(false);
 	        getContentPane().add(welcomePanel, BorderLayout.SOUTH);
 	        
-
-	        
-	        menuH.add(mItem2);
-	        menuH.add(mItem3);
-	        menuL.add(mItemES);
-	        menuL.add(mItemEN);
-	        menu.add(mItem);
-	        menuBar.add(menuH);
-	        menuBar.add(menu);
-	        menuBar.add(menuL);
-	        setJMenuBar(menuBar);
-	        
-	        mItem2.addActionListener(this);
-	        mItem3.addActionListener(this);
-			mItem2.setEnabled(false);
+	        upperMenu = new UpperMenu( v-> {
+	        	 infoPanel.setVisible(false);
+				 settingsPanel.setVisible(false);
+				 reservationWindow.setVisible(false);
+				 setSize(400, 300);
+				 pCenter.setVisible(true);
+		    	 welcomePanel.setVisible(true);
+		    	 buttonPanel.setVisible(true);
+				 upperMenu.returnHomeItem.setEnabled(false);
+	        });
+	        setJMenuBar(upperMenu);
 	        
 	        setSize(400, 300);
 	        setLocationRelativeTo(null);
@@ -172,7 +153,7 @@ public class MainMenuClient extends JFrame implements ActionListener {
 				pCenter.setVisible(false);
 				setSize(700, 600);
 				reservationWindow.setVisible(true);
-				mItem2.setEnabled(true);
+				upperMenu.returnHomeItem.setEnabled(true);
 				
 			} else if (e.getSource() == searchButton) {
 				HotelBrowserWindow hotelBrowser = new HotelBrowserWindow();
@@ -181,32 +162,14 @@ public class MainMenuClient extends JFrame implements ActionListener {
 				 buttonPanel.setVisible(false);
 			     welcomePanel.setVisible(false);
 			     infoPanel.setVisible(true);
-				 mItem2.setEnabled(true);
+			     upperMenu.returnHomeItem.setEnabled(true);
 			    
 			 } else if (e.getSource() == advSettingsButton) {
 				 buttonPanel.setVisible(false);
 				 welcomePanel.setVisible(false);
 				 settingsPanel.setVisible(true);
-				 mItem2.setEnabled(true);
+				 upperMenu.returnHomeItem.setEnabled(true);
 				    
-		     } else if (e.getSource() == mItem2) {
-				 infoPanel.setVisible(false);
-				 settingsPanel.setVisible(false);
-				 reservationWindow.setVisible(false);
-				 setSize(400, 300);
-				 pCenter.setVisible(true);
-		    	 welcomePanel.setVisible(true);
-		    	 buttonPanel.setVisible(true);
-				 mItem2.setEnabled(false);
-				
-		     }  else if (e.getSource() == mItem3) {
-		    	 this.dispose();
-		    	 
-		     }  else if (e.getSource() == mItemES) {
-		    	 InternLanguage.changeLanguage("es");
-		    	 
-		     }  else if (e.getSource() == mItemEN) {
-		    	 InternLanguage.changeLanguage("en");
 		     }
 		}
 		
