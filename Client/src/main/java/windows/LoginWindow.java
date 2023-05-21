@@ -4,12 +4,18 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+<<<<<<< Updated upstream
 import java.io.IOException;
+=======
+import remote.ClientController;
+import remote.ClientController.Response;
+>>>>>>> Stashed changes
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -50,15 +56,20 @@ public class LoginWindow extends JFrame {
                 String username = usernameField.getText();
                 char[] passwordChars = passwordField.getPassword();
                 String password = new String(passwordChars);
-
+                Response resp = new Response(10,"");
                 try {
                 	if(!username.equals("") && !password.equals("")) {
-                		ClientController.login(username, password);
-                		openMenu(ClientController.isHotelOwner());
                 		
+                		resp = ClientController.login(username, password);
                 	} else {
                 		System.out.println(InternLanguage.translateTxt("no_Info"));
                 	}
+                	if(resp.status == 200) {
+                		openMenu(ClientController.isHotelOwner());
+                	} else {
+                		messageWrong();
+                	}
+                	
                 }  catch (Exception e1) {
 					e1.printStackTrace();
                 }
@@ -100,6 +111,10 @@ public class LoginWindow extends JFrame {
 	    	menuClient.setVisible(true);
     	}
     	closeW();
+    }
+    
+    private void messageWrong() {
+        JOptionPane.showMessageDialog(this, "Your username or password is incorrect");
     }
     
     private void closeW() {
