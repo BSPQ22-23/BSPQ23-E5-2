@@ -11,6 +11,11 @@ import org.apache.logging.log4j.Logger;
 
 import language.InternLanguage;
 
+/**
+ * Macro for the common {@link javax.swing.JMenuBar JMenuBar} of the windows
+ * @author a-rasines
+ *
+ */
 public class UpperMenu extends JMenuBar{
 	private static final long serialVersionUID = 1L;
     private JMenu menu, menuH, menuL;

@@ -20,6 +20,11 @@ import remote.ClientController;
 import remote.ClientController.Response;
 import remote.ServiceLocator;
 
+/**
+ * 
+ * Window to log in the app, main class of the client
+ *
+ */
 public class LoginWindow extends JFrame {
 	private static final long serialVersionUID = 9081802356867145951L;
 	private JTextField usernameField;

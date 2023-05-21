@@ -18,6 +18,10 @@ import javax.swing.border.EmptyBorder;
 import domain.Guest;
 import language.InternLanguage;
 
+/**
+ * Window to add guests to a booking from {@link windows.RegistrationWindow RegistrationWindow}
+ *
+ */
 public class GuestCreatorWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;

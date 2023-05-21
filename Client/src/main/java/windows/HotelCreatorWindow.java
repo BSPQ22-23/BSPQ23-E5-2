@@ -25,6 +25,10 @@ import remote.ClientController;
 import windows.TranslatableObject.TranslatableJButton;
 import windows.TranslatableObject.TranslatableJLabel;
 
+/**
+ * Window to create new hotels
+ *
+ */
 public class HotelCreatorWindow extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;

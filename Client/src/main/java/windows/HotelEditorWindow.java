@@ -20,6 +20,11 @@ import domain.Service;
 import language.InternLanguage;
 import remote.ClientController;
 
+/**
+ * 
+ * Window to edit a hotel owned by the user
+ *
+ */
 public class HotelEditorWindow extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = -7362369183665923719L;

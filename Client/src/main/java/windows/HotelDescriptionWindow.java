@@ -16,7 +16,11 @@ import javax.swing.border.EmptyBorder;
 
 import domain.Hotel;
 import windows.TranslatableObject.TranslatableJButton;
-
+/**
+ * 
+ * Detailed view of a hotel from {@link windows.HotelBrowserWindow HotelBrowserWindow}
+ *
+ */
 public class HotelDescriptionWindow extends JFrame{
 	
 	private JPanel contentPane;

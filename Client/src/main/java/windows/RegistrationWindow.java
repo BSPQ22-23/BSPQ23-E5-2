@@ -10,6 +10,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * 
+ * Window to register a new user
+ *
+ */
 public class RegistrationWindow extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;

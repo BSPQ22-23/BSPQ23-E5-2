@@ -19,6 +19,11 @@ import javax.swing.JPanel;
 import windows.TranslatableObject.TranslatableJButton;
 import windows.TranslatableObject.TranslatableJLabel;
 
+/**
+ * 
+ * Main menu for not hotel owners
+ *
+ */
 public class MainMenuClient extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 8376278722958811219L;
 	private TranslatableJLabel welcome, info, info2, info3, info4, info5, warningL, infoSettings;

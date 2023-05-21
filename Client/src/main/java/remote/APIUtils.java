@@ -13,8 +13,18 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * 
+ * Container of common functions for API methods
+ *
+ */
 public class APIUtils {
-	
+	/**
+	 * Turn a java object into http headers.
+	 * This function uses fields to turn it into headers, transient or static fields are ignored
+	 * @param o Object to turn into headers
+	 * @return hashmap with the header names as keys and header values as value
+	 */
 	public static HashMap<String, String> objectToHeaders(Object o) {
 		HashMap<String, String> output = new HashMap<>();
 		for(Field f : o.getClass().getDeclaredFields())
@@ -40,9 +50,19 @@ public class APIUtils {
 			}
 		return output;
 	}
+	/**
+	 * Macro to decode string into a string
+	 * @param value base64 string to decode
+	 * @retyrb decoded string in utf-8
+	 */
 	public static String decode(String value) {
 		return new String(Base64.getDecoder().decode(value), StandardCharsets.UTF_8);
 	}
+	/**
+	 * Takes a collection and turns it into a JSONArray of JSONObjects
+	 * @param o collection to turn into JSONArray
+	 * @return the JSONArray representation of the collection
+	 */
 	public static JSONArray listToJSONArray(Collection<?> o) {
 		JSONArray array = new JSONArray();
 		for(Object obj : o)
@@ -60,6 +80,14 @@ public class APIUtils {
 				array.put(objectToJSON(obj));
 		return array;
 	}
+	/**
+	 * Takes a java Object and turns it into a JSONObject, if it's a {@link java.util.Collection Collection} use better {@link APIUtils#listToJSONArray(Collection) listToJSONArray}
+	 * as it won't take the un-needed fields.
+	 * 
+	 * This uses the declared fields of the class and parents to turn it into a {@link org.json.JSONObject JSONObject}, to avoid one set it's value to null or the field to transient or static.
+	 * @param o object to turn into a json object
+	 * @return JSONObject representation of the input object
+	 */
 	public static JSONObject objectToJSON(Object o) {
 		JSONObject output = new JSONObject();
 		try {

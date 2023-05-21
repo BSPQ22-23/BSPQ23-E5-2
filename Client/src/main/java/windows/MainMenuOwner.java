@@ -21,7 +21,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import language.InternLanguage;
-
+/**
+ * 
+ * Home for hotel owners
+ *
+ */
 public class MainMenuOwner extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 7388889135006913436L;
 		private JLabel welcome, warningL, infoSettings;
