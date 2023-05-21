@@ -24,13 +24,15 @@ public class HotelDescriptionWindow extends JFrame{
 	private UpperMenu upperMenu;
 	
 	private static final long serialVersionUID = 1L;
-	public HotelDescriptionWindow(Hotel h, HotelBrowserWindow hbw) {
+	public HotelDescriptionWindow(Hotel h) {
 		 upperMenu = new UpperMenu( v-> {
-        	 new Thread(() -> new MainMenuClient()).start();
+        	 new MainMenuClient();
         	 dispose();
         });
         setJMenuBar(upperMenu);
-		setBounds(100, 100, 450, 300);
+		setSize(450, 320);
+		setLocationRelativeTo(null);
+		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -47,11 +49,15 @@ public class HotelDescriptionWindow extends JFrame{
 		JPanel panelDown = new JPanel(new GridLayout(1, 0));
 		JButton back = new JButton("Back");
 		back.addActionListener(v -> {
-			hbw.setVisible(true);
+			HotelBrowserWindow.getInstance().setVisible(true);
 			dispose();
 		});
 		panelDown.add(back);
 		JButton makeBooking = new JButton(InternLanguage.translateTxt("book"));
+		makeBooking.addActionListener(v -> {
+			new ReservationWindow(h);
+			dispose();
+		});
 		panelDown.add(makeBooking);
 		contentPane.add(panelDown, BorderLayout.SOUTH);
 		
@@ -61,12 +67,9 @@ public class HotelDescriptionWindow extends JFrame{
 		
 		JScrollPane description = new JScrollPane(new JLabel("<html><p style=\"width:155px\">"+h.getInfo()+"</p></html>"));
 		contentPane.add(description, BorderLayout.CENTER);
-		setVisible(true);
 	}
 	public static void main(String[] args) {
-		HotelBrowserWindow hbw = new HotelBrowserWindow();
-		hbw.setVisible(false);
-		new HotelDescriptionWindow(new Hotel(1, "Test Hotel", "Test city", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), hbw);
+		new HotelDescriptionWindow(new Hotel(1, "Test Hotel", "Test city", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."));
 	}
 
 }

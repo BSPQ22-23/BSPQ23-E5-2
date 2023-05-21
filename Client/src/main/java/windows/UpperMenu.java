@@ -35,7 +35,7 @@ public class UpperMenu extends JMenuBar{
         mItemES.addActionListener(v-> InternLanguage.changeLanguage("es"));
         mItemEN.addActionListener(v-> InternLanguage.changeLanguage("en"));
         exitItem.addActionListener(v-> System.exit(0));
-        returnHomeItem.setEnabled(false);
+        //returnHomeItem.setEnabled(false);
 	}
 
 }

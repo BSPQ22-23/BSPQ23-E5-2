@@ -44,7 +44,7 @@ public class HotelBrowserWindow extends JFrame  {
     private static JLabel notAvailableHotel;
     private static JLabel noIconHotel;
     private static Hotel errorHotel = new Hotel(-1, "Disconnected", "---", "The server connection is missing");
-    
+    private UpperMenu upperMenu;
     static {
     	try {//Java testing
 			BufferedImage nahBi = ImageIO.read(new File("src/main/resources/images/hna.png"));
@@ -70,7 +70,19 @@ public class HotelBrowserWindow extends JFrame  {
             }
         });
     }
-    public HotelBrowserWindow() {
+    private static HotelBrowserWindow instance;
+    public static HotelBrowserWindow getInstance() {
+    	if(instance == null)
+    		new Thread(() -> instance = new HotelBrowserWindow()).start();//No query freeze
+    	return instance;
+    }
+    
+    private HotelBrowserWindow() {
+    	upperMenu = new UpperMenu( v-> {
+       	 new Thread(() -> new MainMenuClient()).start();
+       	 dispose();
+       });
+       setJMenuBar(upperMenu);
     	DefaultListModel<Hotel> hotelListModel = new DefaultListModel<>();
     	try {
     		ClientController.getHotels().forEach(v->hotelListModel.addElement(v));
@@ -78,7 +90,6 @@ public class HotelBrowserWindow extends JFrame  {
     		hotelListModel.addElement(errorHotel);
     	}
     	JList<Hotel> hotelList = new JList<>(hotelListModel);
-    	final HotelBrowserWindow window = this;
     	hotelList.setCellRenderer(new ListCellRenderer<Hotel>() {
 
 			@Override
@@ -105,7 +116,7 @@ public class HotelBrowserWindow extends JFrame  {
 				JButton buttonEnter = new JButton(InternLanguage.translateTxt("go"));
 				buttonEnter.addActionListener(v -> {
 					setVisible(false);
-					new HotelDescriptionWindow(value, window);
+					new HotelDescriptionWindow(value);
 				});
 				panel.add(buttonEnter, BorderLayout.EAST);
 				
