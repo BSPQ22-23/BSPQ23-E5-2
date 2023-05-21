@@ -146,9 +146,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a21a3a6c597df916f32962987ac3c5fa6 inherit pro_static_attribs_classdatabase_1_1_data_access_object_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>DAO for Image class </p><dl class="section author"><dt>Author</dt><dd>maitanegarcia </dd></dl>
+<div class="textblock"><p>Class to allow the access to <code><a class="el" href="classdomain_1_1_image.html">Image</a></code> objects in the database </p>
 
-<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00020">20</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00018">18</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a76c38ff4483cd16abc2e3884a8f452c2" name="a76c38ff4483cd16abc2e3884a8f452c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a76c38ff4483cd16abc2e3884a8f452c2">&#9670;&#160;</a></span>delete()</h2>
@@ -165,9 +165,14 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Thus method deletes a reservation </p>
+<p>Delete an <code><a class="el" href="classdomain_1_1_image.html">Image</a></code> that has been retrieved from the database </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>detatched object to delete </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00041">41</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00046">46</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
 
 </div>
 </div>
@@ -196,8 +201,16 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get an <code><a class="el" href="classdomain_1_1_image.html">Image</a></code> from the database by the id of the object the image is attached to and the ctx of the image </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oid</td><td>id of the object the image is attached to </td></tr>
+    <tr><td class="paramname">type</td><td>ctx of the image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the image or null if it doesn't exist </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00105">105</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00121">121</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
 
 </div>
 </div>
@@ -216,8 +229,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get an <code><a class="el" href="classdomain_1_1_image.html">Image</a></code> from the database by it's id </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>id of the image </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the image or null if it doesn't exist </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00079">79</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00089">89</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
 
 </div>
 </div>
@@ -235,9 +255,9 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method gets a list of all the reservations </p>
+<p>Get all <code><a class="el" href="classdomain_1_1_image.html">Image</a></code>s from the database </p><dl class="section return"><dt>Returns</dt><dd>the list of images in the database </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00050">50</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00056">56</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
 
 </div>
 </div>
@@ -263,8 +283,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the DAO instance for <code><a class="el" href="classdomain_1_1_image.html">Image</a></code>s </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00026">26</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00028">28</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
 
 </div>
 </div>
@@ -283,9 +304,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method saves a reservation </p>
+<p>Upload or update an <code><a class="el" href="classdomain_1_1_image.html">Image</a></code> to the database </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>image to store/update </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the transaction was successful </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00033">33</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_d_a_o_8java_source.html#l00037">37</a> of file <a class="el" href="_image_d_a_o_8java_source.html">ImageDAO.java</a>.</p>
 
 </div>
 </div>

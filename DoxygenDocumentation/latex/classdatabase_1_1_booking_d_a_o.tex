@@ -53,12 +53,9 @@ static Persistence\+Manager\+Factory \mbox{\hyperlink{classdatabase_1_1_data_acc
 
 
 \doxysubsection{Detailed Description}
-DAO for Booking class \begin{DoxyAuthor}{Author}
-maitanegarcia 
-\end{DoxyAuthor}
+Class to allow the access to {\ttfamily \mbox{\hyperlink{classdomain_1_1_booking}{Booking}}} objects in the database 
 
-
-Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00022}{22}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00020}{20}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
 
 
 
@@ -69,9 +66,14 @@ Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00022}{22}} of 
 \doxysubsubsection{\texorpdfstring{delete()}{delete()}}
 {\footnotesize\ttfamily void database.\+Booking\+DAO.\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_booking}{Booking}}}]{object }\end{DoxyParamCaption})}
 
-Thus method deletes a reservation 
+Delete a {\ttfamily \mbox{\hyperlink{classdomain_1_1_booking}{Booking}}} that has been retrieved from the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & detatched object to delete \\
+\hline
+\end{DoxyParams}
 
-Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00043}{43}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00048}{48}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
 
 \mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_a94599fa08d6a8e3762bf4c78d92c42fb}\label{classdatabase_1_1_booking_d_a_o_a94599fa08d6a8e3762bf4c78d92c42fb}} 
 \index{database.BookingDAO@{database.BookingDAO}!find@{find}}
@@ -79,9 +81,17 @@ Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00043}{43}} of 
 \doxysubsubsection{\texorpdfstring{find()}{find()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classdomain_1_1_booking}{Booking}} database.\+Booking\+DAO.\+find (\begin{DoxyParamCaption}\item[{String}]{param }\end{DoxyParamCaption})}
 
+Get a {\ttfamily \mbox{\hyperlink{classdomain_1_1_booking}{Booking}}} from the database by it\textquotesingle{}s id 
+\begin{DoxyParams}{Parameters}
+{\em param} & id of the booking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the booking or null if it doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00081}{81}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00091}{91}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
 
 \mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_abc7c4acbf94525ebc21062ffdb04b009}\label{classdatabase_1_1_booking_d_a_o_abc7c4acbf94525ebc21062ffdb04b009}} 
 \index{database.BookingDAO@{database.BookingDAO}!getAll@{getAll}}
@@ -89,9 +99,12 @@ Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00081}{81}} of 
 \doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
 {\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}} $>$ database.\+Booking\+DAO.\+get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-This method gets a list of all the reservations 
+Get all {\ttfamily \mbox{\hyperlink{classdomain_1_1_booking}{Booking}}}s from the database \begin{DoxyReturn}{Returns}
+the list of bookings in the database 
+\end{DoxyReturn}
 
-Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00052}{52}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00058}{58}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
 
 \mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_a9658d731482299f8dcde292d6f0da26c}\label{classdatabase_1_1_booking_d_a_o_a9658d731482299f8dcde292d6f0da26c}} 
 \index{database.BookingDAO@{database.BookingDAO}!getByAuthor@{getByAuthor}}
@@ -99,9 +112,17 @@ Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00052}{52}} of 
 \doxysubsubsection{\texorpdfstring{getByAuthor()}{getByAuthor()}}
 {\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}} $>$ database.\+Booking\+DAO.\+get\+By\+Author (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_guest}{Guest}}}]{author }\end{DoxyParamCaption})}
 
+Get\textquotesingle{}s all booking that have been made by a guest 
+\begin{DoxyParams}{Parameters}
+{\em author} & person that created the booking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a list of bookings from that guest 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00128}{128}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00143}{143}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
 
 \mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_a2e956df355af937061c1942ae4014c00}\label{classdatabase_1_1_booking_d_a_o_a2e956df355af937061c1942ae4014c00}} 
 \index{database.BookingDAO@{database.BookingDAO}!getInstance@{getInstance}}
@@ -109,9 +130,12 @@ Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00128}{128}} of
 \doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{classdatabase_1_1_booking_d_a_o}{Booking\+DAO}} database.\+Booking\+DAO.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Get the DAO instance for {\ttfamily \mbox{\hyperlink{classdomain_1_1_booking}{Booking}}}s \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00028}{28}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00030}{30}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
 
 \mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_a3e295d6486d892e4ae65290af3537587}\label{classdatabase_1_1_booking_d_a_o_a3e295d6486d892e4ae65290af3537587}} 
 \index{database.BookingDAO@{database.BookingDAO}!hasReservationInRoomOnDate@{hasReservationInRoomOnDate}}
@@ -119,9 +143,19 @@ Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00028}{28}} of 
 \doxysubsubsection{\texorpdfstring{hasReservationInRoomOnDate()}{hasReservationInRoomOnDate()}}
 {\footnotesize\ttfamily boolean database.\+Booking\+DAO.\+has\+Reservation\+In\+Room\+On\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_room}{Room}}}]{room,  }\item[{Date}]{date }\end{DoxyParamCaption})}
 
+Checks if a room contains a booking in an specific day 
+\begin{DoxyParams}{Parameters}
+{\em room} & room to check \\
+\hline
+{\em date} & date to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the room is occupied that day 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00175}{175}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00195}{195}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
 
 \mbox{\Hypertarget{classdatabase_1_1_booking_d_a_o_a2ea246db31ace3d964ffb2e3531d54c3}\label{classdatabase_1_1_booking_d_a_o_a2ea246db31ace3d964ffb2e3531d54c3}} 
 \index{database.BookingDAO@{database.BookingDAO}!save@{save}}
@@ -129,9 +163,17 @@ Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00175}{175}} of
 \doxysubsubsection{\texorpdfstring{save()}{save()}}
 {\footnotesize\ttfamily boolean database.\+Booking\+DAO.\+save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_booking}{Booking}}}]{object }\end{DoxyParamCaption})}
 
-This method saves a reservation 
+Upload or update a {\ttfamily \mbox{\hyperlink{classdomain_1_1_booking}{Booking}}} to the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & booking to store/update \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the transaction was successful 
+\end{DoxyReturn}
 
-Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00035}{35}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
+
+Definition at line \mbox{\hyperlink{_booking_d_a_o_8java_source_l00039}{39}} of file \mbox{\hyperlink{_booking_d_a_o_8java_source}{Booking\+DAO.\+java}}.
 
 
 

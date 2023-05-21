@@ -14,122 +14,129 @@
 \DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00010}00010\ \textcolor{keyword}{import}\ java.awt.event.*;}
 \DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00011}00011\ \textcolor{keyword}{import}\ java.util.concurrent.ExecutionException;}
 \DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00012}00012\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00013}\mbox{\hyperlink{classwindows_1_1_registration_window}{00013}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classwindows_1_1_registration_window}{RegistrationWindow}}\ \textcolor{keyword}{extends}\ JFrame\ implements\ ActionListener\ \{}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00014}00014\ \ \ \ \ \ \textcolor{keyword}{private}\ JLabel\ nicknameLabel,\ passwordLabel,\ nameLabel,\ lastNameLabel,\ idLabel,\ ageLabel,\ cityLabel;}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JTextField\ nicknameTextField,\ passwordTextField,\ nameTextField,\ lastNameTextField,\ idTextField,\ ageTextField,\ cityTextField;}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ JButton\ submitButton,\ clearButton;}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00018}\mbox{\hyperlink{classwindows_1_1_registration_window_a0996140f74d1873499990506e00c1d7d}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classwindows_1_1_registration_window_a0996140f74d1873499990506e00c1d7d}{RegistrationWindow}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ super(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}register"{}}));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ nicknameLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}username"{}}));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ passwordLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}password"{}}));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ nameLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}name"{}}));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ lastNameLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}lst\_Name"{}}));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ idLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}idnum"{}}));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ ageLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}age"{}}));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ cityLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}cityLbl"{}}));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00018}\mbox{\hyperlink{classwindows_1_1_registration_window}{00018}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classwindows_1_1_registration_window}{RegistrationWindow}}\ \textcolor{keyword}{extends}\ JFrame\ implements\ ActionListener\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{long}\ serialVersionUID\ =\ 1L;}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}\ JLabel\ nicknameLabel,\ passwordLabel,\ nameLabel,\ lastNameLabel,\ idLabel,\ ageLabel,\ cityLabel,\ ownerLabel;}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ JTextField\ nicknameTextField,\ passwordTextField,\ nameTextField,\ lastNameTextField,\ idTextField,\ ageTextField,\ cityTextField;}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ JButton\ submitButton,\ clearButton;}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ JCheckBox\ ownership;}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00026}\mbox{\hyperlink{classwindows_1_1_registration_window_a0996140f74d1873499990506e00c1d7d}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classwindows_1_1_registration_window_a0996140f74d1873499990506e00c1d7d}{RegistrationWindow}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ super(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}register"{}}));}
 \DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ nicknameTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ passwordTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ nameTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ lastNameTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ idTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ ageTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ cityTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ submitButton\ =\ \textcolor{keyword}{new}\ JButton(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}submit"{}}));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ clearButton\ =\ \textcolor{keyword}{new}\ JButton(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}clear"{}}));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ submitButton.addActionListener(\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ clearButton.addActionListener(\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ JPanel\ formPanel\ =\ \textcolor{keyword}{new}\ JPanel(\textcolor{keyword}{new}\ GridLayout(7,\ 2,\ 5,\ 5));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.setBackground(\textcolor{keyword}{new}\ Color(255,\ 228,\ 181));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.setBorder(BorderFactory.createEmptyBorder(10,\ 10,\ 10,\ 10));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(nicknameLabel);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(nicknameTextField);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(passwordLabel);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(passwordTextField);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(nameLabel);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(nameTextField);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(lastNameLabel);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(lastNameTextField);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(idLabel);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(idTextField);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(ageLabel);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(ageTextField);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(cityLabel);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ formPanel.add(cityTextField);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ JPanel\ buttonPanel\ =\ \textcolor{keyword}{new}\ JPanel(\textcolor{keyword}{new}\ FlowLayout(FlowLayout.CENTER));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.setBackground(\textcolor{keyword}{new}\ Color(135,\ 206,\ 250));}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.setBorder(BorderFactory.createEmptyBorder(0,\ 10,\ 10,\ 10));\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.add(submitButton);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ buttonPanel.add(clearButton);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ getContentPane().setLayout(\textcolor{keyword}{new}\ BorderLayout());}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ getContentPane().add(formPanel,\ BorderLayout.CENTER);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ getContentPane().add(buttonPanel,\ BorderLayout.SOUTH);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00070}00070\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00071}00071\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ setSize(400,\ 300);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ setLocationRelativeTo(\textcolor{keyword}{null});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ setDefaultCloseOperation(JFrame.EXIT\_ON\_CLOSE);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ setVisible(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00079}\mbox{\hyperlink{classwindows_1_1_registration_window_a1248c85268c636b27f28b1c1129fdefa}{00079}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwindows_1_1_registration_window_a1248c85268c636b27f28b1c1129fdefa}{actionPerformed}}(ActionEvent\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ submitButton)\ \{}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ nickname\ =\ nicknameTextField.getText();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ password\ =\ passwordTextField.getText();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ name\ =\ nameTextField.getText();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ lastName\ =\ lastNameTextField.getText();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ \textcolor{keywordtype}{id}\ =\ idTextField.getText();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ age\ =\ ageTextField.getText();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ String\ city\ =\ cityTextField.getText();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showMessageDialog(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Thank\ you\ for\ registering,\ "{}}\ +\ name\ +\ \textcolor{stringliteral}{"{}!\(\backslash\)n"{}}\ +}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Your\ nickname\ is\ "{}}\ +\ nickname\ +\ \textcolor{stringliteral}{"{}\ and\ your\ password\ is\ "{}}\ +\ password);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ageI\ =\ Integer.parseInt(age);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}\ guest\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}(name,\ lastName,\ \textcolor{keywordtype}{id},\ ageI,\ city);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}(nickname,\ password,\ guest,\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a6c97427df5402630b799800a0c7263fe}{register}}(user);}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ openMenu(user.isHotelOwner());}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00098}00098\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (InterruptedException\ |\ ExecutionException\ e1)\ \{}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e1.printStackTrace();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ clearButton)\ \{}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nicknameTextField.setText(\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ passwordTextField.setText(\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nameTextField.setText(\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lastNameTextField.setText(\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ idTextField.setText(\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ageTextField.setText(\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cityTextField.setText(\textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00113}00113\ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ openMenu(\textcolor{keywordtype}{boolean}\ isOwner)\ \{}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isOwner)\ \{}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_main_menu_owner}{MainMenuOwner}}\ menuOwner\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classwindows_1_1_main_menu_owner}{MainMenuOwner}}();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menuOwner.setVisible(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MainMenuClient\ menuClient\ =\ \textcolor{keyword}{new}\ MainMenuClient();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ menuClient.setVisible(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ this.dispose();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00125}\mbox{\hyperlink{classwindows_1_1_registration_window_aecbe8b26bb19e148f6e2071aa20d272b}{00125}}\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwindows_1_1_registration_window_aecbe8b26bb19e148f6e2071aa20d272b}{main}}(String[]\ args)\ \{}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_registration_window}{RegistrationWindow}}\ registrationForm\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classwindows_1_1_registration_window_a0996140f74d1873499990506e00c1d7d}{RegistrationWindow}}();}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00129}00129\ \}}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ nicknameLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}username"{}}));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ passwordLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}password"{}}));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ nameLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}name"{}}));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ lastNameLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}lst\_Name"{}}));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ idLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}idnum"{}}));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ ageLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}age"{}}));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ cityLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}cityLbl"{}}));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ ownerLabel\ =\ \textcolor{keyword}{new}\ JLabel(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}ownership"{}}));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ nicknameTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ passwordTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ nameTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ lastNameTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ idTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ ageTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ cityTextField\ =\ \textcolor{keyword}{new}\ JTextField(20);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ submitButton\ =\ \textcolor{keyword}{new}\ JButton(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}submit"{}}));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ clearButton\ =\ \textcolor{keyword}{new}\ JButton(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}clear"{}}));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ ownership\ =\ \textcolor{keyword}{new}\ JCheckBox();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ submitButton.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ clearButton.addActionListener(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ JPanel\ formPanel\ =\ \textcolor{keyword}{new}\ JPanel(\textcolor{keyword}{new}\ GridLayout(8,\ 2,\ 5,\ 5));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ formPanel.setBackground(\textcolor{keyword}{new}\ Color(255,\ 228,\ 181));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ formPanel.setBorder(BorderFactory.createEmptyBorder(10,\ 10,\ 10,\ 10));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ formPanel.add(nicknameLabel);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ formPanel.add(nicknameTextField);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ formPanel.add(passwordLabel);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ formPanel.add(passwordTextField);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ formPanel.add(nameLabel);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ formPanel.add(nameTextField);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ formPanel.add(lastNameLabel);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ formPanel.add(lastNameTextField);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ formPanel.add(idLabel);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ formPanel.add(idTextField);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ formPanel.add(ageLabel);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ formPanel.add(ageTextField);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ formPanel.add(cityLabel);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ formPanel.add(cityTextField);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ formPanel.add(ownerLabel);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ formPanel.add(ownership);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ JPanel\ buttonPanel\ =\ \textcolor{keyword}{new}\ JPanel(\textcolor{keyword}{new}\ FlowLayout(FlowLayout.CENTER));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ buttonPanel.setBackground(\textcolor{keyword}{new}\ Color(135,\ 206,\ 250));}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ buttonPanel.setBorder(BorderFactory.createEmptyBorder(0,\ 10,\ 10,\ 10));\ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ buttonPanel.add(submitButton);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ buttonPanel.add(clearButton);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ getContentPane().setLayout(\textcolor{keyword}{new}\ BorderLayout());}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ getContentPane().add(formPanel,\ BorderLayout.CENTER);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ getContentPane().add(buttonPanel,\ BorderLayout.SOUTH);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00084}00084\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ setSize(400,\ 300);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00086}00086\ \ \ \ \ \ \ \ \ setLocationRelativeTo(\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00087}00087\ \ \ \ \ \ \ \ \ setDefaultCloseOperation(JFrame.EXIT\_ON\_CLOSE);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00091}00091\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00092}\mbox{\hyperlink{classwindows_1_1_registration_window_a1248c85268c636b27f28b1c1129fdefa}{00092}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwindows_1_1_registration_window_a1248c85268c636b27f28b1c1129fdefa}{actionPerformed}}(ActionEvent\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ submitButton)\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ String\ nickname\ =\ nicknameTextField.getText();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ String\ password\ =\ passwordTextField.getText();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ String\ name\ =\ nameTextField.getText();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ String\ lastName\ =\ lastNameTextField.getText();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ String\ \textcolor{keywordtype}{id}\ =\ idTextField.getText();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ String\ age\ =\ ageTextField.getText();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ String\ city\ =\ cityTextField.getText();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ Boolean\ owner\ =\ ownership.isSelected();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ JOptionPane.showMessageDialog(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Thank\ you\ for\ registering,\ "{}}\ +\ name\ +\ \textcolor{stringliteral}{"{}!\(\backslash\)n"{}}\ +}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Your\ nickname\ is\ "{}}\ +\ nickname\ +\ \textcolor{stringliteral}{"{}\ and\ your\ password\ is\ "{}}\ +\ password);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ageI\ =\ Integer.parseInt(age);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}\ guest\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_guest}{Guest}}(name,\ lastName,\ \textcolor{keywordtype}{id},\ ageI,\ city);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}(nickname,\ password,\ guest,\ owner);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classremote_1_1_client_controller}{ClientController}}.\mbox{\hyperlink{classremote_1_1_client_controller_a6c97427df5402630b799800a0c7263fe}{register}}(user);}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ openMenu(user.isHotelOwner());}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (InterruptedException\ |\ ExecutionException\ e1)\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ e1.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00117}00117\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e.getSource()\ ==\ clearButton)\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ nicknameTextField.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ passwordTextField.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ nameTextField.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ lastNameTextField.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ idTextField.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ ageTextField.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ cityTextField.setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00126}00126\ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00128}00128\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ openMenu(\textcolor{keywordtype}{boolean}\ isOwner)\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isOwner)\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classwindows_1_1_main_menu_owner}{MainMenuOwner}}();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00131}00131\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ MainMenuClient();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00133}00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00134}00134\ \ \ \ \ \ \ \ \ this.dispose();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00135}00135\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00136}00136\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00137}\mbox{\hyperlink{classwindows_1_1_registration_window_aecbe8b26bb19e148f6e2071aa20d272b}{00137}}\ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classwindows_1_1_registration_window_aecbe8b26bb19e148f6e2071aa20d272b}{main}}(String[]\ args)\ \{}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classwindows_1_1_registration_window_a0996140f74d1873499990506e00c1d7d}{RegistrationWindow}}();}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00139}00139\ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_registration_window_8java_source_l00141}00141\ \}}
 
 \end{DoxyCode}

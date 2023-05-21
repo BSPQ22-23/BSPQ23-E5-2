@@ -101,230 +101,201 @@ $(document).ready(function(){initNavTree('_main_menu_client_8java_source.html','
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> java.awt.Image;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> java.awt.event.ActionEvent;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> java.awt.event.ActionListener;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> javax.swing.Icon;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> javax.swing.ImageIcon;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> javax.swing.JButton;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> javax.swing.JFrame;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> javax.swing.JLabel;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">import</span> javax.swing.JMenu;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">import</span> javax.swing.JMenuBar;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">import</span> javax.swing.JMenuItem;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">import</span> javax.swing.JPanel;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">import</span> <a class="code hl_package" href="namespacelanguage.html">language</a>.<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classwindows_1_1_main_menu_client.html">   23</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classwindows_1_1_main_menu_client.html">MainMenuClient</a> <span class="keyword">extends</span> JFrame implements ActionListener {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">private</span> JLabel welcome, info, info2, info3, info4, info5, warningL, infoSettings;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">private</span> JButton hotelButton, searchButton, accountButton, contactButton, advSettingsButton, infoButton, searchHotelButton, deleteAccButton, logOutButton, changeDataButton;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keyword">private</span> JMenuBar menuBar;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keyword">private</span> JMenu menu, menuH, menuL;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keyword">private</span> JMenuItem mItem, mItem2, mItem3, mItemES, mItemEN;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">private</span> JPanel buttonPanel, welcomePanel, infoPanel, pCenter, settingsPanel;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keyword">private</span> <a class="code hl_class" href="classwindows_1_1_reservation_window.html">ReservationWindow</a> reservationWindow;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classwindows_1_1_main_menu_client.html#ad27f46f83dd6d4f793b0f5da305369ea">   32</a></span>        <span class="keyword">public</span> <a class="code hl_function" href="classwindows_1_1_main_menu_client.html#ad27f46f83dd6d4f793b0f5da305369ea">MainMenuClient</a>() {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            super(<span class="stringliteral">&quot;Menu&quot;</span>);    </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            welcome = <span class="keyword">new</span> JLabel(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;welcome&quot;</span>));</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            info = <span class="keyword">new</span> JLabel(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;info&quot;</span>));</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            info2 = <span class="keyword">new</span> JLabel(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;info2&quot;</span>));</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            info3 = <span class="keyword">new</span> JLabel(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;info3&quot;</span>));</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            info4 = <span class="keyword">new</span> JLabel(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;info4&quot;</span>));</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            info5 = <span class="keyword">new</span> JLabel(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;info5&quot;</span>));</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            infoSettings = <span class="keyword">new</span> JLabel(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;settingInf&quot;</span>));</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            warningL = <span class="keyword">new</span> JLabel(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;warning&quot;</span>));</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            ImageIcon icon = <span class="keyword">new</span> ImageIcon(<span class="stringliteral">&quot;../photos/home.png&quot;</span>);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            ImageIcon icon2 = <span class="keyword">new</span> ImageIcon(<span class="stringliteral">&quot;../photos/search.png&quot;</span>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            ImageIcon icon3 = <span class="keyword">new</span> ImageIcon(<span class="stringliteral">&quot;../photos/account.png&quot;</span>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            ImageIcon icon4 = <span class="keyword">new</span> ImageIcon(<span class="stringliteral">&quot;../photos/contact.png&quot;</span>);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            ImageIcon icon5 = <span class="keyword">new</span> ImageIcon(<span class="stringliteral">&quot;../photos/settings.png&quot;</span>);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            ImageIcon icon6 = <span class="keyword">new</span> ImageIcon(<span class="stringliteral">&quot;../photos/info.png&quot;</span>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            hotelButton = <span class="keyword">new</span> JButton(resizeIcon(icon, 60, 60));</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            searchButton = <span class="keyword">new</span> JButton(resizeIcon(icon2, 60, 60));</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            accountButton = <span class="keyword">new</span> JButton(resizeIcon(icon3,60, 60));</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            contactButton = <span class="keyword">new</span> JButton(resizeIcon(icon4, 60, 60));</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            advSettingsButton = <span class="keyword">new</span> JButton(resizeIcon(icon5, 60, 60));</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            infoButton = <span class="keyword">new</span> JButton(resizeIcon(icon6, 60, 60));</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            searchHotelButton = <span class="keyword">new</span> JButton(resizeIcon(icon2, 10, 10));</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            changeDataButton = <span class="keyword">new</span> JButton(<span class="stringliteral">&quot;Change account data&quot;</span>);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            deleteAccButton = <span class="keyword">new</span> JButton(<span class="stringliteral">&quot;Delete this account&quot;</span>);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            logOutButton = <span class="keyword">new</span> JButton(<span class="stringliteral">&quot;Log out&quot;</span>);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            menuBar = <span class="keyword">new</span> JMenuBar();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            menu = <span class="keyword">new</span> JMenu(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;account&quot;</span>));</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            menuH = <span class="keyword">new</span> JMenu(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;home&quot;</span>));</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            menuL = <span class="keyword">new</span> JMenu(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;language&quot;</span>));</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            mItem = <span class="keyword">new</span> JMenuItem(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;logOut&quot;</span>));</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            mItem2 = <span class="keyword">new</span> JMenuItem(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;returnHome&quot;</span>));</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            mItem3 = <span class="keyword">new</span> JMenuItem(<a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;exit&quot;</span>));</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            mItemES  = <span class="keyword">new</span> JMenuItem(<span class="stringliteral">&quot;Español&quot;</span>);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            mItemEN = <span class="keyword">new</span> JMenuItem(<span class="stringliteral">&quot;English&quot;</span>);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            hotelButton.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            searchButton.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            accountButton.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            contactButton.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            advSettingsButton.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            infoButton.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            pCenter = <span class="keyword">new</span> JPanel();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            pCenter.setBackground(<span class="keyword">new</span> Color(255, 228, 181));</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            GridLayout gridLayout = <span class="keyword">new</span> GridLayout(0, 2);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            gridLayout.setVgap(10);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            gridLayout.setHgap(50);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            buttonPanel = <span class="keyword">new</span> JPanel(gridLayout);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            buttonPanel.setBackground(<span class="keyword">new</span> Color(255, 228, 181));</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            buttonPanel.add(hotelButton);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            buttonPanel.add(searchButton);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            buttonPanel.add(advSettingsButton);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            buttonPanel.add(infoButton);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            welcomePanel = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout(FlowLayout.CENTER));</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            welcomePanel.setBackground(<span class="keyword">new</span> Color(135, 206, 250));</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            welcomePanel.add(welcome);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            reservationWindow = <span class="keyword">new</span> <a class="code hl_class" href="classwindows_1_1_reservation_window.html">ReservationWindow</a>();</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            getContentPane().add(reservationWindow);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            reservationWindow.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            GridLayout gridLayout2 = <span class="keyword">new</span> GridLayout(0, 1);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            gridLayout2.setVgap(15);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            gridLayout2.setHgap(10);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            infoPanel = <span class="keyword">new</span> JPanel(gridLayout2);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            infoPanel.setBackground(<span class="keyword">new</span> Color(135, 206, 250));</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            infoPanel.add(info);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            infoPanel.add(info2);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            infoPanel.add(info3);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            infoPanel.add(info4);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            infoPanel.add(info5);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            GridLayout gridLayout3 = <span class="keyword">new</span> GridLayout(0, 1);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            gridLayout3.setVgap(15);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            gridLayout3.setHgap(10);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            settingsPanel = <span class="keyword">new</span> JPanel(gridLayout3);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            infoPanel.setBackground(<span class="keyword">new</span> Color(135, 206, 250));</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            settingsPanel.add(infoSettings);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            settingsPanel.add(changeDataButton);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            settingsPanel.add(logOutButton);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            settingsPanel.add(warningL);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            settingsPanel.add(deleteAccButton);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            pCenter.add(buttonPanel);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            pCenter.add(infoPanel);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            pCenter.add(settingsPanel);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            getContentPane().setLayout(<span class="keyword">new</span> BorderLayout());</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            getContentPane().add(pCenter, BorderLayout.CENTER);</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            infoPanel.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            settingsPanel.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            getContentPane().add(welcomePanel, BorderLayout.SOUTH);</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            menuH.add(mItem2);</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            menuH.add(mItem3);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            menuL.add(mItemES);</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            menuL.add(mItemEN);</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            menu.add(mItem);</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            menuBar.add(menuH);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            menuBar.add(menu);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            menuBar.add(menuL);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            setJMenuBar(menuBar);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            mItem2.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            mItem3.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            mItem2.setEnabled(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            setSize(400, 300);</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            setLocationRelativeTo(<span class="keyword">null</span>);</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keyword">private</span> <span class="keyword">static</span> Icon resizeIcon(ImageIcon icon, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h) {</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            Image img = icon.getImage();  </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            Image resizedImage = img.getScaledInstance(w, h,  java.awt.Image.SCALE_SMOOTH);  </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ImageIcon(resizedImage);</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        }</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        @Override</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classwindows_1_1_main_menu_client.html#a97f0e05497516b71a748a3517e8ae6e3">  166</a></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classwindows_1_1_main_menu_client.html#a97f0e05497516b71a748a3517e8ae6e3">actionPerformed</a>(ActionEvent e) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> java.io.IOException;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> javax.imageio.ImageIO;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> javax.swing.Icon;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> javax.swing.ImageIcon;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">import</span> javax.swing.JButton;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">import</span> javax.swing.JFrame;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">import</span> javax.swing.JPanel;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">import</span> <a class="code hl_package" href="namespacewindows.html">windows</a>.<a class="code hl_interface" href="interfacewindows_1_1_translatable_object.html">TranslatableObject</a>.<a class="code hl_class" href="classwindows_1_1_translatable_object_1_1_translatable_j_button.html">TranslatableJButton</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">import</span> <a class="code hl_package" href="namespacewindows.html">windows</a>.<a class="code hl_interface" href="interfacewindows_1_1_translatable_object.html">TranslatableObject</a>.<a class="code hl_class" href="classwindows_1_1_translatable_object_1_1_translatable_j_label.html">TranslatableJLabel</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classwindows_1_1_main_menu_client.html">   27</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classwindows_1_1_main_menu_client.html">MainMenuClient</a> <span class="keyword">extends</span> JFrame implements ActionListener {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keywordtype">long</span> serialVersionUID = 8376278722958811219L;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">private</span> TranslatableJLabel welcome, info, info2, info3, info4, info5, warningL, infoSettings;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">private</span> JButton hotelButton, searchButton, accountButton, contactButton, advSettingsButton, infoButton;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">private</span> TranslatableJButton deleteAccButton, logOutButton, changeDataButton;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">private</span> JPanel buttonPanel, welcomePanel, infoPanel, pCenter, settingsPanel;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">private</span> <a class="code hl_class" href="classwindows_1_1_upper_menu.html">UpperMenu</a> upperMenu;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classwindows_1_1_main_menu_client.html#ad27f46f83dd6d4f793b0f5da305369ea">   35</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classwindows_1_1_main_menu_client.html#ad27f46f83dd6d4f793b0f5da305369ea">MainMenuClient</a>(){</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        super(<span class="stringliteral">&quot;Menu&quot;</span>);    </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        welcome = <span class="keyword">new</span> TranslatableJLabel(<span class="stringliteral">&quot;welcome&quot;</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        info = <span class="keyword">new</span> TranslatableJLabel(<span class="stringliteral">&quot;info&quot;</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        info2 = <span class="keyword">new</span> TranslatableJLabel(<span class="stringliteral">&quot;info2&quot;</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        info3 = <span class="keyword">new</span> TranslatableJLabel(<span class="stringliteral">&quot;info3&quot;</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        info4 = <span class="keyword">new</span> TranslatableJLabel(<span class="stringliteral">&quot;info4&quot;</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        info5 = <span class="keyword">new</span> TranslatableJLabel(<span class="stringliteral">&quot;info5&quot;</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        infoSettings = <span class="keyword">new</span> TranslatableJLabel(<span class="stringliteral">&quot;settingInf&quot;</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        warningL = <span class="keyword">new</span> TranslatableJLabel(<span class="stringliteral">&quot;warning&quot;</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        ImageIcon icon= <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        ImageIcon icon2= <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        ImageIcon icon3= <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        ImageIcon icon4= <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        ImageIcon icon5= <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        ImageIcon icon6= <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            icon = <span class="keyword">new</span> ImageIcon(ImageIO.read(<a class="code hl_class" href="classwindows_1_1_hotel_browser_window.html">HotelBrowserWindow</a>.class.getClassLoader().getResourceAsStream(<span class="stringliteral">&quot;images/home.png&quot;</span>)));</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            icon2 = <span class="keyword">new</span> ImageIcon(ImageIO.read(<a class="code hl_class" href="classwindows_1_1_hotel_browser_window.html">HotelBrowserWindow</a>.class.getClassLoader().getResourceAsStream(<span class="stringliteral">&quot;images/search.png&quot;</span>)));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            icon3 = <span class="keyword">new</span> ImageIcon(ImageIO.read(<a class="code hl_class" href="classwindows_1_1_hotel_browser_window.html">HotelBrowserWindow</a>.class.getClassLoader().getResourceAsStream(<span class="stringliteral">&quot;images/account.png&quot;</span>)));</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            icon4 = <span class="keyword">new</span> ImageIcon(ImageIO.read(<a class="code hl_class" href="classwindows_1_1_hotel_browser_window.html">HotelBrowserWindow</a>.class.getClassLoader().getResourceAsStream(<span class="stringliteral">&quot;images/contact.png&quot;</span>)));</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            icon5 = <span class="keyword">new</span> ImageIcon(ImageIO.read(<a class="code hl_class" href="classwindows_1_1_hotel_browser_window.html">HotelBrowserWindow</a>.class.getClassLoader().getResourceAsStream(<span class="stringliteral">&quot;images/settings.png&quot;</span>)));</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            icon6 = <span class="keyword">new</span> ImageIcon(ImageIO.read(<a class="code hl_class" href="classwindows_1_1_hotel_browser_window.html">HotelBrowserWindow</a>.class.getClassLoader().getResourceAsStream(<span class="stringliteral">&quot;images/info.png&quot;</span>)));</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            e.printStackTrace();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        hotelButton = <span class="keyword">new</span> JButton(resizeIcon(icon, 60, 60));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        searchButton = <span class="keyword">new</span> JButton(resizeIcon(icon2, 60, 60));</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        accountButton = <span class="keyword">new</span> JButton(resizeIcon(icon3,60, 60));</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        contactButton = <span class="keyword">new</span> JButton(resizeIcon(icon4, 60, 60));</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        advSettingsButton = <span class="keyword">new</span> JButton(resizeIcon(icon5, 60, 60));</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        infoButton = <span class="keyword">new</span> JButton(resizeIcon(icon6, 60, 60));</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        changeDataButton = <span class="keyword">new</span> TranslatableJButton(<span class="stringliteral">&quot;ch_acc_dt&quot;</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        deleteAccButton = <span class="keyword">new</span> TranslatableJButton(<span class="stringliteral">&quot;dlt_acc&quot;</span>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        logOutButton = <span class="keyword">new</span> TranslatableJButton(<span class="stringliteral">&quot;logout&quot;</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        hotelButton.addActionListener(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        searchButton.addActionListener(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        accountButton.addActionListener(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        contactButton.addActionListener(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        advSettingsButton.addActionListener(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        infoButton.addActionListener(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        pCenter = <span class="keyword">new</span> JPanel();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        pCenter.setBackground(<span class="keyword">new</span> Color(255, 228, 181));</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        GridLayout gridLayout = <span class="keyword">new</span> GridLayout(0, 2);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        gridLayout.setVgap(10);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        gridLayout.setHgap(50);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        buttonPanel = <span class="keyword">new</span> JPanel(gridLayout);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        buttonPanel.setBackground(<span class="keyword">new</span> Color(255, 228, 181));</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        buttonPanel.add(hotelButton);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        buttonPanel.add(searchButton);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        buttonPanel.add(advSettingsButton);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        buttonPanel.add(infoButton);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        welcomePanel = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout(FlowLayout.CENTER));</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        welcomePanel.setBackground(<span class="keyword">new</span> Color(135, 206, 250));</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        welcomePanel.add(welcome);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        GridLayout gridLayout2 = <span class="keyword">new</span> GridLayout(0, 1);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        gridLayout2.setVgap(15);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        gridLayout2.setHgap(10);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        infoPanel = <span class="keyword">new</span> JPanel(gridLayout2);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        infoPanel.setBackground(<span class="keyword">new</span> Color(135, 206, 250));</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        infoPanel.add(info);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        infoPanel.add(info2);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        infoPanel.add(info3);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        infoPanel.add(info4);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        infoPanel.add(info5);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        GridLayout gridLayout3 = <span class="keyword">new</span> GridLayout(0, 1);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        gridLayout3.setVgap(15);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        gridLayout3.setHgap(10);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        settingsPanel = <span class="keyword">new</span> JPanel(gridLayout3);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        infoPanel.setBackground(<span class="keyword">new</span> Color(135, 206, 250));</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        settingsPanel.add(infoSettings);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        settingsPanel.add(changeDataButton);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        settingsPanel.add(logOutButton);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        settingsPanel.add(warningL);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        settingsPanel.add(deleteAccButton);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        pCenter.add(buttonPanel);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        pCenter.add(infoPanel);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        pCenter.add(settingsPanel);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        getContentPane().setLayout(<span class="keyword">new</span> BorderLayout());</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        getContentPane().add(pCenter, BorderLayout.CENTER);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        infoPanel.setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        settingsPanel.setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        getContentPane().add(welcomePanel, BorderLayout.SOUTH);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        upperMenu = <span class="keyword">new</span> <a class="code hl_class" href="classwindows_1_1_upper_menu.html">UpperMenu</a>( v-&gt; {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>             infoPanel.setVisible(false);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>             settingsPanel.setVisible(false);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>             setSize(400, 300);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>             pCenter.setVisible(true);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>             welcomePanel.setVisible(true);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>             buttonPanel.setVisible(true);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>             upperMenu.returnHomeItem.setEnabled(false);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        }, welcome, info, info2, info3, info4, info5, infoSettings, warningL, changeDataButton, deleteAccButton, logOutButton);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        upperMenu.<a class="code hl_variable" href="classwindows_1_1_upper_menu.html#abb818478c36bc668433a750f0e4afb3b">returnHomeItem</a>.setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        setJMenuBar(upperMenu);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        setSize(400, 300);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        setLocationRelativeTo(<span class="keyword">null</span>);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keyword">private</span> <span class="keyword">static</span> Icon resizeIcon(ImageIcon icon, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        Image img = icon.getImage();  </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        Image resizedImage = img.getScaledInstance(w, h,  java.awt.Image.SCALE_SMOOTH);  </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> ImageIcon(resizedImage);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    @Override</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classwindows_1_1_main_menu_client.html#a97f0e05497516b71a748a3517e8ae6e3">  162</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classwindows_1_1_main_menu_client.html#a97f0e05497516b71a748a3517e8ae6e3">actionPerformed</a>(ActionEvent e) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">if</span> (e.getSource() == hotelButton) {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="comment">//noting</span></div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <span class="keywordflow">if</span> (e.getSource() == hotelButton) {</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                buttonPanel.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                welcomePanel.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                pCenter.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                setSize(700, 600);</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                reservationWindow.setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                mItem2.setEnabled(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == searchButton) {</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                <a class="code hl_class" href="classwindows_1_1_hotel_browser_window.html">HotelBrowserWindow</a> hotelBrowser = <span class="keyword">new</span> <a class="code hl_class" href="classwindows_1_1_hotel_browser_window.html">HotelBrowserWindow</a>();</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>             } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == infoButton) {</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                 buttonPanel.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                 welcomePanel.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                 infoPanel.setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                 mItem2.setEnabled(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>             } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == advSettingsButton) {</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                 buttonPanel.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                 welcomePanel.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                 settingsPanel.setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                 mItem2.setEnabled(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                    </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>             } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == mItem2) {</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                 infoPanel.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                 settingsPanel.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                 reservationWindow.setVisible(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                 setSize(400, 300);</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                 pCenter.setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                 welcomePanel.setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                 buttonPanel.setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                 mItem2.setEnabled(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>             }  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == mItem3) {</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                 this.dispose();</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                 </div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>             }  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == mItemES) {</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                 <a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a4f3223729336ef3e3f78c837931d4c15">changeLanguage</a>(<span class="stringliteral">&quot;es&quot;</span>);</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                 </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>             }  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == mItemEN) {</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                 <a class="code hl_class" href="classlanguage_1_1_intern_language.html">InternLanguage</a>.<a class="code hl_function" href="classlanguage_1_1_intern_language.html#a4f3223729336ef3e3f78c837931d4c15">changeLanguage</a>(<span class="stringliteral">&quot;en&quot;</span>);</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>             }</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        }</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classwindows_1_1_main_menu_client.html#a75c00730c7c4fb58dca2be7e1282faee">  213</a></span>             <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classwindows_1_1_main_menu_client.html#a75c00730c7c4fb58dca2be7e1282faee">main</a>(String[] args) {</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                 <a class="code hl_class" href="classwindows_1_1_main_menu_client.html">MainMenuClient</a> menuW = <span class="keyword">new</span> <a class="code hl_function" href="classwindows_1_1_main_menu_client.html#ad27f46f83dd6d4f793b0f5da305369ea">MainMenuClient</a>();</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>             }</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>}</div>
-<div class="ttc" id="aclasslanguage_1_1_intern_language_html"><div class="ttname"><a href="classlanguage_1_1_intern_language.html">language.InternLanguage</a></div><div class="ttdef"><b>Definition:</b> <a href="_intern_language_8java_source.html#l00007">InternLanguage.java:7</a></div></div>
-<div class="ttc" id="aclasslanguage_1_1_intern_language_html_a0ac01671d348e2c3867179983c897233"><div class="ttname"><a href="classlanguage_1_1_intern_language.html#a0ac01671d348e2c3867179983c897233">language.InternLanguage.translateTxt</a></div><div class="ttdeci">static String translateTxt(String txt)</div><div class="ttdef"><b>Definition:</b> <a href="_intern_language_8java_source.html#l00018">InternLanguage.java:18</a></div></div>
-<div class="ttc" id="aclasslanguage_1_1_intern_language_html_a4f3223729336ef3e3f78c837931d4c15"><div class="ttname"><a href="classlanguage_1_1_intern_language.html#a4f3223729336ef3e3f78c837931d4c15">language.InternLanguage.changeLanguage</a></div><div class="ttdeci">static void changeLanguage(String lan)</div><div class="ttdef"><b>Definition:</b> <a href="_intern_language_8java_source.html#l00013">InternLanguage.java:13</a></div></div>
-<div class="ttc" id="aclasswindows_1_1_hotel_browser_window_html"><div class="ttname"><a href="classwindows_1_1_hotel_browser_window.html">windows.HotelBrowserWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_hotel_browser_window_8java_source.html#l00036">HotelBrowserWindow.java:36</a></div></div>
-<div class="ttc" id="aclasswindows_1_1_main_menu_client_html"><div class="ttname"><a href="classwindows_1_1_main_menu_client.html">windows.MainMenuClient</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_client_8java_source.html#l00023">MainMenuClient.java:23</a></div></div>
-<div class="ttc" id="aclasswindows_1_1_main_menu_client_html_a75c00730c7c4fb58dca2be7e1282faee"><div class="ttname"><a href="classwindows_1_1_main_menu_client.html#a75c00730c7c4fb58dca2be7e1282faee">windows.MainMenuClient.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_client_8java_source.html#l00213">MainMenuClient.java:213</a></div></div>
-<div class="ttc" id="aclasswindows_1_1_main_menu_client_html_a97f0e05497516b71a748a3517e8ae6e3"><div class="ttname"><a href="classwindows_1_1_main_menu_client.html#a97f0e05497516b71a748a3517e8ae6e3">windows.MainMenuClient.actionPerformed</a></div><div class="ttdeci">void actionPerformed(ActionEvent e)</div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_client_8java_source.html#l00166">MainMenuClient.java:166</a></div></div>
-<div class="ttc" id="aclasswindows_1_1_main_menu_client_html_ad27f46f83dd6d4f793b0f5da305369ea"><div class="ttname"><a href="classwindows_1_1_main_menu_client.html#ad27f46f83dd6d4f793b0f5da305369ea">windows.MainMenuClient.MainMenuClient</a></div><div class="ttdeci">MainMenuClient()</div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_client_8java_source.html#l00032">MainMenuClient.java:32</a></div></div>
-<div class="ttc" id="aclasswindows_1_1_reservation_window_html"><div class="ttname"><a href="classwindows_1_1_reservation_window.html">windows.ReservationWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_reservation_window_8java_source.html#l00029">ReservationWindow.java:29</a></div></div>
-<div class="ttc" id="anamespacelanguage_html"><div class="ttname"><a href="namespacelanguage.html">language</a></div><div class="ttdef"><b>Definition:</b> <a href="_intern_language_8java_source.html#l00001">InternLanguage.java:1</a></div></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == searchButton) {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <a class="code hl_class" href="classwindows_1_1_hotel_browser_window.html">HotelBrowserWindow</a>.<a class="code hl_function" href="classwindows_1_1_hotel_browser_window.html#ac810700d3b6ea2fc5f9d99810be3818c">getInstance</a>().setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == infoButton) {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>             buttonPanel.setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>             welcomePanel.setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>             infoPanel.setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>             upperMenu.<a class="code hl_variable" href="classwindows_1_1_upper_menu.html#abb818478c36bc668433a750f0e4afb3b">returnHomeItem</a>.setEnabled(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == advSettingsButton) {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>             buttonPanel.setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>             welcomePanel.setVisible(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>             settingsPanel.setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>             upperMenu.<a class="code hl_variable" href="classwindows_1_1_upper_menu.html#abb818478c36bc668433a750f0e4afb3b">returnHomeItem</a>.setEnabled(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>         }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classwindows_1_1_main_menu_client.html#a75c00730c7c4fb58dca2be7e1282faee">  187</a></span>     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classwindows_1_1_main_menu_client.html#a75c00730c7c4fb58dca2be7e1282faee">main</a>(String[] args) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>         <span class="keyword">new</span> <a class="code hl_function" href="classwindows_1_1_main_menu_client.html#ad27f46f83dd6d4f793b0f5da305369ea">MainMenuClient</a>();</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>     }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>}</div>
+<div class="ttc" id="aclasswindows_1_1_hotel_browser_window_html"><div class="ttname"><a href="classwindows_1_1_hotel_browser_window.html">windows.HotelBrowserWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="_hotel_browser_window_8java_source.html#l00040">HotelBrowserWindow.java:40</a></div></div>
+<div class="ttc" id="aclasswindows_1_1_hotel_browser_window_html_ac810700d3b6ea2fc5f9d99810be3818c"><div class="ttname"><a href="classwindows_1_1_hotel_browser_window.html#ac810700d3b6ea2fc5f9d99810be3818c">windows.HotelBrowserWindow.getInstance</a></div><div class="ttdeci">static HotelBrowserWindow getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="_hotel_browser_window_8java_source.html#l00075">HotelBrowserWindow.java:75</a></div></div>
+<div class="ttc" id="aclasswindows_1_1_main_menu_client_html"><div class="ttname"><a href="classwindows_1_1_main_menu_client.html">windows.MainMenuClient</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_client_8java_source.html#l00027">MainMenuClient.java:27</a></div></div>
+<div class="ttc" id="aclasswindows_1_1_main_menu_client_html_a75c00730c7c4fb58dca2be7e1282faee"><div class="ttname"><a href="classwindows_1_1_main_menu_client.html#a75c00730c7c4fb58dca2be7e1282faee">windows.MainMenuClient.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_client_8java_source.html#l00187">MainMenuClient.java:187</a></div></div>
+<div class="ttc" id="aclasswindows_1_1_main_menu_client_html_a97f0e05497516b71a748a3517e8ae6e3"><div class="ttname"><a href="classwindows_1_1_main_menu_client.html#a97f0e05497516b71a748a3517e8ae6e3">windows.MainMenuClient.actionPerformed</a></div><div class="ttdeci">void actionPerformed(ActionEvent e)</div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_client_8java_source.html#l00162">MainMenuClient.java:162</a></div></div>
+<div class="ttc" id="aclasswindows_1_1_main_menu_client_html_ad27f46f83dd6d4f793b0f5da305369ea"><div class="ttname"><a href="classwindows_1_1_main_menu_client.html#ad27f46f83dd6d4f793b0f5da305369ea">windows.MainMenuClient.MainMenuClient</a></div><div class="ttdeci">MainMenuClient()</div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_client_8java_source.html#l00035">MainMenuClient.java:35</a></div></div>
+<div class="ttc" id="aclasswindows_1_1_translatable_object_1_1_translatable_j_button_html"><div class="ttname"><a href="classwindows_1_1_translatable_object_1_1_translatable_j_button.html">windows.TranslatableObject.TranslatableJButton</a></div><div class="ttdef"><b>Definition:</b> <a href="_translatable_object_8java_source.html#l00045">TranslatableObject.java:45</a></div></div>
+<div class="ttc" id="aclasswindows_1_1_translatable_object_1_1_translatable_j_label_html"><div class="ttname"><a href="classwindows_1_1_translatable_object_1_1_translatable_j_label.html">windows.TranslatableObject.TranslatableJLabel</a></div><div class="ttdef"><b>Definition:</b> <a href="_translatable_object_8java_source.html#l00023">TranslatableObject.java:23</a></div></div>
+<div class="ttc" id="aclasswindows_1_1_upper_menu_html"><div class="ttname"><a href="classwindows_1_1_upper_menu.html">windows.UpperMenu</a></div><div class="ttdef"><b>Definition:</b> <a href="_upper_menu_8java_source.html#l00019">UpperMenu.java:19</a></div></div>
+<div class="ttc" id="aclasswindows_1_1_upper_menu_html_abb818478c36bc668433a750f0e4afb3b"><div class="ttname"><a href="classwindows_1_1_upper_menu.html#abb818478c36bc668433a750f0e4afb3b">windows.UpperMenu.returnHomeItem</a></div><div class="ttdeci">final JMenuItem returnHomeItem</div><div class="ttdef"><b>Definition:</b> <a href="_upper_menu_8java_source.html#l00022">UpperMenu.java:22</a></div></div>
+<div class="ttc" id="ainterfacewindows_1_1_translatable_object_html"><div class="ttname"><a href="interfacewindows_1_1_translatable_object.html">windows.TranslatableObject</a></div><div class="ttdef"><b>Definition:</b> <a href="_translatable_object_8java_source.html#l00012">TranslatableObject.java:12</a></div></div>
+<div class="ttc" id="anamespacewindows_html"><div class="ttname"><a href="namespacewindows.html">windows</a></div><div class="ttdef"><b>Definition:</b> <a href="_guest_creator_window_8java_source.html#l00001">GuestCreatorWindow.java:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_e6bb53534ac0e427887cf7a94c0c004e.html">C:</a></li><li class="navelem"><a class="el" href="dir_8ceffd4ee35c3518d4e8bdc7e638efe8.html">Users</a></li><li class="navelem"><a class="el" href="dir_6afe706a714c73b4f5a01e762a105843.html">andon</a></li><li class="navelem"><a class="el" href="dir_5107a2e4081b43d339c63dc8716dcc5f.html">Documents</a></li><li class="navelem"><a class="el" href="dir_91eb4f2d1a2d42769db3e8e995ea3a4a.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_265a427c40d54a4c22e8b7495d2ad170.html">BSPQ23-E5-2</a></li><li class="navelem"><a class="el" href="dir_22c9c1d18e8f9228ddfc2a58c0574283.html">Client</a></li><li class="navelem"><a class="el" href="dir_984c817bcc528c1fd813bef5fdbb0a31.html">src</a></li><li class="navelem"><a class="el" href="dir_4ad82a6e9709d8dfe510ea2612310316.html">main</a></li><li class="navelem"><a class="el" href="dir_8e1335229ef4d180716272d3c39e2442.html">java</a></li><li class="navelem"><a class="el" href="dir_f1caf6c9bf531f960e5d490b22615bb5.html">windows</a></li><li class="navelem"><a class="el" href="_main_menu_client_8java.html">MainMenuClient.java</a></li>
+    <li class="navelem"><a class="el" href="dir_922c588100a187620fdc1533bc178f73.html">Client</a></li><li class="navelem"><a class="el" href="dir_71db3c9ac669ad0e48d6cd88f7e1e924.html">src</a></li><li class="navelem"><a class="el" href="dir_29de8235cf18054b03e9d05a909460bc.html">main</a></li><li class="navelem"><a class="el" href="dir_7c49efd1b69f11ee49a53ba65c63cd5d.html">java</a></li><li class="navelem"><a class="el" href="dir_030f05d7b797aa5b94e8ba49c40b11a1.html">windows</a></li><li class="navelem"><a class="el" href="_main_menu_client_8java.html">MainMenuClient.java</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

@@ -1,0 +1,72 @@
+\hypertarget{_upper_menu_8java_source}{}\doxysection{Upper\+Menu.\+java}
+\label{_upper_menu_8java_source}\index{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/main/java/windows/UpperMenu.java@{C:/Users/andon/Documents/GitHub/BSPQ23-\/E5-\/2/Client/src/main/java/windows/UpperMenu.java}}
+\mbox{\hyperlink{_upper_menu_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00001}00001\ \textcolor{keyword}{package\ }windows;}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.awt.event.ActionListener;}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00005}00005\ \textcolor{keyword}{import}\ javax.swing.JMenu;}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00006}00006\ \textcolor{keyword}{import}\ javax.swing.JMenuBar;}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00007}00007\ \textcolor{keyword}{import}\ javax.swing.JMenuItem;}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00009}00009\ \textcolor{keyword}{import}\ org.apache.logging.log4j.LogManager;}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00010}00010\ \textcolor{keyword}{import}\ org.apache.logging.log4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00012}00012\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacelanguage}{language}}.\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}};}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00019}\mbox{\hyperlink{classwindows_1_1_upper_menu}{00019}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classwindows_1_1_upper_menu}{UpperMenu}}\ \textcolor{keyword}{extends}\ JMenuBar\{}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ \textcolor{keywordtype}{long}\ serialVersionUID\ =\ 1L;}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}\ JMenu\ menu,\ menuH,\ menuL;}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00022}\mbox{\hyperlink{classwindows_1_1_upper_menu_a87e7cef18f0b56d5347719ba2a866e77}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{final}\ JMenuItem\ \mbox{\hyperlink{classwindows_1_1_upper_menu_ab72eedceb521572b04f5c5ee065bf06c}{logOutItem}},\ \mbox{\hyperlink{classwindows_1_1_upper_menu_abb818478c36bc668433a750f0e4afb3b}{returnHomeItem}},\ \mbox{\hyperlink{classwindows_1_1_upper_menu_a87e7cef18f0b56d5347719ba2a866e77}{exitItem}},\ \mbox{\hyperlink{classwindows_1_1_upper_menu_a8dfe6ea1dad37499d4c75976ca1026cb}{mItemES}},\ \mbox{\hyperlink{classwindows_1_1_upper_menu_a1d98a7552bb441e2ea07ddb1922cc519}{mItemEN}};}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00023}\mbox{\hyperlink{classwindows_1_1_upper_menu_a10c1279f2ab3f0e86cec8d22f814d6ba}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classwindows_1_1_upper_menu_a10c1279f2ab3f0e86cec8d22f814d6ba}{UpperMenu}}(ActionListener\ returnHome,\ \mbox{\hyperlink{interfacewindows_1_1_translatable_object}{TranslatableObject}}...\ toTranslate)\ \{}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ Logger\ l\ =\ LogManager.getLogger();}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ menu\ =\ \textcolor{keyword}{new}\ JMenu(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}account"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ menuH\ =\ \textcolor{keyword}{new}\ JMenu(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}home"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ menuL\ =\ \textcolor{keyword}{new}\ JMenu(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}language"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_upper_menu_ab72eedceb521572b04f5c5ee065bf06c}{logOutItem}}\ =\ \textcolor{keyword}{new}\ JMenuItem(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}logOut"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_upper_menu_abb818478c36bc668433a750f0e4afb3b}{returnHomeItem}}\ =\ \textcolor{keyword}{new}\ JMenuItem(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}returnHome"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_upper_menu_a87e7cef18f0b56d5347719ba2a866e77}{exitItem}}\ =\ \textcolor{keyword}{new}\ JMenuItem(\mbox{\hyperlink{classlanguage_1_1_intern_language}{InternLanguage}}.\mbox{\hyperlink{classlanguage_1_1_intern_language_a0ac01671d348e2c3867179983c897233}{translateTxt}}(\textcolor{stringliteral}{"{}exit"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_upper_menu_a8dfe6ea1dad37499d4c75976ca1026cb}{mItemES}}\ \ =\ \textcolor{keyword}{new}\ JMenuItem(\textcolor{stringliteral}{"{}Español"{}});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_upper_menu_a1d98a7552bb441e2ea07ddb1922cc519}{mItemEN}}\ =\ \textcolor{keyword}{new}\ JMenuItem(\textcolor{stringliteral}{"{}English"{}});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ menuH.add(\mbox{\hyperlink{classwindows_1_1_upper_menu_abb818478c36bc668433a750f0e4afb3b}{returnHomeItem}});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ menuH.add(\mbox{\hyperlink{classwindows_1_1_upper_menu_a87e7cef18f0b56d5347719ba2a866e77}{exitItem}});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ menuL.add(\mbox{\hyperlink{classwindows_1_1_upper_menu_a8dfe6ea1dad37499d4c75976ca1026cb}{mItemES}});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ menuL.add(\mbox{\hyperlink{classwindows_1_1_upper_menu_a1d98a7552bb441e2ea07ddb1922cc519}{mItemEN}});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ menu.add(\mbox{\hyperlink{classwindows_1_1_upper_menu_ab72eedceb521572b04f5c5ee065bf06c}{logOutItem}});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ add(menuH);}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ add(menu);}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ add(menuL);}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_upper_menu_abb818478c36bc668433a750f0e4afb3b}{returnHomeItem}}.addActionListener(returnHome);}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_upper_menu_a8dfe6ea1dad37499d4c75976ca1026cb}{mItemES}}.addActionListener(v-\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Language\ set\ to\ Spanish"{}});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ InternLanguage.changeLanguage(\textcolor{stringliteral}{"{}es"{}});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ for(TranslatableObject\ t\ :\ toTranslate)}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t.refreshText();}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ menu.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}account"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ menuH.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}home"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ menuL.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}language"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ logOutItem.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}logOut"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ returnHomeItem.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}returnHome"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ exitItem.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}exit"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_upper_menu_a1d98a7552bb441e2ea07ddb1922cc519}{mItemEN}}.addActionListener(v-\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Language\ set\ to\ English"{}});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ InternLanguage.changeLanguage(\textcolor{stringliteral}{"{}en"{}});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ for(TranslatableObject\ t\ :\ toTranslate)}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t.refreshText();}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ menu.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}account"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ menuH.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}home"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ menuL.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}language"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ logOutItem.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}logOut"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ returnHomeItem.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}returnHome"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ exitItem.setText(InternLanguage.translateTxt(\textcolor{stringliteral}{"{}exit"{}}));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classwindows_1_1_upper_menu_a87e7cef18f0b56d5347719ba2a866e77}{exitItem}}.addActionListener(v-\/>\ System.exit(0));}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//returnHomeItem.setEnabled(false);}}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_upper_menu_8java_source_l00071}00071\ \}}
+
+\end{DoxyCode}

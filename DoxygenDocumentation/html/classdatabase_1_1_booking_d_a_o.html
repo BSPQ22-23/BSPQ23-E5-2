@@ -148,9 +148,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a21a3a6c597df916f32962987ac3c5fa6 inherit pro_static_attribs_classdatabase_1_1_data_access_object_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>DAO for Booking class </p><dl class="section author"><dt>Author</dt><dd>maitanegarcia </dd></dl>
+<div class="textblock"><p>Class to allow the access to <code><a class="el" href="classdomain_1_1_booking.html">Booking</a></code> objects in the database </p>
 
-<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00022">22</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00020">20</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6051c6d63160cebe758e2eed978e7b9d" name="a6051c6d63160cebe758e2eed978e7b9d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6051c6d63160cebe758e2eed978e7b9d">&#9670;&#160;</a></span>delete()</h2>
@@ -167,9 +167,14 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Thus method deletes a reservation </p>
+<p>Delete a <code><a class="el" href="classdomain_1_1_booking.html">Booking</a></code> that has been retrieved from the database </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>detatched object to delete </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00043">43</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00048">48</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
 
 </div>
 </div>
@@ -188,8 +193,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get a <code><a class="el" href="classdomain_1_1_booking.html">Booking</a></code> from the database by it's id </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>id of the booking </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the booking or null if it doesn't exist </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00081">81</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00091">91</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
 
 </div>
 </div>
@@ -207,9 +219,9 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method gets a list of all the reservations </p>
+<p>Get all <code><a class="el" href="classdomain_1_1_booking.html">Booking</a></code>s from the database </p><dl class="section return"><dt>Returns</dt><dd>the list of bookings in the database </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00052">52</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00058">58</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
 
 </div>
 </div>
@@ -228,8 +240,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get's all booking that have been made by a guest </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">author</td><td>person that created the booking </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of bookings from that guest </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00128">128</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00143">143</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
 
 </div>
 </div>
@@ -255,8 +274,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the DAO instance for <code><a class="el" href="classdomain_1_1_booking.html">Booking</a></code>s </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00028">28</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00030">30</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
 
 </div>
 </div>
@@ -285,8 +305,16 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Checks if a room contains a booking in an specific day </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">room</td><td>room to check </td></tr>
+    <tr><td class="paramname">date</td><td>date to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the room is occupied that day </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00175">175</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00195">195</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
 
 </div>
 </div>
@@ -305,9 +333,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This method saves a reservation </p>
+<p>Upload or update a <code><a class="el" href="classdomain_1_1_booking.html">Booking</a></code> to the database </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>booking to store/update </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the transaction was successful </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00035">35</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_booking_d_a_o_8java_source.html#l00039">39</a> of file <a class="el" href="_booking_d_a_o_8java_source.html">BookingDAO.java</a>.</p>
 
 </div>
 </div>

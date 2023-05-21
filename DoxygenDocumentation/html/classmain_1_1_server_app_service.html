@@ -123,7 +123,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00018">18</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00021">21</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2316f06d53ed81a0122db37a6cc66ffa" name="a2316f06d53ed81a0122db37a6cc66ffa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2316f06d53ed81a0122db37a6cc66ffa">&#9670;&#160;</a></span>createHotel()</h2>
@@ -148,8 +148,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Create a new hotel </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>hotel info to insert into the database </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the hotel data it's allowed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00102">102</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00141">141</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 
 </div>
 </div>
@@ -186,8 +193,16 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Remove a reservation by it's id </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td>user running the API method to only allow the author to delete it's bookings </td></tr>
+    <tr><td class="paramname">bookingId</td><td>id of the booking to delete </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the deletion it's allowed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00081">81</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00110">110</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 
 </div>
 </div>
@@ -224,8 +239,16 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Edit an already existing reservation </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td>user that runs the API method to verify that it's allowed </td></tr>
+    <tr><td class="paramname">b</td><td>booking to edit </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the user it's authorized </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00088">88</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00123">123</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 
 </div>
 </div>
@@ -251,8 +274,9 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get all the hotels in the server (May be limited in the future) </p><dl class="section return"><dt>Returns</dt><dd>the list of hotels </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00109">109</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00152">152</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 
 </div>
 </div>
@@ -279,8 +303,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get all hotels that comply with the string query </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td>piece of string that the name of the hotel must contain </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the list of hotels that comply with said query </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00126">126</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00174">174</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 
 </div>
 </div>
@@ -307,8 +338,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get an specific <code><a class="el" href="classdomain_1_1_booking.html">Booking</a></code> by it's id </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bookingID</td><td>id of the booking to search </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the booking with that id </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00078">78</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00101">101</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 
 </div>
 </div>
@@ -345,8 +383,16 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the bookings in an specific hotel </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>user to only allow the owner to get the bookings from it's hotels </td></tr>
+    <tr><td class="paramname">hotelId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00069">69</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00088">88</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 
 </div>
 </div>
@@ -373,8 +419,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the reservations a user has made </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>user owner of the reservations </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the list of said reservations </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00065">65</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00079">79</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 
 </div>
 </div>
@@ -420,7 +473,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The account token or null if the user credentials aren't correct </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00046">46</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00049">49</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 
 </div>
 </div>
@@ -463,7 +516,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00027">27</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00030">30</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 
 </div>
 </div>
@@ -499,7 +552,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00057">57</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_server_app_service_8java_source.html#l00067">67</a> of file <a class="el" href="_server_app_service_8java_source.html">ServerAppService.java</a>.</p>
 
 </div>
 </div>

@@ -7,6 +7,7 @@ var searchData=
   ['hotelcreatorwindow_4',['HotelCreatorWindow',['../classwindows_1_1_hotel_creator_window.html',1,'windows']]],
   ['hoteldao_5',['HotelDAO',['../classdatabase_1_1_hotel_d_a_o.html',1,'database']]],
   ['hoteldaotest_6',['HotelDAOTest',['../classdatabase_1_1_hotel_d_a_o_test.html',1,'database']]],
-  ['hoteleditorwindow_7',['HotelEditorWindow',['../classwindows_1_1_hotel_editor_window.html',1,'windows']]],
-  ['hotelgetterhandler_8',['HotelGetterHandler',['../classapi_1_1hotel_1_1_hotel_getter_handler.html',1,'api::hotel']]]
+  ['hoteldescriptionwindow_7',['HotelDescriptionWindow',['../classwindows_1_1_hotel_description_window.html',1,'windows']]],
+  ['hoteleditorwindow_8',['HotelEditorWindow',['../classwindows_1_1_hotel_editor_window.html',1,'windows']]],
+  ['hotelgetterhandler_9',['HotelGetterHandler',['../classapi_1_1hotel_1_1_hotel_getter_handler.html',1,'api::hotel']]]
 ];

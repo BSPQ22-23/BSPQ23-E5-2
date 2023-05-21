@@ -51,12 +51,9 @@ static Persistence\+Manager\+Factory \mbox{\hyperlink{classdatabase_1_1_data_acc
 
 
 \doxysubsection{Detailed Description}
-DAO for Image class \begin{DoxyAuthor}{Author}
-maitanegarcia 
-\end{DoxyAuthor}
+Class to allow the access to {\ttfamily \mbox{\hyperlink{classdomain_1_1_image}{Image}}} objects in the database 
 
-
-Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00020}{20}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
+Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00018}{18}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
 
 
 
@@ -67,9 +64,14 @@ Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00020}{20}} of fi
 \doxysubsubsection{\texorpdfstring{delete()}{delete()}}
 {\footnotesize\ttfamily void database.\+Image\+DAO.\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_image}{Image}}}]{object }\end{DoxyParamCaption})}
 
-Thus method deletes a reservation 
+Delete an {\ttfamily \mbox{\hyperlink{classdomain_1_1_image}{Image}}} that has been retrieved from the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & detatched object to delete \\
+\hline
+\end{DoxyParams}
 
-Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00041}{41}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
+
+Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00046}{46}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
 
 \mbox{\Hypertarget{classdatabase_1_1_image_d_a_o_a47f4529ffb86c2c82d99610cfaca866e}\label{classdatabase_1_1_image_d_a_o_a47f4529ffb86c2c82d99610cfaca866e}} 
 \index{database.ImageDAO@{database.ImageDAO}!find@{find}}
@@ -77,9 +79,19 @@ Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00041}{41}} of fi
 \doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classdomain_1_1_image}{Image}} $>$ database.\+Image\+DAO.\+find (\begin{DoxyParamCaption}\item[{String}]{oid,  }\item[{\mbox{\hyperlink{enumdomain_1_1_image_1_1_image_type}{Image\+Type}}}]{type }\end{DoxyParamCaption})}
 
+Get an {\ttfamily \mbox{\hyperlink{classdomain_1_1_image}{Image}}} from the database by the id of the object the image is attached to and the ctx of the image 
+\begin{DoxyParams}{Parameters}
+{\em oid} & id of the object the image is attached to \\
+\hline
+{\em type} & ctx of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the image or null if it doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00105}{105}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
+Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00121}{121}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
 
 \mbox{\Hypertarget{classdatabase_1_1_image_d_a_o_ae276bca20ef214afcfaa60a8b2adbd36}\label{classdatabase_1_1_image_d_a_o_ae276bca20ef214afcfaa60a8b2adbd36}} 
 \index{database.ImageDAO@{database.ImageDAO}!find@{find}}
@@ -87,9 +99,17 @@ Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00105}{105}} of f
 \doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classdomain_1_1_image}{Image}} database.\+Image\+DAO.\+find (\begin{DoxyParamCaption}\item[{String}]{param }\end{DoxyParamCaption})}
 
+Get an {\ttfamily \mbox{\hyperlink{classdomain_1_1_image}{Image}}} from the database by it\textquotesingle{}s id 
+\begin{DoxyParams}{Parameters}
+{\em param} & id of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the image or null if it doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00079}{79}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
+Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00089}{89}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
 
 \mbox{\Hypertarget{classdatabase_1_1_image_d_a_o_a2bd375942ba9281205aa54eba5b41765}\label{classdatabase_1_1_image_d_a_o_a2bd375942ba9281205aa54eba5b41765}} 
 \index{database.ImageDAO@{database.ImageDAO}!getAll@{getAll}}
@@ -97,9 +117,12 @@ Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00079}{79}} of fi
 \doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
 {\footnotesize\ttfamily List$<$ \mbox{\hyperlink{classdomain_1_1_image}{Image}} $>$ database.\+Image\+DAO.\+get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-This method gets a list of all the reservations 
+Get all {\ttfamily \mbox{\hyperlink{classdomain_1_1_image}{Image}}}s from the database \begin{DoxyReturn}{Returns}
+the list of images in the database 
+\end{DoxyReturn}
 
-Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00050}{50}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
+
+Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00056}{56}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
 
 \mbox{\Hypertarget{classdatabase_1_1_image_d_a_o_a65bd0cf24b4341063e24104dd606381a}\label{classdatabase_1_1_image_d_a_o_a65bd0cf24b4341063e24104dd606381a}} 
 \index{database.ImageDAO@{database.ImageDAO}!getInstance@{getInstance}}
@@ -107,9 +130,12 @@ Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00050}{50}} of fi
 \doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{classdatabase_1_1_image_d_a_o}{Image\+DAO}} database.\+Image\+DAO.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Get the DAO instance for {\ttfamily \mbox{\hyperlink{classdomain_1_1_image}{Image}}}s \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00026}{26}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
+Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00028}{28}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
 
 \mbox{\Hypertarget{classdatabase_1_1_image_d_a_o_abdaee3f703179357bcddb4a10d3000ea}\label{classdatabase_1_1_image_d_a_o_abdaee3f703179357bcddb4a10d3000ea}} 
 \index{database.ImageDAO@{database.ImageDAO}!save@{save}}
@@ -117,9 +143,17 @@ Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00026}{26}} of fi
 \doxysubsubsection{\texorpdfstring{save()}{save()}}
 {\footnotesize\ttfamily boolean database.\+Image\+DAO.\+save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_image}{Image}}}]{object }\end{DoxyParamCaption})}
 
-This method saves a reservation 
+Upload or update an {\ttfamily \mbox{\hyperlink{classdomain_1_1_image}{Image}}} to the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & image to store/update \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the transaction was successful 
+\end{DoxyReturn}
 
-Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00033}{33}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
+
+Definition at line \mbox{\hyperlink{_image_d_a_o_8java_source_l00037}{37}} of file \mbox{\hyperlink{_image_d_a_o_8java_source}{Image\+DAO.\+java}}.
 
 
 

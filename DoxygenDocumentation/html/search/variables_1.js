@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hotel_5ficon_0',['HOTEL_ICON',['../enumdomain_1_1_image_1_1_image_type.html#a037ab7ff65ec45222ee665d581e234a7',1,'domain::Image::ImageType']]]
+  ['exititem_0',['exitItem',['../classwindows_1_1_upper_menu.html#a87e7cef18f0b56d5347719ba2a866e77',1,'windows::UpperMenu']]]
 ];

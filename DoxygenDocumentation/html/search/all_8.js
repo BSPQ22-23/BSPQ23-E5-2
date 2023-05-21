@@ -18,10 +18,9 @@ var searchData=
   ['imagetype_15',['ImageType',['../enumdomain_1_1_image_1_1_image_type.html',1,'domain::Image']]],
   ['imageuploadhandler_16',['ImageUploadHandler',['../classapi_1_1resources_1_1_image_upload_handler.html',1,'api::resources']]],
   ['imageuploadhandler_2ejava_17',['ImageUploadHandler.java',['../_image_upload_handler_8java.html',1,'']]],
-  ['initdb_18',['initDB',['../classdb_1_1_data_base.html#ae6e28d534a08d31c8d0f66b1260bea48',1,'db::DataBase']]],
-  ['internlanguage_19',['InternLanguage',['../classlanguage_1_1_intern_language.html',1,'language']]],
-  ['internlanguage_2ejava_20',['InternLanguage.java',['../_intern_language_8java.html',1,'']]],
-  ['internlanguagetest_21',['InternLanguageTest',['../classlanguage_1_1_intern_language_test.html',1,'language']]],
-  ['internlanguagetest_2ejava_22',['InternLanguageTest.java',['../_intern_language_test_8java.html',1,'']]],
-  ['ishotelowner_23',['isHotelOwner',['../classdomain_1_1_user.html#ad7b88a71f5493c86d66e70135becd63e',1,'domain.User.isHotelOwner()'],['../classdomain_1_1_user.html#ad7b88a71f5493c86d66e70135becd63e',1,'domain.User.isHotelOwner()']]]
+  ['internlanguage_18',['InternLanguage',['../classlanguage_1_1_intern_language.html',1,'language']]],
+  ['internlanguage_2ejava_19',['InternLanguage.java',['../_intern_language_8java.html',1,'']]],
+  ['internlanguagetest_20',['InternLanguageTest',['../classlanguage_1_1_intern_language_test.html',1,'language']]],
+  ['internlanguagetest_2ejava_21',['InternLanguageTest.java',['../_intern_language_test_8java.html',1,'']]],
+  ['ishotelowner_22',['isHotelOwner',['../classdomain_1_1_user.html#ad7b88a71f5493c86d66e70135becd63e',1,'domain.User.isHotelOwner()'],['../classremote_1_1_client_controller.html#a6069a9b78741d7e3d6ab8fe284a32e58',1,'remote.ClientController.isHotelOwner()'],['../classdomain_1_1_user.html#ad7b88a71f5493c86d66e70135becd63e',1,'domain.User.isHotelOwner()']]]
 ];

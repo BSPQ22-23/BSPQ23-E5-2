@@ -25,5 +25,6 @@ var classdomain_1_1_guest =
     [ "setName", "classdomain_1_1_guest.html#a31c0bc0a414c9b293c43588476eed63a", null ],
     [ "setSurname", "classdomain_1_1_guest.html#a06500d09651c998527f8b6caad94536e", null ],
     [ "setSurname", "classdomain_1_1_guest.html#a06500d09651c998527f8b6caad94536e", null ],
+    [ "toString", "classdomain_1_1_guest.html#a6bc226ff0795f85ce4cb40dbda0bed18", null ],
     [ "toString", "classdomain_1_1_guest.html#a6bc226ff0795f85ce4cb40dbda0bed18", null ]
 ];

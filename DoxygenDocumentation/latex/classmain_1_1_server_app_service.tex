@@ -30,7 +30,7 @@ static List$<$ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}} $>$ \mbox{\hyperl
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00018}{18}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00021}{21}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 
 
@@ -41,9 +41,17 @@ Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00018}{18}
 \doxysubsubsection{\texorpdfstring{createHotel()}{createHotel()}}
 {\footnotesize\ttfamily static boolean main.\+Server\+App\+Service.\+create\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}}}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Create a new hotel 
+\begin{DoxyParams}{Parameters}
+{\em h} & hotel info to insert into the database \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the hotel data it\textquotesingle{}s allowed 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00102}{102}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00141}{141}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 \mbox{\Hypertarget{classmain_1_1_server_app_service_a4d794dcd32e7a729e206019143266c9d}\label{classmain_1_1_server_app_service_a4d794dcd32e7a729e206019143266c9d}} 
 \index{main.ServerAppService@{main.ServerAppService}!deleteReservation@{deleteReservation}}
@@ -51,9 +59,19 @@ Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00102}{102
 \doxysubsubsection{\texorpdfstring{deleteReservation()}{deleteReservation()}}
 {\footnotesize\ttfamily static boolean main.\+Server\+App\+Service.\+delete\+Reservation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_user}{User}}}]{u,  }\item[{int}]{booking\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Remove a reservation by it\textquotesingle{}s id 
+\begin{DoxyParams}{Parameters}
+{\em u} & user running the API method to only allow the author to delete it\textquotesingle{}s bookings \\
+\hline
+{\em booking\+Id} & id of the booking to delete \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the deletion it\textquotesingle{}s allowed 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00081}{81}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00110}{110}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 \mbox{\Hypertarget{classmain_1_1_server_app_service_ad18a978ca991a18121094c3478682d82}\label{classmain_1_1_server_app_service_ad18a978ca991a18121094c3478682d82}} 
 \index{main.ServerAppService@{main.ServerAppService}!editReservation@{editReservation}}
@@ -61,9 +79,19 @@ Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00081}{81}
 \doxysubsubsection{\texorpdfstring{editReservation()}{editReservation()}}
 {\footnotesize\ttfamily static boolean main.\+Server\+App\+Service.\+edit\+Reservation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_user}{User}}}]{u,  }\item[{\mbox{\hyperlink{classdomain_1_1_booking}{Booking}}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Edit an already existing reservation 
+\begin{DoxyParams}{Parameters}
+{\em u} & user that runs the API method to verify that it\textquotesingle{}s allowed \\
+\hline
+{\em b} & booking to edit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the user it\textquotesingle{}s authorized 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00088}{88}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00123}{123}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 \mbox{\Hypertarget{classmain_1_1_server_app_service_abe5b5a5c1ae41ea87beda555d93e40e8}\label{classmain_1_1_server_app_service_abe5b5a5c1ae41ea87beda555d93e40e8}} 
 \index{main.ServerAppService@{main.ServerAppService}!getHotels@{getHotels}}
@@ -71,9 +99,12 @@ Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00088}{88}
 \doxysubsubsection{\texorpdfstring{getHotels()}{getHotels()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}} $>$ main.\+Server\+App\+Service.\+get\+Hotels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Get all the hotels in the server (May be limited in the future) \begin{DoxyReturn}{Returns}
+the list of hotels 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00109}{109}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00152}{152}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 \mbox{\Hypertarget{classmain_1_1_server_app_service_ae73c47232fab6350f0936d7656c92a72}\label{classmain_1_1_server_app_service_ae73c47232fab6350f0936d7656c92a72}} 
 \index{main.ServerAppService@{main.ServerAppService}!getHotels@{getHotels}}
@@ -81,9 +112,17 @@ Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00109}{109
 \doxysubsubsection{\texorpdfstring{getHotels()}{getHotels()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{classdomain_1_1_hotel}{Hotel}} $>$ main.\+Server\+App\+Service.\+get\+Hotels (\begin{DoxyParamCaption}\item[{String}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Get all hotels that comply with the string query 
+\begin{DoxyParams}{Parameters}
+{\em query} & piece of string that the name of the hotel must contain \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the list of hotels that comply with said query 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00126}{126}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00174}{174}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 \mbox{\Hypertarget{classmain_1_1_server_app_service_ac60de1284ca9b022404c3a6afc86a429}\label{classmain_1_1_server_app_service_ac60de1284ca9b022404c3a6afc86a429}} 
 \index{main.ServerAppService@{main.ServerAppService}!getReservationById@{getReservationById}}
@@ -91,9 +130,17 @@ Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00126}{126
 \doxysubsubsection{\texorpdfstring{getReservationById()}{getReservationById()}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{classdomain_1_1_booking}{Booking}} main.\+Server\+App\+Service.\+get\+Reservation\+By\+Id (\begin{DoxyParamCaption}\item[{String}]{booking\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Get an specific {\ttfamily \mbox{\hyperlink{classdomain_1_1_booking}{Booking}}} by it\textquotesingle{}s id 
+\begin{DoxyParams}{Parameters}
+{\em booking\+ID} & id of the booking to search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the booking with that id 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00078}{78}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00101}{101}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 \mbox{\Hypertarget{classmain_1_1_server_app_service_a0d750ca966254e19eaf9a1346443f5fe}\label{classmain_1_1_server_app_service_a0d750ca966254e19eaf9a1346443f5fe}} 
 \index{main.ServerAppService@{main.ServerAppService}!getReservationsByHotel@{getReservationsByHotel}}
@@ -101,9 +148,19 @@ Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00078}{78}
 \doxysubsubsection{\texorpdfstring{getReservationsByHotel()}{getReservationsByHotel()}}
 {\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}} $>$ main.\+Server\+App\+Service.\+get\+Reservations\+By\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_user}{User}}}]{user,  }\item[{String}]{hotel\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Get the bookings in an specific hotel 
+\begin{DoxyParams}{Parameters}
+{\em user} & user to only allow the owner to get the bookings from it\textquotesingle{}s hotels \\
+\hline
+{\em hotel\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00069}{69}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00088}{88}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 \mbox{\Hypertarget{classmain_1_1_server_app_service_a9d9f006971a8d6136c872c8863f2ecee}\label{classmain_1_1_server_app_service_a9d9f006971a8d6136c872c8863f2ecee}} 
 \index{main.ServerAppService@{main.ServerAppService}!getReservationsByUser@{getReservationsByUser}}
@@ -111,9 +168,17 @@ Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00069}{69}
 \doxysubsubsection{\texorpdfstring{getReservationsByUser()}{getReservationsByUser()}}
 {\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{classdomain_1_1_booking}{Booking}} $>$ main.\+Server\+App\+Service.\+get\+Reservations\+By\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1_user}{User}}}]{user }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Get the reservations a user has made 
+\begin{DoxyParams}{Parameters}
+{\em user} & user owner of the reservations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the list of said reservations 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00065}{65}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00079}{79}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 \mbox{\Hypertarget{classmain_1_1_server_app_service_aabd75b4108a56e0b882d7761be1f3ea7}\label{classmain_1_1_server_app_service_aabd75b4108a56e0b882d7761be1f3ea7}} 
 \index{main.ServerAppService@{main.ServerAppService}!login@{login}}
@@ -133,7 +198,7 @@ The account token or null if the user credentials aren\textquotesingle{}t correc
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00046}{46}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00049}{49}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 \mbox{\Hypertarget{classmain_1_1_server_app_service_a17b3c3c4d1fec7e33773aa2807571ec1}\label{classmain_1_1_server_app_service_a17b3c3c4d1fec7e33773aa2807571ec1}} 
 \index{main.ServerAppService@{main.ServerAppService}!register@{register}}
@@ -160,7 +225,7 @@ The account token
 \end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00027}{27}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00030}{30}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 \mbox{\Hypertarget{classmain_1_1_server_app_service_ac2931a22cecf661b49c28700f4c2770d}\label{classmain_1_1_server_app_service_ac2931a22cecf661b49c28700f4c2770d}} 
 \index{main.ServerAppService@{main.ServerAppService}!reservationCreate@{reservationCreate}}
@@ -180,7 +245,7 @@ Adds a reservation to the database if all information it\textquotesingle{}s corr
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00057}{57}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
+Definition at line \mbox{\hyperlink{_server_app_service_8java_source_l00067}{67}} of file \mbox{\hyperlink{_server_app_service_8java_source}{Server\+App\+Service.\+java}}.
 
 
 

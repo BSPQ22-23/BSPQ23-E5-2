@@ -13,65 +13,62 @@
 \DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00009}00009\ }
 \DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00010}00010\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_user}{User}};}
 \DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00017}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base}{DataAccessObjectBase}}\ implements\ \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object}{IDataAccessObject}}<User>\{}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}\ INSTANCE\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}();}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00019}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_abd550028bb2a34376e1907cd92024763}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_abd550028bb2a34376e1907cd92024763}{getInstance}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ INSTANCE;}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00021}00021\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}()\ \{\}}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00023}00023\ \ \ \ \ @Override}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00024}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_adde618b63bb1655f9f7d96ab0cec48b8}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_adde618b63bb1655f9f7d96ab0cec48b8}{save}}(\mbox{\hyperlink{classdomain_1_1_user}{User}}\ \textcolor{keywordtype}{object})\ \{}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{GuestDAO}}.\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a998f128084d9711e8796f2ad728fef88}{getInstance}}().\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a0d066952e6668010d2fb0b23d2fa6f7e}{exists}}(\textcolor{keywordtype}{object}.getLegalInfo().getDni()))}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{GuestDAO}}.\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a998f128084d9711e8796f2ad728fef88}{getInstance}}().\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a40f46ffa59f5462be58bf1658a6e6342}{save}}(\textcolor{keywordtype}{object}.getLegalInfo());}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a8c464a43b69b5f79e0f5af40b445d3d4}{saveObject}}(\textcolor{keywordtype}{object});}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00029}00029\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00016}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}\ \textcolor{keyword}{extends}\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base}{DataAccessObjectBase}}\ implements\ \mbox{\hyperlink{interfacedatabase_1_1_i_data_access_object}{IDataAccessObject}}<User>\{}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}\ INSTANCE\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}();}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00022}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_abd550028bb2a34376e1907cd92024763}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_abd550028bb2a34376e1907cd92024763}{getInstance}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ INSTANCE;}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}()\ \{\}}
 \DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00031}00031\ \ \ \ \ @Override}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00032}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a6e394cdea117b28a3bfd93689d9f6ca0}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a6e394cdea117b28a3bfd93689d9f6ca0}{delete}}(\mbox{\hyperlink{classdomain_1_1_user}{User}}\ \textcolor{keywordtype}{object})\ \{}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{GuestDAO}}.\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a998f128084d9711e8796f2ad728fef88}{getInstance}}().\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a93bb00a885b912cda6d6f3296a1fe012}{delete}}(\textcolor{keywordtype}{object}.getLegalInfo());}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_ad9f80ee38bb7503be53ebea31f016a27}{deleteObject}}(\textcolor{keywordtype}{object});}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00036}00036\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00038}00038\ \ \ \ \ @SuppressWarnings(\textcolor{stringliteral}{"{}unchecked"{}})}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00039}00039\ \ \ \ \ @Override}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00040}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_aa9097a996b9d81a3b1c0c7568db696fb}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ List<User>\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_aa9097a996b9d81a3b1c0c7568db696fb}{getAll}}()\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ Query<User>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_user}{User}}.class);}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (List<User>)q.execute(20);}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00044}00044\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00046}00046\ \ \ \ \ @Override}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00047}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a17ec5036c890794792c48a6ce32ae5ae}{00047}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a17ec5036c890794792c48a6ce32ae5ae}{find}}(String\ dni)\ \{}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ Transaction\ tx\ =\ pm.currentTransaction();}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ tx.begin();}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00051}00051\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00052}00052\ \ \ \ \ \ \ \ \ Query<User>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_user}{User}}.class,\ \textcolor{stringliteral}{"{}nick\ ==\ '"{}}\ +\ dni.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}})+\textcolor{stringliteral}{"{}'"{}});}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00053}00053\ \ \ \ \ \ \ \ \ q.setUnique(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ result\ =\ \ (\mbox{\hyperlink{classdomain_1_1_user}{User}})q.execute();}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ tx.commit();}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tx\ !=\ \textcolor{keyword}{null}\ \&\&\ tx.isActive())\ \{}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ tx.rollback();}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00060}00060\ \ \ \ \ \ \ \ \ pm.close();}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00062}00062\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00063}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a6c0dfbef092e984ff0fb2bd84a6fb850}{00063}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a6c0dfbef092e984ff0fb2bd84a6fb850}{find}}(String\ user,\ String\ password)\ \{}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ Query<User>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_user}{User}}.class,\ \textcolor{stringliteral}{"{}nick\ ==\ '"{}}\ +\ user.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}})+\textcolor{stringliteral}{"{}'\ \&\&\ password\ ==\ '"{}}\ +\ password.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}})+\textcolor{stringliteral}{"{}'"{}});}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ q.setUnique(\textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classdomain_1_1_user}{User}})q.execute(20);}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00068}00068\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00069}00069\ \ \ \ \ @SuppressWarnings(\textcolor{stringliteral}{"{}unchecked"{}})}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00070}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_afe976b7a23a9e81b988c39b5e36fcbc5}{00070}}\ \ \ \ \ public\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_afe976b7a23a9e81b988c39b5e36fcbc5}{exists}}(String\ user)\ \{}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ Query<User>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_user}{User}}.class,\ \textcolor{stringliteral}{"{}nick\ ==\ '"{}}\ +\ user.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}})+\textcolor{stringliteral}{"{}'"{}});}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((List<User>)q.execute()).size()\ !=\ 0;}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00074}00074\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00076}00076\ \}}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00032}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_adde618b63bb1655f9f7d96ab0cec48b8}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_adde618b63bb1655f9f7d96ab0cec48b8}{save}}(\mbox{\hyperlink{classdomain_1_1_user}{User}}\ \textcolor{keywordtype}{object})\ \{}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{GuestDAO}}.\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a998f128084d9711e8796f2ad728fef88}{getInstance}}().\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a0d066952e6668010d2fb0b23d2fa6f7e}{exists}}(\textcolor{keywordtype}{object}.getLegalInfo().getDni()))}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{GuestDAO}}.\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a998f128084d9711e8796f2ad728fef88}{getInstance}}().\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a40f46ffa59f5462be58bf1658a6e6342}{save}}(\textcolor{keywordtype}{object}.getLegalInfo());}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a8c464a43b69b5f79e0f5af40b445d3d4}{saveObject}}(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00042}00042\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00043}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a6e394cdea117b28a3bfd93689d9f6ca0}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a6e394cdea117b28a3bfd93689d9f6ca0}{delete}}(\mbox{\hyperlink{classdomain_1_1_user}{User}}\ \textcolor{keywordtype}{object})\ \{}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdatabase_1_1_guest_d_a_o}{GuestDAO}}.\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a998f128084d9711e8796f2ad728fef88}{getInstance}}().\mbox{\hyperlink{classdatabase_1_1_guest_d_a_o_a93bb00a885b912cda6d6f3296a1fe012}{delete}}(\textcolor{keywordtype}{object}.getLegalInfo());}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_ad9f80ee38bb7503be53ebea31f016a27}{deleteObject}}(\textcolor{keywordtype}{object});}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00052}00052\ \ \ \ \ @SuppressWarnings(\textcolor{stringliteral}{"{}unchecked"{}})}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00053}00053\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00054}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_aa9097a996b9d81a3b1c0c7568db696fb}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ List<User>\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_aa9097a996b9d81a3b1c0c7568db696fb}{getAll}}()\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00055}00055\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00056}00056\ \ \ \ \ \ \ \ \ Query<User>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_user}{User}}.class);}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (List<User>)q.execute(20);}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00064}00064\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00065}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a17ec5036c890794792c48a6ce32ae5ae}{00065}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a17ec5036c890794792c48a6ce32ae5ae}{find}}(String\ dni)\ \{}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ Transaction\ tx\ =\ pm.currentTransaction();}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ tx.begin();}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ Query<User>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_user}{User}}.class,\ \textcolor{stringliteral}{"{}nick\ ==\ '"{}}\ +\ dni.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}})+\textcolor{stringliteral}{"{}'"{}});}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ q.setUnique(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ result\ =\ \ (\mbox{\hyperlink{classdomain_1_1_user}{User}})q.execute();}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ tx.commit();}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tx\ !=\ \textcolor{keyword}{null}\ \&\&\ tx.isActive())\ \{}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ tx.rollback();}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ pm.close();}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00087}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a6c0dfbef092e984ff0fb2bd84a6fb850}{00087}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_a6c0dfbef092e984ff0fb2bd84a6fb850}{find}}(String\ user,\ String\ password)\ \{}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00088}00088\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00089}00089\ \ \ \ \ \ \ \ \ Query<User>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_user}{User}}.class,\ \textcolor{stringliteral}{"{}nick\ ==\ '"{}}\ +\ user.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}})+\textcolor{stringliteral}{"{}'\ \&\&\ password\ ==\ '"{}}\ +\ password.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}})+\textcolor{stringliteral}{"{}'"{}});}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00090}00090\ \ \ \ \ \ \ \ \ q.setUnique(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classdomain_1_1_user}{User}})q.execute(20);}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00098}00098\ \ \ \ \ @SuppressWarnings(\textcolor{stringliteral}{"{}unchecked"{}})}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00099}\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_afe976b7a23a9e81b988c39b5e36fcbc5}{00099}}\ \ \ \ \ public\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o_afe976b7a23a9e81b988c39b5e36fcbc5}{exists}}(String\ user)\ \{}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00100}00100\ \ \ \ \ \ \ \ \ PersistenceManager\ pm\ =\ \mbox{\hyperlink{classdatabase_1_1_data_access_object_base_a21a3a6c597df916f32962987ac3c5fa6}{pmf}}.getPersistenceManager();}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00101}00101\ \ \ \ \ \ \ \ \ Query<User>\ q\ =\ pm.newQuery(\mbox{\hyperlink{classdomain_1_1_user}{User}}.class,\ \textcolor{stringliteral}{"{}nick\ ==\ '"{}}\ +\ user.replace(\textcolor{stringliteral}{"{}'"{}},\ \textcolor{stringliteral}{"{}''"{}})+\textcolor{stringliteral}{"{}'"{}});}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((List<User>)q.execute()).size()\ !=\ 0;}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_user_d_a_o_8java_source_l00105}00105\ \}}
 
 \end{DoxyCode}

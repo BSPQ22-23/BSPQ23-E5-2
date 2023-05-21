@@ -28,9 +28,9 @@ static String \mbox{\hyperlink{classapi_1_1_a_p_i_utils_af3e43b1eaa0bd38b63f5473
 
 
 \doxysubsection{Detailed Description}
+A class that contains common functions for API usage 
 
-
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00023}{23}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00026}{26}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 
 
@@ -41,9 +41,14 @@ Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_
 \doxysubsubsection{\texorpdfstring{decode()}{decode()}}
 {\footnotesize\ttfamily static String api.\+APIUtils.\+decode (\begin{DoxyParamCaption}\item[{String}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Macro to decode string into a string 
+\begin{DoxyParams}{Parameters}
+{\em value} & base64 string to decode @retyrb decoded string in utf-\/8 \\
+\hline
+\end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00129}{129}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00194}{194}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 \mbox{\Hypertarget{classapi_1_1_a_p_i_utils_afe4d34870bb97c6bee921ef5a69872ba}\label{classapi_1_1_a_p_i_utils_afe4d34870bb97c6bee921ef5a69872ba}} 
 \index{api.APIUtils@{api.APIUtils}!getStringHeader@{getStringHeader}}
@@ -51,9 +56,21 @@ Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_
 \doxysubsubsection{\texorpdfstring{getStringHeader()}{getStringHeader()}}
 {\footnotesize\ttfamily static String api.\+APIUtils.\+get\+String\+Header (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t,  }\item[{String}]{name,  }\item[{String}]{def }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Macro to get a decoded header value 
+\begin{DoxyParams}{Parameters}
+{\em t} & exchange that contains the header to decode \\
+\hline
+{\em name} & name of the header \\
+\hline
+{\em def} & default value of the header in case of not existing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the decoded value of the header or def 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00038}{38}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00054}{54}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 \mbox{\Hypertarget{classapi_1_1_a_p_i_utils_af088098a7355b129508c1178089cc91c}\label{classapi_1_1_a_p_i_utils_af088098a7355b129508c1178089cc91c}} 
 \index{api.APIUtils@{api.APIUtils}!listToJSONArray@{listToJSONArray}}
@@ -61,9 +78,17 @@ Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_
 \doxysubsubsection{\texorpdfstring{listToJSONArray()}{listToJSONArray()}}
 {\footnotesize\ttfamily static JSONArray api.\+APIUtils.\+list\+To\+JSONArray (\begin{DoxyParamCaption}\item[{Collection$<$?$>$}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Takes a collection and turns it into a JSONArray of JSONObjects 
+\begin{DoxyParams}{Parameters}
+{\em o} & collection to turn into JSONArray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the JSONArray representation of the collection 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00069}{69}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00096}{96}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 \mbox{\Hypertarget{classapi_1_1_a_p_i_utils_ab807915597795cd3b5d9ea3494f25fd3}\label{classapi_1_1_a_p_i_utils_ab807915597795cd3b5d9ea3494f25fd3}} 
 \index{api.APIUtils@{api.APIUtils}!objectToHeaders@{objectToHeaders}}
@@ -71,9 +96,17 @@ Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_
 \doxysubsubsection{\texorpdfstring{objectToHeaders()}{objectToHeaders()}}
 {\footnotesize\ttfamily static Hash\+Map$<$ String, String $>$ api.\+APIUtils.\+object\+To\+Headers (\begin{DoxyParamCaption}\item[{Object}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Turn a java object into http headers. This function uses fields to turn it into headers, transient or static fields are ignored 
+\begin{DoxyParams}{Parameters}
+{\em o} & Object to turn into headers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hashmap with the header names as keys and header values as value 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00045}{45}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00067}{67}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 \mbox{\Hypertarget{classapi_1_1_a_p_i_utils_ad3230b896a563834b9a1c8756e8c4527}\label{classapi_1_1_a_p_i_utils_ad3230b896a563834b9a1c8756e8c4527}} 
 \index{api.APIUtils@{api.APIUtils}!objectToJSON@{objectToJSON}}
@@ -81,9 +114,19 @@ Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_
 \doxysubsubsection{\texorpdfstring{objectToJSON()}{objectToJSON()}}
 {\footnotesize\ttfamily static JSONObject api.\+APIUtils.\+object\+To\+JSON (\begin{DoxyParamCaption}\item[{Object}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Takes a java Object and turns it into a JSONObject, if it\textquotesingle{}s a {\ttfamily \mbox{\hyperlink{}{Collection}}} use better {\ttfamily \mbox{\hyperlink{}{list\+To\+JSONArray}}} as it won\textquotesingle{}t take the un-\/needed fields.
+
+This uses the declared fields of the class and parents to turn it into a {\ttfamily \mbox{\hyperlink{}{JSONObject}}}, to avoid one set it\textquotesingle{}s value to null or the field to transient or static. 
+\begin{DoxyParams}{Parameters}
+{\em o} & object to turn into a json object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSONObject representation of the input object 
+\end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00086}{86}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00121}{121}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 \mbox{\Hypertarget{classapi_1_1_a_p_i_utils_ae8fe2a28a1e177692ce61abea33c1c1e}\label{classapi_1_1_a_p_i_utils_ae8fe2a28a1e177692ce61abea33c1c1e}} 
 \index{api.APIUtils@{api.APIUtils}!rawResponse@{rawResponse}}
@@ -91,9 +134,19 @@ Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_
 \doxysubsubsection{\texorpdfstring{rawResponse()}{rawResponse()}}
 {\footnotesize\ttfamily static void api.\+APIUtils.\+raw\+Response (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{Http\+Exchange}]{t,  }\item[{String}]{response }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
 
+Quick respond with body 
+\begin{DoxyParams}{Parameters}
+{\em t} & http exchange to respond \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00120}{120}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00175}{175}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 \mbox{\Hypertarget{classapi_1_1_a_p_i_utils_ad81c164fd9464dffb62015ecef9d8ea8}\label{classapi_1_1_a_p_i_utils_ad81c164fd9464dffb62015ecef9d8ea8}} 
 \index{api.APIUtils@{api.APIUtils}!readBody@{readBody}}
@@ -101,9 +154,22 @@ Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_
 \doxysubsubsection{\texorpdfstring{readBody()}{readBody()}}
 {\footnotesize\ttfamily static String api.\+APIUtils.\+read\+Body (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
 
+Reads the body of an HTTP exchange 
+\begin{DoxyParams}{Parameters}
+{\em t} & exchange to translate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The body of the exchange in a string format 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & if the body isn\textquotesingle{}t readable \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00024}{24}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00033}{33}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 \mbox{\Hypertarget{classapi_1_1_a_p_i_utils_abe49d1d03c925934a23c9281afa2212c}\label{classapi_1_1_a_p_i_utils_abe49d1d03c925934a23c9281afa2212c}} 
 \index{api.APIUtils@{api.APIUtils}!respondACK@{respondACK}}
@@ -111,9 +177,19 @@ Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_
 \doxysubsubsection{\texorpdfstring{respondACK()}{respondACK()}}
 {\footnotesize\ttfamily static void api.\+APIUtils.\+respond\+ACK (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
 
+Quick respond 200 with \char`\"{}\+ACK\char`\"{} as body 
+\begin{DoxyParams}{Parameters}
+{\em t} & http exchange to respond \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00111}{111}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00151}{151}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 \mbox{\Hypertarget{classapi_1_1_a_p_i_utils_af7fa14b3ab72e35e1c9cbc9189f72084}\label{classapi_1_1_a_p_i_utils_af7fa14b3ab72e35e1c9cbc9189f72084}} 
 \index{api.APIUtils@{api.APIUtils}!respondError@{respondError}}
@@ -121,9 +197,19 @@ Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_
 \doxysubsubsection{\texorpdfstring{respondError()}{respondError()}}
 {\footnotesize\ttfamily static void api.\+APIUtils.\+respond\+Error (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t,  }\item[{String}]{response }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
 
+Quick respond 400 with body 
+\begin{DoxyParams}{Parameters}
+{\em t} & http exchange to respond \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00126}{126}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00186}{186}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 \mbox{\Hypertarget{classapi_1_1_a_p_i_utils_ac37d21e8ae6a14cc3c1187b19d9a5b0a}\label{classapi_1_1_a_p_i_utils_ac37d21e8ae6a14cc3c1187b19d9a5b0a}} 
 \index{api.APIUtils@{api.APIUtils}!respondInternalError@{respondInternalError}}
@@ -131,9 +217,19 @@ Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_
 \doxysubsubsection{\texorpdfstring{respondInternalError()}{respondInternalError()}}
 {\footnotesize\ttfamily static void api.\+APIUtils.\+respond\+Internal\+Error (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t,  }\item[{String}]{response }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
 
+Quick respond 500 with body 
+\begin{DoxyParams}{Parameters}
+{\em t} & http exchange to respond \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00117}{117}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00167}{167}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 \mbox{\Hypertarget{classapi_1_1_a_p_i_utils_ae0d2f34c661bcc7952f850465e6c3c59}\label{classapi_1_1_a_p_i_utils_ae0d2f34c661bcc7952f850465e6c3c59}} 
 \index{api.APIUtils@{api.APIUtils}!respondSuccess@{respondSuccess}}
@@ -141,9 +237,19 @@ Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_
 \doxysubsubsection{\texorpdfstring{respondSuccess()}{respondSuccess()}}
 {\footnotesize\ttfamily static void api.\+APIUtils.\+respond\+Success (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t,  }\item[{String}]{message }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
 
+Quick respond 200 with body 
+\begin{DoxyParams}{Parameters}
+{\em t} & http exchange to respond \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00114}{114}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
+Definition at line \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source_l00159}{159}} of file \mbox{\hyperlink{_server_2src_2main_2java_2api_2_a_p_i_utils_8java_source}{APIUtils.\+java}}.
 
 
 

@@ -23,57 +23,57 @@
 \DoxyCodeLine{\Hypertarget{_server_8java_source_l00019}00019\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespaceapi}{api}}.\mbox{\hyperlink{namespaceapi_1_1hotel}{hotel}}.*;}
 \DoxyCodeLine{\Hypertarget{_server_8java_source_l00020}00020\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedatabase}{database}}.\mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}};}
 \DoxyCodeLine{\Hypertarget{_server_8java_source_l00021}00021\ \textcolor{keyword}{import}\ \mbox{\hyperlink{namespacedomain}{domain}}.\mbox{\hyperlink{classdomain_1_1_user}{User}};}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00023}\mbox{\hyperlink{classmain_1_1_server}{00023}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmain_1_1_server}{Server}}\ \{}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ HashMap<String,\ User>\ tokenList\ =\ \textcolor{keyword}{new}\ HashMap<>();}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00025}\mbox{\hyperlink{classmain_1_1_server_a723d7eb24fcbcdfa0556eb11ba34f9ca}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmain_1_1_server_a723d7eb24fcbcdfa0556eb11ba34f9ca}{main}}(String[]\ args)\{}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ Logger\ l\ =\ LogManager.getLogger();}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}.\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_abd550028bb2a34376e1907cd92024763}{getInstance}}();}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Datanucleus\ started\ correctly"{}});}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ HttpServer\ server\ =\ HttpServer.create(\textcolor{keyword}{new}\ InetSocketAddress(8000),\ 0);}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/register"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1_register_handler}{RegisterHandler}}());}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/login"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1_login_handler}{LoginHandler}}());}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/booking/create"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1reservation_1_1_reservation_creation_handler}{ReservationCreationHandler}}());}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/booking/get"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1reservation_1_1_reservation_getter_handler}{ReservationGetterHandler}}());}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/booking/edit"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1reservation_1_1_reservation_edit_handler}{ReservationEditHandler}}());}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/hotel/create"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1hotel_1_1_hotel_creation_handler}{HotelCreationHandler}}());}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/hotel/get"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1hotel_1_1_hotel_getter_handler}{HotelGetterHandler}}());}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/resources/upload"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1resources_1_1_image_upload_handler}{ImageUploadHandler}}());}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/resources/download"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1resources_1_1_image_download_handler}{ImageDownloadHandler}}());}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ server.setExecutor(\textcolor{keyword}{null});\ \textcolor{comment}{//\ creates\ a\ default\ executor}}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ server.start();}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Server\ started\ at\ 127.0.0.1:8000"{}});}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{catch}(Exception\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ l.error(\textcolor{stringliteral}{"{}Error\ starting\ the\ server:\ "{}}\ +\ e.getMessage());}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00047}00047\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00053}\mbox{\hyperlink{classmain_1_1_server_ae90c53a2e9b8dd37fe85437c71563a76}{00053}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ \mbox{\hyperlink{classmain_1_1_server_ae90c53a2e9b8dd37fe85437c71563a76}{getUser}}(String\ token)\ \{}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tokenList.get(token);}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00055}00055\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00061}\mbox{\hyperlink{classmain_1_1_server_aa66ff6985dfd9b11d5bbf31e09aba2f7}{00061}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classmain_1_1_server_aa66ff6985dfd9b11d5bbf31e09aba2f7}{createSession}}(\mbox{\hyperlink{classdomain_1_1_user}{User}}\ user)\ \{}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(user\ ==\ \textcolor{keyword}{null})}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Entry<String,\ User>\ entry\ :\ tokenList.entrySet())\ \{}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(entry.getValue().equals(user))}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ entry.getKey();}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ MessageDigest\ md\ =\ MessageDigest.getInstance(\textcolor{stringliteral}{"{}MD5"{}});}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ md.update((\textcolor{stringliteral}{"{}"{}}+Integer.toHexString(user.hashCode())).getBytes());}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ digest\ =\ md.digest();}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ String\ token\ =\ \textcolor{keyword}{new}\ String(Base64.getEncoder().encode(digest),\ StandardCharsets.UTF\_8);}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ tokenList.put(token,\ user);}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Session\ created\ "{}}\ +\ token);}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token;}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (NoSuchAlgorithmException\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Invalid\ session"{}});}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00082}00082\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_server_8java_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00026}\mbox{\hyperlink{classmain_1_1_server}{00026}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classmain_1_1_server}{Server}}\ \{}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keyword}{final}\ HashMap<String,\ User>\ tokenList\ =\ \textcolor{keyword}{new}\ HashMap<>();}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00028}00028\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00029}\mbox{\hyperlink{classmain_1_1_server_a723d7eb24fcbcdfa0556eb11ba34f9ca}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classmain_1_1_server_a723d7eb24fcbcdfa0556eb11ba34f9ca}{main}}(String[]\ args)\{}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ Logger\ l\ =\ LogManager.getLogger();}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdatabase_1_1_user_d_a_o}{UserDAO}}.\mbox{\hyperlink{classdatabase_1_1_user_d_a_o_abd550028bb2a34376e1907cd92024763}{getInstance}}();}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Datanucleus\ started\ correctly"{}});}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ HttpServer\ server\ =\ HttpServer.create(\textcolor{keyword}{new}\ InetSocketAddress(8000),\ 0);}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/register"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1_register_handler}{RegisterHandler}}());}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/login"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1_login_handler}{LoginHandler}}());}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/booking/create"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1reservation_1_1_reservation_creation_handler}{ReservationCreationHandler}}());}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/booking/get"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1reservation_1_1_reservation_getter_handler}{ReservationGetterHandler}}());}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/booking/edit"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1reservation_1_1_reservation_edit_handler}{ReservationEditHandler}}());}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/hotel/create"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1hotel_1_1_hotel_creation_handler}{HotelCreationHandler}}());}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/hotel/get"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1hotel_1_1_hotel_getter_handler}{HotelGetterHandler}}());}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/resources/upload"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1resources_1_1_image_upload_handler}{ImageUploadHandler}}());}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ server.createContext(\textcolor{stringliteral}{"{}/resources/download"{}},\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classapi_1_1resources_1_1_image_download_handler}{ImageDownloadHandler}}());}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ server.setExecutor(\textcolor{keyword}{null});\ \textcolor{comment}{//\ creates\ a\ default\ executor}}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ server.start();}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ l.info(\textcolor{stringliteral}{"{}Server\ started\ at\ 127.0.0.1:8000"{}});}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00047}00047\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{catch}(Exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ l.error(\textcolor{stringliteral}{"{}Error\ starting\ the\ server:\ "{}}\ +\ e.getMessage());}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00057}\mbox{\hyperlink{classmain_1_1_server_ae90c53a2e9b8dd37fe85437c71563a76}{00057}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{classdomain_1_1_user}{User}}\ \mbox{\hyperlink{classmain_1_1_server_ae90c53a2e9b8dd37fe85437c71563a76}{getUser}}(String\ token)\ \{}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tokenList.get(token);}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00065}\mbox{\hyperlink{classmain_1_1_server_aa66ff6985dfd9b11d5bbf31e09aba2f7}{00065}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ String\ \mbox{\hyperlink{classmain_1_1_server_aa66ff6985dfd9b11d5bbf31e09aba2f7}{createSession}}(\mbox{\hyperlink{classdomain_1_1_user}{User}}\ user)\ \{}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(user\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(Entry<String,\ User>\ entry\ :\ tokenList.entrySet())\ \{}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(entry.getValue().equals(user))}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ entry.getKey();}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ MessageDigest\ md\ =\ MessageDigest.getInstance(\textcolor{stringliteral}{"{}MD5"{}});}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ md.update((\textcolor{stringliteral}{"{}"{}}+Integer.toHexString(user.hashCode())).getBytes());}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{byte}[]\ digest\ =\ md.digest();}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ String\ token\ =\ \textcolor{keyword}{new}\ String(Base64.getEncoder().encode(digest),\ StandardCharsets.UTF\_8);}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ tokenList.put(token,\ user);}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Session\ created\ "{}}\ +\ token);}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ token;}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00080}00080\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (NoSuchAlgorithmException\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ System.out.println(\textcolor{stringliteral}{"{}Invalid\ session"{}});}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00084}00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00085}00085\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_server_8java_source_l00087}00087\ \}}
 
 \end{DoxyCode}

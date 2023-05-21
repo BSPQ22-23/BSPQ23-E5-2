@@ -144,8 +144,21 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>A class to handle the http exchanges with the server </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip</td><td>ip of the server </td></tr>
+    <tr><td class="paramname">port</td><td>port to connect to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>Throws if the server can't be reached </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00022">22</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00027">27</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
 
 </div>
 </div>
@@ -175,8 +188,24 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sends a complete delete request </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>method to send the request to in the server </td></tr>
+    <tr><td class="paramname">headers</td><td>a map of headers where the key it's the name of the header and the value in the map it's the value of the header </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the response of the server </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">URISyntaxException</td><td>If method doesn't comply with URI syntax </td></tr>
+    <tr><td class="paramname">InterruptedException</td><td>Server connection has been interrupted </td></tr>
+    <tr><td class="paramname">ExecutionException</td><td>Should not be thrown </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00069">69</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00136">136</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
 
 </div>
 </div>
@@ -195,8 +224,23 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sends a blank get request </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>method to send the request to in the server </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the response of the server </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">URISyntaxException</td><td>If method doesn't comply with URI syntax </td></tr>
+    <tr><td class="paramname">InterruptedException</td><td>Server connection has been interrupted </td></tr>
+    <tr><td class="paramname">ExecutionException</td><td>Should not be thrown </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00030">30</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00049">49</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
 
 </div>
 </div>
@@ -225,8 +269,24 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sends a get request with custom headers </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>method to send the request to in the server </td></tr>
+    <tr><td class="paramname">headers</td><td>a map of headers where the key it's the name of the header and the value in the map it's the value of the header </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the response of the server </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">URISyntaxException</td><td>If method doesn't comply with URI syntax </td></tr>
+    <tr><td class="paramname">InterruptedException</td><td>Server connection has been interrupted </td></tr>
+    <tr><td class="paramname">ExecutionException</td><td>Should not be thrown </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00034">34</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00062">62</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
 
 </div>
 </div>
@@ -255,8 +315,25 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sends a simple post request with a JSON body </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>method to send the request to in the server </td></tr>
+    <tr><td class="paramname">headers</td><td>a map of headers where the key it's the name of the header and the value in the map it's the value of the header </td></tr>
+    <tr><td class="paramname">body</td><td>body of the post request to send </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the response of the server </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">URISyntaxException</td><td>If method doesn't comply with URI syntax </td></tr>
+    <tr><td class="paramname">InterruptedException</td><td>Server connection has been interrupted </td></tr>
+    <tr><td class="paramname">ExecutionException</td><td>Should not be thrown </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00061">61</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00119">119</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
 
 </div>
 </div>
@@ -291,8 +368,25 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sends a complete post request with a blob body </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>method to send the request to in the server </td></tr>
+    <tr><td class="paramname">headers</td><td>a map of headers where the key it's the name of the header and the value in the map it's the value of the header. WARNING: Content-Type it's not defined by default </td></tr>
+    <tr><td class="paramname">body</td><td>body of the post request to send </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the response of the server </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">URISyntaxException</td><td>If method doesn't comply with URI syntax </td></tr>
+    <tr><td class="paramname">InterruptedException</td><td>Server connection has been interrupted </td></tr>
+    <tr><td class="paramname">ExecutionException</td><td>Should not be thrown </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00052">52</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00100">100</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
 
 </div>
 </div>
@@ -327,8 +421,25 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sends a complete post request with a JSON body </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>method to send the request to in the server </td></tr>
+    <tr><td class="paramname">headers</td><td>a map of headers where the key it's the name of the header and the value in the map it's the value of the header </td></tr>
+    <tr><td class="paramname">body</td><td>body of the post request to send </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the response of the server </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">URISyntaxException</td><td>If method doesn't comply with URI syntax </td></tr>
+    <tr><td class="paramname">InterruptedException</td><td>Server connection has been interrupted </td></tr>
+    <tr><td class="paramname">ExecutionException</td><td>Should not be thrown </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00042">42</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00080">80</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
 
 </div>
 </div>
@@ -357,8 +468,21 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Changes the server location to connect to </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip</td><td>ip of the server </td></tr>
+    <tr><td class="paramname">port</td><td>port of the server to connect to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IOException</td><td>Throws if the server can't be reached </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00025">25</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_service_locator_8java_source.html#l00036">36</a> of file <a class="el" href="_service_locator_8java_source.html">ServiceLocator.java</a>.</p>
 
 </div>
 </div>

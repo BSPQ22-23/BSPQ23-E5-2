@@ -35,5 +35,6 @@ var classdomain_1_1_room =
     [ "setSpaceInMeters", "classdomain_1_1_room.html#a11de50943e8b9dd158976543afceeb90", null ],
     [ "setType", "classdomain_1_1_room.html#a876f03e2eb41289e5d604972420c1573", null ],
     [ "setType", "classdomain_1_1_room.html#a876f03e2eb41289e5d604972420c1573", null ],
+    [ "toString", "classdomain_1_1_room.html#a62ca9ab28eb72e259a82f43305f2469b", null ],
     [ "toString", "classdomain_1_1_room.html#a62ca9ab28eb72e259a82f43305f2469b", null ]
 ];

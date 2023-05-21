@@ -8,5 +8,6 @@ var searchData=
   ['loginhandler_2ejava_5',['LoginHandler.java',['../_login_handler_8java.html',1,'']]],
   ['logintest_6',['loginTest',['../classremote_1_1_client_controller_test.html#a71d59ee6b31a18938a2adc0d166542e9',1,'remote::ClientControllerTest']]],
   ['loginwindow_7',['LoginWindow',['../classwindows_1_1_login_window.html#a4d3bc2cc359c059f94a378b16ce30185',1,'windows.LoginWindow.LoginWindow()'],['../classwindows_1_1_login_window.html',1,'windows.LoginWindow']]],
-  ['loginwindow_2ejava_8',['LoginWindow.java',['../_login_window_8java.html',1,'']]]
+  ['loginwindow_2ejava_8',['LoginWindow.java',['../_login_window_8java.html',1,'']]],
+  ['logoutitem_9',['logOutItem',['../classwindows_1_1_upper_menu.html#ab72eedceb521572b04f5c5ee065bf06c',1,'windows::UpperMenu']]]
 ];

@@ -148,8 +148,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a21a3a6c597df916f32962987ac3c5fa6 inherit pro_static_attribs_classdatabase_1_1_data_access_object_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00022">22</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
+<div class="textblock"><p>Class to allow the access to <code><a class="el" href="classdomain_1_1_hotel.html">Hotel</a></code> objects in the database </p>
+
+<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00025">25</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac4474c57dc47892b2a80a555f9f049e4" name="ac4474c57dc47892b2a80a555f9f049e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac4474c57dc47892b2a80a555f9f049e4">&#9670;&#160;</a></span>delete()</h2>
@@ -166,9 +167,14 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Delete a hotel </p>
+<p>Delete a <code><a class="el" href="classdomain_1_1_hotel.html">Hotel</a></code> that has been retrieved from the database </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>detatched object to delete </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00044">44</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00049">49</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
 
 </div>
 </div>
@@ -187,8 +193,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get a <code><a class="el" href="classdomain_1_1_hotel.html">Hotel</a></code> from the database by it's id </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>id of the hotel </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the hotel or null if it doesn't exist </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00107">107</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00121">121</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
 
 </div>
 </div>
@@ -206,9 +219,9 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Method that get a list of all the hotels </p>
+<p>Get all <code><a class="el" href="classdomain_1_1_hotel.html">Hotel</a></code>s from the database </p><dl class="section return"><dt>Returns</dt><dd>the list of hotels in the database </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00051">51</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00057">57</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
 
 </div>
 </div>
@@ -227,15 +240,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Method that get a list Hotel by the name </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Get <code><a class="el" href="classdomain_1_1_hotel.html">Hotel</a></code>s from the database that contain the string in their name </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td></td></tr>
+    <tr><td class="paramname">name</td><td>string to search in the name </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a list of Hotel Names </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of hotels with the query in their name </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00081">81</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00087">87</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
 
 </div>
 </div>
@@ -254,8 +267,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get <code><a class="el" href="classdomain_1_1_hotel.html">Hotel</a></code>s from the database that are owned by the guest with the id provided </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>id of the owner </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of hotels with the owner of the parameter </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00097">97</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00107">107</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
 
 </div>
 </div>
@@ -281,8 +301,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the DAO instance for <code><a class="el" href="classdomain_1_1_hotel.html">Hotel</a></code>s </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00025">25</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00032">32</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
 
 </div>
 </div>
@@ -301,8 +322,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Upload or update a <code><a class="el" href="classdomain_1_1_hotel.html">Hotel</a></code> to the database </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>hotel to store/update </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the transaction was successful </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00037">37</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_hotel_d_a_o_8java_source.html#l00041">41</a> of file <a class="el" href="_hotel_d_a_o_8java_source.html">HotelDAO.java</a>.</p>
 
 </div>
 </div>

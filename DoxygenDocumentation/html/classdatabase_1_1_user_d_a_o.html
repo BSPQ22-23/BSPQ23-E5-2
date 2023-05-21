@@ -148,9 +148,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a21a3a6c597df916f32962987ac3c5fa6 inherit pro_static_attribs_classdatabase_1_1_data_access_object_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>DAO for User class </p><dl class="section author"><dt>Author</dt><dd>a-rasines </dd></dl>
+<div class="textblock"><p>Class to allow the access to <code><a class="el" href="classdomain_1_1_user.html">User</a></code> objects in the database </p>
 
-<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00017">17</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00016">16</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6e394cdea117b28a3bfd93689d9f6ca0" name="a6e394cdea117b28a3bfd93689d9f6ca0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e394cdea117b28a3bfd93689d9f6ca0">&#9670;&#160;</a></span>delete()</h2>
@@ -167,8 +167,14 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Delete a <code><a class="el" href="classdomain_1_1_user.html">User</a></code> that has been retrieved from the database </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>detatched object to delete </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00032">32</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00043">43</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
 
 </div>
 </div>
@@ -187,8 +193,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Checks if a username it's already taken </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>nick to search for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if it already exists in the database </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00070">70</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00099">99</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
 
 </div>
 </div>
@@ -207,8 +220,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get a <code><a class="el" href="classdomain_1_1_user.html">User</a></code> from the database by it's id </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>id of the user </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the user or null if it doesn't exist </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00047">47</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00065">65</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
 
 </div>
 </div>
@@ -237,8 +257,16 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get a <code><a class="el" href="classdomain_1_1_user.html">User</a></code> from the database by it's authentication data </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>nick of the user </td></tr>
+    <tr><td class="paramname">password</td><td>encrypted password using <code><a class="el" href="classdomain_1_1_password_encryption.html#a89c7694ee031ed7b7e4d6dae7ead03ba">PasswordEncryption#encryptPassword</a></code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the user or null if it doesn't exist </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00063">63</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00087">87</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
 
 </div>
 </div>
@@ -256,8 +284,9 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Get all <code><a class="el" href="classdomain_1_1_user.html">User</a></code>s from the database </p><dl class="section return"><dt>Returns</dt><dd>the list of users in the database </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00040">40</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00054">54</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
 
 </div>
 </div>
@@ -283,8 +312,9 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get the DAO instance for <code><a class="el" href="classdomain_1_1_user.html">User</a></code>s </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00019">19</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00022">22</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
 
 </div>
 </div>
@@ -303,8 +333,15 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Upload or update a <code><a class="el" href="classdomain_1_1_user.html">User</a></code> to the database </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>user to store/update </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the transaction was successful </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00024">24</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_user_d_a_o_8java_source.html#l00032">32</a> of file <a class="el" href="_user_d_a_o_8java_source.html">UserDAO.java</a>.</p>
 
 </div>
 </div>

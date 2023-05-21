@@ -16,7 +16,6 @@ var hierarchy =
       [ "database.ImageDAO", "classdatabase_1_1_image_d_a_o.html", null ],
       [ "database.UserDAO", "classdatabase_1_1_user_d_a_o.html", null ]
     ] ],
-    [ "db.DataBase", "classdb_1_1_data_base.html", null ],
     [ "domain.Guest", "classdomain_1_1_guest.html", null ],
     [ "database.GuestDAOTest", "classdatabase_1_1_guest_d_a_o_test.html", null ],
     [ "domain.GuestTest", "classdomain_1_1_guest_test.html", null ],
@@ -53,6 +52,7 @@ var hierarchy =
     [ "domain.Service", "classdomain_1_1_service.html", null ],
     [ "remote.ServiceLocator", "classremote_1_1_service_locator.html", null ],
     [ "domain.ServiceTest", "classdomain_1_1_service_test.html", null ],
+    [ "windows.TranslatableObject", "interfacewindows_1_1_translatable_object.html", null ],
     [ "domain.User", "classdomain_1_1_user.html", null ],
     [ "database.UserDAOTest", "classdatabase_1_1_user_d_a_o_test.html", null ],
     [ "domain.UserTest", "classdomain_1_1_user_test.html", null ],
@@ -75,15 +75,18 @@ var hierarchy =
       [ "api.resources.ImageUploadHandler", "classapi_1_1resources_1_1_image_upload_handler.html", null ]
     ] ],
     [ "JFrame", null, [
+      [ "windows.GuestCreatorWindow", "classwindows_1_1_guest_creator_window.html", null ],
       [ "windows.HotelBrowserWindow", "classwindows_1_1_hotel_browser_window.html", null ],
       [ "windows.HotelCreatorWindow", "classwindows_1_1_hotel_creator_window.html", null ],
+      [ "windows.HotelDescriptionWindow", "classwindows_1_1_hotel_description_window.html", null ],
       [ "windows.HotelEditorWindow", "classwindows_1_1_hotel_editor_window.html", null ],
       [ "windows.LoginWindow", "classwindows_1_1_login_window.html", null ],
       [ "windows.MainMenuClient", "classwindows_1_1_main_menu_client.html", null ],
       [ "windows.MainMenuOwner", "classwindows_1_1_main_menu_owner.html", null ],
-      [ "windows.RegistrationWindow", "classwindows_1_1_registration_window.html", null ]
-    ] ],
-    [ "JPanel", null, [
+      [ "windows.RegistrationWindow", "classwindows_1_1_registration_window.html", null ],
       [ "windows.ReservationWindow", "classwindows_1_1_reservation_window.html", null ]
+    ] ],
+    [ "JMenuBar", null, [
+      [ "windows.UpperMenu", "classwindows_1_1_upper_menu.html", null ]
     ] ]
 ];

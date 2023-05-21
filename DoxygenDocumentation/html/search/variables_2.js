@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['language_0',['language',['../classlanguage_1_1_intern_language.html#abcbd92f209d42cfc6c36bcd04fc3d303',1,'language::InternLanguage']]]
+  ['hotel_5ficon_0',['HOTEL_ICON',['../enumdomain_1_1_image_1_1_image_type.html#a037ab7ff65ec45222ee665d581e234a7',1,'domain::Image::ImageType']]]
 ];

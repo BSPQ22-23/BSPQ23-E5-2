@@ -35,9 +35,21 @@ Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00018}{18}} o
 \doxysubsubsection{\texorpdfstring{ServiceLocator()}{ServiceLocator()}}
 {\footnotesize\ttfamily remote.\+Service\+Locator.\+Service\+Locator (\begin{DoxyParamCaption}\item[{String}]{ip,  }\item[{int}]{port }\end{DoxyParamCaption}) throws IOException}
 
+A class to handle the http exchanges with the server 
+\begin{DoxyParams}{Parameters}
+{\em ip} & ip of the server \\
+\hline
+{\em port} & port to connect to \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & Throws if the server can\textquotesingle{}t be reached \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00022}{22}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00027}{27}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
 
 
 
@@ -48,9 +60,28 @@ Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00022}{22}} o
 \doxysubsubsection{\texorpdfstring{sendDELETE()}{sendDELETE()}}
 {\footnotesize\ttfamily Http\+Response$<$ String $>$ remote.\+Service\+Locator.\+send\+DELETE (\begin{DoxyParamCaption}\item[{String}]{method,  }\item[{Map$<$ String, String $>$}]{headers }\end{DoxyParamCaption}) throws URISyntax\+Exception, Interrupted\+Exception, Execution\+Exception}
 
+Sends a complete delete request 
+\begin{DoxyParams}{Parameters}
+{\em method} & method to send the request to in the server \\
+\hline
+{\em headers} & a map of headers where the key it\textquotesingle{}s the name of the header and the value in the map it\textquotesingle{}s the value of the header \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the response of the server 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em URISyntax\+Exception} & If method doesn\textquotesingle{}t comply with URI syntax \\
+\hline
+{\em Interrupted\+Exception} & Server connection has been interrupted \\
+\hline
+{\em Execution\+Exception} & Should not be thrown \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00069}{69}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00136}{136}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
 
 \mbox{\Hypertarget{classremote_1_1_service_locator_a01431f391504e09ed0500c9fd8d5ecb4}\label{classremote_1_1_service_locator_a01431f391504e09ed0500c9fd8d5ecb4}} 
 \index{remote.ServiceLocator@{remote.ServiceLocator}!sendGET@{sendGET}}
@@ -58,9 +89,26 @@ Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00069}{69}} o
 \doxysubsubsection{\texorpdfstring{sendGET()}{sendGET()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Http\+Response$<$ String $>$ remote.\+Service\+Locator.\+send\+GET (\begin{DoxyParamCaption}\item[{String}]{method }\end{DoxyParamCaption}) throws URISyntax\+Exception, Interrupted\+Exception, Execution\+Exception}
 
+Sends a blank get request 
+\begin{DoxyParams}{Parameters}
+{\em method} & method to send the request to in the server \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the response of the server 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em URISyntax\+Exception} & If method doesn\textquotesingle{}t comply with URI syntax \\
+\hline
+{\em Interrupted\+Exception} & Server connection has been interrupted \\
+\hline
+{\em Execution\+Exception} & Should not be thrown \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00030}{30}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00049}{49}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
 
 \mbox{\Hypertarget{classremote_1_1_service_locator_a3599633bf888e8e2d432c117417e8d40}\label{classremote_1_1_service_locator_a3599633bf888e8e2d432c117417e8d40}} 
 \index{remote.ServiceLocator@{remote.ServiceLocator}!sendGET@{sendGET}}
@@ -68,9 +116,28 @@ Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00030}{30}} o
 \doxysubsubsection{\texorpdfstring{sendGET()}{sendGET()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Http\+Response$<$ String $>$ remote.\+Service\+Locator.\+send\+GET (\begin{DoxyParamCaption}\item[{String}]{method,  }\item[{Map$<$ String, String $>$}]{headers }\end{DoxyParamCaption}) throws URISyntax\+Exception, Interrupted\+Exception, Execution\+Exception}
 
+Sends a get request with custom headers 
+\begin{DoxyParams}{Parameters}
+{\em method} & method to send the request to in the server \\
+\hline
+{\em headers} & a map of headers where the key it\textquotesingle{}s the name of the header and the value in the map it\textquotesingle{}s the value of the header \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the response of the server 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em URISyntax\+Exception} & If method doesn\textquotesingle{}t comply with URI syntax \\
+\hline
+{\em Interrupted\+Exception} & Server connection has been interrupted \\
+\hline
+{\em Execution\+Exception} & Should not be thrown \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00034}{34}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00062}{62}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
 
 \mbox{\Hypertarget{classremote_1_1_service_locator_a868d7c6cdb99eb17c393fb05315c112c}\label{classremote_1_1_service_locator_a868d7c6cdb99eb17c393fb05315c112c}} 
 \index{remote.ServiceLocator@{remote.ServiceLocator}!sendPOST@{sendPOST}}
@@ -78,9 +145,30 @@ Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00034}{34}} o
 \doxysubsubsection{\texorpdfstring{sendPOST()}{sendPOST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Http\+Response$<$ String $>$ remote.\+Service\+Locator.\+send\+POST (\begin{DoxyParamCaption}\item[{String}]{method,  }\item[{JSONObject}]{body }\end{DoxyParamCaption}) throws URISyntax\+Exception, Interrupted\+Exception, Execution\+Exception}
 
+Sends a simple post request with a JSON body 
+\begin{DoxyParams}{Parameters}
+{\em method} & method to send the request to in the server \\
+\hline
+{\em headers} & a map of headers where the key it\textquotesingle{}s the name of the header and the value in the map it\textquotesingle{}s the value of the header \\
+\hline
+{\em body} & body of the post request to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the response of the server 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em URISyntax\+Exception} & If method doesn\textquotesingle{}t comply with URI syntax \\
+\hline
+{\em Interrupted\+Exception} & Server connection has been interrupted \\
+\hline
+{\em Execution\+Exception} & Should not be thrown \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00061}{61}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00119}{119}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
 
 \mbox{\Hypertarget{classremote_1_1_service_locator_a746884299fa506765477bf66f2b1bee7}\label{classremote_1_1_service_locator_a746884299fa506765477bf66f2b1bee7}} 
 \index{remote.ServiceLocator@{remote.ServiceLocator}!sendPOST@{sendPOST}}
@@ -88,9 +176,30 @@ Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00061}{61}} o
 \doxysubsubsection{\texorpdfstring{sendPOST()}{sendPOST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Http\+Response$<$ String $>$ remote.\+Service\+Locator.\+send\+POST (\begin{DoxyParamCaption}\item[{String}]{method,  }\item[{Map$<$ String, String $>$}]{headers,  }\item[{byte\mbox{[}$\,$\mbox{]}}]{body }\end{DoxyParamCaption}) throws URISyntax\+Exception, Interrupted\+Exception, Execution\+Exception}
 
+Sends a complete post request with a blob body 
+\begin{DoxyParams}{Parameters}
+{\em method} & method to send the request to in the server \\
+\hline
+{\em headers} & a map of headers where the key it\textquotesingle{}s the name of the header and the value in the map it\textquotesingle{}s the value of the header. WARNING\+: Content-\/\+Type it\textquotesingle{}s not defined by default \\
+\hline
+{\em body} & body of the post request to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the response of the server 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em URISyntax\+Exception} & If method doesn\textquotesingle{}t comply with URI syntax \\
+\hline
+{\em Interrupted\+Exception} & Server connection has been interrupted \\
+\hline
+{\em Execution\+Exception} & Should not be thrown \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00052}{52}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00100}{100}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
 
 \mbox{\Hypertarget{classremote_1_1_service_locator_af6dc7ed331b3b3e34780059a9f186f4e}\label{classremote_1_1_service_locator_af6dc7ed331b3b3e34780059a9f186f4e}} 
 \index{remote.ServiceLocator@{remote.ServiceLocator}!sendPOST@{sendPOST}}
@@ -98,9 +207,30 @@ Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00052}{52}} o
 \doxysubsubsection{\texorpdfstring{sendPOST()}{sendPOST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily Http\+Response$<$ String $>$ remote.\+Service\+Locator.\+send\+POST (\begin{DoxyParamCaption}\item[{String}]{method,  }\item[{Map$<$ String, String $>$}]{headers,  }\item[{JSONObject}]{body }\end{DoxyParamCaption}) throws URISyntax\+Exception, Interrupted\+Exception, Execution\+Exception}
 
+Sends a complete post request with a JSON body 
+\begin{DoxyParams}{Parameters}
+{\em method} & method to send the request to in the server \\
+\hline
+{\em headers} & a map of headers where the key it\textquotesingle{}s the name of the header and the value in the map it\textquotesingle{}s the value of the header \\
+\hline
+{\em body} & body of the post request to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the response of the server 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em URISyntax\+Exception} & If method doesn\textquotesingle{}t comply with URI syntax \\
+\hline
+{\em Interrupted\+Exception} & Server connection has been interrupted \\
+\hline
+{\em Execution\+Exception} & Should not be thrown \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00042}{42}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00080}{80}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
 
 \mbox{\Hypertarget{classremote_1_1_service_locator_a9245c7a787e1b8d33e2426b515d31843}\label{classremote_1_1_service_locator_a9245c7a787e1b8d33e2426b515d31843}} 
 \index{remote.ServiceLocator@{remote.ServiceLocator}!setService@{setService}}
@@ -108,9 +238,21 @@ Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00042}{42}} o
 \doxysubsubsection{\texorpdfstring{setService()}{setService()}}
 {\footnotesize\ttfamily void remote.\+Service\+Locator.\+set\+Service (\begin{DoxyParamCaption}\item[{String}]{ip,  }\item[{int}]{port }\end{DoxyParamCaption}) throws IOException}
 
+Changes the server location to connect to 
+\begin{DoxyParams}{Parameters}
+{\em ip} & ip of the server \\
+\hline
+{\em port} & port of the server to connect to \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & Throws if the server can\textquotesingle{}t be reached \\
+\hline
+\end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00025}{25}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
+Definition at line \mbox{\hyperlink{_service_locator_8java_source_l00036}{36}} of file \mbox{\hyperlink{_service_locator_8java_source}{Service\+Locator.\+java}}.
 
 
 
