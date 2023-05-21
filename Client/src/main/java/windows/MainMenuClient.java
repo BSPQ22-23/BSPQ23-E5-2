@@ -26,7 +26,7 @@ public class MainMenuClient extends JFrame implements ActionListener {
     private JPanel buttonPanel, welcomePanel, infoPanel, pCenter, settingsPanel;
     private UpperMenu upperMenu;
     
-    public MainMenuClient() throws IOException {
+    public MainMenuClient(){
         super("Menu");    
         
         welcome = new JLabel(InternLanguage.translateTxt("welcome"));
@@ -38,12 +38,23 @@ public class MainMenuClient extends JFrame implements ActionListener {
         infoSettings = new JLabel(InternLanguage.translateTxt("settingInf"));
         warningL = new JLabel(InternLanguage.translateTxt("warning"));
 
-        ImageIcon icon = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/home.png")));
-        ImageIcon icon2 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/search.png")));
-        ImageIcon icon3 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/account.png")));
-        ImageIcon icon4 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/contact.png")));
-        ImageIcon icon5 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/settings.png")));
-        ImageIcon icon6 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/info.png")));
+        ImageIcon icon= null;
+		ImageIcon icon2= null;
+		ImageIcon icon3= null;
+		ImageIcon icon4= null;
+		ImageIcon icon5= null;
+		ImageIcon icon6= null;
+		try {
+			icon = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/home.png")));
+			icon2 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/search.png")));
+			icon3 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/account.png")));
+			icon4 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/contact.png")));
+			icon5 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/settings.png")));
+			icon6 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/info.png")));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         
         hotelButton = new JButton(resizeIcon(icon, 60, 60));
         searchButton = new JButton(resizeIcon(icon2, 60, 60));
@@ -168,7 +179,7 @@ public class MainMenuClient extends JFrame implements ActionListener {
 	     }
 	}
 		
-     public static void main(String[] args) throws IOException {
+     public static void main(String[] args) {
          new MainMenuClient();
      }
 
