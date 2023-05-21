@@ -100,5 +100,8 @@ public class Room {
 	public void setHotel(Hotel hotel) {
 		this.hotel = hotel;
 	}
+	public String toString() {
+		return roomNumber + " - " + type;
+	}
 
 }

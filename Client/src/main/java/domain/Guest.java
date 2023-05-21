@@ -69,4 +69,7 @@ public class Guest {
     public void setCityOfProvenance(String cityOfProvenance) {
         this.cityOfProvenance = cityOfProvenance;
     }
+    public String toString() {
+    	return name + " " + surname + " (" + dni + ")";
+    }
 }
