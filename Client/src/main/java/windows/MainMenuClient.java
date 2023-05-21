@@ -7,7 +7,6 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ResourceBundle;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -17,9 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import language.InternLanguage;
 
@@ -178,7 +175,7 @@ public class MainMenuClient extends JFrame implements ActionListener {
 				mItem2.setEnabled(true);
 				
 			} else if (e.getSource() == searchButton) {
-				HotelBrowserWindow hotelBrowser = new HotelBrowserWindow(null);
+				HotelBrowserWindow hotelBrowser = new HotelBrowserWindow();
 				
 			 } else if (e.getSource() == infoButton) {
 				 buttonPanel.setVisible(false);

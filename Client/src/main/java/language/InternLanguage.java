@@ -1,6 +1,7 @@
 package language;
 
 import java.util.Locale;
+import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 public class InternLanguage {
@@ -15,7 +16,11 @@ public class InternLanguage {
 	}
 	
 	public static String translateTxt(String txt) {
-		return bundle.getString(txt);
+		try {
+			return bundle.getString(txt);
+		} catch(MissingResourceException e) {
+			return "{"+txt+"}";
+		}
 	}
     
 }
