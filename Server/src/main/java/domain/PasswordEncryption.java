@@ -3,7 +3,16 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * A simple class to encrypt passwords
+ *
+ */
 public class PasswordEncryption {
+	/**
+	 * Encryption for passwords in the server side 
+	 * @param password password to encrypt
+	 * @return the password encrypted
+	 */
     public static String encryptPassword(String password) {
         try {
             // Create a SHA-256 hash object

@@ -1,14 +1,14 @@
 package database;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-
-import javax.jdo.JDOHelper;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -54,13 +54,7 @@ public class BookingDAOTest {
 				room, 
 				g, 
 				guest);
-		System.out.println("hotel: " + JDOHelper.getObjectState(hotel) + " " + hotel);
-		System.out.println("room: "  + JDOHelper.getObjectState(room)  + " " + room );
-		System.out.println("guest: " + JDOHelper.getObjectState(guest) + " " + guest);
-		System.out.println(g);
 		BookingDAO.getInstance().save(booking);
-		System.out.println(JDOHelper.getObjectState(booking));
-//		System.out.println(booking);
 	}
 
 	@Test

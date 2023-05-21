@@ -31,6 +31,7 @@ import language.InternLanguage;
 import remote.ClientController;
 import remote.ClientController.DownloadedImage;
 import remote.ClientController.Response;
+import windows.TranslatableObject.TranslatableJButton;
 
 /**
  * Window to browse a hotel from a list
@@ -39,7 +40,7 @@ import remote.ClientController.Response;
 public class HotelBrowserWindow extends JFrame  {
 	private static final long serialVersionUID = 1L;
 	private JTextField searchField;
-    private JButton homeButton,searchButton;
+    private TranslatableJButton homeButton,searchButton;
     public  ClientController controller;
     private static JLabel notAvailableHotel;
     private static JLabel noIconHotel;
@@ -78,11 +79,6 @@ public class HotelBrowserWindow extends JFrame  {
     }
     
     private HotelBrowserWindow() {
-    	upperMenu = new UpperMenu( v-> {
-       	 new Thread(() -> new MainMenuClient()).start();
-       	 dispose();
-       });
-       setJMenuBar(upperMenu);
     	DefaultListModel<Hotel> hotelListModel = new DefaultListModel<>();
     	try {
     		ClientController.getHotels().forEach(v->hotelListModel.addElement(v));
@@ -131,9 +127,14 @@ public class HotelBrowserWindow extends JFrame  {
 
         // Create components
         searchField = new JTextField();
-        searchButton = new JButton(InternLanguage.translateTxt("search"));
-        homeButton = new JButton(InternLanguage.translateTxt("home"));
+        searchButton = new TranslatableJButton("search");
+        homeButton = new TranslatableJButton("home");
 
+        upperMenu = new UpperMenu( v-> {
+          	 new Thread(() -> new MainMenuClient()).start();
+          	 dispose();
+          }, searchButton, homeButton);
+          setJMenuBar(upperMenu);
         // Add action listeners
         searchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

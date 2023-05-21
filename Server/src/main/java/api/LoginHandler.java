@@ -2,7 +2,6 @@ package api;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.Base64;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,6 +14,10 @@ import com.sun.net.httpserver.HttpHandler;
 import domain.PasswordEncryption;
 import main.ServerAppService;
 
+/**
+ * Connection between client and ServerAppService for loging in
+ *
+ */
 public class LoginHandler implements HttpHandler{
 
 	@Override

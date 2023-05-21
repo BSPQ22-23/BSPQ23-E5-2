@@ -15,6 +15,10 @@ import com.sun.net.httpserver.HttpHandler;
 import domain.User;
 import main.ServerAppService;
 
+/**
+ * Connection between client and ServerAppService for registering
+ *
+ */
 public class RegisterHandler implements HttpHandler{
 	
     @Override

@@ -8,7 +8,6 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,7 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import domain.Hotel;
-import language.InternLanguage;
+import windows.TranslatableObject.TranslatableJButton;
 
 public class HotelDescriptionWindow extends JFrame{
 	
@@ -25,11 +24,7 @@ public class HotelDescriptionWindow extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
 	public HotelDescriptionWindow(Hotel h) {
-		 upperMenu = new UpperMenu( v-> {
-        	 new MainMenuClient();
-        	 dispose();
-        });
-        setJMenuBar(upperMenu);
+		super(h.getName());
 		setSize(450, 320);
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -47,19 +42,24 @@ public class HotelDescriptionWindow extends JFrame{
 			e.printStackTrace();
 		}
 		JPanel panelDown = new JPanel(new GridLayout(1, 0));
-		JButton back = new JButton("Back");
+		TranslatableJButton back = new TranslatableJButton("back");
 		back.addActionListener(v -> {
 			HotelBrowserWindow.getInstance().setVisible(true);
 			dispose();
 		});
 		panelDown.add(back);
-		JButton makeBooking = new JButton(InternLanguage.translateTxt("book"));
+		TranslatableJButton makeBooking = new TranslatableJButton("book");
 		makeBooking.addActionListener(v -> {
 			new ReservationWindow(h);
 			dispose();
 		});
 		panelDown.add(makeBooking);
 		contentPane.add(panelDown, BorderLayout.SOUTH);
+		upperMenu = new UpperMenu( v-> {
+       	 new MainMenuClient();
+       	 dispose();
+       }, back, makeBooking);
+       setJMenuBar(upperMenu);
 		
 		JLabel title = new JLabel(h.getName() + " - " + h.getCity());
 		title.setFont(new Font("Calibri", Font.PLAIN, 30));
@@ -67,9 +67,10 @@ public class HotelDescriptionWindow extends JFrame{
 		
 		JScrollPane description = new JScrollPane(new JLabel("<html><p style=\"width:155px\">"+h.getInfo()+"</p></html>"));
 		contentPane.add(description, BorderLayout.CENTER);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 	}
 	public static void main(String[] args) {
-		new HotelDescriptionWindow(new Hotel(1, "Test Hotel", "Test city", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."));
+		new HotelDescriptionWindow(new Hotel(1, "Test Hotel", "Test city", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")).setVisible(true);;
 	}
 
 }

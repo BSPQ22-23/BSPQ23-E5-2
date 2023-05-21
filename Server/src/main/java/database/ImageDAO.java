@@ -12,40 +12,46 @@ import javax.jdo.Transaction;
 import domain.Image;
 import domain.Image.ImageType;
 /**
- * DAO for Image class
- * @author maitanegarcia
+ * Class to allow the access to {@link domain.Image Image} objects in the database
  *
  */
-
 public class ImageDAO extends DataAccessObjectBase implements IDataAccessObject<Image> {
 
 	private static ImageDAO instance = new ImageDAO();	
 	
 	private ImageDAO() { }
 	
+	/**
+	 * Get the DAO instance for {@link domain.Image Image}s
+	 * @return
+	 */
 	public static ImageDAO getInstance() {
 		return instance;
 	}	
 	/**
-	 * This method saves a reservation
+	 * Upload or update an {@link domain.Image Image} to the database
+	 * @param object image to store/update
+	 * @return true if the transaction was successful
 	 */
 	@Override
 	public boolean save(Image object) {
 		return saveObject(object);
 		
 	}
-/**
- * Thus method deletes a reservation
- */
+	/**
+	 * Delete an {@link domain.Image Image} that has been retrieved from the database
+	 * @param object detatched object to delete
+	 */
 	@Override
 	public void delete(Image object) {
 		super.deleteObject(object);
 		
 	}
 	
-/**
- * This method gets a list of all the reservations 
- */
+	/**
+	 * Get all {@link domain.Image Image}s from the database
+	 * @return the list of images in the database
+	 */
 	@Override
 	public List<Image> getAll() {
 		 PersistenceManager pm = pmf.getPersistenceManager();
@@ -74,7 +80,11 @@ public class ImageDAO extends DataAccessObjectBase implements IDataAccessObject<
 		    return result;
 	}
 	
-
+	/**
+	 * Get an {@link domain.Image Image} from the database by it's id
+	 * @param param id of the image
+	 * @return the image or null if it doesn't exist
+	 */
 	@Override
 	public Image find(String param) {
 	    PersistenceManager pm = pmf.getPersistenceManager();
@@ -101,6 +111,12 @@ public class ImageDAO extends DataAccessObjectBase implements IDataAccessObject<
 	    }
 	    return result;
 	}
+	/**
+	 * Get an {@link domain.Image Image} from the database by the id of the object the image is attached to and the ctx of the image
+	 * @param oid id of the object the image is attached to
+	 * @param type ctx of the image
+	 * @return the image or null if it doesn't exist
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Image> find(String oid, ImageType type) {
 		PersistenceManager pm = pmf.getPersistenceManager();

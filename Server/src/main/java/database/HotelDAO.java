@@ -18,34 +18,40 @@ import domain.Booking;
 
 import domain.Hotel;
 import domain.Room;
-
+/**
+ * Class to allow the access to {@link domain.Hotel Hotel} objects in the database
+ *
+ */
 public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject<Hotel> {
 	private static final HotelDAO INSTANCE = new HotelDAO();
 	
+	/**
+	 * Get the DAO instance for {@link domain.Hotel Hotel}s
+	 * @return
+	 */
 	public static HotelDAO getInstance() {
 		return INSTANCE;
 	}
-	/*
-	@Override
-	public void save(Hotel object) {
-		// TODO Auto-generated method stub
-		HotelDAO.getInstance().save(object);
-		save(object);
-	}
-	*/
+	/**
+	 * Upload or update a {@link domain.Hotel Hotel} to the database
+	 * @param object hotel to store/update
+	 * @return true if the transaction was successful
+	 */
 	@Override
 	public boolean save(Hotel object) {
 		return saveObject(object);
 	}
 	/**
-	 * Delete a hotel
+	 * Delete a {@link domain.Hotel Hotel} that has been retrieved from the database
+	 * @param object detatched object to delete
 	 */
 	@Override
 	public void delete(Hotel object) {
 		deleteObject(object);
 	}
 	/**
-	 * Method that get a list of all the hotels
+	 * Get all {@link domain.Hotel Hotel}s from the database
+	 * @return the list of hotels in the database
 	 */
 	@Override
 	public List<Hotel> getAll() {
@@ -74,9 +80,9 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	    return result;
 }
 	/**
-	 * Method that get a list Hotel by the name
-	 * @param name
-	 * @return a list of Hotel Names
+	 * Get {@link domain.Hotel Hotel}s from the database that contain the string in their name
+	 * @param name string to search in the name
+	 * @return a list of hotels with the query in their name
 	 */
 	public List<Hotel> getByName (String name) {
 	    PersistenceManager pm = pmf.getPersistenceManager();
@@ -93,7 +99,11 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 	    pm.close();
 	    return resultList;
 	} 
-    
+	/**
+	 * Get {@link domain.Hotel Hotel}s from the database that are owned by the guest with the id provided
+	 * @param name id of the owner
+	 * @return a list of hotels with the owner of the parameter
+	 */
     public List<Hotel> getByOwner(String owner) {
         PersistenceManager pm = pmf.getPersistenceManager();
         Query<Hotel> q = pm.newQuery(Hotel.class, "ownerDni == :owner");
@@ -102,7 +112,11 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
         return resultList;
     }
 	
-
+    /**
+	 * Get a {@link domain.Hotel Hotel} from the database by it's id
+	 * @param param id of the hotel
+	 * @return the hotel or null if it doesn't exist
+	 */
 	@Override
 	public Hotel find(String param) {
 	    PersistenceManager pm = pmf.getPersistenceManager();
@@ -128,7 +142,6 @@ public class HotelDAO  extends DataAccessObjectBase implements IDataAccessObject
 		    	detatchedRooms.add(r);
 		    });
 		    detatched.setRooms(detatchedRooms);
-		    //detatched.getRooms().forEach(v -> v.getBookings().forEach(b -> b.setRoom(pm.detachCopy(b.getRoom()))));
 		    tx.commit();
 		    detatched.getRooms().forEach(v->System.out.println(v.getBookings()));
 		} catch(Exception ex) {

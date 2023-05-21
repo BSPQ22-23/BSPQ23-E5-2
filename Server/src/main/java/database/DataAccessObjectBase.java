@@ -7,7 +7,7 @@ import javax.jdo.Transaction;
 import javax.jdo.annotations.PersistenceAware;
 
 /**
- * DAO base
+ * Base class for all Data Access Object classes
  *
  */
 @PersistenceAware

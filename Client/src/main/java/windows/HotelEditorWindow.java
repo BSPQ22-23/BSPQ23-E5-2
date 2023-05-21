@@ -1,9 +1,18 @@
 package windows;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.util.LinkedList;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import domain.Hotel;
 import domain.Room;
@@ -128,7 +137,7 @@ public class HotelEditorWindow extends JFrame implements ActionListener {
         	String description = serviceDescF.getText();
         	int price = Integer.parseInt(servicePriceF.getText());
             String hotel = roomHotelF.getText();
-            Hotel hotelT = ClientController.getHotels(hotel).get(1);
+            Hotel hotelT = ClientController.getHotels(hotel).get(0);
             Service service = new Service(name, description, price);
         	
         } else if (e.getSource() == clearButton) {

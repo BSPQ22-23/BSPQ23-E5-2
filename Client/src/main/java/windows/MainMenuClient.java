@@ -14,29 +14,30 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import language.InternLanguage;
+import windows.TranslatableObject.TranslatableJButton;
+import windows.TranslatableObject.TranslatableJLabel;
 
 public class MainMenuClient extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 8376278722958811219L;
-	private JLabel welcome, info, info2, info3, info4, info5, warningL, infoSettings;
-    private JButton hotelButton, searchButton, accountButton, contactButton, advSettingsButton, infoButton, deleteAccButton, logOutButton, changeDataButton;
+	private TranslatableJLabel welcome, info, info2, info3, info4, info5, warningL, infoSettings;
+    private JButton hotelButton, searchButton, accountButton, contactButton, advSettingsButton, infoButton;
+    private TranslatableJButton deleteAccButton, logOutButton, changeDataButton;
     private JPanel buttonPanel, welcomePanel, infoPanel, pCenter, settingsPanel;
     private UpperMenu upperMenu;
     
     public MainMenuClient(){
         super("Menu");    
         
-        welcome = new JLabel(InternLanguage.translateTxt("welcome"));
-        info = new JLabel(InternLanguage.translateTxt("info"));
-        info2 = new JLabel(InternLanguage.translateTxt("info2"));
-        info3 = new JLabel(InternLanguage.translateTxt("info3"));
-        info4 = new JLabel(InternLanguage.translateTxt("info4"));
-        info5 = new JLabel(InternLanguage.translateTxt("info5"));
-        infoSettings = new JLabel(InternLanguage.translateTxt("settingInf"));
-        warningL = new JLabel(InternLanguage.translateTxt("warning"));
+        welcome = new TranslatableJLabel("welcome");
+        info = new TranslatableJLabel("info");
+        info2 = new TranslatableJLabel("info2");
+        info3 = new TranslatableJLabel("info3");
+        info4 = new TranslatableJLabel("info4");
+        info5 = new TranslatableJLabel("info5");
+        infoSettings = new TranslatableJLabel("settingInf");
+        warningL = new TranslatableJLabel("warning");
 
         ImageIcon icon= null;
 		ImageIcon icon2= null;
@@ -63,9 +64,9 @@ public class MainMenuClient extends JFrame implements ActionListener {
         advSettingsButton = new JButton(resizeIcon(icon5, 60, 60));
         infoButton = new JButton(resizeIcon(icon6, 60, 60));
 
-        changeDataButton = new JButton("Change account data");
-        deleteAccButton = new JButton("Delete this account");
-        logOutButton = new JButton("Log out");
+        changeDataButton = new TranslatableJButton("ch_acc_dt");
+        deleteAccButton = new TranslatableJButton("dlt_acc");
+        logOutButton = new TranslatableJButton("logout");
         
         hotelButton.addActionListener(this);
         searchButton.addActionListener(this);
@@ -135,7 +136,9 @@ public class MainMenuClient extends JFrame implements ActionListener {
 	    	 welcomePanel.setVisible(true);
 	    	 buttonPanel.setVisible(true);
 			 upperMenu.returnHomeItem.setEnabled(false);
-        });
+        }, welcome, info, info2, info3, info4, info5, infoSettings, warningL, changeDataButton, deleteAccButton, logOutButton);
+        
+        upperMenu.returnHomeItem.setVisible(false);
         setJMenuBar(upperMenu);
         
         setSize(400, 300);
@@ -154,14 +157,11 @@ public class MainMenuClient extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		
 		if (e.getSource() == hotelButton) {
-
-			buttonPanel.setVisible(false);
-			welcomePanel.setVisible(false);
-			pCenter.setVisible(false);
-			setSize(700, 600);
-			upperMenu.returnHomeItem.setEnabled(true);
+			
+			//noting
 			
 		} else if (e.getSource() == searchButton) {
+			
 			HotelBrowserWindow.getInstance().setVisible(true);
 			
 		 } else if (e.getSource() == infoButton) {

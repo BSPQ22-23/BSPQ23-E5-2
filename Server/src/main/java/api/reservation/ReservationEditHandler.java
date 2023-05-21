@@ -17,6 +17,11 @@ import domain.User;
 import main.Server;
 import main.ServerAppService;
 
+/**
+ * 
+ * Connection between the client and the ServerAppService to edit reservations
+ *
+ */
 public class ReservationEditHandler implements HttpHandler{
 
 	@Override

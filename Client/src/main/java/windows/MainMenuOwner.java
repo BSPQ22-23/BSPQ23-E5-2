@@ -8,6 +8,7 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -44,10 +45,18 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 	        hotelRooms = new JTextField(5);
 	        hotelCity = new JTextField(15);
 	        
-	        ImageIcon icon = new ImageIcon("../photos/pencil.png");
-	        ImageIcon icon2 = new ImageIcon("../photos/search.png");
-	        ImageIcon icon3 = new ImageIcon("../photos/account.png");
-	        ImageIcon icon4 = new ImageIcon("../photos/addIcon.png");
+	        ImageIcon icon = null;
+			ImageIcon icon2 = null;
+			ImageIcon icon3 = null;
+			ImageIcon icon4 = null;
+			try {
+				icon = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/pencil.png")));
+				icon2 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/search.png")));
+				icon3 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/account.png")));
+				icon4 = new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/addIcon.png")));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
 	        
 	        hotelEditButton = new JButton(resizeIcon(icon, 60, 60));

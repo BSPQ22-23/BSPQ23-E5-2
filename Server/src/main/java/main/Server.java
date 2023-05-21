@@ -19,9 +19,13 @@ import api.resources.*;
 import api.hotel.*;
 import database.UserDAO;
 import domain.User;
-
+/**
+ * Main class for the Hotel Manager Tool
+ *
+ */
 public class Server {
 	private static final HashMap<String, User> tokenList = new HashMap<>();
+	
 	public static void main(String[] args){
 		Logger l = LogManager.getLogger();
 		UserDAO.getInstance();
@@ -46,7 +50,7 @@ public class Server {
 		}
     }
 	/**
-	 * Returns the user that corresponds to the token input
+	 * Returns the {@link domain.User User} that corresponds to the token input
 	 * @param token Token of the account
 	 * @return The account associated
 	 */
@@ -54,7 +58,7 @@ public class Server {
 		return tokenList.get(token);
 	}
 	/**
-	 * Creates a token for the user if it's not already logged
+	 * Creates an String token for the user if it's not already logged
 	 * @param user
 	 * @return
 	 */

@@ -11,6 +11,11 @@ import com.sun.net.httpserver.HttpHandler;
 import api.APIUtils;
 import main.ServerAppService;
 
+/**
+ * 
+ * Connection between the client and the ServerAppService to get hotels with or without a string query
+ *
+ */
 public class HotelGetterHandler implements HttpHandler{
 	
 	public void handle(HttpExchange exchange) throws IOException {

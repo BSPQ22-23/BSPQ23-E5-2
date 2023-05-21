@@ -14,40 +14,46 @@ import domain.Guest;
 import domain.Hotel;
 import domain.Room;
 /**
- * DAO for Booking class
- * @author maitanegarcia
+ * Class to allow the access to {@link domain.Booking Booking} objects in the database
  *
  */
-
 public class BookingDAO extends DataAccessObjectBase implements IDataAccessObject<Booking> {
 
 	private static BookingDAO instance = new BookingDAO();	
 	
 	private BookingDAO() { }
 	
+	/**
+	 * Get the DAO instance for {@link domain.Booking Booking}s
+	 * @return
+	 */
 	public static BookingDAO getInstance() {
 		return instance;
 	}	
 	/**
-	 * This method saves a reservation
+	 * Upload or update a {@link domain.Booking Booking} to the database
+	 * @param object booking to store/update
+	 * @return true if the transaction was successful
 	 */
 	@Override
 	public boolean save(Booking object) {
 		return saveObject(object);
 		
 	}
-/**
- * Thus method deletes a reservation
- */
+	/**
+	 * Delete a {@link domain.Booking Booking} that has been retrieved from the database
+	 * @param object detatched object to delete
+	 */
 	@Override
 	public void delete(Booking object) {
 		super.deleteObject(object);
 		
 	}
 	
-/**
- * This method gets a list of all the reservations 
- */
+	/**
+	 * Get all {@link domain.Booking Booking}s from the database
+	 * @return the list of bookings in the database
+	 */
 	@Override
 	public List<Booking> getAll() {
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -76,7 +82,11 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	    return result;
 	}
 	
-
+	/**
+	 * Get a {@link domain.Booking Booking} from the database by it's id
+	 * @param param id of the booking
+	 * @return the booking or null if it doesn't exist
+	 */
 	@Override
 	public Booking find(String param) {
 	    PersistenceManager pm = pmf.getPersistenceManager();
@@ -125,6 +135,11 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	    }
 	    return (Booking) d;
 	}
+	/**
+	 * Get's all booking that have been made by a guest
+	 * @param author person that created the booking
+	 * @return a list of bookings from that guest
+	 */
 	public List<Booking> getByAuthor(Guest author){
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Class<?> c = null;
@@ -171,7 +186,12 @@ public class BookingDAO extends DataAccessObjectBase implements IDataAccessObjec
 	    }
 	    return g;
 	}	
-	
+	/**
+	 * Checks if a room contains a booking in an specific day
+	 * @param room room to check
+	 * @param date date to check
+	 * @return true if the room is occupied that day
+	 */
 	public boolean hasReservationInRoomOnDate(Room room, Date date) {
 	    PersistenceManager pm = pmf.getPersistenceManager();
 	    Transaction tx = pm.currentTransaction();

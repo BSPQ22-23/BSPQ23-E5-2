@@ -23,6 +23,11 @@ import domain.User;
 import main.Server;
 import main.ServerAppService;
 
+/**
+ * 
+ * Connection between the client and the ServerAppService to create reservations
+ *
+ */
 public class ReservationCreationHandler implements HttpHandler{
 
 	@Override

@@ -25,6 +25,11 @@ import domain.Image.ImageType;
 import domain.User;
 import main.Server;
 
+/**
+ * 
+ * Class to allow clients to upload images
+ *
+ */
 public class ImageUploadHandler implements HttpHandler{
 
 	@Override

@@ -1,32 +1,47 @@
 package windows;
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import domain.Hotel;
-import language.InternLanguage;
-import remote.ClientController;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
+import domain.Hotel;
+import language.InternLanguage;
+import remote.ClientController;
+import windows.TranslatableObject.TranslatableJButton;
+import windows.TranslatableObject.TranslatableJLabel;
+
 public class HotelCreatorWindow extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	private JLabel id, name, city, info, imageL;
+	private TranslatableJLabel id, name, city, info;
+	private JLabel imageL;
     private JTextField idF, nameF, cityF, infoF;
-    private JButton submitButton, clearButton, imageButton;
+    private TranslatableJButton submitButton, clearButton, imageButton;
     private JFileChooser fileChooser;
     private FileNameExtensionFilter filter;
 
     public HotelCreatorWindow() {
         super(InternLanguage.translateTxt("title_cr"));
 
-        id = new JLabel(InternLanguage.translateTxt("id_cr"));
-        name = new JLabel(InternLanguage.translateTxt("name_cr"));
-        city = new JLabel(InternLanguage.translateTxt("city_cr"));
-        info = new JLabel(InternLanguage.translateTxt("info_cr"));
+        id = new TranslatableJLabel("id_cr");
+        name = new TranslatableJLabel("name_cr");
+        city = new TranslatableJLabel("city_cr");
+        info = new TranslatableJLabel("info_cr");
         imageL = new JLabel();
         
         idF = new JTextField(20);
@@ -34,9 +49,15 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
         cityF = new JTextField(20);
         infoF = new JTextField(60);
 
-        submitButton = new JButton(InternLanguage.translateTxt("submit"));
-        clearButton = new JButton(InternLanguage.translateTxt("clear"));
-        imageButton = new JButton(InternLanguage.translateTxt("submit_Image"));
+        submitButton = new TranslatableJButton("submit");
+        clearButton = new TranslatableJButton("clear");
+        imageButton = new TranslatableJButton("submit_Image");
+        
+        UpperMenu upperMenu = new UpperMenu(v -> {
+        	new MainMenuOwner();
+        	dispose();
+        }, id, name, city, info, submitButton, clearButton, imageButton);
+        setJMenuBar(upperMenu);
         
         fileChooser = new JFileChooser();
         filter = new FileNameExtensionFilter("jpg", "png", "ico");

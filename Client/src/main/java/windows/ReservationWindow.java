@@ -35,6 +35,7 @@ import domain.Hotel;
 import domain.Room;
 import language.InternLanguage;
 import remote.ClientController;
+import windows.TranslatableObject.TranslatableJLabel;
 
 
 
@@ -59,11 +60,6 @@ public static void main(String[] args) {
 	 * Create the panel.
 	 */
 	public ReservationWindow(Hotel h) {
-		upperMenu = new UpperMenu( v-> {
-       	 	new Thread(() -> new HotelDescriptionWindow(h)).start();
-       	 	dispose();
-		});
-		setJMenuBar(upperMenu);
 		setTitle(InternLanguage.translateTxt("book_cr"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 510, 430);
@@ -103,7 +99,7 @@ public static void main(String[] args) {
 		leftPanel.add(panel_1);
 		panel_1.setLayout(new FlowLayout(FlowLayout.RIGHT, 5, 5));
 		
-		JLabel checkinLabel = new JLabel(InternLanguage.translateTxt("chin_dt"));
+		TranslatableJLabel checkinLabel = new TranslatableJLabel("chin_dt");
 		panel_1.add(checkinLabel);
 		
 		SimpleDateFormat model = new SimpleDateFormat("dd/MM/yyyy");
@@ -116,9 +112,13 @@ public static void main(String[] args) {
 		leftPanel.add(panel_1_1);
 		panel_1_1.setLayout(new FlowLayout(FlowLayout.RIGHT, 5, 5));
 		
-		JLabel checkoutLabel = new JLabel(InternLanguage.translateTxt("chot_dt"));
+		TranslatableJLabel checkoutLabel = new TranslatableJLabel("chot_dt");
 		panel_1_1.add(checkoutLabel);
-		
+		upperMenu = new UpperMenu( v-> {
+       	 	new Thread(() -> new HotelDescriptionWindow(h)).start();
+       	 	dispose();
+		}, checkoutLabel, checkinLabel);
+		setJMenuBar(upperMenu);
 		JSpinner checkoutSpinner = new JSpinner();
 		checkoutSpinner.setModel(new SpinnerDateModel(new Date(System.currentTimeMillis()), null, null, Calendar.DAY_OF_YEAR));
 		checkoutSpinner.setEditor(new JSpinner.DateEditor(checkoutSpinner, model.toPattern()));

@@ -20,6 +20,11 @@ import database.ImageDAO;
 import domain.Image;
 import domain.Image.ImageType;
 
+/**
+ * 
+ * Class to allow the download of images by the client
+ *
+ */
 public class ImageDownloadHandler implements HttpHandler{
 
 	@Override

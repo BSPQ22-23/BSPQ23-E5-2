@@ -71,11 +71,20 @@ public class ServerAppService {
 		BookingDAO.getInstance().save(reservation);
 		return true;
 	}
-	
+	/**
+	 * Get the reservations a user has made
+	 * @param user user owner of the reservations
+	 * @return the list of said reservations
+	 */
 	public static List<Booking> getReservationsByUser(User user){
 		return BookingDAO.getInstance().getByAuthor(user.getLegalInfo());
 	}
-	
+	/**
+	 * Get the bookings in an specific hotel
+	 * @param user user to only allow the owner to get the bookings from it's hotels
+	 * @param hotelId
+	 * @return
+	 */
 	public static List<Booking> getReservationsByHotel(User user, String hotelId){
 		Hotel h = HotelDAO.getInstance().find(hotelId);
 		List<Booking> bookings = new LinkedList<>();
@@ -84,10 +93,20 @@ public class ServerAppService {
 		});
 		return bookings;
 	}
-	
+	/**
+	 * Get an specific {@link domain.Booking Booking} by it's id
+	 * @param bookingID id of the booking to search
+	 * @return the booking with that id
+	 */
 	public static Booking getReservationById(String bookingID) {
 		return BookingDAO.getInstance().find(bookingID);
 	}
+	/**
+	 * Remove a reservation by it's id
+	 * @param u user running the API method to only allow the author to delete it's bookings
+	 * @param bookingId id of the booking to delete
+	 * @return true if the deletion it's allowed
+	 */
 	public static boolean deleteReservation(User u, int bookingId) {
 		Booking b = BookingDAO.getInstance().find(Integer.toString(bookingId));
 		if(!b.getAuthor().equals(u.getLegalInfo()))
@@ -95,6 +114,12 @@ public class ServerAppService {
 		BookingDAO.getInstance().delete(b);
 		return true;
 	}
+	/**
+	 * Edit an already existing reservation
+	 * @param u user that runs the API method to verify that it's allowed
+	 * @param b booking to edit
+	 * @return true if the user it's authorized
+	 */
 	public static boolean editReservation(User u, Booking b) {
 		Booking toUpdate = BookingDAO.getInstance().find(Integer.toString(b.getId()));
 		toUpdate.setCheckinDate(b.getCheckinDate());
@@ -108,7 +133,11 @@ public class ServerAppService {
 		toUpdate.setGuests(guests);
 		return BookingDAO.getInstance().save(toUpdate);
 	}
-	
+	/**
+	 * Create a new hotel
+	 * @param h hotel info to insert into the database
+	 * @return true if the hotel data it's allowed
+	 */
 	public static boolean createHotel(Hotel h) {
 		if(h.getName().equals("") || h.getCity().equals("") || h.getRooms().size() == 0)
 			return false;
@@ -116,6 +145,10 @@ public class ServerAppService {
 			HotelDAO.getInstance().save(h);
 		return true;
 	}
+	/**
+	 * Get all the hotels in the server (May be limited in the future)
+	 * @return the list of hotels
+	 */
 	public static List<Hotel> getHotels() {
 		List<Hotel> h = HotelDAO.getInstance().getAll();
 		List<Hotel> transientList = new ArrayList<>(h.size());
@@ -133,6 +166,11 @@ public class ServerAppService {
 		});
 		return transientList;
 	}
+	/**
+	 * Get all hotels that comply with the string query
+	 * @param query piece of string that the name of the hotel must contain
+	 * @return the list of hotels that comply with said query
+	 */
 	public static List<Hotel> getHotels(String query) {
 		List<Hotel> h = HotelDAO.getInstance().getByName(query);
 		List<Hotel> transientList = new ArrayList<>(h.size());
