@@ -1,6 +1,12 @@
 # Hotel Manager Tool
 Manage your hotels or reservations in an easy way.
 
+<h1>Documentation of the project</h1>
+To access project's documentation you can access the Github Page of this project in the next link:
+<a href="https://bspq22-23.github.io/BSPQ23-E5-2/html/">bspq22-23.github.io/BSPQ23-E5-2/</a>
+
+Or enter the `gh-pages` branch. (<a href="https://github.com/BSPQ22-23/BSPQ23-E5-2/tree/gh-pages">Click here to enter</a>)
+
 <h1>Building the project</h1>
 The client can be compiled into a jar to later run it via Java while the server it's directly ran by maven.
 
