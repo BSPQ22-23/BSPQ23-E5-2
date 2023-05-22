@@ -46,7 +46,10 @@ jobs:
           tag_name: ${{ steps.version.outputs.TAG_NAME }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+      - name: Test
+        run: |
+          tree
+          
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
@@ -56,8 +59,7 @@ jobs:
           tag: ${{ steps.version.outputs.TAG_NAME }}
           release_name: ${{ steps.version.outputs.TAG_NAME }}
           overwrite: true
-        run: |
-          tree
+        
       - name: Generate Doxigen documentation
         uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
         with:
