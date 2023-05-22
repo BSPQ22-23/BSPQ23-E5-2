@@ -174,7 +174,7 @@ public class MainMenuOwner extends JFrame implements ActionListener {
 				mItem2.setEnabled(true);
 			
 			 } else if (e.getSource() == hotelEditButton) {
-				 new HotelEditorWindow();
+				 new HotelEditorWindow(null);
 				
 			 } else if (e.getSource() == accountButton) {
 				buttonPanel.setVisible(false);

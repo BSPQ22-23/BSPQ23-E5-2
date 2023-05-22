@@ -8,9 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -31,10 +33,11 @@ public class HotelEditorWindow extends JFrame implements ActionListener {
 	private JLabel roomNum, roomType, roomMax, roomSpace, roomPrice, roomHotel, serviceName, serviceDesc, servicePrice;
 	private JTextField roomNumF, roomTypeF, roomMaxF, roomSpaceF, roomPriceF, roomHotelF, serviceNameF, serviceDescF, servicePriceF;
 	private JButton submitRoomButton, submitServiceButton, clearButton, exitButton;
+	private DefaultComboBoxModel<Room> roomList;
 
-	public HotelEditorWindow() {
+	public HotelEditorWindow(DefaultComboBoxModel<Room> roomList) {
 		super(InternLanguage.translateTxt("title_Ed"));
-	        
+	    this.roomList = roomList;
         roomNum = new JLabel(InternLanguage.translateTxt("roomNum"));
         roomType = new JLabel(InternLanguage.translateTxt("roomType"));
         roomMax = new JLabel(InternLanguage.translateTxt("roomMax"));
@@ -68,6 +71,7 @@ public class HotelEditorWindow extends JFrame implements ActionListener {
         submitServiceButton.addActionListener(this);
         clearButton.addActionListener(this);
         exitButton.addActionListener(this);
+        
         
         JPanel panelBorder = new JPanel(new BorderLayout());
         JPanel formPanel = new JPanel(new GridLayout(3, 4, 4, 4));
@@ -133,9 +137,20 @@ public class HotelEditorWindow extends JFrame implements ActionListener {
             int space = Integer.parseInt(roomSpaceF.getText());
             int price = Integer.parseInt(roomPriceF.getText());
             String hotel = roomHotelF.getText();
-            Hotel hotelT = ClientController.getHotels(hotel).get(1);
-            Room room = new Room(num, type, max, space, price, hotelT);
+            //Hotel hotelT = ClientController.getHotels(hotel).get(1);
+            Room room = new Room(num, type, max, space, price, null);
             
+            int h = 0;
+            for(int i = 0; i < roomList.getSize(); i++) {
+            	if(roomList.getElementAt(i).getRoomNumber() == num) {
+            		h = 1;
+            	}
+            }
+            if(h == 0) {
+            	roomList.addElement(room);
+            } else {
+            	messageWrong();
+            }
         
         } else if (e.getSource() == submitServiceButton) {
         	String name = serviceNameF.getText();
@@ -160,8 +175,12 @@ public class HotelEditorWindow extends JFrame implements ActionListener {
 			this.dispose();
 		}  
      }
+    
+    private void messageWrong() {
+        JOptionPane.showMessageDialog(this, "Room already exists");
+    }
 
      public static void main(String[] args) {
-         new HotelEditorWindow();
+         new HotelEditorWindow(null);
      }        
 }
