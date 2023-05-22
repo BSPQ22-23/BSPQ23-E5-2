@@ -5,5 +5,5 @@ var searchData=
   ['hotel_556',['Hotel',['../classdomain_1_1Hotel.html#a1f9fb56b7412449bc8999be6b8839f22',1,'domain.Hotel.Hotel(int id, String name, String city, String info)'],['../classdomain_1_1Hotel.html#a5df8e9dc4c636691da8a719f2d3489cb',1,'domain.Hotel.Hotel(int id, String name, String city, String info, BufferedImage icon, String iconFormat)'],['../classdomain_1_1Hotel.html#afed103132e778b773bf9edb68d2dca43',1,'domain.Hotel.Hotel(Hotel h)'],['../classdomain_1_1Hotel.html#ae94b617daf98135b32c6b33ad38fa1ce',1,'domain.Hotel.Hotel(String name, String city, String info, Guest owner)']]],
   ['hotelcreatorwindow_557',['HotelCreatorWindow',['../classwindows_1_1HotelCreatorWindow.html#a1b922f9d1fed0d7fbed3786dbda25f41',1,'windows::HotelCreatorWindow']]],
   ['hoteldescriptionwindow_558',['HotelDescriptionWindow',['../classwindows_1_1HotelDescriptionWindow.html#a52ef7e57bd5b021e9a09294cbd25a9f0',1,'windows::HotelDescriptionWindow']]],
-  ['hoteleditorwindow_559',['HotelEditorWindow',['../classwindows_1_1HotelEditorWindow.html#a5331fa13314f0aa42c6083be7390a346',1,'windows::HotelEditorWindow']]]
+  ['hoteleditorwindow_559',['HotelEditorWindow',['../classwindows_1_1HotelEditorWindow.html#ac3ff10b2972aa86eb9bc58cfed68846a',1,'windows::HotelEditorWindow']]]
 ];

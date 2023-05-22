@@ -20,7 +20,7 @@ var searchData=
   ['hoteldaotest_2ejava_126',['HotelDAOTest.java',['../HotelDAOTest_8java.html',1,'']]],
   ['hoteldescriptionwindow_127',['HotelDescriptionWindow',['../classwindows_1_1HotelDescriptionWindow.html#a52ef7e57bd5b021e9a09294cbd25a9f0',1,'windows.HotelDescriptionWindow.HotelDescriptionWindow()'],['../classwindows_1_1HotelDescriptionWindow.html',1,'windows.HotelDescriptionWindow']]],
   ['hoteldescriptionwindow_2ejava_128',['HotelDescriptionWindow.java',['../HotelDescriptionWindow_8java.html',1,'']]],
-  ['hoteleditorwindow_129',['HotelEditorWindow',['../classwindows_1_1HotelEditorWindow.html#a5331fa13314f0aa42c6083be7390a346',1,'windows.HotelEditorWindow.HotelEditorWindow()'],['../classwindows_1_1HotelEditorWindow.html',1,'windows.HotelEditorWindow']]],
+  ['hoteleditorwindow_129',['HotelEditorWindow',['../classwindows_1_1HotelEditorWindow.html#ac3ff10b2972aa86eb9bc58cfed68846a',1,'windows.HotelEditorWindow.HotelEditorWindow()'],['../classwindows_1_1HotelEditorWindow.html',1,'windows.HotelEditorWindow']]],
   ['hoteleditorwindow_2ejava_130',['HotelEditorWindow.java',['../HotelEditorWindow_8java.html',1,'']]],
   ['hotelgetterhandler_131',['HotelGetterHandler',['../classapi_1_1hotel_1_1HotelGetterHandler.html',1,'api::hotel']]],
   ['hotelgetterhandler_2ejava_132',['HotelGetterHandler.java',['../HotelGetterHandler_8java.html',1,'']]]

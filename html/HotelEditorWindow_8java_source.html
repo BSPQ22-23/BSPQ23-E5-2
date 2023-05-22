@@ -95,158 +95,177 @@ $(document).ready(function(){initNavTree('HotelEditorWindow_8java_source.html','
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> java.awt.event.ActionListener;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> javax.swing.BorderFactory;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> javax.swing.JButton;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> javax.swing.JFrame;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> javax.swing.JLabel;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> javax.swing.JPanel;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> javax.swing.JTextField;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> <a class="code" href="namespacedomain.html">domain</a>.<a class="code" href="classdomain_1_1Hotel.html">Hotel</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">import</span> <a class="code" href="namespacedomain.html">domain</a>.<a class="code" href="classdomain_1_1Room.html">Room</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> <a class="code" href="namespacedomain.html">domain</a>.<a class="code" href="classdomain_1_1Service.html">Service</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> <a class="code" href="namespacelanguage.html">language</a>.<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceremote.html">remote</a>.<a class="code" href="classremote_1_1ClientController.html">ClientController</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classwindows_1_1HotelEditorWindow.html">   28</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classwindows_1_1HotelEditorWindow.html">HotelEditorWindow</a> <span class="keyword">extends</span> JFrame implements ActionListener {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keywordtype">long</span> serialVersionUID = -7362369183665923719L;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">private</span> JLabel roomNum, roomType, roomMax, roomSpace, roomPrice, roomHotel, serviceName, serviceDesc, servicePrice;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span> JTextField roomNumF, roomTypeF, roomMaxF, roomSpaceF, roomPriceF, roomHotelF, serviceNameF, serviceDescF, servicePriceF;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">private</span> JButton submitRoomButton, submitServiceButton, clearButton, exitButton;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classwindows_1_1HotelEditorWindow.html#a5331fa13314f0aa42c6083be7390a346">   35</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classwindows_1_1HotelEditorWindow.html#a5331fa13314f0aa42c6083be7390a346">HotelEditorWindow</a>() {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        super(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;title_Ed&quot;</span>));</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        roomNum = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;roomNum&quot;</span>));</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        roomType = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;roomType&quot;</span>));</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        roomMax = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;roomMax&quot;</span>));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        roomSpace = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;roomSpace&quot;</span>));</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        roomPrice = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;roomPrice&quot;</span>));</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        serviceName = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;serviceName&quot;</span>));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        serviceDesc = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;serviceDesc&quot;</span>));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        servicePrice = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;servicePrice&quot;</span>));</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        roomHotel = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;hotelEd&quot;</span>));</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        roomNumF = <span class="keyword">new</span> JTextField(20);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        roomTypeF = <span class="keyword">new</span> JTextField(20);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        roomMaxF = <span class="keyword">new</span> JTextField(20);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        roomSpaceF = <span class="keyword">new</span> JTextField(20);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        roomPriceF = <span class="keyword">new</span> JTextField(20);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        serviceNameF = <span class="keyword">new</span> JTextField(20);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        serviceDescF = <span class="keyword">new</span> JTextField(60);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        servicePriceF = <span class="keyword">new</span> JTextField(20);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        roomHotelF = <span class="keyword">new</span> JTextField(20);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        submitRoomButton = <span class="keyword">new</span> JButton(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;addRoom&quot;</span>));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        submitServiceButton = <span class="keyword">new</span> JButton(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;addService&quot;</span>));</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        clearButton = <span class="keyword">new</span> JButton(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;clear&quot;</span>));</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        exitButton = <span class="keyword">new</span> JButton(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;exit&quot;</span>));</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        submitRoomButton.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        submitServiceButton.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        clearButton.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        exitButton.addActionListener(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        JPanel panelBorder = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout());</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        JPanel formPanel = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> GridLayout(3, 4, 4, 4));</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        formPanel.setBackground(<span class="keyword">new</span> Color(255, 228, 181));</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        formPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        formPanel.add(roomNum);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        formPanel.add(roomNumF);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        formPanel.add(roomType);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        formPanel.add(roomTypeF);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        formPanel.add(roomMax);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        formPanel.add(roomMaxF);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        formPanel.add(roomSpace);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        formPanel.add(roomSpaceF);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        formPanel.add(roomPrice);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        formPanel.add(roomPriceF);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        panelBorder.add(formPanel, BorderLayout.NORTH);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        JPanel servicePanel = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> GridLayout(3, 2, 4, 4));</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        servicePanel.setBackground(<span class="keyword">new</span> Color(255, 228, 181));</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        servicePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        servicePanel.add(serviceName);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        servicePanel.add(serviceNameF);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        servicePanel.add(serviceDesc);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        servicePanel.add(serviceDescF);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        servicePanel.add(servicePrice);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        servicePanel.add(servicePriceF);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        JPanel hotelPanel = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout(FlowLayout.CENTER));</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        hotelPanel.setBackground(<span class="keyword">new</span> Color(255, 228, 181));</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        hotelPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        hotelPanel.add(roomHotel);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        hotelPanel.add(roomHotelF);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        panelBorder.add(formPanel, BorderLayout.NORTH);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        panelBorder.add(servicePanel, BorderLayout.CENTER);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        panelBorder.add(hotelPanel, BorderLayout.SOUTH);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        JPanel buttonPanel = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout(FlowLayout.CENTER));</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        buttonPanel.setBackground(<span class="keyword">new</span> Color(135, 206, 250));</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        buttonPanel.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10)); </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        buttonPanel.add(submitRoomButton);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        buttonPanel.add(submitServiceButton);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        buttonPanel.add(clearButton);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        buttonPanel.add(exitButton);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        getContentPane().setLayout(<span class="keyword">new</span> BorderLayout());</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        getContentPane().add(panelBorder, BorderLayout.CENTER);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        getContentPane().add(buttonPanel, BorderLayout.SOUTH);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">import</span> javax.swing.DefaultComboBoxModel;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">import</span> javax.swing.JButton;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">import</span> javax.swing.JFrame;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">import</span> javax.swing.JLabel;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">import</span> javax.swing.JOptionPane;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">import</span> javax.swing.JPanel;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">import</span> javax.swing.JTextField;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">import</span> <a class="code" href="namespacedomain.html">domain</a>.<a class="code" href="classdomain_1_1Hotel.html">Hotel</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">import</span> <a class="code" href="namespacedomain.html">domain</a>.<a class="code" href="classdomain_1_1Room.html">Room</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">import</span> <a class="code" href="namespacedomain.html">domain</a>.<a class="code" href="classdomain_1_1Service.html">Service</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">import</span> <a class="code" href="namespacelanguage.html">language</a>.<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">import</span> <a class="code" href="namespaceremote.html">remote</a>.<a class="code" href="classremote_1_1ClientController.html">ClientController</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classwindows_1_1HotelEditorWindow.html">   30</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="classwindows_1_1HotelEditorWindow.html">HotelEditorWindow</a> <span class="keyword">extends</span> JFrame implements ActionListener {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keywordtype">long</span> serialVersionUID = -7362369183665923719L;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">private</span> JLabel roomNum, roomType, roomMax, roomSpace, roomPrice, roomHotel, serviceName, serviceDesc, servicePrice;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">private</span> JTextField roomNumF, roomTypeF, roomMaxF, roomSpaceF, roomPriceF, roomHotelF, serviceNameF, serviceDescF, servicePriceF;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">private</span> JButton submitRoomButton, submitServiceButton, clearButton, exitButton;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">private</span> DefaultComboBoxModel&lt;Room&gt; roomList;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classwindows_1_1HotelEditorWindow.html#ac3ff10b2972aa86eb9bc58cfed68846a">   38</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="classwindows_1_1HotelEditorWindow.html#ac3ff10b2972aa86eb9bc58cfed68846a">HotelEditorWindow</a>(DefaultComboBoxModel&lt;Room&gt; roomList) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        super(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;title_Ed&quot;</span>));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        this.roomList = roomList;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        roomNum = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;roomNum&quot;</span>));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        roomType = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;roomType&quot;</span>));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        roomMax = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;roomMax&quot;</span>));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        roomSpace = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;roomSpace&quot;</span>));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        roomPrice = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;roomPrice&quot;</span>));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        serviceName = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;serviceName&quot;</span>));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        serviceDesc = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;serviceDesc&quot;</span>));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        servicePrice = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;servicePrice&quot;</span>));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        roomHotel = <span class="keyword">new</span> JLabel(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;hotelEd&quot;</span>));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        roomNumF = <span class="keyword">new</span> JTextField(20);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        roomTypeF = <span class="keyword">new</span> JTextField(20);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        roomMaxF = <span class="keyword">new</span> JTextField(20);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        roomSpaceF = <span class="keyword">new</span> JTextField(20);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        roomPriceF = <span class="keyword">new</span> JTextField(20);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        serviceNameF = <span class="keyword">new</span> JTextField(20);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        serviceDescF = <span class="keyword">new</span> JTextField(60);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        servicePriceF = <span class="keyword">new</span> JTextField(20);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        roomHotelF = <span class="keyword">new</span> JTextField(20);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        submitRoomButton = <span class="keyword">new</span> JButton(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;addRoom&quot;</span>));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        submitServiceButton = <span class="keyword">new</span> JButton(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;addService&quot;</span>));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        clearButton = <span class="keyword">new</span> JButton(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;clear&quot;</span>));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        exitButton = <span class="keyword">new</span> JButton(<a class="code" href="classlanguage_1_1InternLanguage.html">InternLanguage</a>.<a class="code" href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">translateTxt</a>(<span class="stringliteral">&quot;exit&quot;</span>));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        submitRoomButton.addActionListener(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        submitServiceButton.addActionListener(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        clearButton.addActionListener(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        exitButton.addActionListener(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        JPanel panelBorder = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> BorderLayout());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        JPanel formPanel = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> GridLayout(3, 4, 4, 4));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        formPanel.setBackground(<span class="keyword">new</span> Color(255, 228, 181));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        formPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        formPanel.add(roomNum);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        formPanel.add(roomNumF);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        formPanel.add(roomType);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        formPanel.add(roomTypeF);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        formPanel.add(roomMax);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        formPanel.add(roomMaxF);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        formPanel.add(roomSpace);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        formPanel.add(roomSpaceF);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        formPanel.add(roomPrice);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        formPanel.add(roomPriceF);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        panelBorder.add(formPanel, BorderLayout.NORTH);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        JPanel servicePanel = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> GridLayout(3, 2, 4, 4));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        servicePanel.setBackground(<span class="keyword">new</span> Color(255, 228, 181));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        servicePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        servicePanel.add(serviceName);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        servicePanel.add(serviceNameF);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        servicePanel.add(serviceDesc);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        servicePanel.add(serviceDescF);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        servicePanel.add(servicePrice);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        servicePanel.add(servicePriceF);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        JPanel hotelPanel = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout(FlowLayout.CENTER));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        hotelPanel.setBackground(<span class="keyword">new</span> Color(255, 228, 181));</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        hotelPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        hotelPanel.add(roomHotel);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        hotelPanel.add(roomHotelF);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        panelBorder.add(formPanel, BorderLayout.NORTH);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        panelBorder.add(servicePanel, BorderLayout.CENTER);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        panelBorder.add(hotelPanel, BorderLayout.SOUTH);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        JPanel buttonPanel = <span class="keyword">new</span> JPanel(<span class="keyword">new</span> FlowLayout(FlowLayout.CENTER));</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        buttonPanel.setBackground(<span class="keyword">new</span> Color(135, 206, 250));</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        buttonPanel.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10)); </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        buttonPanel.add(submitRoomButton);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        buttonPanel.add(submitServiceButton);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        buttonPanel.add(clearButton);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        buttonPanel.add(exitButton);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;   </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        setSize(600, 400);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        setLocationRelativeTo(<span class="keyword">null</span>);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    </div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classwindows_1_1HotelEditorWindow.html#a95a7dbbf8453b3f0751ea1c3d1fd43b9">  128</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classwindows_1_1HotelEditorWindow.html#a95a7dbbf8453b3f0751ea1c3d1fd43b9">actionPerformed</a>(ActionEvent e) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">if</span> (e.getSource() == submitRoomButton) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordtype">int</span> num = Integer.parseInt(roomNumF.getText());</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            String type = roomTypeF.getText();</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordtype">int</span> max = Integer.parseInt(roomMaxF.getText());</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordtype">int</span> space = Integer.parseInt(roomSpaceF.getText());</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordtype">int</span> price = Integer.parseInt(roomPriceF.getText());</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            String hotel = roomHotelF.getText();</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <a class="code" href="classdomain_1_1Hotel.html">Hotel</a> hotelT = <a class="code" href="classremote_1_1ClientController.html">ClientController</a>.<a class="code" href="classremote_1_1ClientController.html#a2f116123d21e3b293d64544e6a88a960">getHotels</a>(hotel).get(1);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <a class="code" href="classdomain_1_1Room.html">Room</a> room = <span class="keyword">new</span> <a class="code" href="classdomain_1_1Room.html">Room</a>(num, type, max, space, price, hotelT);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == submitServiceButton) {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            String name = serviceNameF.getText();</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            String description = serviceDescF.getText();</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordtype">int</span> price = Integer.parseInt(servicePriceF.getText());</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            String hotel = roomHotelF.getText();</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <a class="code" href="classdomain_1_1Hotel.html">Hotel</a> hotelT = <a class="code" href="classremote_1_1ClientController.html">ClientController</a>.<a class="code" href="classremote_1_1ClientController.html#a2f116123d21e3b293d64544e6a88a960">getHotels</a>(hotel).get(0);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <a class="code" href="classdomain_1_1Service.html">Service</a> service = <span class="keyword">new</span> <a class="code" href="classdomain_1_1Service.html">Service</a>(name, description, price);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == clearButton) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            roomNumF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            roomTypeF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            roomMaxF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            roomSpaceF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            roomPriceF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            serviceNameF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            serviceDescF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            servicePriceF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            roomHotelF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == exitButton) {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            this.dispose();</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }  </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;     }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="classwindows_1_1HotelEditorWindow.html#a0a5710579e758d5524824bc8e2ddbdf5">  164</a></span>&#160;     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classwindows_1_1HotelEditorWindow.html#a0a5710579e758d5524824bc8e2ddbdf5">main</a>(String[] args) {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;         <span class="keyword">new</span> <a class="code" href="classwindows_1_1HotelEditorWindow.html#a5331fa13314f0aa42c6083be7390a346">HotelEditorWindow</a>();</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;     }        </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        getContentPane().setLayout(<span class="keyword">new</span> BorderLayout());</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        getContentPane().add(panelBorder, BorderLayout.CENTER);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        getContentPane().add(buttonPanel, BorderLayout.SOUTH);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;   </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        setSize(600, 400);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        setLocationRelativeTo(<span class="keyword">null</span>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classwindows_1_1HotelEditorWindow.html#a95a7dbbf8453b3f0751ea1c3d1fd43b9">  132</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="classwindows_1_1HotelEditorWindow.html#a95a7dbbf8453b3f0751ea1c3d1fd43b9">actionPerformed</a>(ActionEvent e) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">if</span> (e.getSource() == submitRoomButton) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordtype">int</span> num = Integer.parseInt(roomNumF.getText());</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            String type = roomTypeF.getText();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordtype">int</span> max = Integer.parseInt(roomMaxF.getText());</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordtype">int</span> space = Integer.parseInt(roomSpaceF.getText());</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordtype">int</span> price = Integer.parseInt(roomPriceF.getText());</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            String hotel = roomHotelF.getText();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="comment">//Hotel hotelT = ClientController.getHotels(hotel).get(1);</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <a class="code" href="classdomain_1_1Room.html">Room</a> room = <span class="keyword">new</span> <a class="code" href="classdomain_1_1Room.html">Room</a>(num, type, max, space, price, <span class="keyword">null</span>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordtype">int</span> h = 0;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; roomList.getSize(); i++) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">if</span>(roomList.getElementAt(i).getRoomNumber() == num) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    h = 1;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">if</span>(h == 0) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                roomList.addElement(room);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                messageWrong();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == submitServiceButton) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            String name = serviceNameF.getText();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            String description = serviceDescF.getText();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordtype">int</span> price = Integer.parseInt(servicePriceF.getText());</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            String hotel = roomHotelF.getText();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <a class="code" href="classdomain_1_1Hotel.html">Hotel</a> hotelT = <a class="code" href="classremote_1_1ClientController.html">ClientController</a>.<a class="code" href="classremote_1_1ClientController.html#a2f116123d21e3b293d64544e6a88a960">getHotels</a>(hotel).get(0);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <a class="code" href="classdomain_1_1Service.html">Service</a> service = <span class="keyword">new</span> <a class="code" href="classdomain_1_1Service.html">Service</a>(name, description, price);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == clearButton) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            roomNumF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            roomTypeF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            roomMaxF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            roomSpaceF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            roomPriceF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            serviceNameF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            serviceDescF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            servicePriceF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            roomHotelF.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (e.getSource() == exitButton) {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            this.dispose();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }  </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;     }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">private</span> <span class="keywordtype">void</span> messageWrong() {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        JOptionPane.showMessageDialog(<span class="keyword">this</span>, <span class="stringliteral">&quot;Room already exists&quot;</span>);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="classwindows_1_1HotelEditorWindow.html#a0a5710579e758d5524824bc8e2ddbdf5">  183</a></span>&#160;     <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classwindows_1_1HotelEditorWindow.html#a0a5710579e758d5524824bc8e2ddbdf5">main</a>(String[] args) {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;         <span class="keyword">new</span> <a class="code" href="classwindows_1_1HotelEditorWindow.html#ac3ff10b2972aa86eb9bc58cfed68846a">HotelEditorWindow</a>(<span class="keyword">null</span>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;     }        </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
 <div class="ttc" id="aclassdomain_1_1Hotel_html"><div class="ttname"><a href="classdomain_1_1Hotel.html">domain.Hotel</a></div><div class="ttdef"><b>Definition:</b> <a href="Client_2src_2main_2java_2domain_2Hotel_8java_source.html#l00015">Hotel.java:15</a></div></div>
 <div class="ttc" id="aclassdomain_1_1Room_html"><div class="ttname"><a href="classdomain_1_1Room.html">domain.Room</a></div><div class="ttdef"><b>Definition:</b> <a href="Client_2src_2main_2java_2domain_2Room_8java_source.html#l00010">Room.java:10</a></div></div>
 <div class="ttc" id="aclassdomain_1_1Service_html"><div class="ttname"><a href="classdomain_1_1Service.html">domain.Service</a></div><div class="ttdef"><b>Definition:</b> <a href="Client_2src_2main_2java_2domain_2Service_8java_source.html#l00008">Service.java:8</a></div></div>
@@ -254,10 +273,10 @@ $(document).ready(function(){initNavTree('HotelEditorWindow_8java_source.html','
 <div class="ttc" id="aclasslanguage_1_1InternLanguage_html_a0ac01671d348e2c3867179983c897233"><div class="ttname"><a href="classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233">language.InternLanguage.translateTxt</a></div><div class="ttdeci">static String translateTxt(String txt)</div><div class="ttdef"><b>Definition:</b> <a href="InternLanguage_8java_source.html#l00029">InternLanguage.java:29</a></div></div>
 <div class="ttc" id="aclassremote_1_1ClientController_html"><div class="ttname"><a href="classremote_1_1ClientController.html">remote.ClientController</a></div><div class="ttdef"><b>Definition:</b> <a href="ClientController_8java_source.html#l00027">ClientController.java:27</a></div></div>
 <div class="ttc" id="aclassremote_1_1ClientController_html_a2f116123d21e3b293d64544e6a88a960"><div class="ttname"><a href="classremote_1_1ClientController.html#a2f116123d21e3b293d64544e6a88a960">remote.ClientController.getHotels</a></div><div class="ttdeci">static List&lt; Hotel &gt; getHotels()</div><div class="ttdef"><b>Definition:</b> <a href="ClientController_8java_source.html#l00333">ClientController.java:333</a></div></div>
-<div class="ttc" id="aclasswindows_1_1HotelEditorWindow_html"><div class="ttname"><a href="classwindows_1_1HotelEditorWindow.html">windows.HotelEditorWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="HotelEditorWindow_8java_source.html#l00028">HotelEditorWindow.java:28</a></div></div>
-<div class="ttc" id="aclasswindows_1_1HotelEditorWindow_html_a0a5710579e758d5524824bc8e2ddbdf5"><div class="ttname"><a href="classwindows_1_1HotelEditorWindow.html#a0a5710579e758d5524824bc8e2ddbdf5">windows.HotelEditorWindow.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdef"><b>Definition:</b> <a href="HotelEditorWindow_8java_source.html#l00164">HotelEditorWindow.java:164</a></div></div>
-<div class="ttc" id="aclasswindows_1_1HotelEditorWindow_html_a5331fa13314f0aa42c6083be7390a346"><div class="ttname"><a href="classwindows_1_1HotelEditorWindow.html#a5331fa13314f0aa42c6083be7390a346">windows.HotelEditorWindow.HotelEditorWindow</a></div><div class="ttdeci">HotelEditorWindow()</div><div class="ttdef"><b>Definition:</b> <a href="HotelEditorWindow_8java_source.html#l00035">HotelEditorWindow.java:35</a></div></div>
-<div class="ttc" id="aclasswindows_1_1HotelEditorWindow_html_a95a7dbbf8453b3f0751ea1c3d1fd43b9"><div class="ttname"><a href="classwindows_1_1HotelEditorWindow.html#a95a7dbbf8453b3f0751ea1c3d1fd43b9">windows.HotelEditorWindow.actionPerformed</a></div><div class="ttdeci">void actionPerformed(ActionEvent e)</div><div class="ttdef"><b>Definition:</b> <a href="HotelEditorWindow_8java_source.html#l00128">HotelEditorWindow.java:128</a></div></div>
+<div class="ttc" id="aclasswindows_1_1HotelEditorWindow_html"><div class="ttname"><a href="classwindows_1_1HotelEditorWindow.html">windows.HotelEditorWindow</a></div><div class="ttdef"><b>Definition:</b> <a href="HotelEditorWindow_8java_source.html#l00030">HotelEditorWindow.java:30</a></div></div>
+<div class="ttc" id="aclasswindows_1_1HotelEditorWindow_html_a0a5710579e758d5524824bc8e2ddbdf5"><div class="ttname"><a href="classwindows_1_1HotelEditorWindow.html#a0a5710579e758d5524824bc8e2ddbdf5">windows.HotelEditorWindow.main</a></div><div class="ttdeci">static void main(String[] args)</div><div class="ttdef"><b>Definition:</b> <a href="HotelEditorWindow_8java_source.html#l00183">HotelEditorWindow.java:183</a></div></div>
+<div class="ttc" id="aclasswindows_1_1HotelEditorWindow_html_a95a7dbbf8453b3f0751ea1c3d1fd43b9"><div class="ttname"><a href="classwindows_1_1HotelEditorWindow.html#a95a7dbbf8453b3f0751ea1c3d1fd43b9">windows.HotelEditorWindow.actionPerformed</a></div><div class="ttdeci">void actionPerformed(ActionEvent e)</div><div class="ttdef"><b>Definition:</b> <a href="HotelEditorWindow_8java_source.html#l00132">HotelEditorWindow.java:132</a></div></div>
+<div class="ttc" id="aclasswindows_1_1HotelEditorWindow_html_ac3ff10b2972aa86eb9bc58cfed68846a"><div class="ttname"><a href="classwindows_1_1HotelEditorWindow.html#ac3ff10b2972aa86eb9bc58cfed68846a">windows.HotelEditorWindow.HotelEditorWindow</a></div><div class="ttdeci">HotelEditorWindow(DefaultComboBoxModel&lt; Room &gt; roomList)</div><div class="ttdef"><b>Definition:</b> <a href="HotelEditorWindow_8java_source.html#l00038">HotelEditorWindow.java:38</a></div></div>
 <div class="ttc" id="anamespacedomain_html"><div class="ttname"><a href="namespacedomain.html">domain</a></div><div class="ttdef"><b>Definition:</b> <a href="Client_2src_2main_2java_2domain_2Bill_8java_source.html#l00001">Bill.java:1</a></div></div>
 <div class="ttc" id="anamespacelanguage_html"><div class="ttname"><a href="namespacelanguage.html">language</a></div><div class="ttdef"><b>Definition:</b> <a href="InternLanguage_8java_source.html#l00001">InternLanguage.java:1</a></div></div>
 <div class="ttc" id="anamespaceremote_html"><div class="ttname"><a href="namespaceremote.html">remote</a></div><div class="ttdef"><b>Definition:</b> <a href="Client_2src_2main_2java_2remote_2APIUtils_8java_source.html#l00001">APIUtils.java:1</a></div></div>
