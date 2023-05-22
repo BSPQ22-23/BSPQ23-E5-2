@@ -41,7 +41,7 @@ import windows.TranslatableObject.TranslatableJLabel;
  * 
  * A window to create a booking to a hotel from {@link windows.HotelDescriptionWindow}
  *
- */
+ */ 
 public class ReservationWindow extends JFrame {
 	/**
 	 * 
