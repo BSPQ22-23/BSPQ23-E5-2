@@ -1,0 +1,157 @@
+\hypertarget{classdatabase_1_1HotelDAO}{}\doxysection{database.\+Hotel\+DAO Class Reference}
+\label{classdatabase_1_1HotelDAO}\index{database.HotelDAO@{database.HotelDAO}}
+Inheritance diagram for database.\+Hotel\+DAO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdatabase_1_1HotelDAO}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1HotelDAO_aa93a3bf1d295eef833b1a642ffd914c0}{save}} (\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} object)
+\item 
+void \mbox{\hyperlink{classdatabase_1_1HotelDAO_ac4474c57dc47892b2a80a555f9f049e4}{delete}} (\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} object)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} $>$ \mbox{\hyperlink{classdatabase_1_1HotelDAO_aabfc5b90e4d5851e67867f2dee0187d6}{get\+All}} ()
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} $>$ \mbox{\hyperlink{classdatabase_1_1HotelDAO_acb54e005465e248f1c2a9e63079241db}{get\+By\+Name}} (String name)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} $>$ \mbox{\hyperlink{classdatabase_1_1HotelDAO_a37fe95a43ae2cd643f82846c14d83333}{get\+By\+Owner}} (String owner)
+\item 
+\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} \mbox{\hyperlink{classdatabase_1_1HotelDAO_a995079eb79111ec7866e69c2fc3c734b}{find}} (String param)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classdatabase_1_1HotelDAO}{Hotel\+DAO}} \mbox{\hyperlink{classdatabase_1_1HotelDAO_acbd01d431d8fc161787c91bbe686218c}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class to allow the access to \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} objects in the database 
+
+Definition at line 25 of file Hotel\+DAO.\+java.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdatabase_1_1HotelDAO_ac4474c57dc47892b2a80a555f9f049e4}\label{classdatabase_1_1HotelDAO_ac4474c57dc47892b2a80a555f9f049e4}} 
+\index{database.HotelDAO@{database.HotelDAO}!delete@{delete}}
+\index{delete@{delete}!database.HotelDAO@{database.HotelDAO}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily void database.\+Hotel\+DAO.\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}}]{object }\end{DoxyParamCaption})}
+
+Delete a \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} that has been retrieved from the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & detatched object to delete \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file Hotel\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1HotelDAO_a995079eb79111ec7866e69c2fc3c734b}\label{classdatabase_1_1HotelDAO_a995079eb79111ec7866e69c2fc3c734b}} 
+\index{database.HotelDAO@{database.HotelDAO}!find@{find}}
+\index{find@{find}!database.HotelDAO@{database.HotelDAO}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} database.\+Hotel\+DAO.\+find (\begin{DoxyParamCaption}\item[{String}]{param }\end{DoxyParamCaption})}
+
+Get a \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} from the database by it\textquotesingle{}s id 
+\begin{DoxyParams}{Parameters}
+{\em param} & id of the hotel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the hotel or null if it doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file Hotel\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1HotelDAO_aabfc5b90e4d5851e67867f2dee0187d6}\label{classdatabase_1_1HotelDAO_aabfc5b90e4d5851e67867f2dee0187d6}} 
+\index{database.HotelDAO@{database.HotelDAO}!getAll@{getAll}}
+\index{getAll@{getAll}!database.HotelDAO@{database.HotelDAO}}
+\doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}$>$ database.\+Hotel\+DAO.\+get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get all \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}s from the database \begin{DoxyReturn}{Returns}
+the list of hotels in the database 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file Hotel\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1HotelDAO_acb54e005465e248f1c2a9e63079241db}\label{classdatabase_1_1HotelDAO_acb54e005465e248f1c2a9e63079241db}} 
+\index{database.HotelDAO@{database.HotelDAO}!getByName@{getByName}}
+\index{getByName@{getByName}!database.HotelDAO@{database.HotelDAO}}
+\doxysubsubsection{\texorpdfstring{getByName()}{getByName()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}$>$ database.\+Hotel\+DAO.\+get\+By\+Name (\begin{DoxyParamCaption}\item[{String}]{name }\end{DoxyParamCaption})}
+
+Get \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}s from the database that contain the string in their name 
+\begin{DoxyParams}{Parameters}
+{\em name} & string to search in the name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a list of hotels with the query in their name 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file Hotel\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1HotelDAO_a37fe95a43ae2cd643f82846c14d83333}\label{classdatabase_1_1HotelDAO_a37fe95a43ae2cd643f82846c14d83333}} 
+\index{database.HotelDAO@{database.HotelDAO}!getByOwner@{getByOwner}}
+\index{getByOwner@{getByOwner}!database.HotelDAO@{database.HotelDAO}}
+\doxysubsubsection{\texorpdfstring{getByOwner()}{getByOwner()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}$>$ database.\+Hotel\+DAO.\+get\+By\+Owner (\begin{DoxyParamCaption}\item[{String}]{owner }\end{DoxyParamCaption})}
+
+Get \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}s from the database that are owned by the guest with the id provided 
+\begin{DoxyParams}{Parameters}
+{\em name} & id of the owner \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a list of hotels with the owner of the parameter 
+\end{DoxyReturn}
+
+
+Definition at line 107 of file Hotel\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1HotelDAO_acbd01d431d8fc161787c91bbe686218c}\label{classdatabase_1_1HotelDAO_acbd01d431d8fc161787c91bbe686218c}} 
+\index{database.HotelDAO@{database.HotelDAO}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!database.HotelDAO@{database.HotelDAO}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classdatabase_1_1HotelDAO}{Hotel\+DAO}} database.\+Hotel\+DAO.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the DAO instance for \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}s \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 32 of file Hotel\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1HotelDAO_aa93a3bf1d295eef833b1a642ffd914c0}\label{classdatabase_1_1HotelDAO_aa93a3bf1d295eef833b1a642ffd914c0}} 
+\index{database.HotelDAO@{database.HotelDAO}!save@{save}}
+\index{save@{save}!database.HotelDAO@{database.HotelDAO}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily boolean database.\+Hotel\+DAO.\+save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}}]{object }\end{DoxyParamCaption})}
+
+Upload or update a \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} to the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & hotel to store/update \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the transaction was successful 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file Hotel\+DAO.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/main/java/database/\mbox{\hyperlink{HotelDAO_8java}{Hotel\+DAO.\+java}}\end{DoxyCompactItemize}

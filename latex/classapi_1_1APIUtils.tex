@@ -1,0 +1,258 @@
+\hypertarget{classapi_1_1APIUtils}{}\doxysection{api.\+APIUtils Class Reference}
+\label{classapi_1_1APIUtils}\index{api.APIUtils@{api.APIUtils}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static String \mbox{\hyperlink{classapi_1_1APIUtils_ad81c164fd9464dffb62015ecef9d8ea8}{read\+Body}} (Http\+Exchange t)  throws IOException
+\item 
+static String \mbox{\hyperlink{classapi_1_1APIUtils_afe4d34870bb97c6bee921ef5a69872ba}{get\+String\+Header}} (Http\+Exchange t, String name, String def)
+\item 
+static Hash\+Map$<$ String, String $>$ \mbox{\hyperlink{classapi_1_1APIUtils_add66fed962c4c95af65adb7416b7bf16}{object\+To\+Headers}} (Object o)
+\item 
+static JSONArray \mbox{\hyperlink{classapi_1_1APIUtils_af088098a7355b129508c1178089cc91c}{list\+To\+JSONArray}} (Collection$<$?$>$ o)
+\item 
+static JSONObject \mbox{\hyperlink{classapi_1_1APIUtils_ad3230b896a563834b9a1c8756e8c4527}{object\+To\+JSON}} (Object o)
+\item 
+static void \mbox{\hyperlink{classapi_1_1APIUtils_abe49d1d03c925934a23c9281afa2212c}{respond\+ACK}} (Http\+Exchange t)  throws IOException 
+\item 
+static void \mbox{\hyperlink{classapi_1_1APIUtils_ae0d2f34c661bcc7952f850465e6c3c59}{respond\+Success}} (Http\+Exchange t, String message)  throws IOException 
+\item 
+static void \mbox{\hyperlink{classapi_1_1APIUtils_ac37d21e8ae6a14cc3c1187b19d9a5b0a}{respond\+Internal\+Error}} (Http\+Exchange t, String response)  throws IOException 
+\item 
+static void \mbox{\hyperlink{classapi_1_1APIUtils_ae8fe2a28a1e177692ce61abea33c1c1e}{raw\+Response}} (int code, Http\+Exchange t, String response)  throws IOException 
+\item 
+static void \mbox{\hyperlink{classapi_1_1APIUtils_af7fa14b3ab72e35e1c9cbc9189f72084}{respond\+Error}} (Http\+Exchange t, String response)  throws IOException 
+\item 
+static String \mbox{\hyperlink{classapi_1_1APIUtils_af3e43b1eaa0bd38b63f547306849d45f}{decode}} (String value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that contains common functions for API usage 
+
+Definition at line 26 of file APIUtils.\+java.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classapi_1_1APIUtils_af3e43b1eaa0bd38b63f547306849d45f}\label{classapi_1_1APIUtils_af3e43b1eaa0bd38b63f547306849d45f}} 
+\index{api.APIUtils@{api.APIUtils}!decode@{decode}}
+\index{decode@{decode}!api.APIUtils@{api.APIUtils}}
+\doxysubsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily static String api.\+APIUtils.\+decode (\begin{DoxyParamCaption}\item[{String}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Macro to decode string into a string 
+\begin{DoxyParams}{Parameters}
+{\em value} & base64 string to decode @retyrb decoded string in utf-\/8 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 194 of file APIUtils.\+java.
+
+\mbox{\Hypertarget{classapi_1_1APIUtils_afe4d34870bb97c6bee921ef5a69872ba}\label{classapi_1_1APIUtils_afe4d34870bb97c6bee921ef5a69872ba}} 
+\index{api.APIUtils@{api.APIUtils}!getStringHeader@{getStringHeader}}
+\index{getStringHeader@{getStringHeader}!api.APIUtils@{api.APIUtils}}
+\doxysubsubsection{\texorpdfstring{getStringHeader()}{getStringHeader()}}
+{\footnotesize\ttfamily static String api.\+APIUtils.\+get\+String\+Header (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t,  }\item[{String}]{name,  }\item[{String}]{def }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Macro to get a decoded header value 
+\begin{DoxyParams}{Parameters}
+{\em t} & exchange that contains the header to decode \\
+\hline
+{\em name} & name of the header \\
+\hline
+{\em def} & default value of the header in case of not existing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the decoded value of the header or def 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file APIUtils.\+java.
+
+\mbox{\Hypertarget{classapi_1_1APIUtils_af088098a7355b129508c1178089cc91c}\label{classapi_1_1APIUtils_af088098a7355b129508c1178089cc91c}} 
+\index{api.APIUtils@{api.APIUtils}!listToJSONArray@{listToJSONArray}}
+\index{listToJSONArray@{listToJSONArray}!api.APIUtils@{api.APIUtils}}
+\doxysubsubsection{\texorpdfstring{listToJSONArray()}{listToJSONArray()}}
+{\footnotesize\ttfamily static JSONArray api.\+APIUtils.\+list\+To\+JSONArray (\begin{DoxyParamCaption}\item[{Collection$<$?$>$}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Takes a collection and turns it into a JSONArray of JSONObjects 
+\begin{DoxyParams}{Parameters}
+{\em o} & collection to turn into JSONArray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the JSONArray representation of the collection 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file APIUtils.\+java.
+
+\mbox{\Hypertarget{classapi_1_1APIUtils_add66fed962c4c95af65adb7416b7bf16}\label{classapi_1_1APIUtils_add66fed962c4c95af65adb7416b7bf16}} 
+\index{api.APIUtils@{api.APIUtils}!objectToHeaders@{objectToHeaders}}
+\index{objectToHeaders@{objectToHeaders}!api.APIUtils@{api.APIUtils}}
+\doxysubsubsection{\texorpdfstring{objectToHeaders()}{objectToHeaders()}}
+{\footnotesize\ttfamily static Hash\+Map$<$String, String$>$ api.\+APIUtils.\+object\+To\+Headers (\begin{DoxyParamCaption}\item[{Object}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Turn a java object into http headers. This function uses fields to turn it into headers, transient or static fields are ignored 
+\begin{DoxyParams}{Parameters}
+{\em o} & Object to turn into headers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hashmap with the header names as keys and header values as value 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file APIUtils.\+java.
+
+\mbox{\Hypertarget{classapi_1_1APIUtils_ad3230b896a563834b9a1c8756e8c4527}\label{classapi_1_1APIUtils_ad3230b896a563834b9a1c8756e8c4527}} 
+\index{api.APIUtils@{api.APIUtils}!objectToJSON@{objectToJSON}}
+\index{objectToJSON@{objectToJSON}!api.APIUtils@{api.APIUtils}}
+\doxysubsubsection{\texorpdfstring{objectToJSON()}{objectToJSON()}}
+{\footnotesize\ttfamily static JSONObject api.\+APIUtils.\+object\+To\+JSON (\begin{DoxyParamCaption}\item[{Object}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Takes a java Object and turns it into a JSONObject, if it\textquotesingle{}s a \mbox{\hyperlink{}{Collection}} use better \mbox{\hyperlink{}{list\+To\+JSONArray}} as it won\textquotesingle{}t take the un-\/needed fields.
+
+This uses the declared fields of the class and parents to turn it into a \mbox{\hyperlink{}{JSONObject}}, to avoid one set it\textquotesingle{}s value to null or the field to transient or static. 
+\begin{DoxyParams}{Parameters}
+{\em o} & object to turn into a json object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JSONObject representation of the input object 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file APIUtils.\+java.
+
+\mbox{\Hypertarget{classapi_1_1APIUtils_ae8fe2a28a1e177692ce61abea33c1c1e}\label{classapi_1_1APIUtils_ae8fe2a28a1e177692ce61abea33c1c1e}} 
+\index{api.APIUtils@{api.APIUtils}!rawResponse@{rawResponse}}
+\index{rawResponse@{rawResponse}!api.APIUtils@{api.APIUtils}}
+\doxysubsubsection{\texorpdfstring{rawResponse()}{rawResponse()}}
+{\footnotesize\ttfamily static void api.\+APIUtils.\+raw\+Response (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{Http\+Exchange}]{t,  }\item[{String}]{response }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
+
+Quick respond with body 
+\begin{DoxyParams}{Parameters}
+{\em t} & http exchange to respond \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 175 of file APIUtils.\+java.
+
+\mbox{\Hypertarget{classapi_1_1APIUtils_ad81c164fd9464dffb62015ecef9d8ea8}\label{classapi_1_1APIUtils_ad81c164fd9464dffb62015ecef9d8ea8}} 
+\index{api.APIUtils@{api.APIUtils}!readBody@{readBody}}
+\index{readBody@{readBody}!api.APIUtils@{api.APIUtils}}
+\doxysubsubsection{\texorpdfstring{readBody()}{readBody()}}
+{\footnotesize\ttfamily static String api.\+APIUtils.\+read\+Body (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
+
+Reads the body of an HTTP exchange 
+\begin{DoxyParams}{Parameters}
+{\em t} & exchange to translate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The body of the exchange in a string format 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & if the body isn\textquotesingle{}t readable \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 33 of file APIUtils.\+java.
+
+\mbox{\Hypertarget{classapi_1_1APIUtils_abe49d1d03c925934a23c9281afa2212c}\label{classapi_1_1APIUtils_abe49d1d03c925934a23c9281afa2212c}} 
+\index{api.APIUtils@{api.APIUtils}!respondACK@{respondACK}}
+\index{respondACK@{respondACK}!api.APIUtils@{api.APIUtils}}
+\doxysubsubsection{\texorpdfstring{respondACK()}{respondACK()}}
+{\footnotesize\ttfamily static void api.\+APIUtils.\+respond\+ACK (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
+
+Quick respond 200 with \char`\"{}\+ACK\char`\"{} as body 
+\begin{DoxyParams}{Parameters}
+{\em t} & http exchange to respond \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 151 of file APIUtils.\+java.
+
+\mbox{\Hypertarget{classapi_1_1APIUtils_af7fa14b3ab72e35e1c9cbc9189f72084}\label{classapi_1_1APIUtils_af7fa14b3ab72e35e1c9cbc9189f72084}} 
+\index{api.APIUtils@{api.APIUtils}!respondError@{respondError}}
+\index{respondError@{respondError}!api.APIUtils@{api.APIUtils}}
+\doxysubsubsection{\texorpdfstring{respondError()}{respondError()}}
+{\footnotesize\ttfamily static void api.\+APIUtils.\+respond\+Error (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t,  }\item[{String}]{response }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
+
+Quick respond 400 with body 
+\begin{DoxyParams}{Parameters}
+{\em t} & http exchange to respond \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 186 of file APIUtils.\+java.
+
+\mbox{\Hypertarget{classapi_1_1APIUtils_ac37d21e8ae6a14cc3c1187b19d9a5b0a}\label{classapi_1_1APIUtils_ac37d21e8ae6a14cc3c1187b19d9a5b0a}} 
+\index{api.APIUtils@{api.APIUtils}!respondInternalError@{respondInternalError}}
+\index{respondInternalError@{respondInternalError}!api.APIUtils@{api.APIUtils}}
+\doxysubsubsection{\texorpdfstring{respondInternalError()}{respondInternalError()}}
+{\footnotesize\ttfamily static void api.\+APIUtils.\+respond\+Internal\+Error (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t,  }\item[{String}]{response }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
+
+Quick respond 500 with body 
+\begin{DoxyParams}{Parameters}
+{\em t} & http exchange to respond \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 167 of file APIUtils.\+java.
+
+\mbox{\Hypertarget{classapi_1_1APIUtils_ae0d2f34c661bcc7952f850465e6c3c59}\label{classapi_1_1APIUtils_ae0d2f34c661bcc7952f850465e6c3c59}} 
+\index{api.APIUtils@{api.APIUtils}!respondSuccess@{respondSuccess}}
+\index{respondSuccess@{respondSuccess}!api.APIUtils@{api.APIUtils}}
+\doxysubsubsection{\texorpdfstring{respondSuccess()}{respondSuccess()}}
+{\footnotesize\ttfamily static void api.\+APIUtils.\+respond\+Success (\begin{DoxyParamCaption}\item[{Http\+Exchange}]{t,  }\item[{String}]{message }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
+
+Quick respond 200 with body 
+\begin{DoxyParams}{Parameters}
+{\em t} & http exchange to respond \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 159 of file APIUtils.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/main/java/api/\mbox{\hyperlink{Server_2src_2main_2java_2api_2APIUtils_8java}{APIUtils.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,141 @@
+\hypertarget{classdomain_1_1Image}{}\doxysection{domain.\+Image Class Reference}
+\label{classdomain_1_1Image}\index{domain.Image@{domain.Image}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{enumdomain_1_1Image_1_1ImageType}{Image\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdomain_1_1Image_a214b822f3b51975cca93a03e814ec4bd}{Image}} (Buffered\+Image image, String format, \mbox{\hyperlink{enumdomain_1_1Image_1_1ImageType}{Image\+Type}} type, String oid)
+\item 
+void \mbox{\hyperlink{classdomain_1_1Image_a748e8865a82280cae43e0962dae58cf4}{set\+Image}} (Buffered\+Image image, String format)
+\item 
+long \mbox{\hyperlink{classdomain_1_1Image_a94922e74170630f2ca076ec8df952230}{get\+Id}} ()
+\item 
+Buffered\+Image \mbox{\hyperlink{classdomain_1_1Image_ae3e09b10c73f004c1386e4f8069d19ce}{get\+Image}} ()
+\item 
+String \mbox{\hyperlink{classdomain_1_1Image_a2eb2a0d8fd7f80c041a1d28577fb4bcd}{get\+Format}} ()
+\item 
+\mbox{\hyperlink{enumdomain_1_1Image_1_1ImageType}{Image\+Type}} \mbox{\hyperlink{classdomain_1_1Image_a2f3d42d9bf09c7a9e0c1937a9d97c871}{get\+Type}} ()
+\item 
+String \mbox{\hyperlink{classdomain_1_1Image_a90d1742c2c9d74de3a8c3f177f450058}{get\+Oid}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to save images into the database \begin{DoxyAuthor}{Author}
+a-\/rasines 
+\end{DoxyAuthor}
+
+
+Definition at line 15 of file Image.\+java.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdomain_1_1Image_a214b822f3b51975cca93a03e814ec4bd}\label{classdomain_1_1Image_a214b822f3b51975cca93a03e814ec4bd}} 
+\index{domain.Image@{domain.Image}!Image@{Image}}
+\index{Image@{Image}!domain.Image@{domain.Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}}
+{\footnotesize\ttfamily domain.\+Image.\+Image (\begin{DoxyParamCaption}\item[{Buffered\+Image}]{image,  }\item[{String}]{format,  }\item[{\mbox{\hyperlink{enumdomain_1_1Image_1_1ImageType}{Image\+Type}}}]{type,  }\item[{String}]{oid }\end{DoxyParamCaption})}
+
+Generates a handler for an image in the database 
+\begin{DoxyParams}{Parameters}
+{\em image} & the image itself \\
+\hline
+{\em format} & format to decode to \\
+\hline
+{\em type} & place where the image belongs \\
+\hline
+{\em oid} & id of the object related to the image \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Image.\+java.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdomain_1_1Image_a2eb2a0d8fd7f80c041a1d28577fb4bcd}\label{classdomain_1_1Image_a2eb2a0d8fd7f80c041a1d28577fb4bcd}} 
+\index{domain.Image@{domain.Image}!getFormat@{getFormat}}
+\index{getFormat@{getFormat}!domain.Image@{domain.Image}}
+\doxysubsubsection{\texorpdfstring{getFormat()}{getFormat()}}
+{\footnotesize\ttfamily String domain.\+Image.\+get\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The format in which the image from \mbox{\hyperlink{classdomain_1_1Image_ae3e09b10c73f004c1386e4f8069d19ce}{get\+Image()}} is encoded \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 68 of file Image.\+java.
+
+\mbox{\Hypertarget{classdomain_1_1Image_a94922e74170630f2ca076ec8df952230}\label{classdomain_1_1Image_a94922e74170630f2ca076ec8df952230}} 
+\index{domain.Image@{domain.Image}!getId@{getId}}
+\index{getId@{getId}!domain.Image@{domain.Image}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily long domain.\+Image.\+get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the id in the database \begin{DoxyReturn}{Returns}
+id of the row in the database 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file Image.\+java.
+
+\mbox{\Hypertarget{classdomain_1_1Image_ae3e09b10c73f004c1386e4f8069d19ce}\label{classdomain_1_1Image_ae3e09b10c73f004c1386e4f8069d19ce}} 
+\index{domain.Image@{domain.Image}!getImage@{getImage}}
+\index{getImage@{getImage}!domain.Image@{domain.Image}}
+\doxysubsubsection{\texorpdfstring{getImage()}{getImage()}}
+{\footnotesize\ttfamily Buffered\+Image domain.\+Image.\+get\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the image data \begin{DoxyReturn}{Returns}
+the image in \{@linkplain java.\+awt.\+image.\+Buffered\+Image Buffered\+Image\} format.
+\end{DoxyReturn}
+To know in which format decode it, use \mbox{\hyperlink{classdomain_1_1Image_a2eb2a0d8fd7f80c041a1d28577fb4bcd}{get\+Format()}} 
+
+Definition at line 61 of file Image.\+java.
+
+\mbox{\Hypertarget{classdomain_1_1Image_a90d1742c2c9d74de3a8c3f177f450058}\label{classdomain_1_1Image_a90d1742c2c9d74de3a8c3f177f450058}} 
+\index{domain.Image@{domain.Image}!getOid@{getOid}}
+\index{getOid@{getOid}!domain.Image@{domain.Image}}
+\doxysubsubsection{\texorpdfstring{getOid()}{getOid()}}
+{\footnotesize\ttfamily String domain.\+Image.\+get\+Oid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Id of the object related to this object, use it with \mbox{\hyperlink{classdomain_1_1Image_a2f3d42d9bf09c7a9e0c1937a9d97c871}{get\+Type()}} as objects from multiple tables may share id \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 82 of file Image.\+java.
+
+\mbox{\Hypertarget{classdomain_1_1Image_a2f3d42d9bf09c7a9e0c1937a9d97c871}\label{classdomain_1_1Image_a2f3d42d9bf09c7a9e0c1937a9d97c871}} 
+\index{domain.Image@{domain.Image}!getType@{getType}}
+\index{getType@{getType}!domain.Image@{domain.Image}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enumdomain_1_1Image_1_1ImageType}{Image\+Type}} domain.\+Image.\+get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Place where the image should be displayed. Linked to image ctx in HTTP exchanges \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 75 of file Image.\+java.
+
+\mbox{\Hypertarget{classdomain_1_1Image_a748e8865a82280cae43e0962dae58cf4}\label{classdomain_1_1Image_a748e8865a82280cae43e0962dae58cf4}} 
+\index{domain.Image@{domain.Image}!setImage@{setImage}}
+\index{setImage@{setImage}!domain.Image@{domain.Image}}
+\doxysubsubsection{\texorpdfstring{setImage()}{setImage()}}
+{\footnotesize\ttfamily void domain.\+Image.\+set\+Image (\begin{DoxyParamCaption}\item[{Buffered\+Image}]{image,  }\item[{String}]{format }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file Image.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/main/java/domain/\mbox{\hyperlink{Image_8java}{Image.\+java}}\end{DoxyCompactItemize}

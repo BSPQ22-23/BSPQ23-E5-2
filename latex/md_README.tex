@@ -1,0 +1,51 @@
+Manage your hotels or reservations in an easy way.
+
+\doxysection*{Building the project}
+
+The client can be compiled into a jar to later run it via Java while the server it\textquotesingle{}s directly ran by maven.
+
+To pack the client you can either run the {\ttfamily build\+Client.\+bat} located in the root folder or type the following command in the Client folder\+:
+
+$>$mvn install -\/Dskip\+Tests
+
+To run the project you can run the following command
+
+$>$java -\/jar \mbox{[}Client\mbox{]}$\ast$/target/\+Client-\/0.0.\+1-\/SNAPSHOT-\/jar-\/with-\/dependencies
+
+To run the server, you can either run the {\ttfamily run\+Server.\+bat} or run the following command in the Server folder\+:
+
+$>$mvn compile datanucleus\+:enhance exec\+:java -\/Dskip\+Tests
+
+To run the JUnits found in each module of the project you can just run
+
+$>$mvn test
+
+and you\textquotesingle{}ll find the corresponding result in {\ttfamily \mbox{[}Client/\+Server\mbox{]}$\ast$/target/jacoco.exec}
+
+Or enter the target folder and double clicking the jar file (In the case of the Server it\textquotesingle{}s not recommended as it does not have a GUI, if you want to kill the process afterwards you will have to kill the entire java proccess)
+
+\doxysubsection*{Datanucleus}
+
+To be able to use the database you will need the next command, included already in the building / running commands from above\+:
+
+\begin{quote}
+mvn datanucleus\+:enhance \end{quote}
+If a change affects the deletion or adition of a column, you may need to run the next command in order for the database to work properly
+
+\begin{quote}
+mvn datanucleus\+:enhance datanucleus\+:schema-\/delete \end{quote}
+To create the database, make use of the following SQL code, this project runs on My\+SQL\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{DROP} SCHEMA \textcolor{keywordflow}{IF} \textcolor{keyword}{EXISTS} HotelManager;}
+\DoxyCodeLine{\textcolor{keyword}{DROP} \textcolor{keyword}{USER} \textcolor{keywordflow}{IF} \textcolor{keyword}{EXISTS} \textcolor{stringliteral}{'spq'}@\textcolor{stringliteral}{'localhost'};}
+\DoxyCodeLine{\textcolor{keyword}{CREATE} SCHEMA \textcolor{keywordflow}{IF} \textcolor{keyword}{NOT} \textcolor{keyword}{EXISTS} HotelManager;}
+\DoxyCodeLine{\textcolor{keyword}{CREATE} \textcolor{keyword}{USER} \textcolor{keywordflow}{IF} \textcolor{keyword}{NOT} \textcolor{keyword}{EXISTS} \textcolor{stringliteral}{'spq'}@\textcolor{stringliteral}{'localhost'} IDENTIFIED \textcolor{keyword}{BY} \textcolor{stringliteral}{'spq'};}
+\DoxyCodeLine{\textcolor{keyword}{GRANT} \textcolor{keyword}{ALL} \textcolor{keyword}{ON} HotelManager.* \textcolor{keyword}{TO} \textcolor{stringliteral}{'spq'}@\textcolor{stringliteral}{'localhost'};}
+
+\end{DoxyCode}
+
+
+If you like to check if all tables will generate correctly you can use
+
+\begin{quote}
+mvn datanucleus\+:enhance datanucleus\+:schema-\/create \end{quote}

@@ -1,0 +1,159 @@
+\hypertarget{classdatabase_1_1BookingDAO}{}\doxysection{database.\+Booking\+DAO Class Reference}
+\label{classdatabase_1_1BookingDAO}\index{database.BookingDAO@{database.BookingDAO}}
+Inheritance diagram for database.\+Booking\+DAO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdatabase_1_1BookingDAO}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1BookingDAO_a2ea246db31ace3d964ffb2e3531d54c3}{save}} (\mbox{\hyperlink{classdomain_1_1Booking}{Booking}} object)
+\item 
+void \mbox{\hyperlink{classdatabase_1_1BookingDAO_a6051c6d63160cebe758e2eed978e7b9d}{delete}} (\mbox{\hyperlink{classdomain_1_1Booking}{Booking}} object)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1Booking}{Booking}} $>$ \mbox{\hyperlink{classdatabase_1_1BookingDAO_a82d3c8c5544e3343be0aad205d2c84c6}{get\+All}} ()
+\item 
+\mbox{\hyperlink{classdomain_1_1Booking}{Booking}} \mbox{\hyperlink{classdatabase_1_1BookingDAO_a94599fa08d6a8e3762bf4c78d92c42fb}{find}} (String param)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1Booking}{Booking}} $>$ \mbox{\hyperlink{classdatabase_1_1BookingDAO_a121a0363331f2f2460731fd69baa1ed8}{get\+By\+Author}} (\mbox{\hyperlink{classdomain_1_1Guest}{Guest}} author)
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1BookingDAO_a3e295d6486d892e4ae65290af3537587}{has\+Reservation\+In\+Room\+On\+Date}} (\mbox{\hyperlink{classdomain_1_1Room}{Room}} room, Date date)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classdatabase_1_1BookingDAO}{Booking\+DAO}} \mbox{\hyperlink{classdatabase_1_1BookingDAO_a2e956df355af937061c1942ae4014c00}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class to allow the access to \mbox{\hyperlink{classdomain_1_1Booking}{Booking}} objects in the database 
+
+Definition at line 20 of file Booking\+DAO.\+java.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdatabase_1_1BookingDAO_a6051c6d63160cebe758e2eed978e7b9d}\label{classdatabase_1_1BookingDAO_a6051c6d63160cebe758e2eed978e7b9d}} 
+\index{database.BookingDAO@{database.BookingDAO}!delete@{delete}}
+\index{delete@{delete}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily void database.\+Booking\+DAO.\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Booking}{Booking}}}]{object }\end{DoxyParamCaption})}
+
+Delete a \mbox{\hyperlink{classdomain_1_1Booking}{Booking}} that has been retrieved from the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & detatched object to delete \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Booking\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1BookingDAO_a94599fa08d6a8e3762bf4c78d92c42fb}\label{classdatabase_1_1BookingDAO_a94599fa08d6a8e3762bf4c78d92c42fb}} 
+\index{database.BookingDAO@{database.BookingDAO}!find@{find}}
+\index{find@{find}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdomain_1_1Booking}{Booking}} database.\+Booking\+DAO.\+find (\begin{DoxyParamCaption}\item[{String}]{param }\end{DoxyParamCaption})}
+
+Get a \mbox{\hyperlink{classdomain_1_1Booking}{Booking}} from the database by it\textquotesingle{}s id 
+\begin{DoxyParams}{Parameters}
+{\em param} & id of the booking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the booking or null if it doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file Booking\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1BookingDAO_a82d3c8c5544e3343be0aad205d2c84c6}\label{classdatabase_1_1BookingDAO_a82d3c8c5544e3343be0aad205d2c84c6}} 
+\index{database.BookingDAO@{database.BookingDAO}!getAll@{getAll}}
+\index{getAll@{getAll}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classdomain_1_1Booking}{Booking}}$>$ database.\+Booking\+DAO.\+get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get all \mbox{\hyperlink{classdomain_1_1Booking}{Booking}}s from the database \begin{DoxyReturn}{Returns}
+the list of bookings in the database 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file Booking\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1BookingDAO_a121a0363331f2f2460731fd69baa1ed8}\label{classdatabase_1_1BookingDAO_a121a0363331f2f2460731fd69baa1ed8}} 
+\index{database.BookingDAO@{database.BookingDAO}!getByAuthor@{getByAuthor}}
+\index{getByAuthor@{getByAuthor}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{getByAuthor()}{getByAuthor()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classdomain_1_1Booking}{Booking}}$>$ database.\+Booking\+DAO.\+get\+By\+Author (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Guest}{Guest}}}]{author }\end{DoxyParamCaption})}
+
+Get\textquotesingle{}s all booking that have been made by a guest 
+\begin{DoxyParams}{Parameters}
+{\em author} & person that created the booking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a list of bookings from that guest 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file Booking\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1BookingDAO_a2e956df355af937061c1942ae4014c00}\label{classdatabase_1_1BookingDAO_a2e956df355af937061c1942ae4014c00}} 
+\index{database.BookingDAO@{database.BookingDAO}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classdatabase_1_1BookingDAO}{Booking\+DAO}} database.\+Booking\+DAO.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the DAO instance for \mbox{\hyperlink{classdomain_1_1Booking}{Booking}}s \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 30 of file Booking\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1BookingDAO_a3e295d6486d892e4ae65290af3537587}\label{classdatabase_1_1BookingDAO_a3e295d6486d892e4ae65290af3537587}} 
+\index{database.BookingDAO@{database.BookingDAO}!hasReservationInRoomOnDate@{hasReservationInRoomOnDate}}
+\index{hasReservationInRoomOnDate@{hasReservationInRoomOnDate}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{hasReservationInRoomOnDate()}{hasReservationInRoomOnDate()}}
+{\footnotesize\ttfamily boolean database.\+Booking\+DAO.\+has\+Reservation\+In\+Room\+On\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Room}{Room}}}]{room,  }\item[{Date}]{date }\end{DoxyParamCaption})}
+
+Checks if a room contains a booking in an specific day 
+\begin{DoxyParams}{Parameters}
+{\em room} & room to check \\
+\hline
+{\em date} & date to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the room is occupied that day 
+\end{DoxyReturn}
+
+
+Definition at line 195 of file Booking\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1BookingDAO_a2ea246db31ace3d964ffb2e3531d54c3}\label{classdatabase_1_1BookingDAO_a2ea246db31ace3d964ffb2e3531d54c3}} 
+\index{database.BookingDAO@{database.BookingDAO}!save@{save}}
+\index{save@{save}!database.BookingDAO@{database.BookingDAO}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily boolean database.\+Booking\+DAO.\+save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Booking}{Booking}}}]{object }\end{DoxyParamCaption})}
+
+Upload or update a \mbox{\hyperlink{classdomain_1_1Booking}{Booking}} to the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & booking to store/update \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the transaction was successful 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file Booking\+DAO.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/main/java/database/\mbox{\hyperlink{BookingDAO_8java}{Booking\+DAO.\+java}}\end{DoxyCompactItemize}

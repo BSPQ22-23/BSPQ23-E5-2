@@ -1,0 +1,334 @@
+\hypertarget{classremote_1_1ClientController}{}\doxysection{remote.\+Client\+Controller Class Reference}
+\label{classremote_1_1ClientController}\index{remote.ClientController@{remote.ClientController}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Downloaded\+Image}
+\item 
+class {\bfseries Response}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classremote_1_1ClientController_a88bacc8ec920950b099914d1783d9e8f}{set\+Server\+Handler}} (\mbox{\hyperlink{classremote_1_1ServiceLocator}{Service\+Locator}} sv)
+\item 
+static boolean \mbox{\hyperlink{classremote_1_1ClientController_a6069a9b78741d7e3d6ab8fe284a32e58}{is\+Hotel\+Owner}} ()
+\item 
+static Response \mbox{\hyperlink{classremote_1_1ClientController_a6c97427df5402630b799800a0c7263fe}{register}} (\mbox{\hyperlink{classdomain_1_1User}{User}} g)  throws Interrupted\+Exception, Execution\+Exception
+\item 
+static Response \mbox{\hyperlink{classremote_1_1ClientController_abf6dcb2fcfceda277469080df028603c}{login}} (String user, String password)  throws Interrupted\+Exception, Execution\+Exception 
+\item 
+static Response \mbox{\hyperlink{classremote_1_1ClientController_a75cfb0a18ff05582eb47297359513033}{create\+Reservation}} (\mbox{\hyperlink{classdomain_1_1Booking}{Booking}} b)
+\item 
+static Response \mbox{\hyperlink{classremote_1_1ClientController_ab076f08e859353f90c152cdc2d2edd2f}{edit\+Reservation}} (\mbox{\hyperlink{classdomain_1_1Booking}{Booking}} b)
+\item 
+static Response \mbox{\hyperlink{classremote_1_1ClientController_a14c9c184c4edbdae2beba37b319ecee8}{delete\+Reservation}} (\mbox{\hyperlink{classdomain_1_1Booking}{Booking}} b)
+\item 
+static Response \mbox{\hyperlink{classremote_1_1ClientController_aa12be99f64706cbfc85e23c74d8ce9f2}{create\+Hotel}} (\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} h)
+\item 
+static Response \mbox{\hyperlink{classremote_1_1ClientController_a85d121b4ef7988ad5b8d762b0356840e}{upload\+Image}} (Buffered\+Image image, String format, String ctx)  throws IOException 
+\item 
+static Downloaded\+Image \mbox{\hyperlink{classremote_1_1ClientController_ae6d781be2d96c4466bcdd7d0ed52a44b}{download\+Image}} (String ctx, int offset)
+\item 
+static List$<$ \mbox{\hyperlink{classdomain_1_1Booking}{Booking}} $>$ \mbox{\hyperlink{classremote_1_1ClientController_a7ebe4fb1feaad9e385041e2be75f34ce}{get\+Reservations}} ()
+\item 
+static List$<$ \mbox{\hyperlink{classdomain_1_1Booking}{Booking}} $>$ \mbox{\hyperlink{classremote_1_1ClientController_a03ce0a24574c52f72408931f640f6337}{get\+Reservations}} (\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} h)
+\item 
+static \mbox{\hyperlink{classdomain_1_1Booking}{Booking}} \mbox{\hyperlink{classremote_1_1ClientController_a5551f9983c3eb5a169c4a5557308c934}{get\+Reservation}} (int id)
+\item 
+static List$<$ \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} $>$ \mbox{\hyperlink{classremote_1_1ClientController_a2f116123d21e3b293d64544e6a88a960}{get\+Hotels}} ()
+\item 
+static List$<$ \mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}} $>$ \mbox{\hyperlink{classremote_1_1ClientController_a45ef85d47545e6a24544dc7976ee9287}{get\+Hotels}} (String name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 27 of file Client\+Controller.\+java.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classremote_1_1ClientController_aa12be99f64706cbfc85e23c74d8ce9f2}\label{classremote_1_1ClientController_aa12be99f64706cbfc85e23c74d8ce9f2}} 
+\index{remote.ClientController@{remote.ClientController}!createHotel@{createHotel}}
+\index{createHotel@{createHotel}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{createHotel()}{createHotel()}}
+{\footnotesize\ttfamily static Response remote.\+Client\+Controller.\+create\+Hotel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Tries to register a hotel in the database 
+\begin{DoxyParams}{Parameters}
+{\em h} & The hotel data to upload \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A simplified version of the result from the server, giving the result type and a comment from the server 
+\end{DoxyReturn}
+
+
+Definition at line 197 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_a75cfb0a18ff05582eb47297359513033}\label{classremote_1_1ClientController_a75cfb0a18ff05582eb47297359513033}} 
+\index{remote.ClientController@{remote.ClientController}!createReservation@{createReservation}}
+\index{createReservation@{createReservation}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{createReservation()}{createReservation()}}
+{\footnotesize\ttfamily static Response remote.\+Client\+Controller.\+create\+Reservation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Booking}{Booking}}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Tries to create a reservation 
+\begin{DoxyParams}{Parameters}
+{\em b} & original data of the reservation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A simplified version of the result from the server, giving the result type and a comment from the server 
+\end{DoxyReturn}
+
+
+Definition at line 140 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_a14c9c184c4edbdae2beba37b319ecee8}\label{classremote_1_1ClientController_a14c9c184c4edbdae2beba37b319ecee8}} 
+\index{remote.ClientController@{remote.ClientController}!deleteReservation@{deleteReservation}}
+\index{deleteReservation@{deleteReservation}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{deleteReservation()}{deleteReservation()}}
+{\footnotesize\ttfamily static Response remote.\+Client\+Controller.\+delete\+Reservation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Booking}{Booking}}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Deletes an existing booking 
+\begin{DoxyParams}{Parameters}
+{\em b} & A booking with a valid id (one given by the server, not generated locally) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A simplified version of the result from the server, giving the result type and a comment from the server 
+\end{DoxyReturn}
+
+
+Definition at line 179 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_ae6d781be2d96c4466bcdd7d0ed52a44b}\label{classremote_1_1ClientController_ae6d781be2d96c4466bcdd7d0ed52a44b}} 
+\index{remote.ClientController@{remote.ClientController}!downloadImage@{downloadImage}}
+\index{downloadImage@{downloadImage}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{downloadImage()}{downloadImage()}}
+{\footnotesize\ttfamily static Downloaded\+Image remote.\+Client\+Controller.\+download\+Image (\begin{DoxyParamCaption}\item[{String}]{ctx,  }\item[{int}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Download a photo existing in the server 
+\begin{DoxyParams}{Parameters}
+{\em ctx} & place to search \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 255 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_ab076f08e859353f90c152cdc2d2edd2f}\label{classremote_1_1ClientController_ab076f08e859353f90c152cdc2d2edd2f}} 
+\index{remote.ClientController@{remote.ClientController}!editReservation@{editReservation}}
+\index{editReservation@{editReservation}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{editReservation()}{editReservation()}}
+{\footnotesize\ttfamily static Response remote.\+Client\+Controller.\+edit\+Reservation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Booking}{Booking}}}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Tries to edit an existing reservation 
+\begin{DoxyParams}{Parameters}
+{\em b} & A reservation with a valid id (one given by the server, not generated locally) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A simplified version of the result from the server, giving the result type and a comment from the server 
+\end{DoxyReturn}
+
+
+Definition at line 162 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_a2f116123d21e3b293d64544e6a88a960}\label{classremote_1_1ClientController_a2f116123d21e3b293d64544e6a88a960}} 
+\index{remote.ClientController@{remote.ClientController}!getHotels@{getHotels}}
+\index{getHotels@{getHotels}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{getHotels()}{getHotels()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static List$<$\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}$>$ remote.\+Client\+Controller.\+get\+Hotels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns a random list of hotels to show when no query is set \begin{DoxyReturn}{Returns}
+A list of hotels 
+\end{DoxyReturn}
+
+
+Definition at line 333 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_a45ef85d47545e6a24544dc7976ee9287}\label{classremote_1_1ClientController_a45ef85d47545e6a24544dc7976ee9287}} 
+\index{remote.ClientController@{remote.ClientController}!getHotels@{getHotels}}
+\index{getHotels@{getHotels}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{getHotels()}{getHotels()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static List$<$\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}$>$ remote.\+Client\+Controller.\+get\+Hotels (\begin{DoxyParamCaption}\item[{String}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets a list of hotels according to user input 
+\begin{DoxyParams}{Parameters}
+{\em name} & string the name must contain \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of hotels that comply with the query 
+\end{DoxyReturn}
+
+
+Definition at line 354 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_a5551f9983c3eb5a169c4a5557308c934}\label{classremote_1_1ClientController_a5551f9983c3eb5a169c4a5557308c934}} 
+\index{remote.ClientController@{remote.ClientController}!getReservation@{getReservation}}
+\index{getReservation@{getReservation}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{getReservation()}{getReservation()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classdomain_1_1Booking}{Booking}} remote.\+Client\+Controller.\+get\+Reservation (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets an specific reservation if the user it\textquotesingle{}s in the guest list 
+\begin{DoxyParams}{Parameters}
+{\em id} & id of the booking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the booking data 
+\end{DoxyReturn}
+
+
+Definition at line 315 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_a7ebe4fb1feaad9e385041e2be75f34ce}\label{classremote_1_1ClientController_a7ebe4fb1feaad9e385041e2be75f34ce}} 
+\index{remote.ClientController@{remote.ClientController}!getReservations@{getReservations}}
+\index{getReservations@{getReservations}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{getReservations()}{getReservations()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static List$<$\mbox{\hyperlink{classdomain_1_1Booking}{Booking}}$>$ remote.\+Client\+Controller.\+get\+Reservations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Tries to return the list of reservations the user has made \begin{DoxyReturn}{Returns}
+A list of reservations where the user is registered 
+\end{DoxyReturn}
+
+
+Definition at line 273 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_a03ce0a24574c52f72408931f640f6337}\label{classremote_1_1ClientController_a03ce0a24574c52f72408931f640f6337}} 
+\index{remote.ClientController@{remote.ClientController}!getReservations@{getReservations}}
+\index{getReservations@{getReservations}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{getReservations()}{getReservations()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static List$<$\mbox{\hyperlink{classdomain_1_1Booking}{Booking}}$>$ remote.\+Client\+Controller.\+get\+Reservations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Hotel}{Hotel}}}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get reservations by hotel. Only allowed to the owner of said hotel 
+\begin{DoxyParams}{Parameters}
+{\em h} & A hotel the logged user owns \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of bookings registered to that hotel 
+\end{DoxyReturn}
+
+
+Definition at line 294 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_a6069a9b78741d7e3d6ab8fe284a32e58}\label{classremote_1_1ClientController_a6069a9b78741d7e3d6ab8fe284a32e58}} 
+\index{remote.ClientController@{remote.ClientController}!isHotelOwner@{isHotelOwner}}
+\index{isHotelOwner@{isHotelOwner}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{isHotelOwner()}{isHotelOwner()}}
+{\footnotesize\ttfamily static boolean remote.\+Client\+Controller.\+is\+Hotel\+Owner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns if the user logged in is a hotel owner \begin{DoxyReturn}{Returns}
+True if the user is a hotel owner 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_abf6dcb2fcfceda277469080df028603c}\label{classremote_1_1ClientController_abf6dcb2fcfceda277469080df028603c}} 
+\index{remote.ClientController@{remote.ClientController}!login@{login}}
+\index{login@{login}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily static Response remote.\+Client\+Controller.\+login (\begin{DoxyParamCaption}\item[{String}]{user,  }\item[{String}]{password }\end{DoxyParamCaption}) throws Interrupted\+Exception, Execution\+Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Tries to log an existing user 
+\begin{DoxyParams}{Parameters}
+{\em user} & Nick of the user \\
+\hline
+{\em password} & Password of the user not encrypted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A simplified response, giving in the status the result of the exchange and in the body the error in case of one 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Interrupted\+Exception} & \\
+\hline
+{\em Execution\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 116 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_a6c97427df5402630b799800a0c7263fe}\label{classremote_1_1ClientController_a6c97427df5402630b799800a0c7263fe}} 
+\index{remote.ClientController@{remote.ClientController}!register@{register}}
+\index{register@{register}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{register()}{register()}}
+{\footnotesize\ttfamily static Response remote.\+Client\+Controller.\+register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1User}{User}}}]{g }\end{DoxyParamCaption}) throws Interrupted\+Exception, Execution\+Exception\hspace{0.3cm}{\ttfamily [static]}}
+
+Register a new user 
+\begin{DoxyParams}{Parameters}
+{\em g} & user data to try to register \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A simplified response, giving in the status the result of the exchange and in the body the error in case of one 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Interrupted\+Exception} & \\
+\hline
+{\em Execution\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 93 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_a88bacc8ec920950b099914d1783d9e8f}\label{classremote_1_1ClientController_a88bacc8ec920950b099914d1783d9e8f}} 
+\index{remote.ClientController@{remote.ClientController}!setServerHandler@{setServerHandler}}
+\index{setServerHandler@{setServerHandler}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{setServerHandler()}{setServerHandler()}}
+{\footnotesize\ttfamily static void remote.\+Client\+Controller.\+set\+Server\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classremote_1_1ServiceLocator}{Service\+Locator}}}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Establishes the server connection data 
+\begin{DoxyParams}{Parameters}
+{\em sv} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file Client\+Controller.\+java.
+
+\mbox{\Hypertarget{classremote_1_1ClientController_a85d121b4ef7988ad5b8d762b0356840e}\label{classremote_1_1ClientController_a85d121b4ef7988ad5b8d762b0356840e}} 
+\index{remote.ClientController@{remote.ClientController}!uploadImage@{uploadImage}}
+\index{uploadImage@{uploadImage}!remote.ClientController@{remote.ClientController}}
+\doxysubsubsection{\texorpdfstring{uploadImage()}{uploadImage()}}
+{\footnotesize\ttfamily static Response remote.\+Client\+Controller.\+upload\+Image (\begin{DoxyParamCaption}\item[{Buffered\+Image}]{image,  }\item[{String}]{format,  }\item[{String}]{ctx }\end{DoxyParamCaption}) throws IOException\hspace{0.3cm}{\ttfamily [static]}}
+
+Tries to upload an image to the server 
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to upload \\
+\hline
+{\em format} & Format in which the image is encoded (jpg, png, webp...) \\
+\hline
+{\em ctx} & place where the image goes, determined by the server \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A simplified version of the result from the server, giving the result type and a comment from the server 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 222 of file Client\+Controller.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Client/src/main/java/remote/\mbox{\hyperlink{ClientController_8java}{Client\+Controller.\+java}}\end{DoxyCompactItemize}

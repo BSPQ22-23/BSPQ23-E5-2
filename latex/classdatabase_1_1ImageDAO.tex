@@ -1,0 +1,139 @@
+\hypertarget{classdatabase_1_1ImageDAO}{}\doxysection{database.\+Image\+DAO Class Reference}
+\label{classdatabase_1_1ImageDAO}\index{database.ImageDAO@{database.ImageDAO}}
+Inheritance diagram for database.\+Image\+DAO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdatabase_1_1ImageDAO}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1ImageDAO_abdaee3f703179357bcddb4a10d3000ea}{save}} (\mbox{\hyperlink{classdomain_1_1Image}{Image}} object)
+\item 
+void \mbox{\hyperlink{classdatabase_1_1ImageDAO_a76c38ff4483cd16abc2e3884a8f452c2}{delete}} (\mbox{\hyperlink{classdomain_1_1Image}{Image}} object)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1Image}{Image}} $>$ \mbox{\hyperlink{classdatabase_1_1ImageDAO_aa3211d4511d419585ce8428270fbdb87}{get\+All}} ()
+\item 
+\mbox{\hyperlink{classdomain_1_1Image}{Image}} \mbox{\hyperlink{classdatabase_1_1ImageDAO_ae276bca20ef214afcfaa60a8b2adbd36}{find}} (String param)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1Image}{Image}} $>$ \mbox{\hyperlink{classdatabase_1_1ImageDAO_a9cd00f0cbdb841315fb8e01b29b33d17}{find}} (String oid, \mbox{\hyperlink{enumdomain_1_1Image_1_1ImageType}{Image\+Type}} type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classdatabase_1_1ImageDAO}{Image\+DAO}} \mbox{\hyperlink{classdatabase_1_1ImageDAO_a65bd0cf24b4341063e24104dd606381a}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class to allow the access to \mbox{\hyperlink{classdomain_1_1Image}{Image}} objects in the database 
+
+Definition at line 18 of file Image\+DAO.\+java.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdatabase_1_1ImageDAO_a76c38ff4483cd16abc2e3884a8f452c2}\label{classdatabase_1_1ImageDAO_a76c38ff4483cd16abc2e3884a8f452c2}} 
+\index{database.ImageDAO@{database.ImageDAO}!delete@{delete}}
+\index{delete@{delete}!database.ImageDAO@{database.ImageDAO}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily void database.\+Image\+DAO.\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Image}{Image}}}]{object }\end{DoxyParamCaption})}
+
+Delete an \mbox{\hyperlink{classdomain_1_1Image}{Image}} that has been retrieved from the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & detatched object to delete \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file Image\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1ImageDAO_a9cd00f0cbdb841315fb8e01b29b33d17}\label{classdatabase_1_1ImageDAO_a9cd00f0cbdb841315fb8e01b29b33d17}} 
+\index{database.ImageDAO@{database.ImageDAO}!find@{find}}
+\index{find@{find}!database.ImageDAO@{database.ImageDAO}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classdomain_1_1Image}{Image}}$>$ database.\+Image\+DAO.\+find (\begin{DoxyParamCaption}\item[{String}]{oid,  }\item[{\mbox{\hyperlink{enumdomain_1_1Image_1_1ImageType}{Image\+Type}}}]{type }\end{DoxyParamCaption})}
+
+Get an \mbox{\hyperlink{classdomain_1_1Image}{Image}} from the database by the id of the object the image is attached to and the ctx of the image 
+\begin{DoxyParams}{Parameters}
+{\em oid} & id of the object the image is attached to \\
+\hline
+{\em type} & ctx of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the image or null if it doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file Image\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1ImageDAO_ae276bca20ef214afcfaa60a8b2adbd36}\label{classdatabase_1_1ImageDAO_ae276bca20ef214afcfaa60a8b2adbd36}} 
+\index{database.ImageDAO@{database.ImageDAO}!find@{find}}
+\index{find@{find}!database.ImageDAO@{database.ImageDAO}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdomain_1_1Image}{Image}} database.\+Image\+DAO.\+find (\begin{DoxyParamCaption}\item[{String}]{param }\end{DoxyParamCaption})}
+
+Get an \mbox{\hyperlink{classdomain_1_1Image}{Image}} from the database by it\textquotesingle{}s id 
+\begin{DoxyParams}{Parameters}
+{\em param} & id of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the image or null if it doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+
+
+Definition at line 89 of file Image\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1ImageDAO_aa3211d4511d419585ce8428270fbdb87}\label{classdatabase_1_1ImageDAO_aa3211d4511d419585ce8428270fbdb87}} 
+\index{database.ImageDAO@{database.ImageDAO}!getAll@{getAll}}
+\index{getAll@{getAll}!database.ImageDAO@{database.ImageDAO}}
+\doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classdomain_1_1Image}{Image}}$>$ database.\+Image\+DAO.\+get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get all \mbox{\hyperlink{classdomain_1_1Image}{Image}}s from the database \begin{DoxyReturn}{Returns}
+the list of images in the database 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file Image\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1ImageDAO_a65bd0cf24b4341063e24104dd606381a}\label{classdatabase_1_1ImageDAO_a65bd0cf24b4341063e24104dd606381a}} 
+\index{database.ImageDAO@{database.ImageDAO}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!database.ImageDAO@{database.ImageDAO}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classdatabase_1_1ImageDAO}{Image\+DAO}} database.\+Image\+DAO.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the DAO instance for \mbox{\hyperlink{classdomain_1_1Image}{Image}}s \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 28 of file Image\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1ImageDAO_abdaee3f703179357bcddb4a10d3000ea}\label{classdatabase_1_1ImageDAO_abdaee3f703179357bcddb4a10d3000ea}} 
+\index{database.ImageDAO@{database.ImageDAO}!save@{save}}
+\index{save@{save}!database.ImageDAO@{database.ImageDAO}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily boolean database.\+Image\+DAO.\+save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Image}{Image}}}]{object }\end{DoxyParamCaption})}
+
+Upload or update an \mbox{\hyperlink{classdomain_1_1Image}{Image}} to the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & image to store/update \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the transaction was successful 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file Image\+DAO.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/main/java/database/\mbox{\hyperlink{ImageDAO_8java}{Image\+DAO.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,137 @@
+\hypertarget{classdatabase_1_1GuestDAO}{}\doxysection{database.\+Guest\+DAO Class Reference}
+\label{classdatabase_1_1GuestDAO}\index{database.GuestDAO@{database.GuestDAO}}
+Inheritance diagram for database.\+Guest\+DAO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdatabase_1_1GuestDAO}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1GuestDAO_a40f46ffa59f5462be58bf1658a6e6342}{save}} (\mbox{\hyperlink{classdomain_1_1Guest}{Guest}} object)
+\item 
+void \mbox{\hyperlink{classdatabase_1_1GuestDAO_a93bb00a885b912cda6d6f3296a1fe012}{delete}} (\mbox{\hyperlink{classdomain_1_1Guest}{Guest}} object)
+\item 
+List$<$ \mbox{\hyperlink{classdomain_1_1Guest}{Guest}} $>$ \mbox{\hyperlink{classdatabase_1_1GuestDAO_a2b8eac07a0c1f8aae39d7d1b42841525}{get\+All}} ()
+\item 
+\mbox{\hyperlink{classdomain_1_1Guest}{Guest}} \mbox{\hyperlink{classdatabase_1_1GuestDAO_a4c334d254cd037376c2feebacbfd3e88}{find}} (String dni)
+\item 
+boolean \mbox{\hyperlink{classdatabase_1_1GuestDAO_a0d066952e6668010d2fb0b23d2fa6f7e}{exists}} (String dni)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classdatabase_1_1GuestDAO}{Guest\+DAO}} \mbox{\hyperlink{classdatabase_1_1GuestDAO_a998f128084d9711e8796f2ad728fef88}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class to allow the access to \mbox{\hyperlink{classdomain_1_1Guest}{Guest}} objects in the database 
+
+Definition at line 15 of file Guest\+DAO.\+java.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdatabase_1_1GuestDAO_a93bb00a885b912cda6d6f3296a1fe012}\label{classdatabase_1_1GuestDAO_a93bb00a885b912cda6d6f3296a1fe012}} 
+\index{database.GuestDAO@{database.GuestDAO}!delete@{delete}}
+\index{delete@{delete}!database.GuestDAO@{database.GuestDAO}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily void database.\+Guest\+DAO.\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Guest}{Guest}}}]{object }\end{DoxyParamCaption})}
+
+Delete a \mbox{\hyperlink{classdomain_1_1Guest}{Guest}} that has been retrieved from the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & detatched object to delete \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 41 of file Guest\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1GuestDAO_a0d066952e6668010d2fb0b23d2fa6f7e}\label{classdatabase_1_1GuestDAO_a0d066952e6668010d2fb0b23d2fa6f7e}} 
+\index{database.GuestDAO@{database.GuestDAO}!exists@{exists}}
+\index{exists@{exists}!database.GuestDAO@{database.GuestDAO}}
+\doxysubsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily boolean database.\+Guest\+DAO.\+exists (\begin{DoxyParamCaption}\item[{String}]{dni }\end{DoxyParamCaption})}
+
+Check if a \mbox{\hyperlink{classdomain_1_1Guest}{Guest}} exists in the database by it\textquotesingle{}s dni 
+\begin{DoxyParams}{Parameters}
+{\em param} & dni of the guest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the guest exists 
+\end{DoxyReturn}
+
+
+Definition at line 85 of file Guest\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1GuestDAO_a4c334d254cd037376c2feebacbfd3e88}\label{classdatabase_1_1GuestDAO_a4c334d254cd037376c2feebacbfd3e88}} 
+\index{database.GuestDAO@{database.GuestDAO}!find@{find}}
+\index{find@{find}!database.GuestDAO@{database.GuestDAO}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdomain_1_1Guest}{Guest}} database.\+Guest\+DAO.\+find (\begin{DoxyParamCaption}\item[{String}]{dni }\end{DoxyParamCaption})}
+
+Get a \mbox{\hyperlink{classdomain_1_1Guest}{Guest}} from the database by it\textquotesingle{}s dni 
+\begin{DoxyParams}{Parameters}
+{\em param} & dni of the guest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the guest or null if it doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file Guest\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1GuestDAO_a2b8eac07a0c1f8aae39d7d1b42841525}\label{classdatabase_1_1GuestDAO_a2b8eac07a0c1f8aae39d7d1b42841525}} 
+\index{database.GuestDAO@{database.GuestDAO}!getAll@{getAll}}
+\index{getAll@{getAll}!database.GuestDAO@{database.GuestDAO}}
+\doxysubsubsection{\texorpdfstring{getAll()}{getAll()}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{classdomain_1_1Guest}{Guest}}$>$ database.\+Guest\+DAO.\+get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get all \mbox{\hyperlink{classdomain_1_1Guest}{Guest}}s from the database \begin{DoxyReturn}{Returns}
+the list of guests in the database 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file Guest\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1GuestDAO_a998f128084d9711e8796f2ad728fef88}\label{classdatabase_1_1GuestDAO_a998f128084d9711e8796f2ad728fef88}} 
+\index{database.GuestDAO@{database.GuestDAO}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!database.GuestDAO@{database.GuestDAO}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classdatabase_1_1GuestDAO}{Guest\+DAO}} database.\+Guest\+DAO.\+get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the DAO instance for \mbox{\hyperlink{classdomain_1_1Guest}{Guest}}s \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 21 of file Guest\+DAO.\+java.
+
+\mbox{\Hypertarget{classdatabase_1_1GuestDAO_a40f46ffa59f5462be58bf1658a6e6342}\label{classdatabase_1_1GuestDAO_a40f46ffa59f5462be58bf1658a6e6342}} 
+\index{database.GuestDAO@{database.GuestDAO}!save@{save}}
+\index{save@{save}!database.GuestDAO@{database.GuestDAO}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily boolean database.\+Guest\+DAO.\+save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdomain_1_1Guest}{Guest}}}]{object }\end{DoxyParamCaption})}
+
+Upload or update a \mbox{\hyperlink{classdomain_1_1Guest}{Guest}} to the database 
+\begin{DoxyParams}{Parameters}
+{\em object} & guest to store/update \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the transaction was successful 
+\end{DoxyReturn}
+
+
+Definition at line 31 of file Guest\+DAO.\+java.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Server/src/main/java/database/\mbox{\hyperlink{GuestDAO_8java}{Guest\+DAO.\+java}}\end{DoxyCompactItemize}
