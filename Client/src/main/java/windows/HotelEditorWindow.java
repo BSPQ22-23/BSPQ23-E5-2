@@ -6,6 +6,9 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
@@ -50,15 +53,27 @@ public class HotelEditorWindow extends JFrame implements ActionListener {
         
         roomHotel = new JLabel(InternLanguage.translateTxt("hotelEd"));
         
+        KeyListener numberField = new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char c = e.getKeyChar();
+				if(!(c >= '0') || !(c <= '9'))
+					e.consume();
+			}
+		};
         roomNumF = new JTextField(20);
+        roomNumF.addKeyListener(numberField);
         roomTypeF = new JTextField(20);
         roomMaxF = new JTextField(20);
+        roomMaxF.addKeyListener(numberField);
         roomSpaceF = new JTextField(20);
+        roomSpaceF.addKeyListener(numberField);
         roomPriceF = new JTextField(20);
-        
+        roomPriceF.addKeyListener(numberField);
         serviceNameF = new JTextField(20);
         serviceDescF = new JTextField(60);
         servicePriceF = new JTextField(20);
+        servicePriceF.addKeyListener(numberField);
         
         roomHotelF = new JTextField(20);
 

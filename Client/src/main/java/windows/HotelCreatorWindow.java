@@ -13,7 +13,6 @@ import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -36,9 +35,9 @@ import remote.ClientController;
 public class HotelCreatorWindow extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	private TranslatableJLabel id, name, city, info;
+	private TranslatableJLabel name, city, info;
 	private JLabel imageL;
-    private JTextField idF, nameF, cityF, infoF;
+    private JTextField nameF, cityF, infoF;
     private TranslatableJButton submitButton, clearButton, imageButton, roomButton;
     private JFileChooser fileChooser;
     private FileNameExtensionFilter filter;
@@ -48,14 +47,10 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
     
     public HotelCreatorWindow() {
         super(InternLanguage.translateTxt("title_cr"));
-
-        id = new TranslatableJLabel("id_cr");
         name = new TranslatableJLabel("name_cr");
         city = new TranslatableJLabel("city_cr");
         info = new TranslatableJLabel("info_cr");
         imageL = new JLabel();
-        
-        idF = new JTextField(20);
         nameF = new JTextField(20);
         cityF = new JTextField(20);
         infoF = new JTextField(60);
@@ -68,7 +63,7 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
         UpperMenu upperMenu = new UpperMenu(v -> {
         	new MainMenuOwner();
         	dispose();
-        }, id, name, city, info, submitButton, clearButton, imageButton);
+        }, name, city, info, submitButton, clearButton, imageButton);
         setJMenuBar(upperMenu);
         
         fileChooser = new JFileChooser();
@@ -86,8 +81,6 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
         JPanel imagePanel = new JPanel(new BorderLayout());
         formPanel.setBackground(new Color(255, 228, 181));
         formPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        formPanel.add(id);
-        formPanel.add(idF);
         formPanel.add(name);
         formPanel.add(nameF);
         formPanel.add(city);
@@ -121,11 +114,10 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
     
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == submitButton) {
-        	int id = Integer.parseInt(idF.getText());
             String name = nameF.getText();
             String city = cityF.getText();
             String info = infoF.getText();
-            Hotel hotel = new Hotel(id, name, city, info);
+            Hotel hotel = new Hotel(0, name, city, info);
             for(int i = 0; i < roomBox.getItemCount(); i++) {
             	hotel.addRoom(roomBox.getItemAt(i));
             }
@@ -136,7 +128,6 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
         	new HotelEditorWindow((DefaultComboBoxModel<Room>) roomBox.getModel());
 			
         } else if (e.getSource() == clearButton) {
-        	idF.setText("");
         	nameF.setText("");
             cityF.setText("");
             infoF.setText("");
