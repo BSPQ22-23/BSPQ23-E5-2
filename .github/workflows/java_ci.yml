@@ -66,5 +66,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           config_file: docs/Doxyfile
           folder: docs
+  deploy:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
       - name: Deploy page
         uses: actions/deploy-pages@v2
