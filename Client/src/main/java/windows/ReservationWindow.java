@@ -74,7 +74,7 @@ public static void main(String[] args) {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		JPanel upperPanel = new JPanel();
-		TranslatableTitledBorder ttb = new TranslatableTitledBorder(null, "hotel", TitledBorder.LEADING, TitledBorder.TOP, null, null);
+		TranslatableTitledBorder ttb = new TranslatableTitledBorder(upperPanel, null, "hotel", TitledBorder.LEADING, TitledBorder.TOP, null, null);
 		upperPanel.setBorder(ttb);
 		contentPane.add(upperPanel, BorderLayout.NORTH);
 		upperPanel.setLayout(new GridLayout(1, 0, 0, 0));
@@ -96,7 +96,7 @@ public static void main(String[] args) {
 		panel.add(lblNewLabel_1);
 		
 		JPanel leftPanel = new JPanel();
-		TranslatableTitledBorder ttb1 = new TranslatableTitledBorder(null, "book_inf", TitledBorder.LEADING, TitledBorder.TOP, null, null); 
+		TranslatableTitledBorder ttb1 = new TranslatableTitledBorder(leftPanel, null, "book_inf", TitledBorder.LEADING, TitledBorder.TOP, null, null); 
 		leftPanel.setBorder(ttb1);
 		contentPane.add(leftPanel, BorderLayout.WEST);
 		leftPanel.setLayout(new GridLayout(0, 1, 0, 0));
@@ -126,7 +126,7 @@ public static void main(String[] args) {
 		panel_1_1.add(checkoutSpinner);
 		
 		JPanel panel_2 = new JPanel();
-		TranslatableTitledBorder ttb2 = new TranslatableTitledBorder(null, InternLanguage.translateTxt("room"), TitledBorder.LEADING, TitledBorder.TOP, null, null); 
+		TranslatableTitledBorder ttb2 = new TranslatableTitledBorder(panel_2, null, "room", TitledBorder.LEADING, TitledBorder.TOP, null, null); 
 		panel_2.setBorder(ttb2);
 		leftPanel.add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
@@ -170,7 +170,7 @@ public static void main(String[] args) {
 		JScrollPane scrollPane = new JScrollPane(guestList);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		TranslatableTitledBorder ttb3 = new TranslatableTitledBorder(null, "guests", TitledBorder.LEADING, TitledBorder.TOP, null, null);
+		TranslatableTitledBorder ttb3 = new TranslatableTitledBorder(scrollPane, null, "guests", TitledBorder.LEADING, TitledBorder.TOP, null, null);
 		scrollPane.setBorder(ttb3);
 		upperMenu = new UpperMenu( v-> {
        	 	new Thread(() -> new HotelDescriptionWindow(h)).start();
