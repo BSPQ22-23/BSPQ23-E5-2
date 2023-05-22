@@ -61,7 +61,7 @@ jobs:
         uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          folder: docss
+          folder: docs
           config_file: docs
         #uses: mattnotmitt/doxygen-action@v1.9.5
         #with:
