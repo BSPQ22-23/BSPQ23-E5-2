@@ -66,14 +66,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           config_file: docs/Doxyfile
           folder: docs
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions: write-all
-    steps:
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: .
-      - name: Deploy page
-        uses: actions/deploy-pages@v2
