@@ -34,8 +34,9 @@ import domain.Guest;
 import domain.Hotel;
 import domain.Room;
 import language.InternLanguage;
+import language.TranslatableObject.TranslatableJLabel;
+import language.TranslatableObject.TranslatableTitledBorder;
 import remote.ClientController;
-import windows.TranslatableObject.TranslatableJLabel;
 
 /**
  * 
@@ -73,7 +74,8 @@ public static void main(String[] args) {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		JPanel upperPanel = new JPanel();
-		upperPanel.setBorder(new TitledBorder(null, InternLanguage.translateTxt("hotel"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		TranslatableTitledBorder ttb = new TranslatableTitledBorder(null, "hotel", TitledBorder.LEADING, TitledBorder.TOP, null, null);
+		upperPanel.setBorder(ttb);
 		contentPane.add(upperPanel, BorderLayout.NORTH);
 		upperPanel.setLayout(new GridLayout(1, 0, 0, 0));
 		
@@ -94,7 +96,8 @@ public static void main(String[] args) {
 		panel.add(lblNewLabel_1);
 		
 		JPanel leftPanel = new JPanel();
-		leftPanel.setBorder(new TitledBorder(null, InternLanguage.translateTxt("book_inf"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		TranslatableTitledBorder ttb1 = new TranslatableTitledBorder(null, "book_inf", TitledBorder.LEADING, TitledBorder.TOP, null, null); 
+		leftPanel.setBorder(ttb1);
 		contentPane.add(leftPanel, BorderLayout.WEST);
 		leftPanel.setLayout(new GridLayout(0, 1, 0, 0));
 		
@@ -117,18 +120,14 @@ public static void main(String[] args) {
 		
 		TranslatableJLabel checkoutLabel = new TranslatableJLabel("chot_dt");
 		panel_1_1.add(checkoutLabel);
-		upperMenu = new UpperMenu( v-> {
-       	 	new Thread(() -> new HotelDescriptionWindow(h)).start();
-       	 	dispose();
-		}, checkoutLabel, checkinLabel);
-		setJMenuBar(upperMenu);
 		JSpinner checkoutSpinner = new JSpinner();
 		checkoutSpinner.setModel(new SpinnerDateModel(new Date(System.currentTimeMillis()), null, null, Calendar.DAY_OF_YEAR));
 		checkoutSpinner.setEditor(new JSpinner.DateEditor(checkoutSpinner, model.toPattern()));
 		panel_1_1.add(checkoutSpinner);
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new TitledBorder(null, InternLanguage.translateTxt("room"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		TranslatableTitledBorder ttb2 = new TranslatableTitledBorder(null, InternLanguage.translateTxt("room"), TitledBorder.LEADING, TitledBorder.TOP, null, null); 
+		panel_2.setBorder(ttb2);
 		leftPanel.add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
 		DefaultComboBoxModel<Room> dcbm = new DefaultComboBoxModel<>();
@@ -171,7 +170,13 @@ public static void main(String[] args) {
 		JScrollPane scrollPane = new JScrollPane(guestList);
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setViewportBorder(new TitledBorder(null, InternLanguage.translateTxt("guests"), TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		TranslatableTitledBorder ttb3 = new TranslatableTitledBorder(null, "guests", TitledBorder.LEADING, TitledBorder.TOP, null, null);
+		scrollPane.setBorder(ttb3);
+		upperMenu = new UpperMenu( v-> {
+       	 	new Thread(() -> new HotelDescriptionWindow(h)).start();
+       	 	dispose();
+		}, checkoutLabel, checkinLabel, ttb, ttb1, ttb2, ttb3);
+		setJMenuBar(upperMenu);
 		contentPane.add(scrollPane, BorderLayout.EAST);
 	}
 }

@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import language.InternLanguage;
+import language.TranslatableObject;
 
 /**
  * Macro for the common {@link javax.swing.JMenuBar JMenuBar} of the windows

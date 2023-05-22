@@ -25,9 +25,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import domain.Hotel;
 import domain.Room;
 import language.InternLanguage;
+import language.TranslatableObject.TranslatableJButton;
+import language.TranslatableObject.TranslatableJLabel;
 import remote.ClientController;
-import windows.TranslatableObject.TranslatableJButton;
-import windows.TranslatableObject.TranslatableJLabel;
 
 /**
  * Window to create new hotels

@@ -1,9 +1,14 @@
-package windows;
+package language;
+
+import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 
-import language.InternLanguage;
+import windows.UpperMenu;
 
 /**
  * An interface to allow object translation from {@link windows.UpperMenu UpperMenu}'s languaje options in real time
@@ -60,7 +65,31 @@ public interface TranslatableObject{
 		public void refreshText() {
 			setText(InternLanguage.translateTxt(id));
 		}
-		
 	}
+	/**
+	 * {@link javax.swing.border.TitledBorder TitledBorder} that automatically translates when {@link windows.UpperMenu UpperMenu}'s languaje buttons are used
+	 */
+	static class TranslatableTitledBorder extends TitledBorder implements TranslatableObject {
+
+		private static final long serialVersionUID = 1L;
+		private String key;
+		public TranslatableTitledBorder(Border border, String key) {
+			super(border, InternLanguage.translateTxt(key));
+			this.key = key;
+		}
+
+		public TranslatableTitledBorder(Border object, String translateTxt, int leading, int top, Font object2,
+				Color object3) {
+			super(object, InternLanguage.translateTxt(translateTxt), leading, top, object2, object3);
+			this.key = translateTxt;
+		}
+
+		@Override
+		public void refreshText() {
+			setTitle(InternLanguage.translateTxt(key));
+			
+		}
+		 
+	 }
 
 }

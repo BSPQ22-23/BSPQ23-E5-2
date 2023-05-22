@@ -54,8 +54,7 @@ public class GuestCreatorWindow extends JFrame {
 	 */
 	public GuestCreatorWindow(DefaultListModel<Guest> guestList) {
 		setTitle(InternLanguage.translateTxt("add_guest"));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 150);
+		setBounds(100, 100, 480, 180);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 

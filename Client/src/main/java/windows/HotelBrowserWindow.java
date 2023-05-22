@@ -30,10 +30,10 @@ import javax.swing.SwingUtilities;
 
 import domain.Hotel;
 import language.InternLanguage;
+import language.TranslatableObject.TranslatableJButton;
 import remote.ClientController;
 import remote.ClientController.DownloadedImage;
 import remote.ClientController.Response;
-import windows.TranslatableObject.TranslatableJButton;
 
 /**
  * Window to browse a hotel from a list

@@ -15,7 +15,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import domain.Hotel;
-import windows.TranslatableObject.TranslatableJButton;
+import language.TranslatableObject.TranslatableJButton;
 /**
  * 
  * Detailed view of a hotel from {@link windows.HotelBrowserWindow HotelBrowserWindow}

@@ -16,8 +16,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import windows.TranslatableObject.TranslatableJButton;
-import windows.TranslatableObject.TranslatableJLabel;
+import language.TranslatableObject.TranslatableJButton;
+import language.TranslatableObject.TranslatableJLabel;
 
 /**
  * 
