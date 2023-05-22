@@ -30,7 +30,7 @@ import remote.APIUtils;
     			APIUtils.decode(obj.getString("info"))
     		);
     	if(obj.keySet().contains("rooms"))
-    		for(Object o : obj.getJSONArray("rooms"))    result.addRoom(Room.fromJSON((JSONObject)o));
+    		for(Object o : obj.getJSONArray("rooms"))    result.addRoom(Room.fromJSON((JSONObject)o, result));
     	if(obj.keySet().contains("services"))
     		for(Object o : obj.getJSONArray("services")) result.addService(Service.fromJSON((JSONObject)o));
     	return result;

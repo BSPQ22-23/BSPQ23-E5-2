@@ -31,6 +31,21 @@ public class Room {
     	return res;
     }
     
+    public static Room fromJSON(JSONObject object, Hotel h) {
+    	Room res = new Room(
+			object.getInt("roomNumber"), 
+			APIUtils.decode(object.getString("type")),
+			object.getInt("numMaxGuests"),
+			object.getInt("spaceInMeters"),
+			object.getFloat("prize"),
+			h
+		);
+    	if(object.keySet().contains("bookings"))
+    		for(Object o : object.getJSONArray("bookings"))
+    			res.addBooking(Booking.fromJSON((JSONObject)o));
+    	return res;
+    }
+    
     public Room(int roomNumber, String type, int numMaxHosts, int spaceInMeters, float prize, Hotel hotel) {
         this.roomNumber = roomNumber;
         this.type = type;

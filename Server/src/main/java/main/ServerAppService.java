@@ -159,6 +159,7 @@ public class ServerAppService {
 				Room r = new Room(w);
 				r.setHotel(null);//Avoid stack overflow
 				r.setBookings(null);
+				transientRooms.add(r);
 			});//Do not ship bookings
 			h1.setRooms(transientRooms);
 			h1.setOwner(null);//No need to know private info of owner

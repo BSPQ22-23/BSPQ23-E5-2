@@ -78,7 +78,7 @@ public static void main(String[] args) {
 		upperPanel.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		try {
-			upperPanel.add(new JLabel(h.getIcon() == null? new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/dha.png")).getScaledInstance(100, 100, BufferedImage.SCALE_SMOOTH)): new ImageIcon(h.getIcon().getScaledInstance(200, 200, BufferedImage.SCALE_SMOOTH))));
+			upperPanel.add(new JLabel(h.getIcon() == null? new ImageIcon(ImageIO.read(HotelBrowserWindow.class.getClassLoader().getResourceAsStream("images/dha.png")).getScaledInstance(100, 100, BufferedImage.SCALE_SMOOTH)): new ImageIcon(h.getIcon().getScaledInstance(100, 100, BufferedImage.SCALE_SMOOTH))));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

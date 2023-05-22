@@ -77,6 +77,7 @@ public class HotelBrowserWindow extends JFrame  {
     	try {
     		ClientController.getHotels().forEach(v->hotelListModel.addElement(v));
     	} catch(Exception e) {
+    		e.printStackTrace();
     		hotelListModel.addElement(errorHotel);
     	}
     	JList<Hotel> hotelList = new JList<>(hotelListModel);
