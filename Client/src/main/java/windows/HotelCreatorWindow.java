@@ -64,7 +64,7 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
         setJMenuBar(upperMenu);
         
         fileChooser = new JFileChooser();
-        filter = new FileNameExtensionFilter("jpg", "png", "ico");
+        filter = new FileNameExtensionFilter("", "jpg", "png", "ico");
         fileChooser.setFileFilter(filter);
 
         submitButton.addActionListener(this);

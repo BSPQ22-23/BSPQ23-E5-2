@@ -3,7 +3,7 @@
 	<packaging>pom</packaging>
 	<groupId>BSPQ23-E5-2</groupId>
 	<artifactId>BSPQ23-E5-2</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>Sprint-3</version>
 	<!--  <name>   Hotel       </name>-->
 	<url>http://maven.apache.org</url>
 	<modules>
