@@ -52,7 +52,7 @@ var hierarchy =
     [ "domain.Service", "classdomain_1_1Service.html", null ],
     [ "remote.ServiceLocator", "classremote_1_1ServiceLocator.html", null ],
     [ "domain.ServiceTest", "classdomain_1_1ServiceTest.html", null ],
-    [ "windows.TranslatableObject", "interfacewindows_1_1TranslatableObject.html", null ],
+    [ "language.TranslatableObject", "interfacelanguage_1_1TranslatableObject.html", null ],
     [ "domain.User", "classdomain_1_1User.html", null ],
     [ "database.UserDAOTest", "classdatabase_1_1UserDAOTest.html", null ],
     [ "domain.UserTest", "classdomain_1_1UserTest.html", null ],

@@ -30,9 +30,6 @@ var dir_030f05d7b797aa5b94e8ba49c40b11a1 =
     [ "ReservationWindow.java", "ReservationWindow_8java.html", [
       [ "ReservationWindow", "classwindows_1_1ReservationWindow.html", "classwindows_1_1ReservationWindow" ]
     ] ],
-    [ "TranslatableObject.java", "TranslatableObject_8java.html", [
-      [ "TranslatableObject", "interfacewindows_1_1TranslatableObject.html", "interfacewindows_1_1TranslatableObject" ]
-    ] ],
     [ "UpperMenu.java", "UpperMenu_8java.html", [
       [ "UpperMenu", "classwindows_1_1UpperMenu.html", "classwindows_1_1UpperMenu" ]
     ] ]

@@ -10,6 +10,5 @@ var namespacewindows =
     [ "MainMenuOwner", "classwindows_1_1MainMenuOwner.html", "classwindows_1_1MainMenuOwner" ],
     [ "RegistrationWindow", "classwindows_1_1RegistrationWindow.html", "classwindows_1_1RegistrationWindow" ],
     [ "ReservationWindow", "classwindows_1_1ReservationWindow.html", "classwindows_1_1ReservationWindow" ],
-    [ "TranslatableObject", "interfacewindows_1_1TranslatableObject.html", "interfacewindows_1_1TranslatableObject" ],
     [ "UpperMenu", "classwindows_1_1UpperMenu.html", "classwindows_1_1UpperMenu" ]
 ];

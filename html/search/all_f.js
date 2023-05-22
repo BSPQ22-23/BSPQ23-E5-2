@@ -63,7 +63,7 @@ var searchData=
   ['testsettype_325',['testSetType',['../classdomain_1_1RoomTest.html#aa42630ea9ac15498fead36ed0831375d',1,'domain::RoomTest']]],
   ['testuploadjpg_326',['testUploadJPG',['../classremote_1_1ImageTransferTest.html#af325a660f0f916e3ee1c0e25ade73396',1,'remote::ImageTransferTest']]],
   ['tostring_327',['toString',['../classdomain_1_1User.html#af71f8a5078957e4c3d56813a23e42473',1,'domain.User.toString()'],['../classdomain_1_1Guest.html#a6bc226ff0795f85ce4cb40dbda0bed18',1,'domain.Guest.toString()'],['../classdomain_1_1Hotel.html#a4b6f56ad065f115d75d2c7826967734c',1,'domain.Hotel.toString()'],['../classdomain_1_1Room.html#a62ca9ab28eb72e259a82f43305f2469b',1,'domain.Room.toString()'],['../classdomain_1_1Booking.html#a06da18f26e5dcaa4bb2c8ab981fe1d9c',1,'domain.Booking.toString()'],['../classdomain_1_1Room.html#a62ca9ab28eb72e259a82f43305f2469b',1,'domain.Room.toString()'],['../classdomain_1_1Guest.html#a6bc226ff0795f85ce4cb40dbda0bed18',1,'domain.Guest.toString()']]],
-  ['translatableobject_328',['TranslatableObject',['../interfacewindows_1_1TranslatableObject.html',1,'windows']]],
+  ['translatableobject_328',['TranslatableObject',['../interfacelanguage_1_1TranslatableObject.html',1,'language']]],
   ['translatableobject_2ejava_329',['TranslatableObject.java',['../TranslatableObject_8java.html',1,'']]],
   ['translatetxt_330',['translateTxt',['../classlanguage_1_1InternLanguage.html#a0ac01671d348e2c3867179983c897233',1,'language::InternLanguage']]],
   ['translation_331',['translation',['../classlanguage_1_1InternLanguageTest.html#acffc26b98f52925b7a01e7d46a8863ee',1,'language::InternLanguageTest']]],

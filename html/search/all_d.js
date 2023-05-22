@@ -3,7 +3,7 @@ var searchData=
   ['rawresponse_177',['rawResponse',['../classapi_1_1APIUtils.html#ae8fe2a28a1e177692ce61abea33c1c1e',1,'api::APIUtils']]],
   ['readbody_178',['readBody',['../classapi_1_1APIUtils.html#ad81c164fd9464dffb62015ecef9d8ea8',1,'api::APIUtils']]],
   ['readme_2emd_179',['README.md',['../README_8md.html',1,'']]],
-  ['refreshtext_180',['refreshText',['../interfacewindows_1_1TranslatableObject.html#a714f9c5d88e22dbe6b01c24275b6e451',1,'windows::TranslatableObject']]],
+  ['refreshtext_180',['refreshText',['../interfacelanguage_1_1TranslatableObject.html#a9d7d55ef0b1794cea95cc54fbccc7dd2',1,'language::TranslatableObject']]],
   ['register_181',['register',['../classmain_1_1ServerAppService.html#a17b3c3c4d1fec7e33773aa2807571ec1',1,'main.ServerAppService.register()'],['../classremote_1_1ClientController.html#a6c97427df5402630b799800a0c7263fe',1,'remote.ClientController.register()']]],
   ['registerhandler_182',['RegisterHandler',['../classapi_1_1RegisterHandler.html',1,'api']]],
   ['registerhandler_2ejava_183',['RegisterHandler.java',['../RegisterHandler_8java.html',1,'']]],

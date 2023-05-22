@@ -50,6 +50,7 @@ var annotated_dup =
     ] ],
     [ "language", "namespacelanguage.html", [
       [ "InternLanguage", "classlanguage_1_1InternLanguage.html", null ],
+      [ "TranslatableObject", "interfacelanguage_1_1TranslatableObject.html", "interfacelanguage_1_1TranslatableObject" ],
       [ "InternLanguageTest", "classlanguage_1_1InternLanguageTest.html", "classlanguage_1_1InternLanguageTest" ]
     ] ],
     [ "main", "namespacemain.html", [
@@ -76,7 +77,6 @@ var annotated_dup =
       [ "MainMenuOwner", "classwindows_1_1MainMenuOwner.html", "classwindows_1_1MainMenuOwner" ],
       [ "RegistrationWindow", "classwindows_1_1RegistrationWindow.html", "classwindows_1_1RegistrationWindow" ],
       [ "ReservationWindow", "classwindows_1_1ReservationWindow.html", "classwindows_1_1ReservationWindow" ],
-      [ "TranslatableObject", "interfacewindows_1_1TranslatableObject.html", "interfacewindows_1_1TranslatableObject" ],
       [ "UpperMenu", "classwindows_1_1UpperMenu.html", "classwindows_1_1UpperMenu" ]
     ] ]
 ];

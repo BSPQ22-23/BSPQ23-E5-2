@@ -2,7 +2,7 @@ var searchData=
 [
   ['rawresponse_573',['rawResponse',['../classapi_1_1APIUtils.html#ae8fe2a28a1e177692ce61abea33c1c1e',1,'api::APIUtils']]],
   ['readbody_574',['readBody',['../classapi_1_1APIUtils.html#ad81c164fd9464dffb62015ecef9d8ea8',1,'api::APIUtils']]],
-  ['refreshtext_575',['refreshText',['../interfacewindows_1_1TranslatableObject.html#a714f9c5d88e22dbe6b01c24275b6e451',1,'windows::TranslatableObject']]],
+  ['refreshtext_575',['refreshText',['../interfacelanguage_1_1TranslatableObject.html#a9d7d55ef0b1794cea95cc54fbccc7dd2',1,'language::TranslatableObject']]],
   ['register_576',['register',['../classremote_1_1ClientController.html#a6c97427df5402630b799800a0c7263fe',1,'remote.ClientController.register()'],['../classmain_1_1ServerAppService.html#a17b3c3c4d1fec7e33773aa2807571ec1',1,'main.ServerAppService.register()']]],
   ['registertest_577',['registerTest',['../classremote_1_1ClientControllerTest.html#a8bda25a4669a1a52d0b608f279c7afec',1,'remote::ClientControllerTest']]],
   ['registrationwindow_578',['RegistrationWindow',['../classwindows_1_1RegistrationWindow.html#a0996140f74d1873499990506e00c1d7d',1,'windows::RegistrationWindow']]],
