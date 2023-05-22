@@ -1,14 +1,28 @@
 package windows;
-import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.concurrent.ExecutionException;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import domain.Guest;
 import domain.User;
 import language.InternLanguage;
 import remote.ClientController;
-
-import java.awt.*;
-import java.awt.event.*;
-import java.util.concurrent.ExecutionException;
+import remote.ClientController.Response;
 
 /**
  * 
@@ -54,6 +68,15 @@ public class RegistrationWindow extends JFrame implements ActionListener {
         JPanel formPanel = new JPanel(new GridLayout(8, 2, 5, 5));
         formPanel.setBackground(new Color(255, 228, 181));
         formPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        ageTextField.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char c = e.getKeyChar();
+				if(!(c >= '0') || !(c <= '9'))
+					e.consume();
+			}
+		});
+        
         formPanel.add(nicknameLabel);
         formPanel.add(nicknameTextField);
         formPanel.add(passwordLabel);
@@ -99,16 +122,19 @@ public class RegistrationWindow extends JFrame implements ActionListener {
             String age = ageTextField.getText();
             String city = cityTextField.getText();
             Boolean owner = ownership.isSelected();
-            JOptionPane.showMessageDialog(this, "Thank you for registering, " + name + "!\n" +
-                    "Your nickname is " + nickname + " and your password is " + password);
             
             int ageI = Integer.parseInt(age);
             Guest guest = new Guest(name, lastName, id, ageI, city);
             User user = new User(nickname, password, guest, owner);
             
             try {
-				ClientController.register(user);
-				openMenu(user.isHotelOwner());
+				Response res = ClientController.register(user);
+				if(res.status == Response.SUCCESS) {
+					JOptionPane.showMessageDialog(this, "Thank you for registering, " + name + "!\n" +
+		                    "Your nickname is " + nickname + " and your password is " + password);
+					openMenu(user.isHotelOwner());
+				} else
+					JOptionPane.showMessageDialog(null, "Registration failed: " + res.message);
 
 			} catch (InterruptedException | ExecutionException e1) {
 				e1.printStackTrace();

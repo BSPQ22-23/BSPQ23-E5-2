@@ -54,7 +54,7 @@ public class HotelDescriptionWindow extends JFrame{
 		panelDown.add(back);
 		TranslatableJButton makeBooking = new TranslatableJButton("book");
 		makeBooking.addActionListener(v -> {
-			new ReservationWindow(h);
+			new ReservationWindow(h).setVisible(true);
 			dispose();
 		});
 		panelDown.add(makeBooking);
