@@ -43,7 +43,9 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
     private JFileChooser fileChooser;
     private FileNameExtensionFilter filter;
     private JComboBox<Room> roomBox;
-
+    private BufferedImage icon = null;
+    private String format = "";
+    
     public HotelCreatorWindow() {
         super(InternLanguage.translateTxt("title_cr"));
 
@@ -124,10 +126,11 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
             String city = cityF.getText();
             String info = infoF.getText();
             Hotel hotel = new Hotel(id, name, city, info);
-			ClientController.createHotel(hotel);
             for(int i = 0; i < roomBox.getItemCount(); i++) {
             	hotel.addRoom(roomBox.getItemAt(i));
             }
+            hotel.setIcon(icon, format);
+			ClientController.createHotel(hotel);
             
         } else if (e.getSource() == roomButton) {
         	new HotelEditorWindow((DefaultComboBoxModel<Room>) roomBox.getModel());
@@ -144,7 +147,9 @@ public class HotelCreatorWindow extends JFrame implements ActionListener {
         		 File file = fileChooser.getSelectedFile();
 	        	 try {
 	        		 BufferedImage imageBuff = ImageIO.read(file);
+	        		 format = file.getName().substring(file.getName().indexOf(".") + 1);
 	        		 ImageIcon icon = new ImageIcon(imageBuff);
+	        		 this.icon = imageBuff;
 	        		 imageL.setIcon(icon);
 	        	 } catch (IOException ex) {
 	        		 ex.printStackTrace();
