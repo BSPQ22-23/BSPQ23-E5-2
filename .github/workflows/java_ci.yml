@@ -71,5 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
       - name: Deploy page
         uses: actions/deploy-pages@v2
