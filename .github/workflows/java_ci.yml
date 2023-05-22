@@ -28,7 +28,7 @@ jobs:
 
       - name: Run JUnits
         run: | 
-          sleep 10  
+          sleep 7 
           mvn --batch-mode --update-snapshots test
 
       - name: Build client
@@ -56,6 +56,8 @@ jobs:
           tag: ${{ steps.version.outputs.TAG_NAME }}
           release_name: ${{ steps.version.outputs.TAG_NAME }}
           overwrite: true
+        run: |
+          tree
       - name: Generate Doxigen documentation
         uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
         with:
