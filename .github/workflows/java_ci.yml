@@ -73,5 +73,7 @@ jobs:
     steps:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+        with:
+          path: .
       - name: Deploy page
         uses: actions/deploy-pages@v2
