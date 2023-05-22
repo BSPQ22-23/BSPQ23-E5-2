@@ -67,6 +67,7 @@ jobs:
           config_file: docs/Doxyfile
           folder: docs
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     permissions: write-all
     steps:
