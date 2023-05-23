@@ -65,7 +65,7 @@ public static void main(String[] args) {
 	 */
 	public ReservationWindow(Hotel h) {
 		setTitle(InternLanguage.translateTxt("book_cr"));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 510, 430);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

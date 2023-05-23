@@ -60,7 +60,7 @@ public class ReservationCreationHandler implements HttpHandler{
 	    		List<Guest> guests= new ArrayList<>();
 	    		for (Object _o : obj.getJSONArray("guests")) {
 	    			JSONObject o = (JSONObject)_o;
-	    			guests.add(new Guest(o.getString("name"), o.getString("surname"), o.getString("dni"), o.getInt("age"), o.getString("cityOfProvenance")));
+	    			guests.add(Guest.fromJSON(o));
 	    		}
 	    		Booking b = Booking.fromJSON(obj);
 	    		l.info("Searching hotel");
@@ -82,6 +82,11 @@ public class ReservationCreationHandler implements HttpHandler{
 	    			APIUtils.respondError(t, "Room doesn't exist");
 	    			return;
 	    		}
+	    		if(b.getGuests().size() > b.getRoom().getNumMaxGuests()) {
+	    			l.info("Too many guests, reservation denied");
+	    			APIUtils.respondError(t, "Too many guests");
+	    		}else if(b.getGuests().size() < b.getRoom().getNumMaxGuests())
+	    			b.addGuest(author.getLegalInfo());
 	    		l.info("Room found, creating reservation");
 	    		b.setAuthor(author.getLegalInfo());
 	    		if(ServerAppService.reservationCreate(b)) {
